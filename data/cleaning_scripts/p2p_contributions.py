@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 # Load the HTML file
-with open("P2P_2024_Contributions.html", "r", encoding="utf-8") as file:
+with open("P2P_2024_Contributions", "r", encoding="utf-8") as file:
     soup = BeautifulSoup(file, "html.parser")
 
 # Find all table rows (assuming donation info is in tables)
