@@ -5,30 +5,30 @@ import pandas as pd
 with open("P2P_2024_Contributions.html", "r", encoding="utf-8") as file:
     soup = BeautifulSoup(file, "html.parser")
 
-# Find all table rows (assuming donation info is in tables)
+# Find all table rows
 rows = soup.find_all("tr")
 
-# Prepare list of extracted rows
 data = []
+headers = []
 
-for row in rows:
-    cols = row.find_all(["td", "th"])  # td = data, th = headers
+for i, row in enumerate(rows):
+    cols = row.find_all(["td", "th"])  # headers or data cells
     cols = [col.get_text(strip=True) for col in cols]
-    
-    # Skip rows that are clearly too short or blank
+
     if len(cols) < 3:
         continue
 
-    data.append(cols)
+    if i == 0:
+        # First row assumed to be headers
+        headers = cols
+    else:
+        data.append(cols)
 
-# Convert to DataFrame
-df = pd.DataFrame(data)
+# Create DataFrame with exact headers from HTML
+df = pd.DataFrame(data, columns=headers)
 
-# Preview the data to manually adjust column names if needed
+# Preview
 print(df.head())
-
-# Optionally assign column names
-df.columns = ["Donor/Entity", "Candidate", "Amount", "Date", "Other Info"][:len(df.columns)]
 
 # Export to CSV
 df.to_csv("donations_cleaned.csv", index=False)
