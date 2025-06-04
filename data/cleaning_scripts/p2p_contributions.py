@@ -15,19 +15,32 @@ for year in years:
             print(f"⚠️ No table found in {filename}, skipping.")
             continue
 
-        # Extract headers
-        headers = [th.get_text(strip=True) for th in table.find_all("th")]
+        # Get all rows
+        rows = table.find_all("tr")
+        if not rows:
+            print(f"⚠️ No rows found in {filename}, skipping.")
+            continue
 
-        # Extract rows (skip header)
-        rows = [
-            [td.get_text(strip=True) for td in tr.find_all("td")]
-            for tr in table.find_all("tr")[1:]
-        ]
+        # Extract header cells from first row, whether <th> or <td>
+        header_cells = rows[0].find_all(["th", "td"])
+        headers = [cell.get_text(strip=True) for cell in header_cells]
+
+        # Extract data rows (skip first header row)
+        data = []
+        for row in rows[1:]:
+            cells = row.find_all("td")
+            if len(cells) == 0:
+                continue
+            row_data = [cell.get_text(strip=True) for cell in cells]
+            data.append(row_data)
+
+        # Check if all rows have same length as headers; if not, fix or skip rows
+        filtered_data = [r for r in data if len(r) == len(headers)]
 
         # Build DataFrame
-        df = pd.DataFrame(rows, columns=headers)
+        df = pd.DataFrame(filtered_data, columns=headers)
 
-        # Save to individual Excel file
+        # Save to Excel file
         df.to_excel(output_excel, index=False)
         print(f"✅ Saved {output_excel}")
 
@@ -36,4 +49,4 @@ for year in years:
     except Exception as e:
         print(f"❌ Error processing {filename}: {e}")
 
-print("🎉 All files processed!")
+print(" All files processed!")
