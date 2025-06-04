@@ -1,35 +1,39 @@
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# Load the HTML file
-with open("P2P_2024_Contributions.html", "r", encoding="utf-8") as file:
-    soup = BeautifulSoup(file, "html.parser")
+years = list(range(2024, 2019, -1))  # 2024 down to 2020
 
-# Find all table rows
-rows = soup.find_all("tr")
+for year in years:
+    filename = f"P2P_{year}_Contributions.html"
+    output_excel = f"P2P_{year}_Contributions.xlsx"
+    try:
+        with open(filename, "r", encoding="utf-8") as file:
+            soup = BeautifulSoup(file, "html.parser")
 
-data = []
-headers = []
+        table = soup.find("table")
+        if not table:
+            print(f"⚠️ No table found in {filename}, skipping.")
+            continue
 
-for i, row in enumerate(rows):
-    cols = row.find_all(["td", "th"])  # headers or data cells
-    cols = [col.get_text(strip=True) for col in cols]
+        # Extract headers
+        headers = [th.get_text(strip=True) for th in table.find_all("th")]
 
-    if len(cols) < 3:
-        continue
+        # Extract rows (skip header)
+        rows = [
+            [td.get_text(strip=True) for td in tr.find_all("td")]
+            for tr in table.find_all("tr")[1:]
+        ]
 
-    if i == 0:
-        # First row assumed to be headers
-        headers = cols
-    else:
-        data.append(cols)
+        # Build DataFrame
+        df = pd.DataFrame(rows, columns=headers)
 
-# Create DataFrame with exact headers from HTML
-df = pd.DataFrame(data, columns=headers)
+        # Save to individual Excel file
+        df.to_excel(output_excel, index=False)
+        print(f"✅ Saved {output_excel}")
 
-# Preview
-print(df.head())
+    except FileNotFoundError:
+        print(f"❌ File {filename} not found, skipping.")
+    except Exception as e:
+        print(f"❌ Error processing {filename}: {e}")
 
-# Export to CSV
-df.to_csv("donations_cleaned.csv", index=False)
-print("✅ Exported to donations_cleaned.csv")
+print("🎉 All files processed!")
