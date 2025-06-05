@@ -86,7 +86,7 @@ def contributionSizeBreakdown(combineddf):
             idx = 3
 
         if idx is not None:
-            if amt <= 1000:
+            if amt <= 2500:
                 breakdown[idx][0] += amt  # small
             else:
                 breakdown[idx][1] += amt  # large
