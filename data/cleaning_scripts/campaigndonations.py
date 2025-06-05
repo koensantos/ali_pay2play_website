@@ -214,26 +214,54 @@ for entry in data:
 
 import pandas as pd
 
-def get_aggregate_contributions(file_path, candidate_name):
+import pandas as pd
+
+def get_aggregate_contributions(file_path, candidate_name="Jim McGreevey"):
+    """
+    Prints a breakdown of contributors to a candidate:
+    - Contributor name
+    - Contributor city and state
+    - Aggregate contribution amount (deduplicated)
+    
+    Returns:
+        float: Total aggregate amount
+        pd.DataFrame: Table of contributor info and their aggregate amount
+    """
     try:
         df = pd.read_excel(file_path)
 
-        # Filter rows where recipient matches candidate name
+        # Filter for candidate
         filtered_df = df[df["Recipient_Name"].str.contains(candidate_name, case=False, na=False)]
 
-        # Get max aggregate per contributor to avoid duplicates
-        agg_by_contributor = filtered_df.groupby("Contributor_Name")["Aggregate_Contribution_Amount"].max()
+        # Drop duplicates to avoid double-counting
+        deduped = filtered_df.drop_duplicates(subset=["Contributor_Name", "Aggregate_Contribution_Amount"])
 
-        total = agg_by_contributor.sum()
+        # Optional: sort by amount
+        deduped = deduped.sort_values(by="Aggregate_Contribution_Amount", ascending=False)
 
-        print(f"Total aggregate contributions to {candidate_name}: ${total:,.2f}")
-        return total, agg_by_contributor
+        # Print header
+        print(f"\nAggregate contributions to {candidate_name}:\n")
+        print(f"{'Contributor':40} {'City':20} {'State':6} {'Aggregate ($)':>15}")
+        print("-" * 90)
+
+        for _, row in deduped.iterrows():
+            name = str(row["Contributor_Name"]).strip()
+            city = str(row.get("Contributor_City", "")).strip()
+            state = str(row.get("Contributor_State", "")).strip()
+            amount = float(row["Aggregate_Contribution_Amount"])
+            print(f"{name:40} {city:20} {state:6} {amount:15,.2f}")
+
+        total = deduped["Aggregate_Contribution_Amount"].sum()
+        print(f"\nTotal Aggregate Contributions to {candidate_name}: ${total:,.2f}")
+
+        return total, deduped[["Contributor_Name", "Contributor_City", "Contributor_State", "Aggregate_Contribution_Amount"]]
 
     except Exception as e:
         print(f"Error: {e}")
-        return 0.0, pd.Series()
+        return 0.0, pd.DataFrame()
+    
+get_aggregate_contributions("P2P_2024_Contributions.xlsx")
 
-total, breakdown = get_aggregate_contributions("P2P_2024_contributions.xlsx", "Jim McGreevey")
 
 
             
