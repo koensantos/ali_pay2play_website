@@ -151,8 +151,66 @@ jc_ratios = jerseyCityRatio(combined_df)
 for i in range(len(data)):
     data[i]["jerseyCityDonationRatio"] = jc_ratios[i]
 
+
+def contributionTypeBreakdown(combineddf):
+    # Step 1: Map detailed types to simplified groups
+    type_mapping = {
+        "INDIVIDUAL": "Individual",
+        "BUSINESS/CORP": "Corporate",
+        "BUSINESS/ CORP ASSOC/ PAC": "Corporate",
+        "UNION": "Union",
+        "UNION PAC": "Union",
+        "POLITICAL CMTE": "Political Committee",
+        "POLITICAL PARTY CMTE": "Political Committee",
+        "POLITICAL CLUB": "Political Committee",
+        "TRADE ASSOCIATION PAC": "Corporate",
+        "IDEOLOGICAL ASSOC/ PAC": "Interest Group",
+        "INTEREST": "Interest Group",
+        "CANDIDATE COMMITTEE": "Candidate",
+        "MISC/ OTHER": "Other",
+        "NOT PROVIDED": "Unknown"
+    }
+
+    combineddf["ContributorGroup"] = combineddf["ContributorType"].map(type_mapping).fillna("Unknown")
+
+    # Step 2: Get total contribution per candidate
+    total_per_candidate = combineddf.groupby("EntityName")["ContributionAmount"].sum()
+
+    # Step 3: Get contribution sums per contributor group and candidate
+    grouped = combineddf.groupby(["EntityName", "ContributorGroup"])["ContributionAmount"].sum()
+
+    # Step 4: Calculate % per contributor group
+    percentage_breakdowns = {}
+
+    for (candidate, group), amt in grouped.items():
+        total = total_per_candidate.get(candidate, 1)  # Avoid division by 0
+        percent = amt / total
+
+        if candidate not in percentage_breakdowns:
+            percentage_breakdowns[candidate] = {}
+
+        percentage_breakdowns[candidate][group] = round(percent, 4)
+
+    return percentage_breakdowns
+
+percentages = contributionTypeBreakdown(combined_df)
+
+
+name_map = {
+    "ALI, MUSSAB": "Mussab Ali",
+    "WATTERMAN, JOYCE E": "Joyce Watterman",
+    "MCGREEVEY, JIM": "Jim McGreevey",
+    "SOLOMON, JAMES": "James Solomon"
+}
+
+for entry in data:
+    full_name = next((k for k, v in name_map.items() if v == entry["name"]), None)
+    if full_name in percentages:
+        entry["contributorTypeBreakdown"] = percentages[full_name]
+
 for entry in data:
     print(entry)
+
 
             
 
