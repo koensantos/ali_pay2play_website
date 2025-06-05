@@ -208,8 +208,32 @@ for entry in data:
     if full_name in percentages:
         entry["contributorTypeBreakdown"] = percentages[full_name]
 
+
 for entry in data:
     print(entry)
+
+import pandas as pd
+
+def get_aggregate_contributions(file_path, candidate_name):
+    try:
+        df = pd.read_excel(file_path)
+
+        # Filter rows where recipient matches candidate name
+        filtered_df = df[df["Recipient_Name"].str.contains(candidate_name, case=False, na=False)]
+
+        # Get max aggregate per contributor to avoid duplicates
+        agg_by_contributor = filtered_df.groupby("Contributor_Name")["Aggregate_Contribution_Amount"].max()
+
+        total = agg_by_contributor.sum()
+
+        print(f"Total aggregate contributions to {candidate_name}: ${total:,.2f}")
+        return total, agg_by_contributor
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return 0.0, pd.Series()
+
+total, breakdown = get_aggregate_contributions("P2P_2024_contributions.xlsx", "Jim McGreevey")
 
 
             
