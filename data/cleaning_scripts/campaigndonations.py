@@ -217,16 +217,7 @@ import pandas as pd
 import pandas as pd
 
 def get_aggregate_contributions(file_path, candidate_name="Jim McGreevey"):
-    """
-    Prints a breakdown of contributors to a candidate:
-    - Contributor name
-    - Contributor city and state
-    - Aggregate contribution amount (deduplicated)
-    
-    Returns:
-        float: Total aggregate amount
-        pd.DataFrame: Table of contributor info and their aggregate amount
-    """
+
     try:
         df = pd.read_excel(file_path)
 
