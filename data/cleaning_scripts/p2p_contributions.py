@@ -1,54 +1,56 @@
 from bs4 import BeautifulSoup
 import pandas as pd
+import os
+import re
 
-years = list(range(2024, 2019, -1))  # 2024 to 2020
-all_data = []
+def combine_html_p2p_data(folder):
+    html_pattern = re.compile(r"P2P_(\d{4})_Contributions\.html$")
+    all_data = []
+    final_headers = []
 
-for year in years:
-    filename = f"P2P_{year}_Contributions.html"
-    try:
-        with open(filename, "r", encoding="utf-8") as file:
-            soup = BeautifulSoup(file, "html.parser")
+    for filename in os.listdir(folder):
+        match = html_pattern.match(filename)
+        if match:
+            year = int(match.group(1))
+            if not (2006 <= year <= 2024):
+                continue  # Skip years outside 2006–2024
 
-        table = soup.find("table")
-        if not table:
-            print(f"⚠️ No table found in {filename}, skipping.")
-            continue
+            filepath = os.path.join(folder, filename)
 
-        rows = table.find_all("tr")
-        if not rows:
-            print(f"⚠️ No rows found in {filename}, skipping.")
-            continue
+            try:
+                with open(filepath, "r", encoding="utf-8") as file:
+                    soup = BeautifulSoup(file, "html.parser")
 
-        header_cells = rows[0].find_all(["th", "td"])
-        headers = [cell.get_text(strip=True) for cell in header_cells]
+                rows = soup.find_all("tr")
+                if len(rows) < 2:
+                    print(f"⚠️ Not enough rows in {filename}, skipping.")
+                    continue
 
-        data = []
-        for row in rows[1:]:
-            cells = row.find_all("td")
-            if len(cells) == 0:
-                continue
-            row_data = [cell.get_text(strip=True) for cell in cells]
-            if len(row_data) == len(headers):
-                row_data.append(str(year))  # Add year to row
-                data.append(row_data)
+                # Header row
+                header_cells = [cell.get_text(strip=True) for cell in rows[0].find_all("td")]
+                if not final_headers:
+                    final_headers = header_cells + ["Year"]  # Save only once
 
-        headers.append("Year")  # Add Year column
-        df = pd.DataFrame(data, columns=headers)
-        all_data.append(df)
+                # Data rows
+                for row in rows[1:]:
+                    cells = [cell.get_text(strip=True) for cell in row.find_all("td")]
+                    if len(cells) == len(header_cells):
+                        cells.append(year)
+                        all_data.append(cells)
 
-        print(f"✅ Processed {filename}")
+                print(f"✅ Processed {filename}")
 
-    except FileNotFoundError:
-        print(f"❌ File {filename} not found, skipping.")
-    except Exception as e:
-        print(f"❌ Error processing {filename}: {e}")
+            except Exception as e:
+                print(f"❌ Error in {filename}: {e}")
 
-# Combine all years into one DataFrame
-if all_data:
-    combined_df = pd.concat(all_data, ignore_index=True)
-    combined_df.to_excel("Combined_P2P_Contributions.xlsx", index=False)
-    print("🎯 All data saved to Combined_P2P_Contributions.xlsx")
-else:
-    print("⚠️ No data to save.")
+    # Create DataFrame
+    if all_data:
+        df = pd.DataFrame(all_data, columns=final_headers)
+        output_path = "Combined_P2P_Contributions_2006_2024.xlsx"
+        df.to_excel(output_path, index=False)
+        print(f"🎯 Saved combined data to {output_path}")
+    else:
+        print("⚠️ No valid data found in HTML files.")
 
+
+combine_html_p2p_data("OtherFiles")  # Change to your folder name if needed

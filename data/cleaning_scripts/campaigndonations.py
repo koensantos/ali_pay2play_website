@@ -1,256 +1,108 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import re
 
+candidate_files = {
+    "Mussab Ali": "MussabAliContributions.csv",
+    "Joyce Watterman": "JoyceWattermanContributions.csv",
+    "Jim McGreevey": "JimMcGreeveyContributions.csv",
+    "James Solomon": "JamesSolomonContributions.csv",
+    "Bill O'Dea": "WilliamODeaContributions.csv"
+}
+p2p_file = "Combined_P2P_Contributions.xlsx"
 
-file_paths = ["MussabAliContributions.csv", "JoyceWattermanContributions.csv","JimMcGreeveyContributions.csv", "JamesSolomonContributions.csv"]
-
-dfs = [pd.read_csv(file_path) for file_path in file_paths]
-
-combined_df = pd.concat(dfs)
-
-print(combined_df)
-
-candidates = ["Mussab Ali", "Joyce Watterman", "Jim McGreevey", "James Solomon"]
-
-data = [
-    {"name": "Mussab Ali"},
-    {"name": "Joyce Watterman"},
-    {"name": "Jim McGreevey"},
-    {"name": "James Solomon"}
-]
-
-def totalAmounts(combineddf):
-    campaign_amounts = [0, 0, 0, 0]
-
-    for _, row in combineddf.iterrows():
-        name = row["EntityName"]
-        amt = row["ContributionAmount"]
-        
-        if name == "ALI, MUSSAB":
-            campaign_amounts[0] += amt
-        elif name == "WATTERMAN, JOYCE E":
-            campaign_amounts[1] += amt
-        elif name == "MCGREEVEY, JIM":
-            campaign_amounts[2] += amt
-        elif name == "SOLOMON, JAMES":
-            campaign_amounts[3] += amt
-
-    return campaign_amounts
-
-def individualToTotalRatio(camp_amts, combineddf):
-    amts = [0, 0, 0, 0]
-    
-    for _, row in combineddf.iterrows():
-        if row["ContributorType"] != "INDIVIDUAL":
-            name = row["EntityName"]
-            amt = row["ContributionAmount"]
-            
-            if name == "ALI, MUSSAB":
-                amts[0] += amt
-            elif name == "WATTERMAN, JOYCE E":
-                amts[1] += amt
-            elif name == "MCGREEVEY, JIM":
-                amts[2] += amt
-            elif name == "SOLOMON, JAMES":
-                amts[3] += amt
-
-    ratio = [amts[i] / camp_amts[i] if camp_amts[i] != 0 else 0 for i in range(4)]
-    return ratio
-
-# Compute values
-campaign_amounts = totalAmounts(combined_df)
-ratios = individualToTotalRatio(campaign_amounts, combined_df)
-
-# Update the data list with new attributes
-for i in range(len(data)):
-    data[i]["totalAmount"] = campaign_amounts[i]
-    data[i]["businessToTotalRatio"] = ratios[i]
-
-
-
-def contributionSizeBreakdown(combineddf):
-    # Result structure: [ [small, large], [small, large], ... ] for each candidate
-    breakdown = [[0, 0] for _ in range(4)]
-
-    for _, row in combineddf.iterrows():
-        name = row["EntityName"]
-        amt = row["ContributionAmount"]
-
-        idx = None
-        if name == "ALI, MUSSAB":
-            idx = 0
-        elif name == "WATTERMAN, JOYCE E":
-            idx = 1
-        elif name == "MCGREEVEY, JIM":
-            idx = 2
-        elif name == "SOLOMON, JAMES":
-            idx = 3
-
-        if idx is not None:
-            if amt <= 2500:
-                breakdown[idx][0] += amt  # small
-            else:
-                breakdown[idx][1] += amt  # large
-
-    return breakdown
-
-size_breakdowns = contributionSizeBreakdown(combined_df)
-
-for i in range(len(data)):
-    data[i]["smallDonations"] = size_breakdowns[i][0]
-    data[i]["largeDonations"] = size_breakdowns[i][1]
-
-
-# View updated data
-for entry in data:
-    total = entry["totalAmount"]
-    small = entry["smallDonations"]
-    large = entry["largeDonations"]
-
-    if total > 0:
-        entry["smallDonationRatio"] = small / total
-        entry["largeDonationRatio"] = large / total
-    else:
-        entry["smallDonationRatio"] = 0
-        entry["largeDonationRatio"] = 0
-
-
-def jerseyCityRatio(combineddf):
-    # Initialize [Jersey City amount, Total amount] per candidate
-    jc_amounts = [0, 0, 0, 0]
-    total_amounts = [0, 0, 0, 0]
-
-    for _, row in combineddf.iterrows():
-        name = row["EntityName"]
-        city = str(row["City"]).strip().upper()
-        amt = row["ContributionAmount"]
-
-        idx = None
-        if name == "ALI, MUSSAB":
-            idx = 0
-        elif name == "WATTERMAN, JOYCE E":
-            idx = 1
-        elif name == "MCGREEVEY, JIM":
-            idx = 2
-        elif name == "SOLOMON, JAMES":
-            idx = 3
-
-        if idx is not None:
-            total_amounts[idx] += amt
-            if city == "JERSEY CITY":
-                jc_amounts[idx] += amt
-
-    ratios = [
-        jc_amounts[i] / total_amounts[i] if total_amounts[i] > 0 else 0
-        for i in range(4)
-    ]
-
-    return ratios
-
-jc_ratios = jerseyCityRatio(combined_df)
-
-for i in range(len(data)):
-    data[i]["jerseyCityDonationRatio"] = jc_ratios[i]
-
-
-def contributionTypeBreakdown(combineddf):
-    # Step 1: Map detailed types to simplified groups
-    type_mapping = {
-        "INDIVIDUAL": "Individual",
-        "BUSINESS/CORP": "Corporate",
-        "BUSINESS/ CORP ASSOC/ PAC": "Corporate",
-        "UNION": "Union",
-        "UNION PAC": "Union",
-        "POLITICAL CMTE": "Political Committee",
-        "POLITICAL PARTY CMTE": "Political Committee",
-        "POLITICAL CLUB": "Political Committee",
-        "TRADE ASSOCIATION PAC": "Corporate",
-        "IDEOLOGICAL ASSOC/ PAC": "Interest Group",
-        "INTEREST": "Interest Group",
-        "CANDIDATE COMMITTEE": "Candidate",
-        "MISC/ OTHER": "Other",
-        "NOT PROVIDED": "Unknown"
-    }
-
-    combineddf["ContributorGroup"] = combineddf["ContributorType"].map(type_mapping).fillna("Unknown")
-
-    # Step 2: Get total contribution per candidate
-    total_per_candidate = combineddf.groupby("EntityName")["ContributionAmount"].sum()
-
-    # Step 3: Get contribution sums per contributor group and candidate
-    grouped = combineddf.groupby(["EntityName", "ContributorGroup"])["ContributionAmount"].sum()
-
-    # Step 4: Calculate % per contributor group
-    percentage_breakdowns = {}
-
-    for (candidate, group), amt in grouped.items():
-        total = total_per_candidate.get(candidate, 1)  # Avoid division by 0
-        percent = amt / total
-
-        if candidate not in percentage_breakdowns:
-            percentage_breakdowns[candidate] = {}
-
-        percentage_breakdowns[candidate][group] = round(percent, 4)
-
-    return percentage_breakdowns
-
-percentages = contributionTypeBreakdown(combined_df)
-
-
-name_map = {
-    "ALI, MUSSAB": "Mussab Ali",
-    "WATTERMAN, JOYCE E": "Joyce Watterman",
-    "MCGREEVEY, JIM": "Jim McGreevey",
-    "SOLOMON, JAMES": "James Solomon"
+type_mapping = {
+    "INDIVIDUAL": "Individual",
+    "BUSINESS/CORP": "Corporate",
+    "BUSINESS/ CORP ASSOC/ PAC": "Corporate",
+    "UNION": "Union",
+    "UNION PAC": "Union",
+    "POLITICAL CMTE": "Political Committee",
+    "POLITICAL PARTY CMTE": "Political Committee",
+    "POLITICAL CLUB": "Political Committee",
+    "TRADE ASSOCIATION PAC": "Corporate",
+    "IDEOLOGICAL ASSOC/ PAC": "Interest Group",
+    "INTEREST": "Interest Group",
+    "CANDIDATE COMMITTEE": "Candidate",
+    "MISC/ OTHER": "Other",
+    "NOT PROVIDED": "Unknown"
 }
 
-for entry in data:
-    full_name = next((k for k, v in name_map.items() if v == entry["name"]), None)
-    if full_name in percentages:
-        entry["contributorTypeBreakdown"] = percentages[full_name]
+business_keywords = r"\b(LLC|INC|PC|CORP|CORPORATION|L\.L\.C\.|L\.P\.|LP)\b"
 
+def get_individual_csv_data(file_path):
+    df = pd.read_csv(file_path)
+    df["ContributorGroup"] = df["ContributorType"].map(type_mapping).fillna("Other")
 
+    # Split individual donations into small/large
+    def split_individual(row):
+        if row["ContributorGroup"] == "Individual":
+            if row["ContributionAmount"] > 4000:
+                return "Individual - Large"
+            else:
+                return "Individual - Small"
+        else:
+            return row["ContributorGroup"]
 
+    df["ContributorGroup"] = df.apply(split_individual, axis=1)
+    return df[["ContributorGroup", "ContributionAmount"]]
 
-def get_aggregate_contributions(file_path, candidate_name="Jim McGreevey"):
+def get_p2p_contributions(file_path, candidate_name):
+    df = pd.read_excel(file_path)
+    df = df[df['Recipient_Name'].str.contains(candidate_name, case=False, na=False)].copy()
+    df["IsBusiness"] = df["Contributor_Name"].str.contains(business_keywords, case=False, na=False)
 
-    try:
-        df = pd.read_excel(file_path)
+    # For P2P, classify business vs individual, then split individuals by donation size
+    def classify(row):
+        if row["IsBusiness"]:
+            return "Corporate"
+        else:
+            if row["Aggregate_Contribution_Amount"] > 4000:
+                return "Individual - Large"
+            else:
+                return "Individual - Small"
 
-        # Filter for candidate
-        filtered_df = df[df["Recipient_Name"].str.contains(candidate_name, case=False, na=False)]
+    df["ContributorGroup"] = df.apply(classify, axis=1)
+    df = df.rename(columns={"Aggregate_Contribution_Amount": "ContributionAmount"})
+    return df[["ContributorGroup", "ContributionAmount"]]
 
-        # Drop duplicates to avoid double-counting
-        deduped = filtered_df.drop_duplicates(subset=["Contributor_Name", "Aggregate_Contribution_Amount"])
+def plot_type_breakdown_pie(df, candidate):
+    grouped = df.groupby("ContributorGroup")["ContributionAmount"].sum()
+    labels = grouped.index.tolist()
+    values = grouped.values
+    total = values.sum()
 
-        # Optional: sort by amount
-        deduped = deduped.sort_values(by="Aggregate_Contribution_Amount", ascending=False)
+    color_map = {
+        "Individual - Small": "#66b3ff",
+        "Individual - Large": "#004080",
+        "Corporate": "#ff9999",
+        "Union": "#99ff99",
+        "Political Committee": "#ffcc99",
+        "Interest Group": "#c2c2f0",
+        "Candidate": "#ffb3e6",
+        "Other": "#d3d3d3",
+        "Unknown": "#bbbbbb"
+    }
+    colors = [color_map.get(label, "#dddddd") for label in labels]
 
-        # Print header
-        print(f"\nAggregate contributions to {candidate_name}:\n")
-        print(f"{'Contributor':40} {'City':20} {'State':6} {'Aggregate ($)':>15}")
-        print("-" * 90)
+    plt.figure(figsize=(7,7))
+    wedges, texts, autotexts = plt.pie(values, labels=None, autopct='%1.1f%%', startangle=140, colors=colors, textprops={'fontsize': 12})
 
-        for _, row in deduped.iterrows():
-            name = str(row["Contributor_Name"]).strip()
-            city = str(row.get("Contributor_City", "")).strip()
-            state = str(row.get("Contributor_State", "")).strip()
-            amount = float(row["Aggregate_Contribution_Amount"])
-            print(f"{name:40} {city:20} {state:6} {amount:15,.2f}")
+    plt.title(f"{candidate}\nTotal Donations: ${total:,.2f}", fontsize=16)
 
-        total = deduped["Aggregate_Contribution_Amount"].sum()
-        print(f"\nTotal Aggregate Contributions to {candidate_name}: ${total:,.2f}")
+    plt.legend(wedges, labels, title="Contributor Types", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1), fontsize=12)
 
-        return total, deduped[["Contributor_Name", "Contributor_City", "Contributor_State", "Aggregate_Contribution_Amount"]]
+    plt.tight_layout()
+    plt.show()
 
-    except Exception as e:
-        print(f"Error: {e}")
-        return 0.0, pd.DataFrame()
-    
-get_aggregate_contributions("Combined_P2P_Contributions.xlsx")
+# --- Main Loop ---
+for candidate, file_path in candidate_files.items():
+    df_csv = get_individual_csv_data(file_path)
+    df_p2p = get_p2p_contributions(p2p_file, candidate)
 
+    combined_df = pd.concat([df_csv, df_p2p], ignore_index=True)
 
+    print(f"\nContribution Type Breakdown for {candidate}:")
+    print(combined_df.groupby("ContributorGroup")["ContributionAmount"].sum())
 
-            
-
-    
-
+    plot_type_breakdown_pie(combined_df, candidate)
