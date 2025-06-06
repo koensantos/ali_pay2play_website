@@ -209,12 +209,7 @@ for entry in data:
         entry["contributorTypeBreakdown"] = percentages[full_name]
 
 
-for entry in data:
-    print(entry)
 
-import pandas as pd
-
-import pandas as pd
 
 def get_aggregate_contributions(file_path, candidate_name="Jim McGreevey"):
 
@@ -251,7 +246,7 @@ def get_aggregate_contributions(file_path, candidate_name="Jim McGreevey"):
         print(f"Error: {e}")
         return 0.0, pd.DataFrame()
     
-get_aggregate_contributions("P2P_2024_Contributions.xlsx")
+get_aggregate_contributions("Combined_P2P_Contributions.xlsx")
 
 
 
