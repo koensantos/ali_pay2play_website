@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import re
 import os
-import numpy as np
 
 candidate_files = {
     "Mussab Ali": "MussabAliContributions.csv",
@@ -28,71 +27,59 @@ type_mapping = {
     "CANDIDATE COMMITTEE": "Candidate",
     "MISC/ OTHER": "Other",
     "NOT PROVIDED": "Unknown",
-    "P2P_INDIVIDUAL": "P2P Individual",
-    "P2P_CORPORATE": "P2P Corporate"
+    "P2P_INDIVIDUAL": "Individual",
+    "P2P_CORPORATE": "Corporate"
 }
 
 business_keywords = r"\b(LLC|INC|PC|CORP|CORPORATION|L\.L\.C\.|L\.P\.|LP)\b"
-os.makedirs("output_csv", exist_ok=True)
 
 def get_individual_csv_data(file_path):
     df = pd.read_csv(file_path)
-
     df["ContributorGroup"] = df["ContributorType"].map(type_mapping).fillna("Other")
+    df["Employer"] = df["EmpName"]
+    df["Occupation"] = df["OccupationName"]
+    df["ContributorName"] = df.apply(lambda row: f"{row['FirstName']} {row['LastName']}".strip(), axis=1)
+    df["Date"] = pd.to_datetime(df["ContributionDate"], errors="coerce")
+    df["Location"] = df["City"] + ", " + df["State"]
 
+    # Split individual donations into small/large
     def split_individual(row):
         if row["ContributorGroup"] == "Individual":
-            return "Individual - Large" if row["ContributionAmount"] > 4000 else "Individual - Small"
-        return row["ContributorGroup"]
+            if row["ContributionAmount"] > 4000:
+                return "Individual - Large"
+            else:
+                return "Individual - Small"
+        else:
+            return row["ContributorGroup"]
 
     df["ContributorGroup"] = df.apply(split_individual, axis=1)
-
-    contributor_name = df.get("NonIndName").fillna(
-        df.get("LastName", "") + ", " + df.get("FirstName", "")
-    )
-    city = df.get("City", np.nan)
-    state = df.get("State", np.nan)
-    location = city.fillna("") + ", " + state.fillna("")
-    location = location.str.strip(", ")
-
-    return pd.DataFrame({
-        "ContributorGroup": df["ContributorGroup"],
-        "ContributionAmount": df["ContributionAmount"],
-        "Contributor_Name": contributor_name,
-        "ContributionDate": df.get("ContributionDate", np.nan),
-        "EmployerName": df.get("EmpName", np.nan),
-        "OccupationName": df.get("OccupationName", np.nan),
-        "Location": location.replace("", np.nan)
-    })
+    return df[["ContributorGroup", "ContributionAmount", "ContributorName", "Employer", "Occupation", "Date", "Location"]]
 
 def get_p2p_contributions(file_path, candidate_name):
     df = pd.read_excel(file_path)
     df = df[df['Recipient_Name'].str.contains(candidate_name, case=False, na=False)].copy()
-
     df["IsBusiness"] = df["Contributor_Name"].str.contains(business_keywords, case=False, na=False)
+    df["Date"] = pd.to_datetime(df["Contribution_Date"], errors="coerce")
+    df["Location"] = df["Contributor_City"] + ", " + df["Contributor_State"]
 
-    df["ContributorGroup"] = df.apply(
-        lambda row: "P2P Corporate" if row["IsBusiness"] else "P2P Individual",
-        axis=1
-    )
+    # Classify and split
+    def classify(row):
+        if row["IsBusiness"]:
+            return "Corporate"
+        else:
+            if row["Aggregate_Contribution_Amount"] > 4000:
+                return "Individual - Large"
+            else:
+                return "Individual - Small"
 
-    df = df.rename(columns={"Aggregate_Contribution_Amount": "ContributionAmount"})
-
-    # Location based on contributor's address
-    city = df.get("Contributor_City", np.nan)
-    state = df.get("Contributor_State", np.nan)
-    location = city.fillna("") + ", " + state.fillna("")
-    location = location.str.strip(", ")
-
-    return pd.DataFrame({
-        "ContributorGroup": df["ContributorGroup"],
-        "ContributionAmount": df["ContributionAmount"],
-        "Contributor_Name": df["Contributor_Name"],
-        "ContributionDate": df.get("Contribution_Date", np.nan),
-        "EmployerName": df.get("Employer_Name", np.nan),
-        "OccupationName": df.get("Contributor_Occupation", np.nan),
-        "Location": location.replace("", np.nan)
+    df["ContributorGroup"] = df.apply(classify, axis=1)
+    df = df.rename(columns={
+        "Aggregate_Contribution_Amount": "ContributionAmount",
+        "Contributor_Name": "ContributorName",
+        "Business_Name": "Employer"
     })
+    df["Occupation"] = None
+    return df[["ContributorGroup", "ContributionAmount", "ContributorName", "Employer", "Occupation", "Date", "Location"]]
 
 def plot_type_breakdown_pie(df, candidate):
     grouped = df.groupby("ContributorGroup")["ContributionAmount"].sum()
@@ -109,36 +96,64 @@ def plot_type_breakdown_pie(df, candidate):
         "Interest Group": "#c2c2f0",
         "Candidate": "#ffb3e6",
         "Other": "#d3d3d3",
-        "Unknown": "#bbbbbb",
-        "P2P Individual": "#006699",
-        "P2P Corporate": "#cc3333"
+        "Unknown": "#bbbbbb"
     }
-
     colors = [color_map.get(label, "#dddddd") for label in labels]
 
-    plt.figure(figsize=(7, 7))
-    wedges, texts, autotexts = plt.pie(
-        values, labels=None, autopct='%1.1f%%', startangle=140,
-        colors=colors, textprops={'fontsize': 12}
-    )
-
+    plt.figure(figsize=(7,7))
+    wedges, texts, autotexts = plt.pie(values, labels=None, autopct='%1.1f%%', startangle=140, colors=colors, textprops={'fontsize': 12})
     plt.title(f"{candidate}\nTotal Donations: ${total:,.2f}", fontsize=16)
     plt.legend(wedges, labels, title="Contributor Types", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1), fontsize=12)
     plt.tight_layout()
     plt.show()
 
-# --- Main Execution ---
+def save_combined_csv(df, candidate_name, output_dir="Combined_CSVs"):
+    os.makedirs(output_dir, exist_ok=True)
+    safe_name = candidate_name.replace(" ", "")
+    df.to_csv(f"{output_dir}/{safe_name}_CombinedDonations.csv", index=False)
+
+def save_top_contributors_csvs(df, candidate_name, output_dir="Top_Contributors"):
+    os.makedirs(output_dir, exist_ok=True)
+    safe_name = candidate_name.replace(" ", "")
+
+    top_donors = (
+        df.groupby("ContributorName")["ContributionAmount"]
+        .sum()
+        .sort_values(ascending=False)
+        .head(10)
+        .reset_index()
+    )
+    top_donors.to_csv(f"{output_dir}/{safe_name}_Top10Donors.csv", index=False)
+
+    top_employers = (
+        df.groupby("Employer")["ContributionAmount"]
+        .sum()
+        .dropna()
+        .sort_values(ascending=False)
+        .head(10)
+        .reset_index()
+    )
+    top_employers.to_csv(f"{output_dir}/{safe_name}_Top10Employers.csv", index=False)
+
+    top_occupations = (
+        df.groupby("Occupation")["ContributionAmount"]
+        .sum()
+        .dropna()
+        .sort_values(ascending=False)
+        .head(10)
+        .reset_index()
+    )
+    top_occupations.to_csv(f"{output_dir}/{safe_name}_Top10Occupations.csv", index=False)
+
+# --- Main Loop ---
 for candidate, file_path in candidate_files.items():
     df_csv = get_individual_csv_data(file_path)
     df_p2p = get_p2p_contributions(p2p_file, candidate)
-
     combined_df = pd.concat([df_csv, df_p2p], ignore_index=True)
-
-    # Save the detailed CSV
-    output_path = os.path.join("output_csv", f"{candidate.replace(' ', '_')}_DetailedDonations.csv")
-    combined_df.to_csv(output_path, index=False)
 
     print(f"\nContribution Type Breakdown for {candidate}:")
     print(combined_df.groupby("ContributorGroup")["ContributionAmount"].sum())
 
     plot_type_breakdown_pie(combined_df, candidate)
+    save_combined_csv(combined_df, candidate)
+    save_top_contributors_csvs(combined_df, candidate)
