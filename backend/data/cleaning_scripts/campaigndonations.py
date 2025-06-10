@@ -144,8 +144,35 @@ def get_top_contributors(df, candidate):
     top_occupations.to_csv(f"output/{candidate.replace(' ', '_')}_top_occupations.csv", index=False)
 
 # Ensure output folders exist
-os.makedirs("charts", exist_ok=True)
+os.makedirs("visuals", exist_ok=True)   # Changed from "charts" to "visuals"
 os.makedirs("output", exist_ok=True)
+
+def plot_type_breakdown_pie(df, candidate):
+    grouped = df.groupby("ContributorGroup")["ContributionAmount"].sum()
+    labels = grouped.index.tolist()
+    values = grouped.values
+    total = values.sum()
+
+    color_map = {
+        "Individual - Small": "#66b3ff",
+        "Individual - Large": "#004080",
+        "Corporate": "#ff9999",
+        "Union": "#99ff99",
+        "Political Committee": "#ffcc99",
+        "Interest Group": "#c2c2f0",
+        "Candidate": "#ffb3e6",
+        "Other": "#d3d3d3",
+        "Unknown": "#bbbbbb"
+    }
+    colors = [color_map.get(label, "#dddddd") for label in labels]
+
+    plt.figure(figsize=(7,7))
+    wedges, _, autotexts = plt.pie(values, labels=None, autopct='%1.1f%%', startangle=140, colors=colors, textprops={'fontsize': 12})
+    plt.title(f"{candidate}\nTotal Donations: ${total:,.2f}", fontsize=16)
+    plt.legend(wedges, labels, title="Contributor Types", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1), fontsize=12)
+    plt.tight_layout()
+    plt.savefig(f"visuals/{candidate.replace(' ', '_')}_contributions_pie.png")  # changed folder here
+    plt.close()
 
 def plot_category_bar_chart(df, candidate):
     grouped = df.groupby("ContributorGroup")["ContributionAmount"].sum().sort_values(ascending=False)
@@ -161,7 +188,7 @@ def plot_category_bar_chart(df, candidate):
         yval = bar.get_height()
         plt.text(bar.get_x() + bar.get_width() / 2, yval, f"${yval:,.0f}", va='bottom', ha='center', fontsize=9)
 
-    filename = f"charts/{candidate.replace(' ', '_')}_bar_contributions.png"
+    filename = f"visuals/{candidate.replace(' ', '_')}_bar_contributions.png"  # changed folder here
     plt.savefig(filename)
     plt.close()
 
@@ -184,9 +211,10 @@ def plot_contributions_over_time(df, candidate):
     plt.grid(True)
     plt.tight_layout()
 
-    filename = f"charts/{candidate.replace(' ', '_')}_line_donations_over_time.png"
+    filename = f"visuals/{candidate.replace(' ', '_')}_line_donations_over_time.png"  # changed folder here
     plt.savefig(filename)
     plt.close()
+
 
 
 def update_all_donations():
