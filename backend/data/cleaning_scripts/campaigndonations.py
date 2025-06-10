@@ -4,7 +4,7 @@ import re
 import os
 
 # Paths
-data_dir = "candidate_contributions"
+data_dir = os.path.join(os.path.dirname(__file__), "candidate_contributions")
 p2p_file = os.path.join(data_dir, "Combined_P2P_Contributions.xlsx")
 
 # Candidate files inside 'candidate_contributions'
