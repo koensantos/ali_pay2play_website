@@ -1,13 +1,14 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 export default function Home() {
   const candidates = [
     "MussabAli",
     "JoyceWatterman",
     "JimMcGreevey",
     "JamesSolomon",
-    "WilliamODea"
+    "BillODea"
   ];
-
-  const backendUrl = "http://localhost:5000"; // Flask runs on 5000 by default
 
   return (
     <div className="homepage">
@@ -19,18 +20,12 @@ export default function Home() {
         Pay2Play exists to empower voters with accessible donation records and to support informed decision-making.
         We do not endorse any candidate—our goal is to let the data speak for itself.
       </p>
-      <h3>Download 2025 Candidate Donation Data</h3>
+
+      <h3>Explore Candidate Data</h3>
       <ul>
         {candidates.map((name) => (
           <li key={name}>
-            <a
-              href={`${backendUrl}/api/download/${name}Contributions`}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download 2025 data for {name}
-            </a>
+            <Link to={`/candidate/${name}`}>View data for {name}</Link>
           </li>
         ))}
       </ul>

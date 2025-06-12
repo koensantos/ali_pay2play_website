@@ -1,7 +1,8 @@
-from flask import Flask, send_file, jsonify, request
+from flask import Flask, send_file, jsonify, request, send_from_directory, json
 from flask_cors import CORS
 import os
 import logging
+import pandas as pd
 
 # Import your data update function
 from cleaning_scripts import campaigndonations
@@ -12,29 +13,27 @@ CORS(app)
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
-# Path to the candidate data folder
-DATA_FOLDER = os.path.join(os.path.dirname(__file__), "candidate_contributions")
+# Folder paths
+BASE_DIR = os.path.dirname(__file__)
+DATA_FOLDER = os.path.join(BASE_DIR, "cleaning_scripts", "candidate_contributions")
+CHART_FOLDER = os.path.join(BASE_DIR, "cleaning_scripts", "charts")  # ✅ Corrected path
 
+# Route: Download candidate CSV
 @app.route("/api/download/<candidate>", methods=["GET"])
-def download_candidate_data(candidate):
-    """
-    Download a CSV file for a specific candidate.
-    """
-    safe_filename = f"{candidate}.csv"
-    file_path = os.path.join(DATA_FOLDER, safe_filename)
+def download_candidate_csv(candidate):
+    filename = f"{candidate}Contributions.csv"
+    filepath = os.path.join(DATA_FOLDER, filename)
 
-    if os.path.exists(file_path):
-        logging.info(f"Sending file: {file_path}")
-        return send_file(file_path, as_attachment=True)
+    if os.path.exists(filepath):
+        logging.info(f"Sending file: {filepath}")
+        return send_file(filepath, as_attachment=True)
     else:
-        logging.warning(f"File not found: {file_path}")
+        logging.warning(f"File not found: {filepath}")
         return jsonify({"error": "File not found"}), 404
 
+# Route: Update all donation data
 @app.route("/api/update", methods=["POST"])
 def trigger_update():
-    """
-    Run the data update script.
-    """
     try:
         logging.info("Running update_all_donations()")
         campaigndonations.update_all_donations()
@@ -42,6 +41,17 @@ def trigger_update():
     except Exception as e:
         logging.error(f"Update failed: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+# Route: Serve pie chart image for Mussab Ali
+@app.route("/api/chart/mussab", methods=["GET"])
+def get_mussab_chart():
+    filename = "Mussab_Ali_contributions_pie.png"
+    filepath = os.path.join(CHART_FOLDER, filename)
+
+    if os.path.exists(filepath):
+        return send_file(filepath, mimetype='image/png')
+    else:
+        return jsonify({"error": "Chart not found"}), 404
 
 if __name__ == "__main__":
     app.run(debug=True)
