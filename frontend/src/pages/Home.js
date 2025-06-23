@@ -28,6 +28,9 @@ export default function Home() {
             <Link to={`/candidate/${name}`}>View data for {name}</Link>
           </li>
         ))}
+        <li>
+          <Link to="/draft">🔍 Example Visuals (Jim McGreevey)</Link>
+        </li>
       </ul>
     </div>
   );
