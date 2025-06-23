@@ -115,6 +115,31 @@ def get_top_donors_csv(candidate):
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+# Utility to serve CSV files as JSON
+def csv_to_json_response(filename):
+    path = os.path.join(OUTPUT_FOLDER, filename)
+    if not os.path.exists(path):
+        return jsonify({"error": "File not found"}), 404
+    try:
+        df = pd.read_csv(path)
+        return jsonify(df.to_dict(orient="records"))
+    except Exception as e:
+        logging.error(f"Failed to parse CSV {filename}: {e}")
+        return jsonify({"error": "Failed to parse CSV"}), 500
+
+# ✅ Route: Top Employers
+@app.route("/api/top_employers/<candidate>", methods=["GET"])
+def get_top_employers(candidate):
+    filename = f"{candidate}_top_employers.csv"
+    return csv_to_json_response(filename)
+
+# ✅ Route: Top Occupations
+@app.route("/api/top_occupations/<candidate>", methods=["GET"])
+def get_top_occupations(candidate):
+    filename = f"{candidate}_top_occupations.csv"
+    return csv_to_json_response(filename)
+
 
 
 if __name__ == "__main__":
