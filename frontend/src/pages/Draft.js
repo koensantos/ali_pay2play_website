@@ -1,87 +1,237 @@
 import React, { useEffect, useState } from "react";
-import { Pie } from "react-chartjs-2";
+import { Pie, Bar } from "react-chartjs-2";
 import "chart.js/auto";
 
 export default function Draft() {
   const [chartData, setChartData] = useState(null);
-  const [donors, setDonors] = useState([]);
-  const [employers, setEmployers] = useState([]);
-  const [occupations, setOccupations] = useState([]);
+  const [topDonorsBarData, setTopDonorsBarData] = useState(null);
+  const [repeatDonorsData, setRepeatDonorsData] = useState(null);
+  const [donorSearchResults, setDonorSearchResults] = useState([]);
+  const [donorHistory, setDonorHistory] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchStatus, setSearchStatus] = useState(null);
 
-  const backendUrl = "http://localhost:5000";
+  const backendUrl = "http://localhost:5000"; // Adjust if your backend is elsewhere
 
+  // Fetch contribution groups data for pie chart
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/Jim_McGreevey`)
       .then((res) => res.json())
       .then((data) => {
-        if (!Array.isArray(data)) return;
+        if (!Array.isArray(data)) {
+          console.error("Unexpected data format for contributions:", data);
+          return;
+        }
+
         const labels = data.map((item) => item.ContributorGroup);
         const values = data.map((item) => item.ContributionAmount);
-        const total = values.reduce((a, b) => a + b, 0);
+        const total = values.reduce((acc, val) => acc + val, 0);
+
         const backgroundColors = [
-          "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0",
-          "#9966FF", "#FF9F40", "#C9CBCF", "#8D99AE",
-          "#6A4C93", "#F67280",
+          "#FF6384",
+          "#36A2EB",
+          "#FFCE56",
+          "#4BC0C0",
+          "#9966FF",
+          "#FF9F40",
+          "#C9CBCF",
+          "#8D99AE",
+          "#6A4C93",
+          "#F67280",
         ];
+
         setChartData({
           labels,
-          datasets: [{ data: values, backgroundColor: backgroundColors.slice(0, labels.length) }],
+          datasets: [
+            {
+              data: values,
+              backgroundColor: backgroundColors.slice(0, labels.length),
+            },
+          ],
           total,
         });
+      })
+      .catch((err) => {
+        console.error("Error fetching contributions:", err);
       });
   }, []);
 
+  // Fetch Top 10 Donors bar chart data
   useEffect(() => {
-    fetch(`${backendUrl}/api/top_donors_csv/Jim_McGreevey`)
+    fetch(`${backendUrl}/api/top_donors_bar/Jim_McGreevey`)
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data)) setDonors(data);
+        if (!data || !Array.isArray(data.labels) || !Array.isArray(data.datasets)) {
+          console.error("Invalid top donors bar data:", data);
+          return;
+        }
+        setTopDonorsBarData(data);
+      })
+      .catch((err) => {
+        console.error("Error fetching top donors bar data:", err);
       });
   }, []);
 
+  // Fetch Repeated Donors data and format for Chart.js
   useEffect(() => {
-    fetch(`${backendUrl}/api/top_employers/Jim_McGreevey`)
+    fetch(`${backendUrl}/api/repeated_donors/Jim_McGreevey`)
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data)) setEmployers(data);
+        if (!Array.isArray(data)) {
+          console.error("Invalid repeated donors data:", data);
+          return;
+        }
+
+        const labels = data.map((item) => item.ContributorName);
+        const values = data.map((item) => item.TotalAmount);
+
+        const backgroundColors = labels.map(
+          () => `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
+        );
+
+        setRepeatDonorsData({
+          labels,
+          datasets: [
+            {
+              label: "Total Donations",
+              data: values,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        });
+      })
+      .catch((err) => {
+        console.error("Error fetching repeated donors data:", err);
       });
   }, []);
 
-  useEffect(() => {
-    fetch(`${backendUrl}/api/top_occupations/Jim_McGreevey`)
+  // Donor search handler
+  function handleSearch(e) {
+    e.preventDefault();
+    if (!searchTerm.trim()) {
+      setDonorSearchResults([]);
+      setDonorHistory(null);
+      setSearchStatus(null);
+      return;
+    }
+    setSearchStatus("Searching...");
+    setDonorHistory(null);
+    setDonorSearchResults([]);
+
+    fetch(`${backendUrl}/api/search_donor/Jim_McGreevey?q=${encodeURIComponent(searchTerm.trim())}`)
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data)) setOccupations(data);
+        if (data.error) {
+          setSearchStatus(data.error);
+          setDonorSearchResults([]);
+          setDonorHistory(null);
+          return;
+        }
+        if (data.status === "found") {
+          setSearchStatus(null);
+          setDonorHistory(data.records);
+          setDonorSearchResults([]);
+        } else if (data.status === "not_found" && data.suggestions && data.suggestions.length > 0) {
+          setSearchStatus(null);
+          setDonorSearchResults(data.suggestions);
+          setDonorHistory(null);
+        } else {
+          setSearchStatus("This person or business cannot be found.");
+          setDonorSearchResults([]);
+          setDonorHistory(null);
+        }
+      })
+      .catch(() => {
+        setSearchStatus("Search failed, please try again.");
+        setDonorSearchResults([]);
+        setDonorHistory(null);
       });
-  }, []);
+  }
+
+  // Show donor history for a selected close match
+  function showDonorHistory(name) {
+    setSearchTerm(name);
+    setSearchStatus("Loading donor history...");
+    fetch(`${backendUrl}/api/search_donor/Jim_McGreevey?q=${encodeURIComponent(name)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "found") {
+          setDonorHistory(data.records);
+          setDonorSearchResults([]);
+          setSearchStatus(null);
+        } else {
+          setSearchStatus("No donation history found for this donor.");
+          setDonorHistory(null);
+        }
+      })
+      .catch(() => {
+        setSearchStatus("Failed to load donor history.");
+        setDonorHistory(null);
+      });
+  }
+
+  // Candidate Profile hardcoded
+  const candidateProfile = {
+    biography:
+      `Jim McGreevey served as the 52nd Governor of New Jersey from 2002 until his resignation in 2004. Before becoming governor, McGreevey was the Mayor of Woodbridge Township and served in the New Jersey General Assembly. His governorship focused on ethics reform and education initiatives, including increased funding for public schools. However, his career was marked by controversy when he publicly came out as gay and resigned following a scandal involving an extramarital affair. After leaving office, McGreevey became an advocate for criminal justice reform and immigrant rights, and he has worked with various nonprofit organizations. His story reflects the complex challenges of public service and personal identity in politics. McGreevey's transparency and reforms had lasting impacts on New Jersey politics. He continues to engage in public speaking and community activism.`,
+    policies:
+      `During his tenure, McGreevey emphasized ethics reform aimed at reducing corruption and increasing transparency in state government. He supported expanding education funding and reforming the public school system to improve student outcomes. McGreevey also backed environmental protection initiatives and promoted economic development through job creation programs. He was known for advocating immigrant rights and worked on improving access to healthcare. His administration focused on balancing the state budget while maintaining social services. McGreevey’s policies reflected a centrist approach, attempting to bridge progressive and moderate interests. Despite his resignation, many of his initiatives continue to influence New Jersey’s political landscape.`,
+    background:
+      `Born in Jersey City in 1957, Jim McGreevey attended Columbia University and earned a law degree from Boston University. Early in his career, he served as legal counsel to Governor Thomas Kean. McGreevey’s rise in politics was marked by his charisma and ability to connect with diverse communities. His time as mayor and assemblyman provided a foundation for statewide office. After his resignation, he pursued academic and nonprofit work focused on social justice. His personal journey and political career offer insights into the intersection of identity, power, and public service. McGreevey’s legacy is one of both achievement and personal transformation.`,
+  };
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
       <h1>Jim McGreevey: Campaign Finance Visuals</h1>
 
-      {/* Candidate Profile */}
-      <div style={{ marginBottom: "3rem" }}>
-        <h2>Candidate Profile</h2>
-        <p><strong>Biography:</strong> Jim McGreevey, born August 6, 1957, is a former Governor of New Jersey who previously served as Mayor of Woodbridge and as a state legislator. He rose through New Jersey’s political ranks before becoming governor in 2002. McGreevey made national headlines in 2004 when he came out as gay during a resignation speech amid scandal. After leaving office, he pursued theological studies and shifted his focus toward rehabilitation and social justice, particularly prison reentry. He earned a Master of Divinity and served as Executive Director of the NJ Reentry Corporation. McGreevey has since worked with marginalized communities to help them reintegrate into society. In 2023, he announced a campaign for Jersey City mayor, seeking a return to public service. His personal and professional journey reflects a message of redemption and civic duty.</p>
+      {/* Candidate Profile Section */}
+      <section style={{ marginBottom: "2rem" }}>
+        <h2>Biography</h2>
+        <p>{candidateProfile.biography}</p>
 
-        <p><strong>Policy Positions:</strong> McGreevey supports expanding affordable housing and increasing transparency in development. He has emphasized the importance of infrastructure investment, including improvements to public transit and utilities. He promotes workforce development programs, particularly for formerly incarcerated individuals. McGreevey is also committed to enhancing mental health and addiction services citywide. His campaign supports ethical government reforms and community oversight. He also backs education initiatives that target underserved neighborhoods. Environmental sustainability is part of his platform, with a focus on green spaces and flood mitigation. Lastly, he advocates for inclusive economic growth that benefits long-time residents and small businesses.</p>
+        <h2>Policies</h2>
+        <p>{candidateProfile.policies}</p>
 
-        <p><strong>Campaign Vision:</strong> McGreevey presents his campaign as a second chance—for both himself and the city. He aims to restore integrity to public office and uplift communities too often ignored by political leadership. His message emphasizes “service over self” and learning from past mistakes. His experience in state-level governance and nonprofit leadership forms the core of his appeal. McGreevey envisions a Jersey City that is more equitable, resilient, and affordable. He supports a bottom-up approach to policymaking—listening to residents through neighborhood forums and regular check-ins. His agenda reflects both policy acumen and emotional resonance, drawing from personal transformation. If elected, he promises bold, compassionate leadership anchored in local needs.</p>
-      </div>
+        <h2>Background</h2>
+        <p>{candidateProfile.background}</p>
+      </section>
 
       {/* Pie Chart and Legend */}
       {chartData && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginBottom: "3rem" }}>
-          <div style={{ flex: "1 1 500px", minWidth: "400px", maxWidth: "600px", height: "450px" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "2rem",
+            flexWrap: "wrap",
+            alignItems: "flex-start",
+            marginBottom: "3rem",
+          }}
+        >
+          <div
+            style={{
+              flex: "1 1 500px",
+              minWidth: "400px",
+              maxWidth: "600px",
+              height: "450px",
+            }}
+          >
             <Pie
               data={chartData}
               options={{
                 maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
+                hover: { mode: "nearest", intersect: true },
               }}
             />
           </div>
-          <div style={{ flex: "1 1 250px", minWidth: "250px", maxWidth: "300px" }}>
+
+          <div
+            style={{
+              flex: "1 1 250px",
+              minWidth: "250px",
+              maxWidth: "300px",
+            }}
+          >
             <h3>Legend</h3>
             <ul style={{ listStyle: "none", padding: 0 }}>
               {chartData.labels.map((label, idx) => {
@@ -89,13 +239,16 @@ export default function Draft() {
                 const percent = ((value / chartData.total) * 100).toFixed(2);
                 return (
                   <li key={label} style={{ marginBottom: "8px" }}>
-                    <span style={{
-                      display: "inline-block",
-                      width: "12px",
-                      height: "12px",
-                      backgroundColor: chartData.datasets[0].backgroundColor[idx],
-                      marginRight: "8px",
-                    }}></span>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        width: "12px",
+                        height: "12px",
+                        backgroundColor:
+                          chartData.datasets[0].backgroundColor[idx],
+                        marginRight: "8px",
+                      }}
+                    ></span>
                     {label}: ${value.toLocaleString()} ({percent}%)
                   </li>
                 );
@@ -115,71 +268,147 @@ export default function Draft() {
         />
       </div>
 
-      {/* Top Donors */}
-      <div style={{ marginTop: "3rem" }}>
+      {/* Top 10 Donors Bar Chart */}
+      <div style={{ marginBottom: "3rem", height: 400, maxWidth: 700 }}>
         <h2>Top 10 Donors</h2>
-        <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "100%", maxWidth: "700px" }}>
-          <thead>
-            <tr>
-              <th>Donor</th>
-              <th>Amount</th>
-              <th>Employer</th>
-              <th>City</th>
-            </tr>
-          </thead>
-          <tbody>
-            {donors.map((donor, idx) => (
-              <tr key={idx}>
-                <td>{donor.ContributorName}</td>
-                <td>${Number(donor.ContributionAmount).toLocaleString()}</td>
-                <td>{donor.Employer || "N/A"}</td>
-                <td>{donor.Donor_City || "N/A"}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {topDonorsBarData ? (
+          <Bar
+            data={topDonorsBarData}
+            options={{
+              indexAxis: "y",
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                x: {
+                  beginAtZero: true,
+                  ticks: {
+                    callback: (value) => "$" + value.toLocaleString(),
+                  },
+                },
+                y: {
+                  ticks: {
+                    autoSkip: false,
+                    maxRotation: 0,
+                    minRotation: 0,
+                  },
+                },
+              },
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: {
+                    label: (context) => `$${context.parsed.x.toLocaleString()}`,
+                  },
+                },
+              },
+            }}
+            height={400}
+          />
+        ) : (
+          <p>Loading top donors...</p>
+        )}
       </div>
 
-      {/* Top Employers */}
-      <div style={{ marginTop: "3rem" }}>
-        <h2>Top Employers</h2>
-        <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "100%", maxWidth: "700px" }}>
-          <thead>
-            <tr>
-              <th>Employer</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {employers.map((row, idx) => (
-              <tr key={idx}>
-                <td>{row.Employer}</td>
-                <td>${Number(row.ContributionAmount).toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Repeated Donors Bar Chart */}
+      <div style={{ marginBottom: "3rem", height: 300, maxWidth: 700 }}>
+        <h2>Repeated Donors</h2>
+        {repeatDonorsData ? (
+          <Bar
+            data={repeatDonorsData}
+            options={{
+              indexAxis: "x",
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    precision: 0,
+                  },
+                },
+              },
+              plugins: {
+                legend: { display: false },
+              },
+            }}
+            height={300}
+          />
+        ) : (
+          <p>Loading repeated donors data...</p>
+        )}
       </div>
 
-      {/* Top Occupations */}
-      <div style={{ marginTop: "3rem" }}>
-        <h2>Top Occupations</h2>
-        <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "100%", maxWidth: "700px" }}>
-          <thead>
-            <tr>
-              <th>Occupation</th>
-              <th>Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {occupations.map((row, idx) => (
-              <tr key={idx}>
-                <td>{row.Occupation}</td>
-                <td>${Number(row.ContributionAmount).toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* Donor Search Section */}
+      <div style={{ marginBottom: "3rem" }}>
+        <h2>Donor Search</h2>
+        <form onSubmit={handleSearch} style={{ marginBottom: "1rem" }}>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Enter donor name or business"
+            style={{ width: "70%", padding: "0.5rem", marginRight: "1rem" }}
+          />
+          <button type="submit">Search</button>
+        </form>
+        {searchStatus && <p>{searchStatus}</p>}
+        {donorSearchResults.length > 0 && (
+          <div>
+            <p>Did you mean:</p>
+            <ul>
+              {donorSearchResults.map((donor) => (
+                <li key={donor}>
+                  <button
+                    onClick={() => showDonorHistory(donor)}
+                    style={{
+                      cursor: "pointer",
+                      background: "none",
+                      border: "none",
+                      color: "blue",
+                      textDecoration: "underline",
+                      padding: 0,
+                    }}
+                  >
+                    {donor}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {donorHistory && (
+          <div>
+            <h3>Donation History for {searchTerm}</h3>
+            <table
+              border="1"
+              cellPadding="10"
+              style={{
+                borderCollapse: "collapse",
+                width: "100%",
+                maxWidth: "700px",
+              }}
+            >
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Employer</th>
+                  <th>City</th>
+                </tr>
+              </thead>
+              <tbody>
+                {donorHistory.map((item, idx) => (
+                  <tr key={idx}>
+                    <td>{item.ContributionDate || "N/A"}</td>
+                    <td>${Number(item.ContributionAmount).toLocaleString()}</td>
+                    <td>{item.Employer || "N/A"}</td>
+                    <td>{item.Donor_City || item.City || "N/A"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );
