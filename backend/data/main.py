@@ -1,4 +1,4 @@
-from flask import Flask, send_file, jsonify, request, json
+from flask import Flask, send_file, jsonify, request, json, send_from_directory
 from flask_cors import CORS
 import os
 import logging
@@ -192,7 +192,7 @@ def search_donor(candidate):
 
     df = pd.read_csv(filepath)
 
-    # Build unified ContributorName column
+    # Construct ContributorName
     df["ContributorName"] = df.apply(
         lambda row: f"{row['First_Name']} {row['Last_Name']}".strip()
         if pd.notna(row["First_Name"]) or pd.notna(row["Last_Name"])
@@ -201,20 +201,23 @@ def search_donor(candidate):
     )
     df["ContributorName_lower"] = df["ContributorName"].str.lower().fillna("")
 
-    # Find exact matches
+    # Match by lowercase
     matches = df[df["ContributorName_lower"] == name_query]
 
     if not matches.empty:
-        history = matches[[
-            "ContributorName", "ContributionAmount", "ContributionDate", "Employer", "Donor_City"
-        ]].sort_values(by="ContributionDate", ascending=False, na_position="last")
+        history = matches[["ContributorName", "ContributionAmount", "ContributionDate", "Donor_City"]].copy()
+
+        # Ensure nulls are explicit
+        history["ContributionDate"] = history["ContributionDate"].where(pd.notnull(history["ContributionDate"]), None)
+        history["Donor_City"] = history["Donor_City"].where(pd.notnull(history["Donor_City"]), None)
+
         return jsonify({
             "status": "found",
             "donor": name_query,
             "records": history.to_dict(orient="records")
         })
 
-    # Fuzzy match top 5 closest names
+    # Fuzzy match suggestions
     all_names = df["ContributorName_lower"].unique()
     close_matches = difflib.get_close_matches(name_query, all_names, n=5, cutoff=0.6)
 
@@ -223,6 +226,8 @@ def search_donor(candidate):
         "query": name_query,
         "suggestions": close_matches
     })
+
+
 
 
 @app.route("/api/repeated_donors/<candidate>", methods=["GET"])
@@ -357,6 +362,48 @@ def repeat_donors_bar(candidate):
     }
     return jsonify(chart_data)
 
+
+@app.route("/api/donations_over_time/<candidate>", methods=["GET"])
+def donations_over_time(candidate):
+    filepath = os.path.join(OUTPUT_FOLDER, f"{candidate}_combined_contributions.csv")
+    if not os.path.exists(filepath):
+        return jsonify({"error": "File not found"}), 404
+
+    df = pd.read_csv(filepath)
+    df["ContributionDate"] = pd.to_datetime(df["ContributionDate"], errors="coerce")
+
+    today = pd.Timestamp.today()
+    # Filter out future-dated donations
+    df = df[df["ContributionDate"] <= today]
+
+    # Group donations by month or day for the line chart
+    # For example, group by month
+    df_grouped = df.groupby(df["ContributionDate"].dt.to_period("M")).sum(numeric_only=True)
+    df_grouped = df_grouped.reset_index()
+    df_grouped["ContributionDate"] = df_grouped["ContributionDate"].dt.to_timestamp()
+
+    # Prepare data for frontend
+    labels = df_grouped["ContributionDate"].dt.strftime("%Y-%m").tolist()
+    values = df_grouped["ContributionAmount"].tolist()
+
+    return jsonify({
+        "labels": labels,
+        "datasets": [{
+            "label": "Donations Over Time",
+            "data": values,
+            "fill": False,
+            "borderColor": "rgba(75,192,192,1)",
+            "tension": 0.1,
+        }]
+    })
+
+@app.route("/download/<filename>")
+def download_file(filename):
+    filepath = os.path.join(OUTPUT_FOLDER, filename)
+    if os.path.exists(filepath):
+        return send_from_directory(OUTPUT_FOLDER, filename, as_attachment=True)
+    else:
+        return "File not found", 404
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,43 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { Pie, Bar } from "react-chartjs-2";
+import { Pie, Bar, Line } from "react-chartjs-2";
 import "chart.js/auto";
+import "./Draft.css";
 
 export default function Draft() {
   const [chartData, setChartData] = useState(null);
   const [topDonorsBarData, setTopDonorsBarData] = useState(null);
   const [repeatDonorsData, setRepeatDonorsData] = useState(null);
+  const [donationsOverTimeData, setDonationsOverTimeData] = useState(null);
   const [donorSearchResults, setDonorSearchResults] = useState([]);
   const [donorHistory, setDonorHistory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
 
-  const backendUrl = "http://localhost:5000"; // Adjust if your backend is elsewhere
+  const backendUrl = "http://localhost:5000";
 
-  // Fetch contribution groups data for pie chart
+  // Contribution groups (pie chart)
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/Jim_McGreevey`)
       .then((res) => res.json())
       .then((data) => {
-        if (!Array.isArray(data)) {
-          console.error("Unexpected data format for contributions:", data);
-          return;
-        }
+        if (!Array.isArray(data)) return;
 
         const labels = data.map((item) => item.ContributorGroup);
         const values = data.map((item) => item.ContributionAmount);
         const total = values.reduce((acc, val) => acc + val, 0);
 
         const backgroundColors = [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56",
-          "#4BC0C0",
-          "#9966FF",
-          "#FF9F40",
-          "#C9CBCF",
-          "#8D99AE",
-          "#6A4C93",
-          "#F67280",
+          "#E63946", // strong red
+          "#1D3557", // dark navy blue
+          "#457B9D", // medium blue
+          "#A8DADC", // light teal (not too pale)
+          "#FFBE0B", // bright yellow
+          "#FB8500", // bright orange
+          "#6A994E", // medium green
+          "#9D4EDD", // bright purple
+          "#D62828", // vivid red (different tone)
+          "#2A9D8F", // tealish green
         ];
 
         setChartData({
@@ -51,36 +50,26 @@ export default function Draft() {
           total,
         });
       })
-      .catch((err) => {
-        console.error("Error fetching contributions:", err);
-      });
+      .catch(console.error);
   }, []);
 
-  // Fetch Top 10 Donors bar chart data
+  // Top donors bar
   useEffect(() => {
     fetch(`${backendUrl}/api/top_donors_bar/Jim_McGreevey`)
       .then((res) => res.json())
       .then((data) => {
-        if (!data || !Array.isArray(data.labels) || !Array.isArray(data.datasets)) {
-          console.error("Invalid top donors bar data:", data);
-          return;
-        }
+        if (!data || !Array.isArray(data.labels) || !Array.isArray(data.datasets)) return;
         setTopDonorsBarData(data);
       })
-      .catch((err) => {
-        console.error("Error fetching top donors bar data:", err);
-      });
+      .catch(console.error);
   }, []);
 
-  // Fetch Repeated Donors data and format for Chart.js
+  // Repeated donors bar
   useEffect(() => {
     fetch(`${backendUrl}/api/repeated_donors/Jim_McGreevey`)
       .then((res) => res.json())
       .then((data) => {
-        if (!Array.isArray(data)) {
-          console.error("Invalid repeated donors data:", data);
-          return;
-        }
+        if (!Array.isArray(data)) return;
 
         const labels = data.map((item) => item.ContributorName);
         const values = data.map((item) => item.TotalAmount);
@@ -100,12 +89,21 @@ export default function Draft() {
           ],
         });
       })
-      .catch((err) => {
-        console.error("Error fetching repeated donors data:", err);
-      });
+      .catch(console.error);
   }, []);
 
-  // Donor search handler
+  // Donations over time line chart
+  useEffect(() => {
+    fetch(`${backendUrl}/api/donations_over_time/Jim_McGreevey`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data || !Array.isArray(data.labels) || !Array.isArray(data.datasets)) return;
+        setDonationsOverTimeData(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  // Donor search handlers
   function handleSearch(e) {
     e.preventDefault();
     if (!searchTerm.trim()) {
@@ -148,7 +146,6 @@ export default function Draft() {
       });
   }
 
-  // Show donor history for a selected close match
   function showDonorHistory(name) {
     setSearchTerm(name);
     setSearchStatus("Loading donor history...");
@@ -170,7 +167,7 @@ export default function Draft() {
       });
   }
 
-  // Candidate Profile hardcoded
+  // Candidate Profile (hardcoded)
   const candidateProfile = {
     biography:
       `Jim McGreevey served as the 52nd Governor of New Jersey from 2002 until his resignation in 2004. Before becoming governor, McGreevey was the Mayor of Woodbridge Township and served in the New Jersey General Assembly. His governorship focused on ethics reform and education initiatives, including increased funding for public schools. However, his career was marked by controversy when he publicly came out as gay and resigned following a scandal involving an extramarital affair. After leaving office, McGreevey became an advocate for criminal justice reform and immigrant rights, and he has worked with various nonprofit organizations. His story reflects the complex challenges of public service and personal identity in politics. McGreevey's transparency and reforms had lasting impacts on New Jersey politics. He continues to engage in public speaking and community activism.`,
@@ -258,14 +255,47 @@ export default function Draft() {
         </div>
       )}
 
-      {/* Line Chart */}
-      <div style={{ marginTop: "3rem" }}>
+      {/* Donations Over Time Line Chart */}
+      <div style={{ marginTop: "3rem", marginBottom: "3rem", height: 350, maxWidth: 700 }}>
         <h2>Donations Over Time</h2>
-        <img
-          src={`${backendUrl}/api/charts/Jim_McGreevey_line_donations_over_time.png`}
-          alt="Line chart of donations over time"
-          style={{ width: "100%", maxWidth: "700px", border: "1px solid #ccc" }}
-        />
+        {donationsOverTimeData ? (
+          <Line
+            data={donationsOverTimeData}
+            options={{
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                x: {
+                  type: "category",
+                  title: {
+                    display: true,
+                    text: "Month",
+                  },
+                },
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "Amount ($)",
+                  },
+                  ticks: {
+                    callback: (value) => "$" + value.toLocaleString(),
+                  },
+                },
+              },
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: {
+                    label: (ctx) => `$${ctx.parsed.y.toLocaleString()}`,
+                  },
+                },
+              },
+            }}
+          />
+        ) : (
+          <p>Loading donations over time data...</p>
+        )}
       </div>
 
       {/* Top 10 Donors Bar Chart */}
@@ -390,19 +420,19 @@ export default function Draft() {
             >
               <thead>
                 <tr>
+                  <th>Contributor Name</th>
+                  <th>Donation Amount</th>
                   <th>Date</th>
-                  <th>Amount</th>
-                  <th>Employer</th>
                   <th>City</th>
                 </tr>
               </thead>
               <tbody>
                 {donorHistory.map((item, idx) => (
                   <tr key={idx}>
-                    <td>{item.ContributionDate || "N/A"}</td>
+                    <td>{item.ContributorName || "N/A"}</td>
                     <td>${Number(item.ContributionAmount).toLocaleString()}</td>
-                    <td>{item.Employer || "N/A"}</td>
-                    <td>{item.Donor_City || item.City || "N/A"}</td>
+                    <td>{item.ContributionDate || "null"}</td>
+                    <td>{item.Donor_City || item.City || "null"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -410,6 +440,36 @@ export default function Draft() {
           </div>
         )}
       </div>
+
+      {/* Download and Navigation Links */}
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
+        <a
+          href={`${backendUrl}/download/Jim_McGreevey_combined_contributions.csv`}
+          download
+          style={{
+            backgroundColor: "#1D3557",
+            color: "white",
+            padding: "0.5rem 1rem",
+            borderRadius: "4px",
+            textDecoration: "none",
+            marginBottom: "1rem"
+          }}
+        >
+          Download Full Contributions CSV
+        </a>
+        <a
+          href="/"
+          style={{
+            color: "#1D3557",
+            textDecoration: "underline",
+            fontWeight: "bold",
+            marginBottom: "1rem"
+          }}
+        >
+          Return to Home Page
+        </a>
+      </div>
     </div>
   );
 }
+
