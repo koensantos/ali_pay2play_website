@@ -2,14 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  const candidates = [
-    "MussabAli",
-    "JoyceWatterman",
-    "JimMcGreevey",
-    "JamesSolomon",
-    "BillODea"
-  ];
-
   return (
     <div className="homepage">
       <h1>Pay2Play: Follow the money in Jersey City politics.</h1>
@@ -23,13 +15,20 @@ export default function Home() {
 
       <h3>Explore Candidate Data</h3>
       <ul>
-        {candidates.map((name) => (
-          <li key={name}>
-            <Link to={`/candidate/${name}`}>View data for {name}</Link>
-          </li>
-        ))}
         <li>
-          <Link to="/draft">🔍 Example Visuals (Jim McGreevey)</Link>
+          <Link to="/MussabAli">Mussab Ali</Link>
+        </li>
+        <li>
+          <Link to="/BillODea">Bill O'Dea</Link>
+        </li>
+        <li>
+          <Link to="/JimMcGreevey">Jim McGreevey</Link>
+        </li>
+        <li>
+          <Link to="/JamesSolomon">James Solomon</Link>
+        </li>
+        <li>
+          <Link to="/JoyceWatterman">Joyce Watterman</Link>
         </li>
       </ul>
     </div>
