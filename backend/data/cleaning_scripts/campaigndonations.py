@@ -186,3 +186,4 @@ def update_all_donations():
 
 if __name__ == "__main__":
     update_all_donations()
+
