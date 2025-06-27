@@ -192,6 +192,21 @@ export default function Draft() {
         <h2>Background</h2>
         <p>{candidateProfile.background}</p>
       </section>
+      <div className="legend-description">
+  <h3>Legend Description</h3>
+  <ul>
+    <li><strong>Individual - Small</strong>: Contributions from individuals totaling <em>less than $4,000</em></li>
+    <li><strong>Individual - Large</strong>: Contributions from individuals totaling <em>$4,000 or more</em></li>
+    <li><strong>P2P Corporate</strong>: Contributions from businesses or firms—includes LLCs, INCs, CORPs, and similar corporate entities</li>
+    <li><strong>P2P Individual</strong>: Pay-to-play contributions from individuals, not associated with business entities</li>
+    <li><strong>Corporate</strong>: Non-P2P business or corporate contributions</li>
+    <li><strong>Union</strong>: Labor union contributions</li>
+    <li><strong>Political Committee</strong>: Political parties, PACs, and affiliated groups</li>
+    <li><strong>Interest Group</strong>: Ideological or trade associations</li>
+    <li><strong>Candidate</strong>: Self-funding from the candidate’s own committee</li>
+    <li><strong>Other / Unknown</strong>: Contributions not fitting any known category</li>
+  </ul>
+</div>
 
       {/* Pie Chart and Legend */}
       {chartData && (
@@ -424,23 +439,24 @@ export default function Draft() {
                   <th>Donation Amount</th>
                   <th>Date</th>
                   <th>City</th>
+                  <th>Category</th>
                 </tr>
               </thead>
               <tbody>
                 {donorHistory.map((item, idx) => (
-                  <tr key={idx}>
-                    <td>{item.ContributorName || "N/A"}</td>
-                    <td>${Number(item.ContributionAmount).toLocaleString()}</td>
-                    <td>{item.ContributionDate || "null"}</td>
-                    <td>{item.Donor_City || item.City || "null"}</td>
-                  </tr>
-                ))}
+                <tr key={idx}>
+                  <td>{item.ContributorName || item.First_Name + " " + item.Last_Name || item.Business_Name || "N/A"}</td>
+                  <td>${Number(item.ContributionAmount).toLocaleString()}</td>
+                  <td>{item.ContributionDate || "N/A"}</td>
+                  <td>{item.Donor_City || item.City || "N/A"}</td>
+                  <td>{item.ContributorGroup || "Unknown"}</td>
+                </tr>
+              ))}
               </tbody>
             </table>
           </div>
         )}
       </div>
-
       {/* Download and Navigation Links */}
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
         <a

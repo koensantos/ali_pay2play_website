@@ -205,11 +205,18 @@ def search_donor(candidate):
     matches = df[df["ContributorName_lower"] == name_query]
 
     if not matches.empty:
-        history = matches[["ContributorName", "ContributionAmount", "ContributionDate", "Donor_City"]].copy()
+        history = matches[[
+            "ContributorName",
+            "ContributionAmount",
+            "ContributionDate",
+            "Donor_City",
+            "ContributorGroup"
+        ]].copy()
 
-        # Ensure nulls are explicit
+        # Ensure nulls are handled
         history["ContributionDate"] = history["ContributionDate"].where(pd.notnull(history["ContributionDate"]), None)
         history["Donor_City"] = history["Donor_City"].where(pd.notnull(history["Donor_City"]), None)
+        history["ContributorGroup"] = history["ContributorGroup"].where(pd.notnull(history["ContributorGroup"]), "Unknown")
 
         return jsonify({
             "status": "found",
@@ -226,6 +233,7 @@ def search_donor(candidate):
         "query": name_query,
         "suggestions": close_matches
     })
+
 
 
 

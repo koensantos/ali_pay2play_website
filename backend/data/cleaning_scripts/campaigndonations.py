@@ -66,33 +66,44 @@ def get_individual_csv_data(file_path):
         "State": "Donor_State"
     })
 
+business_keywords = r"\b(LLC|INC|PC|CORP|CORPORATION|L\.L\.C\.|L\.P\.|LP|CO\.|COMPANY|INDUSTRIES|GROUP|ENTERPRISES|ASSOCIATES|SERVICES|PARTNERS|HOLDINGS)\b"
+
 def get_p2p_contributions(file_path, candidate_name):
     df = pd.read_excel(file_path)
     df = df[df['Recipient_Name'].str.contains(candidate_name, case=False, na=False)].copy()
 
-    df["IsBusiness"] = df["Contributor_Name"].str.contains(business_keywords, case=False, na=False)
+    # Standardize casing and trim whitespace
+    df["Contributor_Name"] = df["Contributor_Name"].astype(str).str.strip().str.title()
+    df["Business_Name"] = df["Business_Name"].astype(str).str.strip().str.title()
+    df["Employer"] = df["Business_Name"]  # use Business_Name as default employer
 
-    def classify(row):
-        if row["IsBusiness"]:
-            return "P2P Corporate"
-        else:
-            return "P2P Individual"
+    # Match contributor/business names + look for business keywords
+    df["ContributorMatchesBusiness"] = df["Contributor_Name"] == df["Business_Name"]
+    df["HasBusinessKeywords"] = df["Contributor_Name"].str.contains(business_keywords, case=False, na=False)
+    df["ContributorGroup"] = df.apply(
+        lambda row: "P2P Corporate" if row["ContributorMatchesBusiness"] and row["HasBusinessKeywords"]
+        else "P2P Individual", axis=1
+    )
 
-    df["ContributorGroup"] = df.apply(classify, axis=1)
-
+    # Rename + format
     df = df.rename(columns={
         "Contributor_Name": "Name",
-        "Business_Name": "Employer",
         "Aggregate_Contribution_Amount": "ContributionAmount",
         "Contributor_City": "Donor_City",
-        "Contributor_State": "Donor_State"
+        "Contributor_State": "Donor_State",
+        "Contribution_Date": "ContributionDate"
     })
 
+    df["Business_Name"] = df["Name"]
+    df["ContributionAmount"] = df["ContributionAmount"].round(2)
+    df["ContributionDate"] = pd.to_datetime(df["ContributionDate"], errors="coerce").dt.strftime('%m/%d/%Y')
+    df["Donor_City"] = df["Donor_City"].astype(str).str.title()
+    df["Employer"] = df["Employer"].astype(str).str.title()
+
+    # Empty for schema match
     df["First_Name"] = None
     df["Last_Name"] = None
     df["Occupation"] = None
-    df["ContributionDate"] = None
-    df["Business_Name"] = df["Name"]
 
     return df[[
         "ContributorGroup", "ContributionAmount", "First_Name", "Last_Name",

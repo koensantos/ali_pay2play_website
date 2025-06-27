@@ -39,3 +39,22 @@ button[type="submit"] {
   border: none;
   border-radius: 4px;
 }
+
+.legend-description {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.legend-description h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.legend-description ul {
+  list-style: disc;
+  margin-left: 20px;
+}
