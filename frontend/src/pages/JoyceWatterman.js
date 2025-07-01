@@ -12,6 +12,7 @@ export default function Draft() {
   const [donorHistory, setDonorHistory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
+  const [totalDonations, setTotalDonations] = useState(null);
 
   const backendUrl = "http://localhost:5000";
 
@@ -90,6 +91,17 @@ export default function Draft() {
         });
       })
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    fetch(`${backendUrl}/api/total_donations/Joyce_Watterman`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.total_donations !== undefined) {
+          setTotalDonations(data.total_donations);
+        }
+      })
+      .catch(err => console.error("Error fetching total donations:", err));
   }, []);
 
   // Donations over time line chart
@@ -193,22 +205,29 @@ export default function Draft() {
         <p>{candidateProfile.background}</p>
       </section>
 
-<div className="legend-description">
-  <h3>Legend Description</h3>
-  <ul>
-    <li><strong>Individual - Small</strong>: Contributions from individuals totaling <em>less than $4,000</em></li>
-    <li><strong>Individual - Large</strong>: Contributions from individuals totaling <em>$4,000 or more</em></li>
-    <li><strong>P2P Corporate</strong>: Contributions from businesses or firms—includes LLCs, INCs, CORPs, and similar corporate entities</li>
-    <li><strong>P2P Individual</strong>: Pay-to-play contributions from individuals, not associated with business entities</li>
-    <li><strong>Corporate</strong>: Non-P2P business or corporate contributions</li>
-    <li><strong>Union</strong>: Labor union contributions</li>
-    <li><strong>Political Committee</strong>: Political parties, PACs, and affiliated groups</li>
-    <li><strong>Interest Group</strong>: Ideological or trade associations</li>
-    <li><strong>Candidate</strong>: Self-funding from the candidate’s own committee</li>
-    <li><strong>Other / Unknown</strong>: Contributions not fitting any known category</li>
-  </ul>
-</div>
+      <div className="legend-description">
+        <h3>Legend Description</h3>
+        <ul>
+          <li><strong>Individual - Small</strong>: $0 – $499</li>
+          <li><strong>Individual - Medium</strong>: $500 – $1,999</li>
+          <li><strong>Individual - Large</strong>: $2,000 – $5,500</li>
+          <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses (includes LLCs, INCs, CORPs, etc.)</li>
+          <li><strong>P2P Individual</strong>: Pay-to-play donations from individuals not affiliated with businesses</li>
+          <li><strong>Corporate</strong>: Non-pay-to-play business/corporate donors</li>
+          <li><strong>Union</strong>: Labor union donors</li>
+          <li><strong>Political Committee</strong>: PACs, party committees, political clubs</li>
+          <li><strong>Interest Group</strong>: Trade associations and ideological groups</li>
+          <li><strong>Candidate</strong>: Donations from the candidate or their own committee</li>
+          <li><strong>Other / Unknown</strong>: Miscellaneous or uncategorized donations</li>
+        </ul>
+      </div>
 
+{totalDonations !== null && (
+              <div className="total-donations-panel">
+                <h3>Total Donations</h3>
+                <p>${totalDonations.toLocaleString()}</p>
+              </div>
+            )}
       {/* Pie Chart and Legend */}
       {chartData && (
         <div

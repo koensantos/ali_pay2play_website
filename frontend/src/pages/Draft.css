@@ -58,3 +58,12 @@ button[type="submit"] {
   list-style: disc;
   margin-left: 20px;
 }
+
+.total-donations-panel {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+

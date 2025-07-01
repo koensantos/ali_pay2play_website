@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import re
 import os
+from difflib import get_close_matches
 
 # Paths
 data_dir = os.path.join(os.path.dirname(__file__), "candidate_contributions")
@@ -35,7 +36,7 @@ type_mapping = {
     "P2P_CORPORATE": "P2P Corporate"
 }
 
-business_keywords = r"\b(LLC|INC|PC|CORP|CORPORATION|L\.L\.C\.|L\.P\.|LP)\b"
+business_keywords = r"\b(LLC|INC|PC|CORP|CORPORATION|L\.L\.C\.|L\.P\.|LP|CO\.|COMPANY|INDUSTRIES|GROUP|ENTERPRISES|ASSOCIATES|SERVICES|PARTNERS|HOLDINGS)\b"
 
 def get_individual_csv_data(file_path):
     df = pd.read_csv(file_path)
@@ -44,10 +45,13 @@ def get_individual_csv_data(file_path):
 
     def split_individual(row):
         if row["ContributorGroup"] == "Individual":
-            if row["ContributionAmount"] > 4000:
-                return "Individual - Large"
-            else:
+            amount = row["ContributionAmount"]
+            if amount < 500:
                 return "Individual - Small"
+            elif 500 <= amount < 2000:
+                return "Individual - Medium"
+            else:
+                return "Individual - Large"
         else:
             return row["ContributorGroup"]
 
@@ -66,29 +70,52 @@ def get_individual_csv_data(file_path):
         "State": "Donor_State"
     })
 
-business_keywords = r"\b(LLC|INC|PC|CORP|CORPORATION|L\.L\.C\.|L\.P\.|LP|CO\.|COMPANY|INDUSTRIES|GROUP|ENTERPRISES|ASSOCIATES|SERVICES|PARTNERS|HOLDINGS)\b"
-
 def get_p2p_contributions(file_path, candidate_name):
     df = pd.read_excel(file_path)
-    df = df[df['Recipient_Name'].str.contains(candidate_name, case=False, na=False)].copy()
 
-    # Standardize casing and trim whitespace
+    # Define accepted exact recipient name aliases per candidate
+    candidate_recipient_names = {
+        "Mussab Ali": ["Mussab Ali", "Ali for Mayor", "Friends of Mussab Ali", "Mussab Ali for Mayor"],
+        "Joyce Watterman": ["Joyce Watterman", "Joyne E. Watterman", "Joyce E. Watterman", "Joyce Watterman for Mayor"],
+        "Jim McGreevey": ["Jim McGreevey for Mayor", "Jim McGreevey for Mayor Inc, Jersey City", "Jim McGreevey", "Jim McGreevey for Mayor, Inc.", "Jim McGreevey for Mayor, Inc"],
+        "James Solomon": ["James Solomon", "Solomon for Jersey City", "Solomon for Mayor", "Soloman for Jersey City", "Team Soloman", "Team Solomon"],
+        "Bill O'Dea": ["Bill O'Dea", "Bill O'Dea Election Fund", "Bill O'Dea for Mayor", "O'Dea for Mayor"]
+    }
+
+    valid_names = [name.lower() for name in candidate_recipient_names.get(candidate_name, [])]
+    df["Recipient_Name"] = df["Recipient_Name"].astype(str).str.lower()
+
+    df = df[df["Recipient_Name"].isin(valid_names)].copy()
+
     df["Contributor_Name"] = df["Contributor_Name"].astype(str).str.strip().str.title()
     df["Business_Name"] = df["Business_Name"].astype(str).str.strip().str.title()
-    df["Employer"] = df["Business_Name"]  # use Business_Name as default employer
+    df["Employer"] = df["Business_Name"]
 
-    # Match contributor/business names + look for business keywords
     df["ContributorMatchesBusiness"] = df["Contributor_Name"] == df["Business_Name"]
     df["HasBusinessKeywords"] = df["Contributor_Name"].str.contains(business_keywords, case=False, na=False)
+
     df["ContributorGroup"] = df.apply(
         lambda row: "P2P Corporate" if row["ContributorMatchesBusiness"] and row["HasBusinessKeywords"]
         else "P2P Individual", axis=1
     )
 
-    # Rename + format
+    # Re-classify P2P Individuals into Individual - Small/Medium/Large
+    def classify_p2p_individual(row):
+        if row["ContributorGroup"] == "P2P Individual":
+            amount = row["Contribution_Amount"]
+            if amount < 500:
+                return "Individual - Small"
+            elif 500 <= amount < 2000:
+                return "Individual - Medium"
+            else:
+                return "Individual - Large"
+        return row["ContributorGroup"]
+
+    df["ContributorGroup"] = df.apply(classify_p2p_individual, axis=1)
+
     df = df.rename(columns={
         "Contributor_Name": "Name",
-        "Aggregate_Contribution_Amount": "ContributionAmount",
+        "Contribution_Amount": "ContributionAmount",
         "Contributor_City": "Donor_City",
         "Contributor_State": "Donor_State",
         "Contribution_Date": "ContributionDate"
@@ -100,7 +127,6 @@ def get_p2p_contributions(file_path, candidate_name):
     df["Donor_City"] = df["Donor_City"].astype(str).str.title()
     df["Employer"] = df["Employer"].astype(str).str.title()
 
-    # Empty for schema match
     df["First_Name"] = None
     df["Last_Name"] = None
     df["Occupation"] = None
@@ -118,9 +144,10 @@ def plot_type_breakdown_pie(df, candidate):
 
     color_map = {
         "Individual - Small": "#66b3ff",
+        "Individual - Medium": "#3399ff",
         "Individual - Large": "#004080",
         "Corporate": "#ff9999",
-        "P2P Individual": "#33cc99",
+        "P2P Individual": "#33cc99",  # Not used anymore
         "P2P Corporate": "#ff6666",
         "Union": "#99ff99",
         "Political Committee": "#ffcc99",
@@ -197,4 +224,3 @@ def update_all_donations():
 
 if __name__ == "__main__":
     update_all_donations()
-

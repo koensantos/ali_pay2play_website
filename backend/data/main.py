@@ -201,11 +201,11 @@ def search_donor(candidate):
     )
     df["ContributorName_lower"] = df["ContributorName"].str.lower().fillna("")
 
-    # Match by lowercase
-    matches = df[df["ContributorName_lower"] == name_query]
+    # Exact matches first
+    exact_matches = df[df["ContributorName_lower"] == name_query]
 
-    if not matches.empty:
-        history = matches[[
+    if not exact_matches.empty:
+        history = exact_matches[[
             "ContributorName",
             "ContributionAmount",
             "ContributionDate",
@@ -213,7 +213,6 @@ def search_donor(candidate):
             "ContributorGroup"
         ]].copy()
 
-        # Ensure nulls are handled
         history["ContributionDate"] = history["ContributionDate"].where(pd.notnull(history["ContributionDate"]), None)
         history["Donor_City"] = history["Donor_City"].where(pd.notnull(history["Donor_City"]), None)
         history["ContributorGroup"] = history["ContributorGroup"].where(pd.notnull(history["ContributorGroup"]), "Unknown")
@@ -224,15 +223,28 @@ def search_donor(candidate):
             "records": history.to_dict(orient="records")
         })
 
-    # Fuzzy match suggestions
-    all_names = df["ContributorName_lower"].unique()
-    close_matches = difflib.get_close_matches(name_query, all_names, n=5, cutoff=0.6)
+    # Substring match (no fuzzy, just contains)
+    substring_matches = df[df["ContributorName_lower"].str.contains(name_query)]
+
+    if not substring_matches.empty:
+        suggestions = (
+            substring_matches["ContributorName"]
+            .dropna()
+            .unique()
+            .tolist()
+        )
+        return jsonify({
+            "status": "not_found",
+            "query": name_query,
+            "suggestions": suggestions
+        })
 
     return jsonify({
         "status": "not_found",
         "query": name_query,
-        "suggestions": close_matches
+        "suggestions": []
     })
+
 
 
 
@@ -412,6 +424,24 @@ def download_file(filename):
         return send_from_directory(OUTPUT_FOLDER, filename, as_attachment=True)
     else:
         return "File not found", 404
+    
+@app.route("/api/total_donations/<candidate>", methods=["GET"])
+def get_total_donations(candidate):
+    filename = f"{candidate}_combined_contributions.csv"
+    filepath = os.path.join(OUTPUT_FOLDER, filename)
+
+    if not os.path.exists(filepath):
+        return jsonify({"error": "File not found"}), 404
+
+    df = pd.read_csv(filepath)
+
+    total = df["ContributionAmount"].sum()
+
+    return jsonify({
+        "candidate": candidate,
+        "total_donations": round(total, 2)
+    })
+
 
 if __name__ == "__main__":
     app.run(debug=True)
