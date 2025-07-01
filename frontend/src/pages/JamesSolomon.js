@@ -13,6 +13,7 @@ export default function Draft() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
+  const [vendorMatches, setVendorMatches] = useState(null);
   
   const backendUrl = "http://localhost:5000";
 
@@ -104,6 +105,24 @@ export default function Draft() {
       .catch(console.error);
   }, []);
 
+  // Fetch vendor matches
+    useEffect(() => {
+      fetch(`${backendUrl}/api/vendors/Bill_O'Dea`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Vendor matches fetched:", data);
+          if (Array.isArray(data)) {
+            setVendorMatches(data);
+          } else {
+            setVendorMatches([]);
+          }
+        })
+        .catch((err) => {
+          console.error("Error fetching vendor matches:", err);
+          setVendorMatches([]);
+        });
+    }, []);
+
   useEffect(() => {
       fetch(`${backendUrl}/api/total_donations/James_Solomon`)
         .then(res => res.json())
@@ -191,7 +210,7 @@ export default function Draft() {
 
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
-      <h1>Jim McGreevey: Campaign Finance Visuals</h1>
+      <h1>James Solomon: Campaign Finance Visuals</h1>
 
       {/* Candidate Profile Section */}
       <section style={{ marginBottom: "2rem" }}>
@@ -212,7 +231,6 @@ export default function Draft() {
           <li><strong>Individual - Medium</strong>: $500 – $1,999</li>
           <li><strong>Individual - Large</strong>: $2,000 – $5,500</li>
           <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses (includes LLCs, INCs, CORPs, etc.)</li>
-          <li><strong>P2P Individual</strong>: Pay-to-play donations from individuals not affiliated with businesses</li>
           <li><strong>Corporate</strong>: Non-pay-to-play business/corporate donors</li>
           <li><strong>Union</strong>: Labor union donors</li>
           <li><strong>Political Committee</strong>: PACs, party committees, political clubs</li>
@@ -400,6 +418,35 @@ export default function Draft() {
           />
         ) : (
           <p>Loading repeated donors data...</p>
+        )}
+      </div>
+
+      {/* Vendor Matches Section */}
+      <div style={{ marginTop: "3rem", maxWidth: 700 }}>
+        <h2>Top Vendor Matches</h2>
+        {Array.isArray(vendorMatches) && vendorMatches.length > 0 ? (
+          <table
+            border="1"
+            cellPadding="10"
+            style={{ borderCollapse: "collapse", width: "100%" }}
+          >
+            <thead>
+              <tr>
+                <th>Business Name</th>
+                <th>Total Contributions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {vendorMatches.map((item, idx) => (
+                <tr key={idx}>
+                  <td>{item.Business_Name || "N/A"}</td>
+                  <td>${Number(item.ContributionAmount).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No vendor matches found.</p>
         )}
       </div>
 

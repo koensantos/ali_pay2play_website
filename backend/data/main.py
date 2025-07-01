@@ -18,6 +18,7 @@ BASE_DIR = os.path.dirname(__file__)
 DATA_FOLDER = os.path.join(BASE_DIR, "cleaning_scripts", "candidate_contributions")
 CHART_FOLDER = os.path.join(BASE_DIR, "charts")
 OUTPUT_FOLDER = os.path.join(BASE_DIR, "cleaning_scripts", "output")
+VENDOR_FOLDER = os.path.join(BASE_DIR, "cleaning_scripts", "vendors")
 
 
 @app.route("/api/download/<candidate>", methods=["GET"])
@@ -442,6 +443,53 @@ def get_total_donations(candidate):
         "total_donations": round(total, 2)
     })
 
+def normalize_name(name):
+    if pd.isna(name):
+        return ""
+    return name.strip().lower().replace(",", "").replace(".", "")
+
+
+@app.route("/api/vendors/<candidate>", methods=["GET"])
+def get_vendors(candidate):
+
+    filename = f"{candidate}_combined_contributions.csv"
+    filepath = os.path.join(OUTPUT_FOLDER, filename)
+
+    if not os.path.exists(filepath):
+        return jsonify({"error": "File not found"}), 404
+    if not os.path.exists(VENDOR_FOLDER):
+        return jsonify({"error": "Vendor data folder not found"}), 404
+    
+    VENDOR_FILE = os.path.join("cleaning_scripts","vendors", "vendors-directory.csv")
+
+    # Load data
+    contrib_df = pd.read_csv(filepath)
+    vendors_df = pd.read_csv(VENDOR_FILE, delimiter=";")
+
+    # Normalize names
+    contrib_df["NormalizedEmpName"] = contrib_df["Business_Name"].apply(normalize_name)
+    vendors_df["NormalizedBusinessName"] = vendors_df["Business Name"].apply(normalize_name)
+
+    # Compare sets
+    vendor_names = set(vendors_df["NormalizedBusinessName"])
+    contrib_df["IsVendor"] = contrib_df["NormalizedEmpName"].isin(vendor_names)
+
+    # Get matched rows
+    matched = contrib_df[contrib_df["IsVendor"]]
+
+    if matched.empty:
+        return jsonify({"message": "No matching vendors found"}), 200
+
+    # Group and summarize
+    summary = (
+        matched.groupby("Business_Name")["ContributionAmount"]
+        .sum()
+        .reset_index()
+        .sort_values(by="ContributionAmount", ascending=False)
+        .head(10)
+    )
+
+    return jsonify(summary.to_dict(orient="records"))
 
 if __name__ == "__main__":
     app.run(debug=True)
