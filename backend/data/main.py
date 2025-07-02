@@ -3,12 +3,19 @@ from flask_cors import CORS
 import os
 import logging
 import pandas as pd
-import difflib  # Added missing import
+import difflib  
+import urllib.parse
 
 from cleaning_scripts import campaigndonations
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -247,10 +254,6 @@ def search_donor(candidate):
     })
 
 
-
-
-
-
 @app.route("/api/repeated_donors/<candidate>", methods=["GET"])
 def get_repeated_donors(candidate):
     filename = f"{candidate}_combined_contributions.csv"
@@ -443,53 +446,126 @@ def get_total_donations(candidate):
         "total_donations": round(total, 2)
     })
 
+import re
+
 def normalize_name(name):
     if pd.isna(name):
         return ""
     return name.strip().lower().replace(",", "").replace(".", "")
 
-
 @app.route("/api/vendors/<candidate>", methods=["GET"])
 def get_vendors(candidate):
+    try:
+        candidate = urllib.parse.unquote(candidate)
+        filename = f"{candidate}_combined_contributions.csv"
+        filepath = os.path.join(OUTPUT_FOLDER, filename)
 
-    filename = f"{candidate}_combined_contributions.csv"
-    filepath = os.path.join(OUTPUT_FOLDER, filename)
+        if not os.path.exists(filepath):
+            return jsonify({"error": "Candidate file not found"}), 404
 
-    if not os.path.exists(filepath):
-        return jsonify({"error": "File not found"}), 404
-    if not os.path.exists(VENDOR_FOLDER):
-        return jsonify({"error": "Vendor data folder not found"}), 404
-    
-    VENDOR_FILE = os.path.join("cleaning_scripts","vendors", "vendors-directory.csv")
+        # Load contribution data
+        contrib_df = pd.read_csv(filepath, on_bad_lines='skip')
+        
+        # Load vendor directory (XLSX file)
+        vendor_file = os.path.join(VENDOR_FOLDER, "vendors-directory.xlsx")
+        try:
+            vendors_df = pd.read_excel(vendor_file)
+        except:
+            vendors_df = pd.DataFrame(columns=["Business Name"])
 
-    # Load data
-    contrib_df = pd.read_csv(filepath)
-    vendors_df = pd.read_csv(VENDOR_FILE, delimiter=";")
+        # Normalize names for matching
+        contrib_df["normalized_biz"] = contrib_df["Business_Name"].apply(normalize_name)
+        vendors_df["normalized_vendor"] = vendors_df["Business Name"].apply(normalize_name)
 
-    # Normalize names
-    contrib_df["NormalizedEmpName"] = contrib_df["Business_Name"].apply(normalize_name)
-    vendors_df["NormalizedBusinessName"] = vendors_df["Business Name"].apply(normalize_name)
+        # Find vendor matches
+        vendor_matches = contrib_df[
+            contrib_df["normalized_biz"].isin(vendors_df["normalized_vendor"])
+        ].copy()
 
-    # Compare sets
-    vendor_names = set(vendors_df["NormalizedBusinessName"])
-    contrib_df["IsVendor"] = contrib_df["NormalizedEmpName"].isin(vendor_names)
+        # Prepare vendor results
+        vendor_results = []
+        if not vendor_matches.empty:
+            vendor_summary = (
+                vendor_matches.groupby("Business_Name")["ContributionAmount"]
+                .sum()
+                .reset_index()
+                .sort_values("ContributionAmount", ascending=False)
+                .head(10)
+            )
+            vendor_results = vendor_summary.to_dict(orient="records")
 
-    # Get matched rows
-    matched = contrib_df[contrib_df["IsVendor"]]
+        return jsonify({
+            "vendor_matches": vendor_results
+        })
 
-    if matched.empty:
-        return jsonify({"message": "No matching vendors found"}), 200
+    except Exception as e:
+        logging.error(f"Error in get_vendors: {str(e)}")
+        return jsonify({
+            "error": "Internal server error",
+            "details": str(e)
+        }), 500
 
-    # Group and summarize
-    summary = (
-        matched.groupby("Business_Name")["ContributionAmount"]
-        .sum()
-        .reset_index()
-        .sort_values(by="ContributionAmount", ascending=False)
-        .head(10)
-    )
 
-    return jsonify(summary.to_dict(orient="records"))
+@app.route("/api/contracts/<candidate>", methods=["GET"])
+def get_contract_matches(candidate):
+    try:
+        candidate = urllib.parse.unquote(candidate)
+        contrib_path = os.path.join(OUTPUT_FOLDER, f"{candidate}_combined_contributions.csv")
+        contract_path = os.path.join(VENDOR_FOLDER, "contractResults.csv")
 
+        if not os.path.exists(contrib_path):
+            return jsonify({"error": "Candidate contributions file not found"}), 404
+        if not os.path.exists(contract_path):
+            return jsonify({"error": "Contract results file not found"}), 404
+
+        # Load data
+        contrib_df = pd.read_csv(contrib_path, on_bad_lines="skip")
+        contracts_df = pd.read_csv(contract_path, on_bad_lines="skip")
+
+        # Filter to Corporate and P2P Corporate
+        contrib_df = contrib_df[contrib_df["ContributorGroup"].isin(["Corporate", "P2P Corporate"])]
+        contrib_df = contrib_df[contrib_df["Business_Name"].notna()]
+
+        # Normalize business and vendor names
+        contrib_df["normalized_biz"] = contrib_df["Business_Name"].apply(normalize_name)
+        contracts_df["normalized_vendor"] = contracts_df["Vendor"].apply(normalize_name)
+
+        matches = []
+
+        for _, contrib_row in contrib_df.iterrows():
+            biz_name = contrib_row["normalized_biz"]
+            contrib_amount = contrib_row["ContributionAmount"]
+
+            # Substring match: biz_name in vendor OR vendor in biz_name
+            matching_contracts = contracts_df[
+                contracts_df["normalized_vendor"].apply(
+                    lambda vendor: biz_name in vendor or vendor in biz_name
+                )
+            ]
+
+            for _, contract_row in matching_contracts.iterrows():
+                matches.append({
+                    "Business_Name": contrib_row["Business_Name"],
+                    "Contractor Name": contract_row["Vendor"],
+                    "Contract Amount": contract_row.get("Dollars Spent to Date", "N/A"),
+                    "Contract Status": contract_row.get("Status", "N/A"),
+                    "TotalAmount": contrib_amount
+                })
+
+        # Group duplicates (optional)
+        result_df = pd.DataFrame(matches)
+        if not result_df.empty:
+            result_df = result_df.groupby(
+                ["Business_Name", "Contractor Name", "Contract Amount", "Contract Status"],
+                as_index=False
+            )["TotalAmount"].sum()
+
+        return jsonify({"contract_matches": result_df.to_dict(orient="records")})
+
+    except Exception as e:
+        return jsonify({
+            "error": "Internal server error",
+            "details": str(e)
+        }), 500
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

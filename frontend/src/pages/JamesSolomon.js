@@ -13,128 +13,91 @@ export default function Draft() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
-  const [vendorMatches, setVendorMatches] = useState(null);
-  
+  const [vendorMatches, setVendorMatches] = useState([]);
+  const [contractMatches, setContractMatches] = useState([]);
+
   const backendUrl = "http://localhost:5000";
 
-  // Contribution groups (pie chart)
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/James_Solomon`)
       .then((res) => res.json())
       .then((data) => {
         if (!Array.isArray(data)) return;
-
         const labels = data.map((item) => item.ContributorGroup);
         const values = data.map((item) => item.ContributionAmount);
         const total = values.reduce((acc, val) => acc + val, 0);
-
         const backgroundColors = [
-          "#E63946", // strong red
-          "#1D3557", // dark navy blue
-          "#457B9D", // medium blue
-          "#A8DADC", // light teal (not too pale)
-          "#FFBE0B", // bright yellow
-          "#FB8500", // bright orange
-          "#6A994E", // medium green
-          "#9D4EDD", // bright purple
-          "#D62828", // vivid red (different tone)
-          "#2A9D8F", // tealish green
+          "#E63946", "#1D3557", "#457B9D", "#A8DADC", "#FFBE0B",
+          "#FB8500", "#6A994E", "#9D4EDD", "#D62828", "#2A9D8F"
         ];
-
         setChartData({
           labels,
-          datasets: [
-            {
-              data: values,
-              backgroundColor: backgroundColors.slice(0, labels.length),
-            },
-          ],
+          datasets: [{ data: values, backgroundColor: backgroundColors.slice(0, labels.length) }],
           total,
         });
-      })
-      .catch(console.error);
+      }).catch(console.error);
   }, []);
 
-  // Top donors bar
   useEffect(() => {
     fetch(`${backendUrl}/api/top_donors_bar/James_Solomon`)
       .then((res) => res.json())
-      .then((data) => {
-        if (!data || !Array.isArray(data.labels) || !Array.isArray(data.datasets)) return;
-        setTopDonorsBarData(data);
-      })
+      .then(setTopDonorsBarData)
       .catch(console.error);
   }, []);
 
-  // Repeated donors bar
   useEffect(() => {
     fetch(`${backendUrl}/api/repeated_donors/James_Solomon`)
       .then((res) => res.json())
       .then((data) => {
         if (!Array.isArray(data)) return;
-
         const labels = data.map((item) => item.ContributorName);
         const values = data.map((item) => item.TotalAmount);
-
-        const backgroundColors = labels.map(
-          () => `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
+        const backgroundColors = labels.map(() =>
+          `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
         );
-
         setRepeatDonorsData({
           labels,
-          datasets: [
-            {
-              label: "Total Donations",
-              data: values,
-              backgroundColor: backgroundColors,
-            },
-          ],
+          datasets: [{ label: "Total Donations", data: values, backgroundColor: backgroundColors }],
         });
-      })
-      .catch(console.error);
+      }).catch(console.error);
   }, []);
 
-  // Donations over time line chart
   useEffect(() => {
     fetch(`${backendUrl}/api/donations_over_time/James_Solomon`)
       .then((res) => res.json())
-      .then((data) => {
-        if (!data || !Array.isArray(data.labels) || !Array.isArray(data.datasets)) return;
-        setDonationsOverTimeData(data);
+      .then(setDonationsOverTimeData)
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    fetch(`${backendUrl}/api/total_donations/James_Solomon`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.total_donations !== undefined) setTotalDonations(data.total_donations);
       })
       .catch(console.error);
   }, []);
 
-  // Fetch vendor matches
-    useEffect(() => {
-      fetch(`${backendUrl}/api/vendors/Bill_O'Dea`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Vendor matches fetched:", data);
-          if (Array.isArray(data)) {
-            setVendorMatches(data);
-          } else {
-            setVendorMatches([]);
-          }
-        })
-        .catch((err) => {
-          console.error("Error fetching vendor matches:", err);
-          setVendorMatches([]);
-        });
-    }, []);
-
+  // Vendor Matches
   useEffect(() => {
-      fetch(`${backendUrl}/api/total_donations/James_Solomon`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.total_donations !== undefined) {
-            setTotalDonations(data.total_donations);
-          }
-        })
-        .catch(err => console.error("Error fetching total donations:", err));
-    }, []);
+    fetch(`${backendUrl}/api/vendors/James_Solomon`)
+      .then((res) => res.json())
+      .then((data) => {
+        setVendorMatches(data.vendor_matches || []);
+      })
+      .catch(console.error);
+  }, []);
 
-  // Donor search handlers
+  // Contract Matches
+  useEffect(() => {
+    fetch(`${backendUrl}/api/contracts/James_Solomon`)
+      .then((res) => res.json())
+      .then((data) => {
+        setContractMatches(data.contract_matches || []);
+      })
+      .catch(console.error);
+  }, []);
+
   function handleSearch(e) {
     e.preventDefault();
     if (!searchTerm.trim()) {
@@ -146,35 +109,22 @@ export default function Draft() {
     setSearchStatus("Searching...");
     setDonorHistory(null);
     setDonorSearchResults([]);
-
     fetch(`${backendUrl}/api/search_donor/James_Solomon?q=${encodeURIComponent(searchTerm.trim())}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {
           setSearchStatus(data.error);
-          setDonorSearchResults([]);
-          setDonorHistory(null);
-          return;
-        }
-        if (data.status === "found") {
+        } else if (data.status === "found") {
           setSearchStatus(null);
           setDonorHistory(data.records);
-          setDonorSearchResults([]);
-        } else if (data.status === "not_found" && data.suggestions && data.suggestions.length > 0) {
+        } else if (data.status === "not_found" && data.suggestions?.length) {
           setSearchStatus(null);
           setDonorSearchResults(data.suggestions);
-          setDonorHistory(null);
         } else {
           setSearchStatus("This person or business cannot be found.");
-          setDonorSearchResults([]);
-          setDonorHistory(null);
         }
       })
-      .catch(() => {
-        setSearchStatus("Search failed, please try again.");
-        setDonorSearchResults([]);
-        setDonorHistory(null);
-      });
+      .catch(() => setSearchStatus("Search failed, please try again."));
   }
 
   function showDonorHistory(name) {
@@ -185,120 +135,71 @@ export default function Draft() {
       .then((data) => {
         if (data.status === "found") {
           setDonorHistory(data.records);
-          setDonorSearchResults([]);
           setSearchStatus(null);
         } else {
           setSearchStatus("No donation history found for this donor.");
-          setDonorHistory(null);
         }
       })
-      .catch(() => {
-        setSearchStatus("Failed to load donor history.");
-        setDonorHistory(null);
-      });
+      .catch(() => setSearchStatus("Failed to load donor history."));
   }
-
-  // Candidate Profile (hardcoded)
-  const candidateProfile = {
-    biography:
-      `James Solomon is a reform-minded City Council member known for his analytical rigor and commitment to clean government. With a background in public policy and urban planning, Solomon has built a reputation as a watchdog for transparency, ethical governance, and smart growth. He has challenged entrenched interests and fought for stronger oversight of development and campaign finance. His approach appeals to voters seeking technocratic skill combined with progressive ideals.`,
-    policies:
-      `Solomon supports strong rent control protections, increased public transit access, and zoning reforms to encourage affordable housing. He has introduced ethics and anti-corruption legislation and supports campaign finance transparency. On education, he advocates for greater school funding and equitable access. Solomon also prioritizes climate resilience, including flood prevention and green energy infrastructure. He champions digital transparency tools so residents can better engage with city data and decision-making.`,
-    background:
-      `A graduate of the Kennedy School at Harvard and a former professor, Solomon’s policy work spans local government and national civic tech. Since being elected, he’s pushed for systemic reforms to improve government accountability. He brings a wonkier, data-driven perspective to politics, but pairs it with responsiveness to constituent concerns. His candidacy offers a vision of modern, ethical governance rooted in long-term planning and public trust.`
-  };
 
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
       <h1>James Solomon: Campaign Finance Visuals</h1>
 
-      {/* Candidate Profile Section */}
+      {/* Biography, Policies, Background */}
       <section style={{ marginBottom: "2rem" }}>
         <h2>Biography</h2>
-        <p>{candidateProfile.biography}</p>
-
+        <p>Jim McGreevey served as the 52nd Governor of New Jersey ...</p>
         <h2>Policies</h2>
-        <p>{candidateProfile.policies}</p>
-
+        <p>During his tenure, McGreevey emphasized ethics reform ...</p>
         <h2>Background</h2>
-        <p>{candidateProfile.background}</p>
+        <p>Born in Jersey City in 1957, Jim McGreevey attended ...</p>
       </section>
 
+      {/* Legend Description */}
       <div className="legend-description">
         <h3>Legend Description</h3>
         <ul>
           <li><strong>Individual - Small</strong>: $0 – $499</li>
           <li><strong>Individual - Medium</strong>: $500 – $1,999</li>
           <li><strong>Individual - Large</strong>: $2,000 – $5,500</li>
-          <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses (includes LLCs, INCs, CORPs, etc.)</li>
-          <li><strong>Corporate</strong>: Non-pay-to-play business/corporate donors</li>
-          <li><strong>Union</strong>: Labor union donors</li>
-          <li><strong>Political Committee</strong>: PACs, party committees, political clubs</li>
-          <li><strong>Interest Group</strong>: Trade associations and ideological groups</li>
-          <li><strong>Candidate</strong>: Donations from the candidate or their own committee</li>
-          <li><strong>Other / Unknown</strong>: Miscellaneous or uncategorized donations</li>
+          <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses</li>
+          <li><strong>Corporate</strong>: Non-pay-to-play corporate donors</li>
+          <li><strong>Union</strong>: Labor unions</li>
+          <li><strong>Political Committee</strong>: PACs, party committees</li>
+          <li><strong>Interest Group</strong>: Trade or ideological orgs</li>
+          <li><strong>Candidate</strong>: Self or campaign committee</li>
+          <li><strong>Other / Unknown</strong>: Uncategorized donations</li>
         </ul>
       </div>
 
-{totalDonations !== null && (
-              <div className="total-donations-panel">
-                <h3>Total Donations</h3>
-                <p>${totalDonations.toLocaleString()}</p>
-              </div>
-            )}
-      {/* Pie Chart and Legend */}
-      {chartData && (
-        <div
-          style={{
-            display: "flex",
-            gap: "2rem",
-            flexWrap: "wrap",
-            alignItems: "flex-start",
-            marginBottom: "3rem",
-          }}
-        >
-          <div
-            style={{
-              flex: "1 1 500px",
-              minWidth: "400px",
-              maxWidth: "600px",
-              height: "450px",
-            }}
-          >
-            <Pie
-              data={chartData}
-              options={{
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                hover: { mode: "nearest", intersect: true },
-              }}
-            />
-          </div>
+      {/* Total Donations Panel */}
+      {totalDonations !== null && (
+        <div className="total-donations-panel">
+          <h3>Total Donations</h3>
+          <p>${totalDonations.toLocaleString()}</p>
+        </div>
+      )}
 
-          <div
-            style={{
-              flex: "1 1 250px",
-              minWidth: "250px",
-              maxWidth: "300px",
-            }}
-          >
+      {/* Pie Chart */}
+      {chartData && (
+        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", marginBottom: "3rem" }}>
+          <div style={{ flex: "1 1 500px", minWidth: "400px", height: "450px" }}>
+            <Pie data={chartData} options={{ maintainAspectRatio: false, plugins: { legend: { display: false } } }} />
+          </div>
+          <div style={{ flex: "1 1 250px", minWidth: "250px" }}>
             <h3>Legend</h3>
-            <ul style={{ listStyle: "none", padding: 0 }}>
+            <ul>
               {chartData.labels.map((label, idx) => {
                 const value = chartData.datasets[0].data[idx];
                 const percent = ((value / chartData.total) * 100).toFixed(2);
                 return (
-                  <li key={label} style={{ marginBottom: "8px" }}>
-                    <span
-                      style={{
-                        display: "inline-block",
-                        width: "12px",
-                        height: "12px",
-                        backgroundColor:
-                          chartData.datasets[0].backgroundColor[idx],
-                        marginRight: "8px",
-                      }}
-                    ></span>
+                  <li key={label}>
+                    <span style={{
+                      display: "inline-block", width: "12px", height: "12px",
+                      backgroundColor: chartData.datasets[0].backgroundColor[idx], marginRight: "8px"
+                    }}></span>
                     {label}: ${value.toLocaleString()} ({percent}%)
                   </li>
                 );
@@ -308,152 +209,88 @@ export default function Draft() {
         </div>
       )}
 
-      {/* Donations Over Time Line Chart */}
-      <div style={{ marginTop: "3rem", marginBottom: "3rem", height: 350, maxWidth: 700 }}>
+      {/* Line Chart */}
+      <div style={{ marginBottom: "3rem", height: 350 }}>
         <h2>Donations Over Time</h2>
         {donationsOverTimeData ? (
-          <Line
-            data={donationsOverTimeData}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false,
-              scales: {
-                x: {
-                  type: "category",
-                  title: {
-                    display: true,
-                    text: "Month",
-                  },
-                },
-                y: {
-                  beginAtZero: true,
-                  title: {
-                    display: true,
-                    text: "Amount ($)",
-                  },
-                  ticks: {
-                    callback: (value) => "$" + value.toLocaleString(),
-                  },
-                },
-              },
-              plugins: {
-                legend: { display: false },
-                tooltip: {
-                  callbacks: {
-                    label: (ctx) => `$${ctx.parsed.y.toLocaleString()}`,
-                  },
-                },
-              },
-            }}
-          />
-        ) : (
-          <p>Loading donations over time data...</p>
-        )}
+          <Line data={donationsOverTimeData} options={{
+            responsive: true, maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true, ticks: { callback: v => "$" + v.toLocaleString() } } }
+          }} />
+        ) : <p>Loading donations over time...</p>}
       </div>
 
-      {/* Top 10 Donors Bar Chart */}
-      <div style={{ marginBottom: "3rem", height: 400, maxWidth: 700 }}>
+      {/* Top Donors */}
+      <div style={{ marginBottom: "3rem", height: 400 }}>
         <h2>Top 10 Donors</h2>
         {topDonorsBarData ? (
-          <Bar
-            data={topDonorsBarData}
-            options={{
-              indexAxis: "y",
-              responsive: true,
-              maintainAspectRatio: false,
-              scales: {
-                x: {
-                  beginAtZero: true,
-                  ticks: {
-                    callback: (value) => "$" + value.toLocaleString(),
-                  },
-                },
-                y: {
-                  ticks: {
-                    autoSkip: false,
-                    maxRotation: 0,
-                    minRotation: 0,
-                  },
-                },
-              },
-              plugins: {
-                legend: { display: false },
-                tooltip: {
-                  callbacks: {
-                    label: (context) => `$${context.parsed.x.toLocaleString()}`,
-                  },
-                },
-              },
-            }}
-            height={400}
-          />
-        ) : (
-          <p>Loading top donors...</p>
-        )}
+          <Bar data={topDonorsBarData} options={{ indexAxis: "y", responsive: true }} />
+        ) : <p>Loading top donors...</p>}
       </div>
 
-      {/* Repeated Donors Bar Chart */}
-      <div style={{ marginBottom: "3rem", height: 300, maxWidth: 700 }}>
+      {/* Repeated Donors */}
+      <div style={{ marginBottom: "3rem", height: 300 }}>
         <h2>Repeated Donors</h2>
         {repeatDonorsData ? (
-          <Bar
-            data={repeatDonorsData}
-            options={{
-              indexAxis: "x",
-              responsive: true,
-              maintainAspectRatio: false,
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  ticks: {
-                    precision: 0,
-                  },
-                },
-              },
-              plugins: {
-                legend: { display: false },
-              },
-            }}
-            height={300}
-          />
-        ) : (
-          <p>Loading repeated donors data...</p>
-        )}
+          <Bar data={repeatDonorsData} options={{ responsive: true }} />
+        ) : <p>Loading repeated donors data...</p>}
       </div>
 
-      {/* Vendor Matches Section */}
+      {/* Vendor Matches */}
       <div style={{ marginTop: "3rem", maxWidth: 700 }}>
-        <h2>Top Vendor Matches</h2>
-        {Array.isArray(vendorMatches) && vendorMatches.length > 0 ? (
-          <table
-            border="1"
-            cellPadding="10"
-            style={{ borderCollapse: "collapse", width: "100%" }}
-          >
+        <h2>Vendor and Contract Matches</h2>
+        <h3>Vendor Directory Matches</h3>
+        {vendorMatches.length > 0 ? (
+          <table border="1" cellPadding="10">
             <thead>
-              <tr>
-                <th>Business Name</th>
-                <th>Total Contributions</th>
-              </tr>
+              <tr><th>Business Name</th><th>Total Contributions</th></tr>
             </thead>
             <tbody>
               {vendorMatches.map((item, idx) => (
+                <tr key={idx}><td>{item.Business_Name}</td><td>${item.ContributionAmount.toLocaleString()}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        ) : <p>No vendor matches found.</p>}
+
+        {/* Contract Matches */}
+        <h3>Contract Results Matches</h3>
+        {contractMatches.length > 0 ? (
+          <table border="1" cellPadding="10">
+            <thead>
+              <tr><th>Business Name</th><th>Total Contributions</th><th>Contract Amount</th><th>Contract Status</th></tr>
+            </thead>
+            <tbody>
+              {contractMatches.map((item, idx) => (
                 <tr key={idx}>
-                  <td>{item.Business_Name || "N/A"}</td>
-                  <td>${Number(item.ContributionAmount).toLocaleString()}</td>
+                  <td>{item["Business_Name"]}</td>
+                  <td>
+                  {item["TotalAmount"]
+                    ? `$${Number(item["TotalAmount"]).toLocaleString()}`
+                    : "N/A"}
+                  </td>
+                  <td>
+                    {item["Contract Amount"] && item["Contract Amount"] !== "N/A"
+                      ? (() => {
+                          const parsed = parseFloat(
+                            item["Contract Amount"].toString().replace(/[\$,]/g, "")
+                          );
+                          return isNaN(parsed) ? "N/A" : `$${parsed.toLocaleString()}`;
+                        })()
+                      : "N/A"}
+                  </td>
+                  <td>{item["Contract Status"]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-        ) : (
-          <p>No vendor matches found.</p>
-        )}
+        ) : <p>No contract matches found.</p>}
       </div>
 
-      {/* Donor Search Section */}
+      {/* Donor Search */}
       <div style={{ marginBottom: "3rem" }}>
         <h2>Donor Search</h2>
-        <form onSubmit={handleSearch} style={{ marginBottom: "1rem" }}>
+        <form onSubmit={handleSearch}>
           <input
             type="text"
             value={searchTerm}
@@ -465,95 +302,44 @@ export default function Draft() {
         </form>
         {searchStatus && <p>{searchStatus}</p>}
         {donorSearchResults.length > 0 && (
-          <div>
-            <p>Did you mean:</p>
-            <ul>
-              {donorSearchResults.map((donor) => (
-                <li key={donor}>
-                  <button
-                    onClick={() => showDonorHistory(donor)}
-                    style={{
-                      cursor: "pointer",
-                      background: "none",
-                      border: "none",
-                      color: "blue",
-                      textDecoration: "underline",
-                      padding: 0,
-                    }}
-                  >
-                    {donor}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul>{donorSearchResults.map((donor) => (
+            <li key={donor}>
+              <button onClick={() => showDonorHistory(donor)} style={{ color: "blue", background: "none", border: "none" }}>
+                {donor}
+              </button>
+            </li>
+          ))}</ul>
         )}
         {donorHistory && (
           <div>
             <h3>Donation History for {searchTerm}</h3>
-            <table
-              border="1"
-              cellPadding="10"
-              style={{
-                borderCollapse: "collapse",
-                width: "100%",
-                maxWidth: "700px",
-              }}
-            >
+            <table border="1" cellPadding="10">
               <thead>
-                <tr>
-                  <th>Contributor Name</th>
-                  <th>Donation Amount</th>
-                  <th>Date</th>
-                  <th>City</th>
-                  <th>Category</th>
-                </tr>
+                <tr><th>Contributor Name</th><th>Amount</th><th>Date</th><th>City</th><th>Category</th></tr>
               </thead>
               <tbody>
                 {donorHistory.map((item, idx) => (
-                <tr key={idx}>
-                  <td>{item.ContributorName || item.First_Name + " " + item.Last_Name || item.Business_Name || "N/A"}</td>
-                  <td>${Number(item.ContributionAmount).toLocaleString()}</td>
-                  <td>{item.ContributionDate || "N/A"}</td>
-                  <td>{item.Donor_City || item.City || "N/A"}</td>
-                  <td>{item.ContributorGroup || "Unknown"}</td>
-                </tr>
-              ))}
+                  <tr key={idx}>
+                    <td>{item.ContributorName}</td>
+                    <td>${Number(item.ContributionAmount).toLocaleString()}</td>
+                    <td>{item.ContributionDate}</td>
+                    <td>{item.Donor_City}</td>
+                    <td>{item.ContributorGroup}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         )}
       </div>
 
-      {/* Download and Navigation Links */}
-      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
-        <a
-          href={`${backendUrl}/download/James_Solomon_combined_contributions.csv`}
-          download
-          style={{
-            backgroundColor: "#1D3557",
-            color: "white",
-            padding: "0.5rem 1rem",
-            borderRadius: "4px",
-            textDecoration: "none",
-            marginBottom: "1rem"
-          }}
-        >
+      {/* Download / Navigation */}
+      <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
+        <a href={`${backendUrl}/download/James_Solomon_combined_contributions.csv`} download className="btn-download">
           Download Full Contributions CSV
         </a>
-        <a
-          href="/"
-          style={{
-            color: "#1D3557",
-            textDecoration: "underline",
-            fontWeight: "bold",
-            marginBottom: "1rem"
-          }}
-        >
-          Return to Home Page
-        </a>
+        <a href="/" className="btn-return">Return to Home Page</a>
       </div>
     </div>
   );
 }
-
