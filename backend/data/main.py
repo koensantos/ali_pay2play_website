@@ -5,6 +5,7 @@ import logging
 import pandas as pd
 import difflib  
 import urllib.parse
+from rapidfuzz import fuzz
 
 from cleaning_scripts import campaigndonations
 
@@ -506,27 +507,38 @@ def get_vendors(candidate):
         }), 500
 
 
+
+
+# Utility functions
+def normalize_name(name):
+    if pd.isna(name):
+        return ""
+    return str(name).upper().strip()
+
+def word_overlap(a, b):
+    return len(set(a.split()) & set(b.split()))
+
 @app.route("/api/contracts/<candidate>", methods=["GET"])
 def get_contract_matches(candidate):
     try:
         candidate = urllib.parse.unquote(candidate)
         contrib_path = os.path.join(OUTPUT_FOLDER, f"{candidate}_combined_contributions.csv")
-        contract_path = os.path.join(VENDOR_FOLDER, "contractResults.csv")
+        contract_path = os.path.join(VENDOR_FOLDER, "contractResults.xlsx")
 
         if not os.path.exists(contrib_path):
             return jsonify({"error": "Candidate contributions file not found"}), 404
         if not os.path.exists(contract_path):
             return jsonify({"error": "Contract results file not found"}), 404
 
-        # Load data
         contrib_df = pd.read_csv(contrib_path, on_bad_lines="skip")
-        contracts_df = pd.read_csv(contract_path, on_bad_lines="skip")
+        contracts_df = pd.read_excel(contract_path)
 
-        # Filter to Corporate and P2P Corporate
-        contrib_df = contrib_df[contrib_df["ContributorGroup"].isin(["Corporate", "P2P Corporate"])]
-        contrib_df = contrib_df[contrib_df["Business_Name"].notna()]
+        contrib_df = contrib_df[
+            (contrib_df["ContributorGroup"].isin(["Corporate", "P2P Corporate"])) &
+            (contrib_df["Business_Name"].notna()) &
+            (contrib_df["ContributionAmount"] >= 0)
+        ]
 
-        # Normalize business and vendor names
         contrib_df["normalized_biz"] = contrib_df["Business_Name"].apply(normalize_name)
         contracts_df["normalized_vendor"] = contracts_df["Vendor"].apply(normalize_name)
 
@@ -536,24 +548,29 @@ def get_contract_matches(candidate):
             biz_name = contrib_row["normalized_biz"]
             contrib_amount = contrib_row["ContributionAmount"]
 
-            # Substring match: biz_name in vendor OR vendor in biz_name
-            matching_contracts = contracts_df[
-                contracts_df["normalized_vendor"].apply(
-                    lambda vendor: biz_name in vendor or vendor in biz_name
-                )
-            ]
+            if len(biz_name) < 6:
+                continue
 
-            for _, contract_row in matching_contracts.iterrows():
-                matches.append({
-                    "Business_Name": contrib_row["Business_Name"],
-                    "Contractor Name": contract_row["Vendor"],
-                    "Contract Amount": contract_row.get("Dollars Spent to Date", "N/A"),
-                    "Contract Status": contract_row.get("Status", "N/A"),
-                    "TotalAmount": contrib_amount
-                })
+            for _, contract_row in contracts_df.iterrows():
+                vendor_name = contract_row["normalized_vendor"]
+                if len(vendor_name) < 6:
+                    continue
 
-        # Group duplicates (optional)
+                similarity = fuzz.token_sort_ratio(biz_name, vendor_name)
+                shared_words = word_overlap(biz_name, vendor_name)
+
+                if similarity >= 93 and shared_words >= 2:
+                    match_data = {
+                        "Business_Name": contrib_row["Business_Name"],
+                        "Contractor Name": contract_row["Vendor"],
+                        "Contract Amount": contract_row.get("Dollars Spent to Date", "N/A"),
+                        "Contract Status": contract_row.get("Status", "N/A"),
+                        "TotalAmount": contrib_amount
+                    }
+                    matches.append(match_data)
+
         result_df = pd.DataFrame(matches)
+
         if not result_df.empty:
             result_df = result_df.groupby(
                 ["Business_Name", "Contractor Name", "Contract Amount", "Contract Status"],
@@ -567,5 +584,13 @@ def get_contract_matches(candidate):
             "error": "Internal server error",
             "details": str(e)
         }), 500
+
+
 if __name__ == "__main__":
+    print("🚀 Starting Flask server...")
+    print("📊 Contract analysis will be displayed in terminal when API endpoints are called")
+    print("🔗 Available endpoints:")
+    print("   - /api/contracts/<candidate> - Get contract matches")
+    print("   - /api/vendors/<candidate> - Get vendor matches")
+    print("-" * 80)
     app.run(debug=True, port=5000)
