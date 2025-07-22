@@ -164,8 +164,8 @@ export default function Draft() {
           <li><strong>Individual - Small</strong>: $0 – $499</li>
           <li><strong>Individual - Medium</strong>: $500 – $1,999</li>
           <li><strong>Individual - Large</strong>: $2,000 – $5,500</li>
-          <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses</li>
-          <li><strong>Corporate</strong>: Non-pay-to-play corporate donors</li>
+          <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses listed <a href="https://www.elec.nj.gov/pay2play/quickdownload.html">in NJ Elec.</a></li>
+          <li><strong>Corporate</strong>: Donors from corporations.</li>
           <li><strong>Union</strong>: Labor unions</li>
           <li><strong>Political Committee</strong>: PACs, party committees</li>
           <li><strong>Interest Group</strong>: Trade or ideological orgs</li>
@@ -253,33 +253,33 @@ export default function Draft() {
           </table>
         ) : <p>No vendor matches found.</p>}
 
-        {/* Contract Matches */}
+       {/* Contract Matches */}
         <h3>Contract Results Matches</h3>
         {contractMatches.length > 0 ? (
           <table border="1" cellPadding="10">
             <thead>
-              <tr><th>Business Name</th><th>Total Contributions</th><th>Contract Amount</th><th>Contract Status</th></tr>
+              <tr>
+                <th>Donor Business</th>
+                <th>Donated</th>
+                <th>Contract Value</th>
+                <th>Status</th>
+              </tr>
             </thead>
             <tbody>
               {contractMatches.map((item, idx) => (
                 <tr key={idx}>
-                  <td>{item["Business_Name"]}</td>
+                  <td>{item["Donor Business"] || "N/A"}</td>
                   <td>
-                  {item["TotalAmount"]
-                    ? `$${Number(item["TotalAmount"]).toLocaleString()}`
-                    : "N/A"}
-                  </td>
-                  <td>
-                    {item["Contract Amount"] && item["Contract Amount"] !== "N/A"
-                      ? (() => {
-                          const parsed = parseFloat(
-                            item["Contract Amount"].toString().replace(/[\$,]/g, "")
-                          );
-                          return isNaN(parsed) ? "N/A" : `$${parsed.toLocaleString()}`;
-                        })()
+                    {item["Donated"] !== undefined
+                      ? `$${Number(item["Donated"]).toLocaleString()}`
                       : "N/A"}
                   </td>
-                  <td>{item["Contract Status"]}</td>
+                  <td>
+                    {item["Contract Value"] && item["Contract Value"] !== "Unknown"
+                      ? item["Contract Value"]
+                      : "N/A"}
+                  </td>
+                  <td>{item["Status"] || "N/A"}</td>
                 </tr>
               ))}
             </tbody>
@@ -331,6 +331,19 @@ export default function Draft() {
             </table>
           </div>
         )}
+      </div>
+
+      {/*Red Flag Section*/}
+      <div style={{ marginTop: "3rem", padding: "1rem"}}>
+        <h2>Red Flags</h2>
+        <p>Bill O'Dea has received significant contributions from various sources, including:</p>
+        <ul>
+          <li>Pay-to-play corporate donors</li>
+          <li>Large individual contributions from high-net-worth individuals</li>
+          <li>Repeated donations from the same entities</li>
+        </ul>
+        <p>These patterns may indicate potential conflicts of interest or undue influence in his campaign.</p>
+
       </div>
 
       {/* Download / Navigation */}

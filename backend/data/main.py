@@ -523,35 +523,65 @@ def get_contract_matches(candidate):
     try:
         candidate = urllib.parse.unquote(candidate)
         contrib_path = os.path.join(OUTPUT_FOLDER, f"{candidate}_combined_contributions.csv")
-        contract_path = os.path.join(VENDOR_FOLDER, "contractResults.xlsx")
+        contract_path1 = os.path.join(VENDOR_FOLDER, "contractResults.csv")
+        contract_path2 = os.path.join(VENDOR_FOLDER, "Hudson County Contracts.xlsx")
 
         if not os.path.exists(contrib_path):
             return jsonify({"error": "Candidate contributions file not found"}), 404
-        if not os.path.exists(contract_path):
-            return jsonify({"error": "Contract results file not found"}), 404
+        if not os.path.exists(contract_path1) and not os.path.exists(contract_path2):
+            return jsonify({"error": "Neither contract file found"}), 404
 
+        # Load contribution data
         contrib_df = pd.read_csv(contrib_path, on_bad_lines="skip")
-        contracts_df = pd.read_excel(contract_path)
-
         contrib_df = contrib_df[
             (contrib_df["ContributorGroup"].isin(["Corporate", "P2P Corporate"])) &
             (contrib_df["Business_Name"].notna()) &
             (contrib_df["ContributionAmount"] >= 0)
         ]
-
         contrib_df["normalized_biz"] = contrib_df["Business_Name"].apply(normalize_name)
-        contracts_df["normalized_vendor"] = contracts_df["Vendor"].apply(normalize_name)
 
+        # Load both contract files
+        contract_frames = []
+
+        if os.path.exists(contract_path1):
+            df1 = pd.read_csv(contract_path1)
+            if "Vendor" in df1.columns:
+                contract_frames.append(df1.rename(columns={"Vendor": "VendorName"}))
+
+        if os.path.exists(contract_path2):
+            df2 = pd.read_excel(contract_path2)
+            if "Vendor" in df2.columns:
+                contract_frames.append(df2.rename(columns={"Vendor": "VendorName"}))
+
+        if not contract_frames:
+            return jsonify({"error": "No valid contract data loaded"}), 500
+
+        contracts_df = pd.concat(contract_frames, ignore_index=True)
+
+        # Expand multi-vendor contract entries
+        expanded_contracts = []
+        for _, row in contracts_df.iterrows():
+            vendors = re.split(r'[;,]', str(row["VendorName"]))
+            for vendor in vendors:
+                vendor_clean = normalize_name(vendor)
+                if vendor_clean:
+                    new_row = row.copy()
+                    new_row["VendorName"] = vendor.strip()
+                    new_row["normalized_vendor"] = vendor_clean
+                    expanded_contracts.append(new_row)
+
+        contracts_expanded_df = pd.DataFrame(expanded_contracts)
+
+        # Perform donor–contract matching
         matches = []
 
         for _, contrib_row in contrib_df.iterrows():
             biz_name = contrib_row["normalized_biz"]
             contrib_amount = contrib_row["ContributionAmount"]
-
             if len(biz_name) < 6:
                 continue
 
-            for _, contract_row in contracts_df.iterrows():
+            for _, contract_row in contracts_expanded_df.iterrows():
                 vendor_name = contract_row["normalized_vendor"]
                 if len(vendor_name) < 6:
                     continue
@@ -560,30 +590,35 @@ def get_contract_matches(candidate):
                 shared_words = word_overlap(biz_name, vendor_name)
 
                 if similarity >= 93 and shared_words >= 2:
+                    # Contract amount extraction logic
+                    contract_amount = contract_row.get("Dollars Spent to Date")
+                    if pd.isna(contract_amount) or contract_amount in [None, ""]:
+                        contract_amount = contract_row.get("Amount")
+                    if pd.isna(contract_amount) or contract_amount in [None, ""]:
+                        contract_amount = "Unknown"
+                    elif isinstance(contract_amount, (int, float)):
+                        contract_amount = f"${contract_amount:,.2f}"
+
+                    contract_status = contract_row.get("Status") or "Unknown"
+
                     match_data = {
-                        "Business_Name": contrib_row["Business_Name"],
-                        "Contractor Name": contract_row["Vendor"],
-                        "Contract Amount": contract_row.get("Dollars Spent to Date", "N/A"),
-                        "Contract Status": contract_row.get("Status", "N/A"),
-                        "TotalAmount": contrib_amount
+                        "Donor Business": contrib_row["Business_Name"],
+                        "Matched Vendor": contract_row["VendorName"],
+                        "Contract Value": contract_amount,
+                        "Status": contract_status,
+                        "Donated": contrib_amount
                     }
                     matches.append(match_data)
 
-        result_df = pd.DataFrame(matches)
-
-        if not result_df.empty:
-            result_df = result_df.groupby(
-                ["Business_Name", "Contractor Name", "Contract Amount", "Contract Status"],
-                as_index=False
-            )["TotalAmount"].sum()
-
-        return jsonify({"contract_matches": result_df.to_dict(orient="records")})
+        return jsonify({"contract_matches": matches})
 
     except Exception as e:
         return jsonify({
             "error": "Internal server error",
             "details": str(e)
         }), 500
+
+
 
 
 if __name__ == "__main__":

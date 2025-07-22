@@ -12,8 +12,8 @@ def combine_html_p2p_data(folder):
         match = html_pattern.match(filename)
         if match:
             year = int(match.group(1))
-            if not (2006 <= year <= 2024):
-                continue  # Skip years outside 2006–2024
+            if not (2020 <= year <= 2024):
+                continue  # Skip years outside 2020–2024
 
             filepath = os.path.join(folder, filename)
 
@@ -46,11 +46,12 @@ def combine_html_p2p_data(folder):
     # Create DataFrame
     if all_data:
         df = pd.DataFrame(all_data, columns=final_headers)
-        output_path = "Combined_P2P_Contributions_2006_2024.xlsx"
+        output_path = "Combined_P2P_Contributions.xlsx"
         df.to_excel(output_path, index=False)
         print(f"🎯 Saved combined data to {output_path}")
     else:
         print("⚠️ No valid data found in HTML files.")
 
 
-combine_html_p2p_data("OtherFiles")  # Change to your folder name if needed
+if __name__ == "__main__":
+    combine_html_p2p_data("raw")  # Change to your folder name if needed
