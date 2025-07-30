@@ -1,16 +1,31 @@
-body {
+/* Reset & Base Layout */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #add8e6;
   color: #333;
 }
 
+/* Headings */
 h1, h2, h3 {
   color: #1d3557;
 }
 
+/* Tables */
 table {
   border: 1px solid #ddd;
   background-color: white;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 table th {
@@ -23,6 +38,11 @@ table td, table th {
   text-align: left;
 }
 
+table td {
+  border-top: 1px solid #ccc;
+}
+
+/* Buttons & Inputs */
 button {
   cursor: pointer;
 }
@@ -40,13 +60,17 @@ button[type="submit"] {
   border-radius: 4px;
 }
 
+/* Legend Description */
 .legend-description {
   margin-top: 30px;
   padding: 15px;
-  background-color: #f8f8f8;
+  background-color: #add8e6;
   border-radius: 8px;
   font-size: 0.95rem;
   line-height: 1.5;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
 }
 
 .legend-description h3 {
@@ -57,13 +81,175 @@ button[type="submit"] {
 .legend-description ul {
   list-style: disc;
   margin-left: 20px;
+  padding-left: 10px;
 }
 
+/* Total Donations Panel */
 .total-donations-panel {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
-  padding: 1rem;
+  padding: 3rem;
   border-radius: 8px;
   margin-top: 1rem;
+  margin-bottom: 20px;
 }
 
+.total-donations-panel h2 {
+  text-align: center;
+}
+
+.total-donations-panel p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1d3557;
+}
+
+/* Bio Section */
+.bio-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-bottom: 2rem;
+  outline: 1px solid #000;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.bio-text {
+  flex: 1;
+}
+
+.bio-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Bio */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .bio-image img {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+}
+
+/* Chart + Legend */
+.chart-legend-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.chart-wrapper {
+  flex: 1 1 500px;
+  min-width: 400px;
+  height: 450px;
+}
+
+.legend-container {
+  flex: 1 1 350px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Legend items */
+.legend-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend-color-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Responsive Chart + Legend */
+@media (max-width: 768px) {
+  .chart-legend-container {
+    flex-direction: column;
+  }
+
+  .chart-wrapper,
+  .legend-container {
+    min-width: 100%;
+    height: auto !important;
+  }
+
+  .legend-description {
+    max-height: none;
+    overflow-y: visible;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Bar Charts */
+.donor-bar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.bar-chart {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: white;
+  overflow-x: auto;
+}
+
+/* Chart canvas responsiveness and sizing */
+.chart-inner-wrapper canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.05rem;
+    padding: 0;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  .bar-chart {
+    padding: 1rem;
+  }
+
+  .chart-inner-wrapper {
+    width: 100%;
+    height: 400px; /* fixed height but width is responsive */
+    max-width: 100%;
+  }
+
+  .legend-description {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

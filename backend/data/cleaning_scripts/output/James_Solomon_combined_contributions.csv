@@ -431,6 +431,7 @@ Individual - Small,100,GABBY,FELIU,,09/19/2024,DELOITTE,MANAGEMENT/ADMINISTRATOR
 Individual - Small,250,ANDREW,FERGUSON,,02/19/2025,NOT EMPLOYED,UNEMPLOYED,WILTON,CT
 Individual - Small,200,GEORGE,FERNANDEZ,,03/25/2025,GLOBALSOULPROJECT,INFORMATION TECHNOLOGY/COMPUTER SCIENCE,JERSEY CITY,NJ
 Individual - Large,2500,DAVID,FEUERSTEIN,,12/31/2024,TOWNSHIP OF HILLSIDE,POLITICIAN,HILLSIDE,NJ
+Individual - Large,2500,DAVID,FEUERSTEIN,,12/31/2024,Nistar Risk Management NJ LLC,,Teaneck,NJ
 Individual - Small,300,MATHIEU,FIALON,,12/07/2023,AVENTEX INC,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,JERSEY CITY,NJ
 Individual - Medium,500,CHARLES,FIGUEIREDO,,02/06/2025,NOT EMPLOYED,UNEMPLOYED,JERSEY CITY,NJ
 Individual - Medium,500,CHARLES,FIGUEIREDO,,09/19/2024,NOT EMPLOYED,UNEMPLOYED,JERSEY CITY,NJ
@@ -1424,12 +1425,13 @@ Individual - Medium,500,JOHN,YAU,,01/19/2025,JOHN YAU POETRY,ARTS/ENTERTAINMENT,
 Individual - Small,250,CRAIG,ZEHMS,,06/19/2024,SOTHEBY?S,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,JERSEY CITY,NJ
 Individual - Small,300,NANCY,ZEMLAK,,02/11/2025,SILVERKATLLC,ACCOUNTANTS/AUDITORS,SEWELL,NJ
 Individual - Small,250,NICK,ZURAWSKI,,09/26/2024,DELOITTE,CONSULTANT,JERSEY CITY,NJ
-P2P Corporate,1000,,Clb Partners Llc,11/08/2024,Clb Partners,,Lambertville,NJ,
-P2P Corporate,500,,"Mckenna, Dupont, Stone & Washburne, P.C.",09/26/2024,"Mckenna, Dupont, Stone & Washburne, P.C.",,Red Bank,NJ,
+P2P Corporate,1000,,,Clb Partners Llc,11/08/2024,Clb Partners,,Lambertville,NJ
+P2P Corporate,500,,,"Mckenna, Dupont, Stone & Washburne, P.C.",09/26/2024,"Mckenna, Dupont, Stone & Washburne, P.C.",,Red Bank,NJ
 P2P Corporate,1000,,,"Mckenna, Dupont, Stone & Washburne, P.C.",12/30/2024,"Mckenna, Dupont, Stone & Washburne, P.C.",,Red Bank,NJ
 P2P Corporate,5200,,,Rd Parisi Associates,08/26/2024,Rd Parisi Associates,,West Orange,NJ
 P2P Corporate,5200,,,Rd Parisi Associates,09/30/2024,Rd Parisi Associates,,West Orange,NJ
 P2P Corporate,10000,,,Rd Parisi Associates,12/30/2024,Rd Parisi Associates,,West Orange,NJ
+P2P Corporate,1000,,,Trenk Isabel Siddiqi & Shahdanian P.C.,9/30/2024,Trenk Isabel Siddiqi & Shahdanian P.C.,,Livingston,NJ
 Individual - Small,100,Tommy,Parisi,,06/30/25,The Brightside,Business Owner,Jersey City,NJ
 Corporate,1000,,,145 Restaurant Inc,06/30/25,,,Jersey City,NJ
 Political Committee,15000,,,32BJ United ADF,06/26/25,,,New York,NY
@@ -1656,7 +1658,7 @@ Individual - Medium,50,Benjamin,Newman,,05/16/25,Availity,Information Technology
 Individual - Medium,50,Benjamin,Newman,,04/16/25,Availity,Information Technology/Computer Science,Vancouver,WA
 Individual - Medium,1000,Daniel,Newman,,06/13/25,Bridgewater,Financial Services/Banking,Scarsdale,NY
 Individual - Small,100,Kinjal,Nicholls,,06/20/25,The Spence School,Unemployed,Jersey City,NJ
-Corporate,,,,Nick Holding Services INC,,Nick Holding Services INC,,Edison,NJ
+Corporate,2000,,,Nick Holding Services INC,,Nick Holding Services INC,,Edison,NJ
 Individual - Small,50,Susan A,Nolan,,06/11/25,Seton Hall University,Education/Professor/Teacher,Jersey City,NJ
 Individual - Small,50,Susan A,Nolan,,05/11/25,Seton Hall University,Education/Professor/Teacher,Jersey City,NJ
 Individual - Small,50,Susan A,Nolan,,04/11/25,Seton Hall University,Education/Professor/Teacher,Jersey City,NJ

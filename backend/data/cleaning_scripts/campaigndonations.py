@@ -8,7 +8,7 @@ from difflib import get_close_matches
 data_dir = os.path.join(os.path.dirname(__file__), "candidate_contributions")
 p2p_file = os.path.join(data_dir, "Combined_P2P_Contributions.xlsx")
 
-# Candidate files
+# Candidate files (from the original script)
 candidate_files = {
     "Mussab Ali": os.path.join(data_dir, "MussabAliContributions.csv"),
     "Joyce Watterman": os.path.join(data_dir, "JoyceWattermanContributions.csv"),
@@ -56,6 +56,10 @@ def get_individual_csv_data(file_path):
             return row["ContributorGroup"]
 
     df["ContributorGroup"] = df.apply(split_individual, axis=1)
+    
+    # Ensure 'ContributionAmount' is numeric, coercing errors to NaN
+    df['ContributionAmount'] = pd.to_numeric(df['ContributionAmount'], errors='coerce')
+    df.dropna(subset=['ContributionAmount'], inplace=True) # Drop rows where conversion failed
 
     return df[[
         "ContributorGroup", "ContributionAmount", "FirstName", "LastName", "NonIndName",
@@ -112,6 +116,11 @@ def get_p2p_contributions(file_path, candidate_name):
         return row["ContributorGroup"]
 
     df["ContributorGroup"] = df.apply(classify_p2p_individual, axis=1)
+    
+    # Ensure 'Contribution_Amount' is numeric
+    df['Contribution_Amount'] = pd.to_numeric(df['Contribution_Amount'], errors='coerce')
+    df.dropna(subset=['Contribution_Amount'], inplace=True) # Drop rows where conversion failed
+
 
     df = df.rename(columns={
         "Contributor_Name": "Name",
@@ -222,5 +231,28 @@ def update_all_donations():
         plot_contributions_over_time(combined_df, candidate)
         get_top_contributors(combined_df, candidate)
 
+# --- Start of the specific code for Joyce Watterman ---
+
 if __name__ == "__main__":
-    update_all_donations()
+    os.makedirs("visuals", exist_ok=True)
+    os.makedirs("output", exist_ok=True)
+
+    candidate_name = "Joyce Watterman"
+    file_path = candidate_files[candidate_name]
+
+    print(f"Updating data for {candidate_name}...")
+
+    df_csv = get_individual_csv_data(file_path)
+    df_p2p = get_p2p_contributions(p2p_file, candidate_name)
+
+    combined_df = pd.concat([df_csv, df_p2p], ignore_index=True)
+    combined_df.to_csv(f"output/{candidate_name.replace(' ', '_')}_combined_contributions.csv", index=False)
+
+    print(f"\nContribution Type Breakdown for {candidate_name}:")
+    print(combined_df.groupby("ContributorGroup")["ContributionAmount"].sum())
+
+    plot_type_breakdown_pie(combined_df, candidate_name)
+    plot_contributions_over_time(combined_df, candidate_name)
+    get_top_contributors(combined_df, candidate_name)
+
+    print(f"Data for {candidate_name} has been updated successfully.")

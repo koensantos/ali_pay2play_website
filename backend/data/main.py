@@ -41,36 +41,6 @@ def download_candidate_csv(candidate):
         return jsonify({"error": "File not found"}), 404
 
 
-@app.route("/api/update", methods=["POST"])
-def trigger_update():
-    try:
-        logging.info("Running update_all_donations()")
-        campaigndonations.update_all_donations()
-        return jsonify({"message": "Donations updated successfully"})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-
-@app.route("/api/chart/mussab", methods=["GET"])
-def get_mussab_chart():
-    filename = "Mussab_Ali_contributions_pie.png"
-    filepath = os.path.join(CHART_FOLDER, filename)
-
-    if os.path.exists(filepath):
-        return send_file(filepath, mimetype='image/png')
-    else:
-        return jsonify({"error": "Chart not found"}), 404
-
-
-@app.route("/api/charts/<filename>")
-def get_chart(filename):
-    filepath = os.path.join(CHART_FOLDER, filename)
-
-    if os.path.exists(filepath):
-        return send_file(filepath, mimetype="image/png")
-    else:
-        return jsonify({"error": "File not found"}), 404
-
 
 @app.route("/api/contributions/<candidate>", methods=["GET"])
 def get_contributions(candidate):
@@ -137,18 +107,6 @@ def csv_to_json_response(filename):
     except Exception as e:
         logging.error(f"Failed to parse CSV {filename}: {e}")
         return jsonify({"error": "Failed to parse CSV"}), 500
-
-# ✅ Route: Top Employers
-@app.route("/api/top_employers/<candidate>", methods=["GET"])
-def get_top_employers(candidate):
-    filename = f"{candidate}_top_employers.csv"
-    return csv_to_json_response(filename)
-
-# ✅ Route: Top Occupations
-@app.route("/api/top_occupations/<candidate>", methods=["GET"])
-def get_top_occupations(candidate):
-    filename = f"{candidate}_top_occupations.csv"
-    return csv_to_json_response(filename)
 
 @app.route("/api/repeat_donors/<candidate>", methods=["GET"])
 def get_repeat_donor_frequency(candidate):
@@ -343,6 +301,44 @@ def top_donors_bar(candidate):
     }
     return jsonify(chart_data)
 
+@app.route("/api/top_employers_bar/<candidate>", methods=["GET"])
+def top_employers_bar(candidate):
+    filename = f"{candidate}_combined_contributions.csv"
+    path = os.path.join(OUTPUT_FOLDER, filename)
+    if not os.path.exists(path):
+        return jsonify({"error": "File not found"}), 404
+
+    df = pd.read_csv(path)
+    
+    # Filter for records with valid Employer values
+    df = df[df["Employer"].notna()]
+    
+    # Group by Employer and sum contributions
+    top_employers = (
+        df.groupby("Employer")["ContributionAmount"]
+        .sum()
+        .sort_values(ascending=False)
+        .head(10)
+    )
+    
+    labels = top_employers.index.tolist()
+    data = top_employers.values.tolist()
+
+    # Generate distinct colors for bars
+    backgroundColor = [
+        "#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f",
+        "#edc949", "#af7aa1", "#ff9da7", "#9c755f", "#bab0ab"
+    ]
+
+    chart_data = {
+        "labels": labels,
+        "datasets": [{
+            "label": "Donation Amount by Employer",
+            "data": data,
+            "backgroundColor": backgroundColor[:len(labels)]
+        }]
+    }
+    return jsonify(chart_data)
 
 # --- New: Repeated Donors Bar Chart data endpoint ---
 @app.route("/api/repeat_donors_bar/<candidate>", methods=["GET"])
@@ -395,7 +391,7 @@ def donations_over_time(candidate):
         return jsonify({"error": "File not found"}), 404
 
     df = pd.read_csv(filepath)
-    df["ContributionDate"] = pd.to_datetime(df["ContributionDate"], errors="coerce")
+    df["ContributionDate"] = pd.to_datetime(df["ContributionDate"], format="%m/%d/%Y", errors="coerce")
 
     today = pd.Timestamp.today()
     # Filter out future-dated donations
@@ -439,8 +435,11 @@ def get_total_donations(candidate):
         return jsonify({"error": "File not found"}), 404
 
     df = pd.read_csv(filepath)
-
+    df.drop_duplicates(inplace=True)
+# Or if you want to consider specific columns for uniqueness:
+# df.drop_duplicates(subset=['ContributorGroup', 'ContributionAmount', 'First_Name', 'Last_Name', 'ContributionDate'], inplace=True)
     total = df["ContributionAmount"].sum()
+    total = float(round(total, 2))  # Convert to Python float
 
     return jsonify({
         "candidate": candidate,
