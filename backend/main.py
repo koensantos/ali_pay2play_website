@@ -617,7 +617,11 @@ def get_contract_matches(candidate):
             "details": str(e)
         }), 500
 
-
+@app.route('/download/p2p-2024')
+def download_p2p_contributions():
+    directory = os.path.join(os.getcwd(), 'backend/cleaning_scripts/raw')
+    filename = 'P2P_2024_Contributions.html'
+    return send_from_directory(directory, filename, as_attachment=True)
 
 
 if __name__ == "__main__":

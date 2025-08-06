@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Pie, Bar, Line } from "react-chartjs-2";
+import React, {useEffect, useState} from "react";
+import { Pie, Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import "./Draft.css";
+import WattermanPhoto from "./img/watterman.jpg";
 
 export default function Draft() {
   const [chartData, setChartData] = useState(null);
   const [topDonorsBarData, setTopDonorsBarData] = useState(null);
-  const [repeatDonorsData, setRepeatDonorsData] = useState(null);
-  const [donationsOverTimeData, setDonationsOverTimeData] = useState(null);
+  const [topEmployersBarData, setTopEmployersBarData] = useState(null);
   const [donorSearchResults, setDonorSearchResults] = useState([]);
   const [donorHistory, setDonorHistory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
-  const [vendorMatches, setVendorMatches] = useState([]);
-  const [contractMatches, setContractMatches] = useState([]);
 
   const backendUrl = "http://localhost:5000";
+
+ 
+  
 
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/Joyce_Watterman`)
@@ -27,8 +28,9 @@ export default function Draft() {
         const values = data.map((item) => item.ContributionAmount);
         const total = values.reduce((acc, val) => acc + val, 0);
         const backgroundColors = [
-          "#E63946", "#1D3557", "#457B9D", "#A8DADC", "#FFBE0B",
-          "#FB8500", "#6A994E", "#9D4EDD", "#D62828", "#2A9D8F"
+          "#E63946", "#1D3557", "#457B9D", "#000000", "#FFBE0B",
+          "#FB8500", "#6A994E", "#9D4EDD", "#D62828", "#2A9D8F",
+          "#B5838D", "#FF006E", "#8338EC", "#3A86FF"
         ];
         setChartData({
           labels,
@@ -46,26 +48,9 @@ export default function Draft() {
   }, []);
 
   useEffect(() => {
-    fetch(`${backendUrl}/api/repeated_donors/Joyce_Watterman`)
+    fetch(`${backendUrl}/api/top_employers_bar/Joyce_Watterman`)
       .then((res) => res.json())
-      .then((data) => {
-        if (!Array.isArray(data)) return;
-        const labels = data.map((item) => item.ContributorName);
-        const values = data.map((item) => item.TotalAmount);
-        const backgroundColors = labels.map(() =>
-          `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
-        );
-        setRepeatDonorsData({
-          labels,
-          datasets: [{ label: "Total Donations", data: values, backgroundColor: backgroundColors }],
-        });
-      }).catch(console.error);
-  }, []);
-
-  useEffect(() => {
-    fetch(`${backendUrl}/api/donations_over_time/Joyce_Watterman`)
-      .then((res) => res.json())
-      .then(setDonationsOverTimeData)
+      .then(setTopEmployersBarData)
       .catch(console.error);
   }, []);
 
@@ -73,27 +58,9 @@ export default function Draft() {
     fetch(`${backendUrl}/api/total_donations/Joyce_Watterman`)
       .then(res => res.json())
       .then(data => {
-        if (data.total_donations !== undefined) setTotalDonations(data.total_donations);
-      })
-      .catch(console.error);
-  }, []);
-
-  // Vendor Matches
-  useEffect(() => {
-    fetch(`${backendUrl}/api/vendors/Joyce_Watterman`)
-      .then((res) => res.json())
-      .then((data) => {
-        setVendorMatches(data.vendor_matches || []);
-      })
-      .catch(console.error);
-  }, []);
-
-  // Contract Matches
-  useEffect(() => {
-    fetch(`${backendUrl}/api/contracts/Joyce_Watterman`)
-      .then((res) => res.json())
-      .then((data) => {
-        setContractMatches(data.contract_matches || []);
+        if (data.total_donations !== undefined) {
+          setTotalDonations(data.total_donations);
+        }
       })
       .catch(console.error);
   }, []);
@@ -143,148 +110,136 @@ export default function Draft() {
       .catch(() => setSearchStatus("Failed to load donor history."));
   }
 
+  // Y-axis label wrapping function for charts
+  function truncateLabel(label, maxLength = 15) {
+  if (label.length <= maxLength) return label;
+  return label.slice(0, maxLength - 1) + '…';
+}
+
+
+    const donorChartOptions = {
+    indexAxis: "y",
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: {
+        ticks: {
+          callback: (value) => "$" + value.toLocaleString(),
+        },
+        beginAtZero: true,
+      },
+      y: {
+        ticks: {
+          callback: function(value) {
+            const label = this.getLabelForValue(value);
+            return truncateLabel(label);
+          },
+          font: { size: 12 },
+          padding: 10
+        },
+        grid: { display: false },
+      }
+    }
+  };
+
+
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
-      <h1>Joyce Watterman: Campaign Finance Visuals</h1>
+      <h1>Jim McGreevey: Campaign Finance Visuals</h1>
 
-      {/* Biography, Policies, Background */}
-      <section style={{ marginBottom: "2rem" }}>
-        <h2>Biography</h2>
-        <p>Jim McGreevey served as the 52nd Governor of New Jersey ...</p>
-        <h2>Policies</h2>
-        <p>During his tenure, McGreevey emphasized ethics reform ...</p>
-        <h2>Background</h2>
-        <p>Born in Jersey City in 1957, Jim McGreevey attended ...</p>
-      </section>
-
-      {/* Legend Description */}
-      <div className="legend-description">
-        <h3>Legend Description</h3>
-        <ul>
-          <li><strong>Individual - Small</strong>: $0 – $499</li>
-          <li><strong>Individual - Medium</strong>: $500 – $1,999</li>
-          <li><strong>Individual - Large</strong>: $2,000 – $5,500</li>
-          <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses listed <a href="https://www.elec.nj.gov/pay2play/quickdownload.html">in NJ Elec.</a></li>
-          <li><strong>Corporate</strong>: Donors from corporations.</li>
-          <li><strong>Union</strong>: Labor unions</li>
-          <li><strong>Political Committee</strong>: PACs, party committees</li>
-          <li><strong>Interest Group</strong>: Trade or ideological orgs</li>
-          <li><strong>Candidate</strong>: Self or campaign committee</li>
-          <li><strong>Other / Unknown</strong>: Uncategorized donations</li>
-        </ul>
-      </div>
-
-      {/* Total Donations Panel */}
       {totalDonations !== null && (
         <div className="total-donations-panel">
-          <h3>Total Donations</h3>
+          <h2>Total Donations</h2>
           <p>${totalDonations.toLocaleString()}</p>
         </div>
       )}
 
-      {/* Pie Chart */}
+      <div className="bio-container">
+        <section className="bio-text">
+          <h2>Biography</h2>
+          <p>Joyce Watterman is the current City Council President of Jersey City, the first African American woman to hold that position in the city’s history. She has served on the City Council since 2013 and has been a central figure in shaping local legislation over the past decade. Known for her deep roots in faith and community service, Watterman is also a pastor and co-founder of the Women Working Together empowerment conference. Her public service is shaped by a commitment to housing justice, youth programming, and economic opportunity, and she has consistently positioned herself as a unifier across Jersey City’s diverse communities. She is now running for mayor to become the city’s first woman and first Black mayor.</p>
+          <h2>Policies</h2>
+          <ul>
+            <li>Affordable housing: Advocating for more mixed-income development, stronger rent protections, and increased affordable unit requirements in new developments.</li>
+            <li>Workforce development: Supporting job training programs, small business growth, and pathways to careers for underserved residents.</li>
+            <li>Public safety: Backing reforms that blend traditional policing with mental health services and community-based interventions.</li>
+            <li>Youth and education: Promoting afterschool programs, youth mentorship, and city-funded internship opportunities.</li>
+            <li>Equity and representation: Strengthening the city's commitment to diversity in hiring, contracting, and public leadership roles.</li>
+          </ul>
+          <h2>Background</h2>
+          <p>Joyce Watterman was born and raised in Jersey City and has spent her life serving the community through both political and religious leadership. Before entering politics, she worked in faith-based outreach, housing advocacy, and as a minister. She holds a degree in Organizational Leadership from Pillar College and has completed training in nonprofit and theological studies. Her grassroots approach has made her a consistent advocate for marginalized communities, particularly women, renters, and working families. As Council President, she has played a role in key development and zoning decisions, while maintaining a focus on fairness and accessibility in local government. Her campaign presents a vision of experienced leadership grounded in service and faith.</p>
+        </section>
+        <div className="bio-image">
+          <img src={WattermanPhoto} alt="Joyce Watterman" />
+        </div>
+      </div>
+
       {chartData && (
-        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", marginBottom: "3rem" }}>
-          <div style={{ flex: "1 1 500px", minWidth: "400px", height: "450px" }}>
-            <Pie data={chartData} options={{ maintainAspectRatio: false, plugins: { legend: { display: false } } }} />
+        <div className="chart-legend-container">
+          <h1>Campaign Contributions Breakdown</h1>
+          <div className="chart-wrapper">
+            <Pie
+              data={chartData}
+              options={{
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } }
+              }}
+            />
           </div>
-          <div style={{ flex: "1 1 250px", minWidth: "250px" }}>
-            <h3>Legend</h3>
-            <ul>
-              {chartData.labels.map((label, idx) => {
-                const value = chartData.datasets[0].data[idx];
-                const percent = ((value / chartData.total) * 100).toFixed(2);
-                return (
-                  <li key={label}>
-                    <span style={{
-                      display: "inline-block", width: "12px", height: "12px",
-                      backgroundColor: chartData.datasets[0].backgroundColor[idx], marginRight: "8px"
-                    }}></span>
-                    {label}: ${value.toLocaleString()} ({percent}%)
-                  </li>
-                );
-              })}
-            </ul>
+          <div className="legend-container">
+            <div className="legend-description">
+              <h3>Legend Description</h3>
+              <ul>
+                <li><strong>Individual - Small</strong>: $0 – $499</li>
+                <li><strong>Individual - Medium</strong>: $500 – $1,999</li>
+                <li><strong>Individual - Large</strong>: $2,000 – $5,500</li>
+                <li><strong>P2P Corporate</strong>: Pay-to-play donations from businesses listed <a href="https://www.elec.nj.gov/pay2play/quickdownload.html">in NJ Elec.</a></li>
+                <li><strong>Corporate</strong>: Donors from corporations.</li>
+                <li><strong>Union</strong>: Labor unions</li>
+                <li><strong>Political Committee</strong>: PACs, party committees</li>
+                <li><strong>Interest Group</strong>: Trade or ideological orgs</li>
+                <li><strong>Candidate</strong>: Self or campaign committee</li>
+                <li><strong>Other / Unknown</strong>: Uncategorized donations</li>
+              </ul>
+            </div>
+            <div className="legend-wrapper">
+              <h3>Legend</h3>
+              <ul>
+                {chartData.labels.map((label, idx) => {
+                  const value = chartData.datasets[0].data[idx];
+                  const percent = ((value / chartData.total) * 100).toFixed(2);
+                  return (
+                    <li key={label}>
+                      <span className="legend-color-box" style={{ backgroundColor: chartData.datasets[0].backgroundColor[idx] }}></span>
+                      {label}: ${value.toLocaleString()} ({percent}%)
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       )}
 
-      {/* Line Chart */}
-      <div style={{ marginBottom: "3rem", height: 350 }}>
-        <h2>Donations Over Time</h2>
-        {donationsOverTimeData ? (
-          <Line data={donationsOverTimeData} options={{
-            responsive: true, maintainAspectRatio: false,
-            scales: { y: { beginAtZero: true, ticks: { callback: v => "$" + v.toLocaleString() } } }
-          }} />
-        ) : <p>Loading donations over time...</p>}
-      </div>
+      <div className="donor-bar-container">
+        <div className="bar-chart">
+          <h2>Top 10 Donors</h2>
+          <div className="chart-inner-wrapper">
+            {topDonorsBarData ? (
+              <Bar data={topDonorsBarData} options={donorChartOptions} />
+            ) : <p>Loading top donors...</p>}
+          </div>
+        </div>
 
-      {/* Top Donors */}
-      <div style={{ marginBottom: "3rem", height: 400 }}>
-        <h2>Top 10 Donors</h2>
-        {topDonorsBarData ? (
-          <Bar data={topDonorsBarData} options={{ indexAxis: "y", responsive: true }} />
-        ) : <p>Loading top donors...</p>}
-      </div>
-
-      {/* Repeated Donors */}
-      <div style={{ marginBottom: "3rem", height: 300 }}>
-        <h2>Repeated Donors</h2>
-        {repeatDonorsData ? (
-          <Bar data={repeatDonorsData} options={{ responsive: true }} />
-        ) : <p>Loading repeated donors data...</p>}
-      </div>
-
-      {/* Vendor Matches */}
-      <div style={{ marginTop: "3rem", maxWidth: 700 }}>
-        <h2>Vendor and Contract Matches</h2>
-        <h3>Vendor Directory Matches</h3>
-        {vendorMatches.length > 0 ? (
-          <table border="1" cellPadding="10">
-            <thead>
-              <tr><th>Business Name</th><th>Total Contributions</th></tr>
-            </thead>
-            <tbody>
-              {vendorMatches.map((item, idx) => (
-                <tr key={idx}><td>{item.Business_Name}</td><td>${item.ContributionAmount.toLocaleString()}</td></tr>
-              ))}
-            </tbody>
-          </table>
-        ) : <p>No vendor matches found.</p>}
-
-       {/* Contract Matches */}
-        <h3>Contract Results Matches</h3>
-        {contractMatches.length > 0 ? (
-          <table border="1" cellPadding="10">
-            <thead>
-              <tr>
-                <th>Donor Business</th>
-                <th>Donated</th>
-                <th>Contract Value</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {contractMatches.map((item, idx) => (
-                <tr key={idx}>
-                  <td>{item["Donor Business"] || "N/A"}</td>
-                  <td>
-                    {item["Donated"] !== undefined
-                      ? `$${Number(item["Donated"]).toLocaleString()}`
-                      : "N/A"}
-                  </td>
-                  <td>
-                    {item["Contract Value"] && item["Contract Value"] !== "Unknown"
-                      ? item["Contract Value"]
-                      : "N/A"}
-                  </td>
-                  <td>{item["Status"] || "N/A"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : <p>No contract matches found.</p>}
+        <div className="bar-chart">
+          <h2>Top 10 Employer Donors</h2>
+          <div className="chart-inner-wrapper">
+            {topEmployersBarData ? (
+              <Bar data={topEmployersBarData} options={donorChartOptions} />
+            ) : <p>Loading top employer donors...</p>}
+          </div>
+        </div>
       </div>
 
       {/* Donor Search */}
@@ -333,25 +288,20 @@ export default function Draft() {
         )}
       </div>
 
-      {/*Red Flag Section*/}
-      <div style={{ marginTop: "3rem", padding: "1rem"}}>
+      <div style={{ marginTop: "3rem", padding: "1rem" }}>
         <h2>Red Flags</h2>
-        <p>Bill O'Dea has received significant contributions from various sources, including:</p>
+        <p>Bill O'Dea has received significant contributions from various sources...</p>
         <ul>
           <li>Pay-to-play corporate donors</li>
           <li>Large individual contributions from high-net-worth individuals</li>
           <li>Repeated donations from the same entities</li>
         </ul>
-        <p>These patterns may indicate potential conflicts of interest or undue influence in his campaign.</p>
-
       </div>
 
-      {/* Download / Navigation */}
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
-        <a href={`${backendUrl}/download/Joyce_Watterman_combined_contributions.csv`} download className="btn-download">
-          Download Full Contributions CSV
-        </a>
+        <a href={`${backendUrl}/download/Joyce_Watterman_combined_contributions.csv`} download className="btn-download">Download Full Contributions CSV</a>
         <a href="/" className="btn-return">Return to Home Page</a>
+        <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=454445">View Full ELEC Records</a>
       </div>
     </div>
   );
