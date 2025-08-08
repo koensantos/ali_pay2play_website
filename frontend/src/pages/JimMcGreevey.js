@@ -290,7 +290,7 @@ export default function Draft() {
 
       <div style={{ marginTop: "3rem", padding: "1rem" }}>
         <h2>Red Flags</h2>
-        <p>Bill O'Dea has received significant contributions from various sources...</p>
+        <p>Jim McGreevey has received the most amount of donations that are suspicious in terms of pay2play for conflict of interest. All of them are listed below.</p>
         <ul>
           <li>Pay-to-play corporate donors</li>
           <li>Large individual contributions from high-net-worth individuals</li>
