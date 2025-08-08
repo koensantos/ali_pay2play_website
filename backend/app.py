@@ -10,13 +10,7 @@ from rapidfuzz import fuzz
 from cleaning_scripts import campaigndonations
 
 app = Flask(__name__)
-CORS(app, resources={
-    r"/api/*": {
-        "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
-        "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+CORS(app, origins=["https://ali-pay2play-website.vercel.app"])
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
