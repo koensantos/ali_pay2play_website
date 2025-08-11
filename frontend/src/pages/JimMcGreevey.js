@@ -13,7 +13,11 @@ export default function Draft() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
-
+  const [openIndex, setOpenIndex] = React.useState(null);
+    
+      const toggleAccordion = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+      };
   const backendUrl = "https://ali-pay2play-backend.onrender.com";
 
  
@@ -292,11 +296,58 @@ export default function Draft() {
         <h2>Red Flags</h2>
         <p>Jim McGreevey has received the most amount of donations that are suspicious in terms of pay2play for conflict of interest. All of them are listed below.</p>
         <ul>
+          <li>Chisea Shaninian & Giantomisi PC</li>
+
+            <ul>McGreevey has received at least 200 unique donations from this law firm, ranging from small donations from employees to large donations from the law firm itself. They have raised close to $100,000 for McGreevey, with donations from them spiking around December 2023. </ul>
           <li>Pay-to-play corporate donors</li>
           <li>Large individual contributions from high-net-worth individuals</li>
           <li>Repeated donations from the same entities</li>
         </ul>
       </div>
+
+      <section id="red-flags" className="accordion-container">
+        <h2>Red Flags</h2>
+        <p>Jim McGreevey has received the most pay2play and conflict of interest donations out of all the candidates. They are all listed below (Disclaimer: This list is being updated as more research and more donations come through with quarterly reports. This is as up-to-date as it can be.):</p>
+        {/* Accordion item 0 */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 0 ? "active" : ""}`}
+          onClick={() => toggleAccordion(0)}
+          aria-expanded={openIndex === 0}
+        >
+          Chisea Shaninian & Giantomisi 
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 0 && (
+          <div className="accordion-content">
+          <p>Chisea Shaninian & Giantomisi has donated approximately $100,000 to McGreevey's campaign. This includes employee donations and company donations, leading up to about to 200 unique donations, with donations spiking around December 2023.</p>
+          <p><strong>Res 23-481 </strong>This resolution ratifies a professional services agreement with the law firm Chiesa Shahinian & Giantomasi PC to represent Jersey City Police Officers Leon Tucker and Saad Hashmi in a lawsuit related to the Estate of Hiram Gonzalez. The contract, effective March 29, 2023, is for up to $40,000 at an hourly rate of $175, and includes expenses. The firm has complied with all required political contribution disclosures and the City's Pay-to-Play laws. Funds of $5,000 are available for this purpose in the current budget, with continuation contingent on future budget appropriations. The resolution and related documents will be made publicly available as required by law. <a href="https://cityofjerseycity.civicweb.net/document/90902/R0205489_%20Chiesa%20Shahinian%20_%20Giantomasi.pdf?handle=30D5C0EA4875471BAE6D17B7FF828B36">Resolution PDF</a></p>
+          </div>
+        )}
+      </div>
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 1 ? "active" : ""}`}
+          onClick={() => toggleAccordion(1)}
+          aria-expanded={openIndex === 1}
+        >
+          T&M Associates
+          <span className="accordion-arrow" />
+          </button>
+        {openIndex === 1 && (
+          <div className="accordion-content">
+            <p>T&M Associates have donated $8,250 to McGreevey's campaign. These donations are deemed suspicious because T&M Associates have been given contracts by Jersey City listed below.</p>
+            <p><strong>Res 25-073 </strong>The City of Jersey City approved Resolution 25-073 on January 29, 2025 , awarding a professional services contract to T&M Associates. This contract, not to exceed $300,000.00 , is for on-call civil engineering services for the Department of Infrastructure, Division of Engineering. The term of the contract is twelve (12) months , effective upon its execution by City Officials. Assuming execution around the approval date, the contract is expected to run from approximately January 29, 2025, to January 28, 2026. <a href="https://cityofjerseycity.civicweb.net/document/419212/Resolution%20authorizing%20an%20On-Call%20Engineering%20P.pdf?handle=806F0E4674C744FF9B1D369B03C2C114">Resolution PDF</a></p>
+            <p><strong>Res 22-421 </strong>This resolution from the City of Jersey City authorizes a professional services contract with T & M Associates for electrical engineering design and construction administration services. The services are specifically for site lighting improvements at Canco Park (Project No. 2019-042). The contract amount will not exceed $23,140.00. This agreement was awarded through a "fair and open" process, complying with the "Pay-to-Play Law" provisions, and is exempt from public bidding as a professional service. The resolution, approved on June 15, 2022, also includes requirements for Equal Employment Opportunity (EEO) and Affirmative Action (AA) compliance. <a href="https://cityofjerseycity.civicweb.net/document/67682/Resolution%20authorizing%20the%20award%20of%20a%20professio.pdf?handle=6380AC9B1A6F42CCB8AA2EED8AE03DDD">Resolution PDF</a></p>
+            <p><strong>Res 21-169 </strong>This resolution authorizes awarding a $32,500 professional engineering services contract to T&M Associates for the design of the Second Street rail crossing, roadway, and signal improvements (Project No. 17-010-T). Three proposals were received, and T&M Associates was selected based on experience and cost, offering the lowest bid compared to $119,932 and $167,395 from other firms. The contract, effective upon execution for 12 months, is exempt from competitive bidding under the Local Public Contracts Law and awarded through the Pay-to-Play “Direct and Open Process.” T&M Associates met all compliance requirements, including Pay-to-Play and EEO/AA certifications, and funds are available from account 04-215-55-151-990. The resolution and agreement will be made publicly available as required by law. <a href="https://cityofjerseycity.civicweb.net/document/41538/Second%20Street%20Rail%20Crossing%20Improvements.pdf?handle=8B3ACEC34ACE4E9292B8513614AD7ACC">Resolution PDF</a></p>
+            <p><strong>Res 20-503 </strong>The City of Jersey City has authorized a professional services contract with T & M Associates for services related to Reservoir #3 Safety Improvements and Restoration of Reservoir #3 Screen House projects. The contract is for $17,720.00 and is for a twelve-month term. These services include updating land and base mapping, performing site inspection and preliminary NJDEP coordination, and providing ADA compliance recommendations. The City informally solicited a quotation from T & M Associates, who had previously provided a land survey of the site. The Director of Architecture recommended awarding the contract to T & M Associates based on their qualifications. <a href="cityofjerseycity.civicweb.net/document/46974/Professional%20Services%20Agreement%20with%20Eric%20M.%20Be.pdf?handle=8814FBDE9C4A4165A8583CC51BAEFE65">Resolution PDF</a></p>
+            <p><strong>Res 20-270 </strong>The City of Jersey City has awarded a professional services contract to T&M Associates to prepare plans and specifications for the Morris Canal Greenway Segments 5, 10, and 11. This project is funded by a $3,500,000.00 Regional Transportation Alternatives Program grant from the New Jersey Department of Transportation. T&M Associates, a qualified engineering firm, will provide surveying, construction plans, and specifications, with the contract value exceeding $17,500.00. The contract was awarded directly and openly as a statutorily permitted contract under the "Pay to Play Law." The resolution ensures that the firm complies with all necessary certifications and disclosure requirements. <a href="cityofjerseycity.civicweb.net/document/46974/Professional%20Services%20Agreement%20with%20Eric%20M.%20Be.pdf?handle=8814FBDE9C4A4165A8583CC51BAEFE65">Resolution PDF</a></p>
+            <p><strong>Res 19-1766 </strong>The City of Jersey City has awarded a one-year professional engineering services contract to T&M Associates for on-call civil engineering services, with a total cost not to exceed $250,000.00. This contract was awarded through a "fair and open process" in accordance with the New Jersey Pay-to-Play Law and is exempt from public bidding under the Local Public Contracts Law. T&M Associates was chosen due to its pre-qualification, experience in municipal engineering, and satisfactory past performance. The agreement is subject to the firm providing evidence of compliance with Affirmative Action Amendments to the Law Against Discrimination, and the resolution will be publicly published. <a href="https://cityofjerseycity.civicweb.net/filepro/document/7925/RES%202019%2002%2027.pdf">Resolution PDF (Listed in pgs 345-389)</a></p>
+          </div>
+        )}  
+      </div>  
+      </section>
+
 
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         <a href={`${backendUrl}/download/Jim_McGreevey_combined_contributions.csv`} download className="btn-download">Download Full Contributions CSV</a>
