@@ -146,7 +146,7 @@ export default function Draft() {
 
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
-      <h1>Jim McGreevey: Campaign Finance Visuals</h1>
+      <h1>Mussab Ali: Campaign Finance Visuals</h1>
 
       {totalDonations !== null && (
         <div className="total-donations-panel">
@@ -291,12 +291,7 @@ export default function Draft() {
 
       <div style={{ marginTop: "3rem", padding: "1rem" }}>
         <h2>Red Flags</h2>
-        <p>Bill O'Dea has received significant contributions from various sources...</p>
-        <ul>
-          <li>Pay-to-play corporate donors</li>
-          <li>Large individual contributions from high-net-worth individuals</li>
-          <li>Repeated donations from the same entities</li>
-        </ul>
+        <p>Mussab Ali has pledged that he will not take any pay2play corporate money. So far, he has stayed true to his promise, as none of his donations are pay2play or possible conflicts of interest. All of his contributions are available to download using the link at the end of the page if you want to investigate for yourself.</p>
       </div>
 
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
