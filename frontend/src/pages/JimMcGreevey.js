@@ -347,6 +347,91 @@ export default function Draft() {
         )}  
       </div>  
       {/*French & Parrello Associates*/}
+      <div className="accordion-item">
+        <buttton
+          className={`accordion-header ${openIndex === 2 ? "active" : ""}`}
+          onClick={() => toggleAccordion(2)}
+          aria-expanded={openIndex === 2}
+          >
+          French & Parrello Associates
+          <span className="accordion-arrow" />
+          </buttton>
+          {openIndex === 2 && (
+          <div className="accordion-content">
+            <p>French & Parrello Associates have donated $9,700 across two years. The company's donations are deemed suspicious because the company has received several contracts with Jersey City, calling into question violating pay2play and conflict of interest. The contracts are listed below.</p>
+            <p><strong>Res 25-185 </strong>The City of Jersey City approved Resolution 25-185 on March 12, 2025, authorizing a professional services contract with French and Parrello Associates, PA. This contract, not to exceed $162,113.00, is for engineering design services related to improvements on Manhattan Avenue and Franklin Street. The project is funded by a FY 2023 Bikeways Program grant from the New Jersey Department of Transportation (NJDOT), which has allocated $670,000.00 for the project's construction. French and Parrello Associates, PA will provide services including site investigation, preliminary and final design, bid support, and construction administration and inspection over a twelve-month period. <a href="https://cityofjerseycity.civicweb.net/document/423978/A%20resolution%20authorizing%20the%20award%20of%20a%20Profess.pdf?handle=3B15684D8D82440FA91FEA9B99C3DF71">Resolution PDF</a></p>
+            <p><strong>Res 23-276 </strong>This resolution from the City of Jersey City authorizes an amendment to a professional engineering services contract with French & Parrello Associates (FPA) for the Central Avenue Streetscape and Roadway Improvements Project No. 18-017-E. The amendment increases the contract by an additional $73,668.00 due to unforeseen site conditions and material delivery delays, requiring additional inspection and construction management services. These additional services include streetscape renderings, "Hollywood Star" research, basement slab designs, night paving inspection, and coordination with PSE&G. The original contract was for $368,340.00, awarded on January 8, 2020, and this amendment extends the term by one year. <a href="https://cityofjerseycity.civicweb.net/document/88149/R0204894_%20CENTRAL%20AVE%20CLOSEOUT%20Addtl%20Srvcs.pdf?handle=6C63AD7797814142BBB5B6CD4E8C811E">Resolution PDF</a></p>
+            <p><strong>Res 22-604 </strong>This resolution awards a $199,960 professional services contract to French and Parrello Associates to prepare surveys, construction plans, specifications, and provide project administration for the West Side Avenue Improvements Project. The project is funded by a $1,768,519 FY 2022 NJDOT Municipal Aid grant, and the contract term is 12 months from execution. The firm met all compliance requirements under the City’s Pay-to-Play laws, political contribution disclosure rules, and affirmative action regulations. The contract is exempt from public bidding under the Local Public Contracts Law and will be made publicly available as required. Funds for the contract are available in account 04-215-55-985-990. <a href="https://cityofjerseycity.civicweb.net/document/71966/Resolution%20Authorizing%20a%20Professional%20Services%20.pdf?handle=3474AC5BBBA1437DAC78FC97E0B397E5">Resolution PDF</a></p>
+            <p><strong>Res 20-142 </strong>This resolution awards a $27,600 professional services contract to French & Parrello Associates for electrical and plumbing engineering services for the Ferris Triangle Park Improvements project. The firm was selected as the lowest of three proposals received and will provide electrical design, drawings, and specifications to complement plans prepared by the Division of Architecture for public bidding. The 24-month contract is exempt from public bidding under the Local Public Contracts Law and complies with the City’s Pay-to-Play, political contribution disclosure, and affirmative action requirements. Funding is available from account 04-215-55-141-990, and the resolution and agreement will be made publicly accessible. <a href="https://cityofjerseycity.civicweb.net/document/20098/Resolution%20authorizing%20a%20PSA%20to%20French%20_%20Parrel.pdf?handle=BF0EDBF0CE09497E9CC3E22E1D418E8F">Resolution PDF</a></p>
+            <p><strong>Res 20-038 </strong>The City of Jersey City has awarded a professional services contract to French and Parrello Associates to prepare plans and specifications for the Central Avenue Streetscape and Roadway Improvements project. This project is supported by a $2,370,990.00 Municipal Aid Program grant from the New Jersey Department of Transportation. French and Parrello Associates, a qualified consulting firm, will provide surveying, construction plans, specifications, and project administration. The contract, valued at over $17,500.00, was awarded directly and openly as a statutorily permitted contract under the "Pay to Play Law". The resolution ensures the firm's compliance with necessary certifications and disclosure requirements. <a href="https://cityofjerseycity.civicweb.net/document/18461/Resolution%20Awarding%20a%20Professional%20Services%20Con.pdf?handle=FBCBD4EF025249679D93310A30405804">Resolution PDF</a></p>
+          </div>)}
+
+      </div>
+
+      {/*Persistent Construction Corp*/}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 3 ? "active" : ""}`}
+          onClick={() => toggleAccordion(3)}
+          aria-expanded={openIndex === 3}
+        >
+          Anthony Grano, Owner of Persistent Construction Corp
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 3 && (
+          <div className="accordion-content">
+            <ul>
+              <li>
+                Solomon received a donation of $2,000 from Anthony Grano on March 27, 2025. Persistent Construction Corp has received multiple contracts from Jersey City listed below.
+              </li>
+              <ul>
+                <li>
+                  Res 24-859: The City of Jersey City has renewed an open-end contract with Persistent Construction, Inc. for snow removal services for the Department of Public Works, Division of Sanitation. This renewal, approved on November 26, 2024, is for an additional one-year period effective from January 1, 2025, to December 31, 2025. The total cost of this renewed contract will not exceed $1,130,370.00, with an initial allocation of $10,000.00 from the Division of Sanitation Operating Account.{" "}
+                  <a
+                    href="https://cityofjerseycity.civicweb.net/document/413259/R0210559_%20Renewal%201_1%20for%20Snow%20Removal%20Only.pdf?handle=EE9FDAD333FA488CBBBAF537DB24F84A"
+                  >
+                    Resolution PDF
+                  </a>
+                </li>
+                <li>
+                  Res 23-931: On December 13, 2023, Jersey City approved Resolution 23-931, awarding a one-year open-end contract to Persistent Construction Inc. for snow removal services for the Department of Public Works, Division of Sanitation. The contract is valued at $1,102,800.00, with an initial encumbrance of $10,000.00 from the 2024 operating budget. The agreement includes set unit costs and allows for an optional one-year extension. The contract is contingent on compliance with affirmative action requirements and the availability of future budget appropriations. Payments will be made only upon certified completion of services according to specifications.{" "}
+                  <a
+                    href="https://cityofjerseycity.civicweb.net/document/413259/R0210559_%20Renewal%201_1%20for%20Snow%20Removal%20Only.pdf?handle=EE9FDAD333FA488CBBBAF537DB24F84A"
+                  >
+                    Resolution PDF
+                  </a>
+                </li>
+                <li>
+                  Res 21-334: The City of Jersey City ratified an emergency contract with Persistent Construction, Inc. for $24,000.00 to build six parklets across the city. This initiative aimed to create outdoor spaces for small businesses and residents for social distancing and reopening efforts during the COVID-19 pandemic. The contract was awarded as an emergency measure, exempting it from public bidding requirements. Brian D. Platt, the then Business Administrator, issued an emergency certification on October 17, 2020, formally authorizing the parklet construction due to the public health emergency. Paul Russo, the Municipal Engineer, certified that the services rendered by Persistent Construction, Inc. were fair and reasonable.{" "}
+                  <a
+                    href="https://cityofjerseycity.civicweb.net/document/46245/Resolution%20ratifying%20an%20emergency%20contract%20awar.pdf?handle=91AC5DC128344431A12830A6261832AD"
+                  >
+                    Resolution PDF
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        )}
+      </div>
+      {/*Charles and Seryl Kushner - Kushner Company*/}
+      <div className = "accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 4 ? "active" : ""}`}
+          onClick={() => toggleAccordion(4)}
+          aria-expanded={openIndex === 4}>
+          Charles and Seryl Kushner - Kushner Company
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 4 && (
+           <div className="accordion-content">
+            <p>Charles and Seryl Kushner have donated $10,100 each to McGreevey's campaign in 2023 and 2024. Charles and Seryl has donated $100,000 to the Make America Great Again PAC in 2015 and $1 million to America First PAC in 2023, a pro-Trump PAC. They have also held a fundraiser for Trump in their Long Branch home in 2017. They have also begun real estate developments in Jersey City, such as One Journal Square, 65 Bay Street, known as Trump Bay Street, and Journal Squared. These developments  have often been shadowed by ethical, legal, and labor disputes, ranging from funding transparency to compliance with labor laws and local governance challenges.</p>
+            <p>The support of McGreevey shows the favorability of his campaign to their real estate interests. These donations have been deemed a red flag because of the history of the donations of the Kushners, their alignment with Donald Trump, and possible real estate favorability for current projects. </p>
+            <p>Furthermore, Jersey City has accepeted a donation of $47,800, which was approved on November 14, 2024. The donation was to the  Department of Recreation and Youth Development to provide financial support to any Pershing Field Pool projects and f a new refrigeration system at the Lafayette Pool complex concession stand. This was voted unanimously by the Jersey City Council. <a href="https://cityofjerseycity.civicweb.net/document/413754/Aquatics%20Donation.pdf?handle=A5324B6A2456431F8E32B36D6938E0E7">Donation PDF</a></p>
+          </div>
+        )}
+            
+      </div>
       </section>
 
 
