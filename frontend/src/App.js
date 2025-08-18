@@ -6,6 +6,8 @@ import MussabAli from "./pages/MussabAli";
 import BillODea from "./pages/BillODea";
 import JoyceWatterman from "./pages/JoyceWatterman";
 import JamesSolomon from "./pages/JamesSolomon";
+import AllCandidatesComparison from "./pages/AllCandidatesComparison";
+
 
 export default function App() {
   return (
@@ -17,6 +19,7 @@ export default function App() {
         <Route path="/BillODea" element={<BillODea />} />
         <Route path="/JoyceWatterman" element={<JoyceWatterman />} />
         <Route path="/JamesSolomon" element={<JamesSolomon />} />
+        <Route path="/comparison" element={<AllCandidatesComparison />} />
       </Routes>
     </Router>
   );

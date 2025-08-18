@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-// Candidate image imports (replace with correct image paths)
 import mussabImg from "./img/mussab.jpg";
 import odeaImg from "./img/odea.jpg";
 import mcgreeveyImg from "./img/mcgreevey1.jpg";
@@ -14,14 +13,45 @@ const candidates = [
   { name: "Bill O'Dea", path: "/BillODea", image: odeaImg },
   { name: "Jim McGreevey", path: "/JimMcGreevey", image: mcgreeveyImg },
   { name: "James Solomon", path: "/JamesSolomon", image: solomonImg },
-  { name: "Joyce Watterman", path: "/JoyceWatterman", image: wattermanImg },
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="homepage">
+      {/* Fixed Mobile Header */}
+      <div className="mobile-header">
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          ☰ <span className="menu-label">Menu</span>
+        </button>
+        {menuOpen && (
+          <nav className="mobile-menu">
+            {candidates.map((candidate) => (
+              <Link
+                to={candidate.path}
+                key={candidate.name}
+                onClick={() => setMenuOpen(false)}
+              >
+                {candidate.name}
+              </Link>
+            ))}
+          </nav>
+        )}
+      </div>
+
       <header>
         <h1>Pay2Play: Follow the money in Jersey City politics</h1>
+
+        {/* Quick Donation Comparison link at top */}
+        <div className="quick-comparison">
+          <Link to="/comparison">Quick Donation Comparison</Link>
+        </div>
+
         <p className="intro">
           This platform promotes transparency around campaign contributions to Jersey City's 2025 mayoral candidates.
           We break down donation trends, pay-to-play patterns, and top donors—giving voters a clearer picture of the financial forces behind each campaign.

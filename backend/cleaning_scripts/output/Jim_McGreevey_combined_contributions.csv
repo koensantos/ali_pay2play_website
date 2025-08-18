@@ -837,7 +837,6 @@ Individual - Medium,1000,JOHN,LUTZ,,12/12/2023,MC DERMOTT WILL AND EMERY,ATTORNE
 Individual - Small,250,JOSEPH,MACCHI,,04/22/2024,HUDSON COUNTY,SERVICES OCCUPATION,JERSEY CITY,NJ
 Individual - Medium,500,JOSEPH,MACCHI,,03/25/2024,HUDSON COUNTY,SERVICES OCCUPATION,JERSEY CITY,NJ
 Individual - Large,3300,DONCO,MACESKI,,06/28/2024,SUPERIOR FENCE SERVICES LLC,CONSTRUCTION TRADE/LABOR TRADE,PARSIPPANY,NJ
-Individual - Small,400,DAVID,MAIRO,,12/18/2023,CSG LAW,ATTORNEY,WEST ORANGE,NJ
 Individual - Small,200,DAVID,MAIRO,,12/03/2024,CSG LAW,ATTORNEY,WEST ORANGE,NJ
 Individual - Small,250,MARK,MAKHAIL,,03/19/2025,UNEMPLOYED,UNEMPLOYED,JERSEY  CITY,NJ
 Individual - Large,2500,ADAM,MALAMUT,,07/16/2024,MALAMUT AND ASSOCIATES LLC,ATTORNEY,CHERRY HILL,NJ
@@ -1305,8 +1304,6 @@ P2P Corporate,1000,,,"Chasan Lamparello Mallon & Cappuzzo, Pc",12/04/2023,"Chasa
 Individual - Large,2600,Francis J.,Giantomasi,,12/18/2023,Chiesa Shahinian & Giantomasi Pc,,North Caldwell,NJ
 Individual - Large,1000,Francis J.,Giantomasi,,12/10/2024,Chiesa Shahinian & Giantomasi Pc,,North Caldwell,NJ
 Individual - Large,2000,Dennis M.,Toft,,12/18/2023,Chiesa Shahinian & Giantomasi Pc,,Berkeley Heights,NJ
-Individual - Small,350,Dennis M.,Toft,,12/9/2024,Chiesa Shahinian & Giantomasi Pc,,Berkeley Heights,NJ
-Individual - Small,300,John G.,Valeri Jr,,12/13/2023,Chiesa Shahinian & Giantomasi Pc,,Basking Ridge,NJ
 Individual - Small,400,Stephen,Kisker,,12/20/2023,Chiesa Shahinian & Giantomasi Pc,,Basking Ridge,NJ
 Individual - Small,300,Edward,Stevenson,,11/26/2024,Chiesa Shahinian & Giantomasi Pc,,Ridgewood,NJ
 Individual - Small,400,Salimbene,Melissa,,11/26/2024,Chiesa Shahinian & Giantomasi Pc,,Montclair,NJ
@@ -1314,23 +1311,16 @@ Individual - Medium,1500,Peter,Nussbaum,,12/25/2023,Chiesa Shahinian & Giantomas
 Individual - Small,250,Tremain,Stanley,,12/18/2023,Chiesa Shahinian & Giantomasi Pc,,Summit,NJ
 Individual - Small,300,Tremain,Stanley,,12/9/2024,Chiesa Shahinian & Giantomasi Pc,,Summit,NJ
 Individual - Small,400,David,Mairo,,12/18/2023,Chiesa Shahinian & Giantomasi Pc,,West Orange,NJ
-Individual - Small,400,Gemma Giantomasi,Daico,,12/18/2023,Chiesa Shahinian & Giantomasi Pc,,Essex Fells,NJ
 Individual - Small,350,Gemma Giantomasi,Daico,,11/26/2024,Chiesa Shahinian & Giantomasi Pc,,Essex Fells,NJ
-Individual - Medium,500,Junie,Hahn,,12/12/2023,Chiesa Shahinian & Giantomasi Pc,,Scotch Plains,NJ
 Individual - Medium,300,Junie,Hahn,,11/26/2024,Chiesa Shahinian & Giantomasi Pc,,Scotch Plains,NJ
-Individual - Large,1000,Jeffrey,Chiesa,,12/9/2024,Chiesa Shahinian & Giantomasi Pc,,Roseland,NJ
-Individual - Small,300,John,Lloyd,,11/27/2024,Chiesa Shahinian & Giantomasi Pc,,Allendale,NJ
 Individual - Small,400,Heidi,Hansen,,12/12/2023,Chiesa Shahinian & Giantomasi Pc,,Randolph,NJ
 Individual - Small,400,Jarrett,Hansen,,12/12/2023,Chiesa Shahinian & Giantomasi Pc,,Randolph,NJ
-Individual - Large,350,Adam,Derman,,12/1/2024,Chiesa Shahinian & Giantomasi Pc,,Sparta,NJ
+Individual - Small,350,Adam,Derman,,12/1/2024,Chiesa Shahinian & Giantomasi Pc,,Sparta,NJ
 Individual - Medium,500,Michelle,Bergeron Spell,,12/19/2023,Chiesa Shahinian & Giantomasi Pc,,Mountain Lakes,NJ
 Individual - Small,300,Lisa John,Basta,,12/19/2023,Chiesa Shahinian & Giantomasi Pc,,West Caldwell,NJ
 Individual - Small,300,Jennifer,Porter,,12/19/2023,Chiesa Shahinian & Giantomasi Pc,,Morristown,NJ
 Individual - Medium,750,Morris,Bienenfeld,,12/19/2023,Chiesa Shahinian & Giantomasi Pc,,Teaneck,NJ
 Individual - Medium,1000,Susan Reach,Winters,,12/20/2023,Chiesa Shahinian & Giantomasi Pc,,Bonita Springs,FL
-Individual - Small,300,Robert,Hornby,,12/20/2023,Chiesa Shahinian & Giantomasi Pc,,Lebanon,NJ
-Individual - Small,400,Joseph,Saphia,,12/20/2023,Chiesa Shahinian & Giantomasi Pc,,Manhasset,NY
-Individual - Small,400,Michelle,Schaap,,12/20/2023,Chiesa Shahinian & Giantomasi Pc,,West Orange,NJ
 Individual - Medium,500,Adam,Friedman,,12/27/2023,Chiesa Shahinian & Giantomasi Pc,,North Caldwell,NJ
 P2P Corporate,5200,,,Chiesa Shahinian & Giantomasi Pc,12/21/2023,Chiesa Shahinian & Giantomasi Pc,,Roseland,NJ
 P2P Corporate,5200,,,Chiesa Shahinian & Giantomasi Pc,12/10/2024,Chiesa Shahinian & Giantomasi Pc,,Roseland,NJ

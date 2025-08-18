@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { Pie, Bar } from "react-chartjs-2";
+import { Link } from "react-router-dom";
 import "chart.js/auto";
 import "./Draft.css";
 import ODeaPhoto from "./img/odea.jpg";
+import { HashLink } from "react-router-hash-link";
+
 
 export default function Draft() {
   const [chartData, setChartData] = useState(null);
@@ -14,6 +17,7 @@ export default function Draft() {
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
   const [openIndex, setOpenIndex] = React.useState(null);
+
   
     const toggleAccordion = (index) => {
       setOpenIndex(openIndex === index ? null : index);
@@ -21,9 +25,18 @@ export default function Draft() {
   
 
   const backendUrl = "https://ali-pay2play-backend.onrender.com";
+  const otherCandidates = [
+    { name: "Mussab Ali", path: "/MussabAli" },
+    { name: "Bill O'Dea", path: "/BillODea" },
+    { name: "Jim McGreevey", path: "/JimMcGreevey" },
+    { name: "James Solomon", path: "/JamesSolomon" },
+    { name: "Joyce Watterman", path: "/JoyceWatterman" },
+  ];
 
  
-  
+  useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
 
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/Bill_O'Dea`)
@@ -160,6 +173,13 @@ export default function Draft() {
           <p>${totalDonations.toLocaleString()}</p>
         </div>
       )}
+
+      <div className="red-flag-warning">
+        <p>
+          This candidate has been flagged for having suspicious donations.{" "}
+          <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
+        </p>
+      </div>
 
       <div className="bio-container">
         <section className="bio-text">
@@ -305,7 +325,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(1)}
           aria-expanded={openIndex === 1}
         >
-          Sal's Electric CO.
+          Sal's Electric CO. - $1,000
           <span className="accordion-arrow" />
         </button>
         {openIndex === 1 && (
@@ -330,12 +350,12 @@ export default function Draft() {
           onClick={() => toggleAccordion(2)}
           aria-expanded={openIndex === 2}
         >
-          William J Guarini Plumbing
+          William J Guarini Plumbing - $10,575
           <span className="accordion-arrow" />
         </button>
         {openIndex === 2 && (
           <div className="accordion-content">
-            <p>O'Dea has received a total of {/* donation total here */}.</p>
+            <p>O'Dea has received a total of $10,575, with $2,975 coming from the company itself, $2,500 from Krysta Gomes, and $5,100 from Matthew LeFurge. These donations have been flagged as suspicious because William J. Guarini, INC has a contract with the city, raising concerns of potential conflict of interest and pay2play. The resolution is listed below.</p>
             <p>
               <strong>Res 24-335:</strong> The City of Jersey City approved Resolution 24-335 on May 8, 2024, authorizing a contract award of $120,000.00 to William J. Guarini, Inc. for citywide plumbing services. This contract was awarded through the New Jersey Cooperative Purchasing Alliance (NJCPA), Bergen County Coop, for the Department of Public Works, Division of Buildings and Street Maintenance. The contract term is effective from May 9, 2024, through December 31, 2024. Initial funding of $20,000.00 is available in the operating account, with the continuation of the contract subject to the availability of funds in the 2024 fiscal year permanent budget.
             </p>
@@ -353,7 +373,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(3)}
           aria-expanded={openIndex === 3}
         >
-          Royal Printing Services
+          Royal Printing Services - $2,600
           <span className="accordion-arrow" />
         </button>
         {openIndex === 3 && (
@@ -386,7 +406,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(4)}
           aria-expanded={openIndex === 4}
         >
-          McManimon, Scotland & Baumann, LLC
+          McManimon, Scotland & Baumann, LLC - $5,400
           <span className="accordion-arrow" />
         </button>
         {openIndex === 4 && (
@@ -459,12 +479,12 @@ export default function Draft() {
           onClick={() => toggleAccordion(5)}
           aria-expanded={openIndex === 5}
         >
-          Nicholas Netta - Netta Architects LLC
+          Nicholas Netta - Netta Architects LLC - $250
           <span className="accordion-arrow" />
         </button>
         {openIndex === 5 && (
           <div className="accordion-content">
-            <p>O'Dea has received a total of $2,300 from the lawfirm itself. He has also received $2,500 from Niti Raval, $1,000 from Bernie Kenny, and $4,000 from Edward Florio. This amounts the total donations to $9,800 in support of O'Dea. They have received several contracts related to different cases in Jersey City listed below.</p>
+            <p>O'Dea has received a total of $250 from Nicholas Netta. Netta Architects has received several contracts and amendments related to constuction projects with firehouses. This has beend deemed a suspicious donation because it could represent conflict of interest with the company.</p>
             <p><strong>Res 25-077 </strong>This resolution ratifies a third amendment to a contract with Netta Architects for services related to the Engine Co. #10 and Ladder #12 New Firehouse project. The original contract was for schematic design, design development, construction documents, and construction administration services. Previous amendments were made due to geotechnical and environmental evaluations, contaminated groundwater, and design changes, which increased the contract amount and extended the term. Due to COVID-19 supply chain issues, unforeseen subsurface conditions, and a Stop Work Order, the project experienced extensive delays, and the initial construction company was declared in default. This third amendment provides an additional $384,676.72 for supplemental geotechnical investigation services, modifications to contract documents, and additional bid assistance and construction administration services, bringing the total contract amount to $1,080,830.00. The contract term is also extended for an additional twenty-four months, from June 28, 2023, to June 28, 2025. <a href="https://cityofjerseycity.civicweb.net/document/93088/R0205683_%20NETTA%20ARCHITECTS%20Amending%20Resolution.pdf?handle=F8D8DEFAC3D64A89BAD9FE83F3C75CC6">Resolution PDF</a></p>
             <p><strong>Res 22-420 </strong>This resolution from the City of Jersey City ratifies a second amendment to a professional services contract with Netta Architects. The amendment is for schematic design, design development, construction documents, and construction administration services for the new Engine Co #10 and Ladder #12 Firehouse. Due to unforeseen site conditions, including the need for geotechnical and environmental evaluations and subsequent redesign, the contract amount was increased by an additional $220,500.00, bringing the total to $818,000.00. The original contract for $498,500.00 was awarded in August 2018 for a 36-month term, with previous amendments increasing the total to $597,500.00. This agreement was processed as a professional service, exempt from public bidding, and complies with "Pay-to-Play" regulations. <a href="https://cityofjerseycity.civicweb.net/document/66670/Resolution%20Ratifying%20a%20Second%20Amendment%20to%20a%20co.pdf?handle=F0C6148D03F74F37A3A38DCDD3F0750C">Resolution PDF</a></p>
             <p><strong>Res 20-541 </strong>The City of Jersey City has authorized an amendment to its contract with Netta Architects for services related to the Engine Co. #10 - New Firehouse project. This amendment, approved on August 12, 2020, increases the total contract amount by an additional $29,400.00, bringing the new total to $626,900.00. The amendment is necessary due to the discovery of contaminated groundwater at the site, requiring the design and incorporation of a sub-slab vapor mitigation system. Netta Architects will provide architectural, MEP engineering, and civil engineering services for this additional work. The original contract and previous amendments were also for schematic design, design development, construction documents, and construction administration services. <a href="https://cityofjerseycity.civicweb.net/document/31444/Resolution%20authorizing%20an%20amendment%20to%20Netta%20Ar.pdf?handle=B97332BC06AE4503AFEA397F2A18DF96">Resolution PDF</a></p>
@@ -479,7 +499,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(6)}
           aria-expanded={openIndex === 6}
         >
-          Florio Kenny Raval, LLP
+          Florio Kenny Raval, LLP - $2,300
           <span className="accordion-arrow" />
         </button>
         {openIndex === 6 && (
@@ -514,9 +534,126 @@ export default function Draft() {
         )}
     </div>
 
+    {/* Spiniello Companies */}
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 7 ? "active" : ""}`}
+        onClick={() => toggleAccordion(7)}
+        aria-expanded={openIndex === 7}
+      >
+        Spiniello Companies - $10,400
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 7 && (
+        <div className="accordion-content">
+         <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $58,942.69</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $124,284.38</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $297,428.86</a></p>
+         <p><strong>24-454 </strong>the Jersey City Council approved Resolution 24-454 rejecting the lowest bid of $800,000 from Hear Construction, Inc. for the City Hall – Foundation Project (No. 2022-029A), deeming it “unbalanced” and unresponsive since it was significantly lower than the City’s estimated cost. Instead, the contract was awarded to Spiniello Companies, the second lowest responsive and responsible bidder, for $1,175,500. The City authorized a total encumbrance of $1,410,600, which includes a 20% contingency, with funds certified as available under the Department of Infrastructure, Division of Architecture’s capital accounts. <a href="https://cityofjerseycity.civicweb.net/document/403929">Resolution PDF</a></p>
+         
+        </div>
+      )}
+    </div>
+
+    {/* Waters, McPherson, McNeil */}
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
+        onClick={() => toggleAccordion(8)}
+        aria-expanded={openIndex === 8}
+      >
+        Waters, McPherson, McNeil - $6,250 
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 8 && (
+        <div className="accordion-content">
+          <p>The donations from Waters, McPherson, McNeil P.C. to Bill O'Dea and other Jersey City candidates raise potential red flags due to the firm’s direct financial and business interests with the city, as well as the timing of these contributions. The law firm represents Honeywell International Inc. in environmental remediation projects affecting public rights-of-way in Jersey City, including the execution and termination of Notices in Lieu of Deed Notices, such as the resolution approving the updated NILODN for Fisk Street and other ROWs in July 2024 (<a href="https://cityofjerseycity.civicweb.net/document/406670">Resolution PDF</a>). Additionally, the firm has historically represented developers in high-value waterfront redevelopment projects in the city (<a href="https://www.lawwmm.com/HudsonRiverRedev.asp">Waters, McPherson, McNeil Hudson River Waterfront Redevelopment</a>). The firm has also received substantial payments from the city itself, including $448,690.70 (<a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25</a>), $338,281.63 (<a href="https://cityofjerseycity.civicweb.net/document/403052">5/14/25</a>), $26,852.32 (<a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23</a>) $11,510.03 (<a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/2023</a>). The donations, totaling $31,200 from the firm and $5,200 from David McPherson personally, occurred shortly after or around the time of these municipal approvals and expenditures, creating a perception that the contributions could influence officials overseeing matters directly affecting the firm’s clients. While no direct quid pro quo is proven, the overlap of campaign contributions with public decisions and city payments involving the firm constitutes a potential pay-to-play concern and represents a red flag for regulatory or ethical scrutiny.</p>
+        </div>
+      )}
+    </div>
+
+    {/* Tsigonia Paint Sales of Jersey City */}
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
+        onClick={() => toggleAccordion(9)}
+        aria-expanded={openIndex === 9}
+      >
+        Tsigonia Paint Sales of Jersey City - $300
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 9 && (
+        <div className="accordion-content">
+          <p>Tsigonia Paint Sales of Jersey City has made a total of $300 in contributions to Bill O'Dea's campaign. They have received expenditure payments from Jersey City, making it a suspicious donation due to possible city influence. The expenditures given to the company are listed below.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $1,255.83</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $458.03</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $805</a></p>
+
+        </div>
+      )}
+
+
+    </div>
+
+    <div className="accordion-item"> 
+      <button
+        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
+        onClick={() => toggleAccordion(10)}
+        aria-expanded={openIndex === 10}
+      >
+        AMI Hospitality - $1,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 10 && (
+        <div className="accordion-content">
+          <p>AMI Hospitality's donation has been flagged because the company appears on the city's Special Improvement District assessment list with a property valued $4,639,000. AMI Hospitality stands to benefit financially from public spending that enhances the value and marketability of its property, raising the concerns of potential conflict of interest and pay-to-play concern. The ordinace is listed below.</p>
+          <a href="https://cityofjerseycity.civicweb.net/document/413672">Ordinance 24-104</a>
+        </div>
+      )}
+    </div>
+
+    <div className ="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
+        onClick={() => toggleAccordion(11)}
+        aria-expanded={openIndex === 11}
+      >
+        Leemark Electrics - $3,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 11 && (
+        <div className="accordion-content">
+          <p>Leemark Electrics has donated $1,000 to O'Dea, and Anthony Cantanio has made a total of $3,000 in contributions to Bill O'Dea's campaign. Leemark Electrics have done several projects in Jersey City relating lighting, power distribution, etc. Along with their projects, they have received expenditures from Jersey City and had received a contract in October 2020. The details are listed below.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/44186">$32,700 - 3/4/21</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/35805">Resolution PDF</a></p>
+          <p><a href ="https://cityofjerseycity.civicweb.net/document/30560">$9,800 - 2/19/20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/23359">$4,120 - 3/18/20</a></p>
+
+        </div>
+      )}
+    </div>
+
+
+
+
+
+
+
 
 
     </section>
+    <div className="other-candidates-section">
+      <h2>Other Candidates</h2>
+      <ul className="other-candidates-list">
+        {otherCandidates
+          .filter(c => c.name !== "Bill O'Dea") // exclude current candidate
+          .map(c => (
+            <li key={c.name}>
+              <Link to={c.path}>{c.name}</Link>
+            </li>
+        ))}
+      </ul>
+    </div>
 
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         <a href={`${backendUrl}/download/Bill_O'Dea_combined_contributions.csv`} download className="btn-download">Download Full Contributions CSV</a>

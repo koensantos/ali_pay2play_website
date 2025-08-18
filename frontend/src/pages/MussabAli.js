@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 import { Pie, Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import "./Draft.css";
 import MussabPhoto from "./img/mussab.jpg";
+
+
 
 export default function Draft() {
   const [chartData, setChartData] = useState(null);
@@ -16,8 +19,18 @@ export default function Draft() {
 
   const backendUrl = "https://ali-pay2play-backend.onrender.com";
 
+const otherCandidates = [
+    { name: "Mussab Ali", path: "/MussabAli" },
+    { name: "Bill O'Dea", path: "/BillODea" },
+    { name: "Jim McGreevey", path: "/JimMcGreevey" },
+    { name: "James Solomon", path: "/JamesSolomon" },
+    { name: "Joyce Watterman", path: "/JoyceWatterman" },
+  ];
+
  
-  
+  useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
 
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/Mussab_Ali`)
@@ -292,6 +305,19 @@ export default function Draft() {
       <div style={{ marginTop: "3rem", padding: "1rem" }}>
         <h2>Red Flags</h2>
         <p>Mussab Ali has pledged that he will not take any pay2play corporate money. So far, he has stayed true to his promise, as none of his donations are pay2play or possible conflicts of interest. All of his contributions are available to download using the link at the end of the page if you want to investigate for yourself.</p>
+      </div>
+
+      <div className="other-candidates-section">
+        <h2>Other Candidates</h2>
+        <ul className="other-candidates-list">
+          {otherCandidates
+            .filter(c => c.name !== "Mussab Ali") // exclude current candidate
+            .map(c => (
+              <li key={c.name}>
+                <Link to={c.path}>{c.name}</Link>
+              </li>
+          ))}
+        </ul>
       </div>
 
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>

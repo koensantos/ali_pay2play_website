@@ -326,3 +326,65 @@ button[type="submit"] {
   color: #1a40af;
 }
 
+.red-flag-warning {
+  background-color: #b71c1c; /* Deep red */
+  color: white;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: pulseRed 1.5s infinite; /* Optional attention pulse */
+}
+
+.red-flag-warning a {
+  color: #ffeb3b; /* Yellow for contrast */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.red-flag-warning a:hover {
+  color: white;
+}
+
+@keyframes pulseRed {
+  0% { box-shadow: 0 0 10px rgba(183, 28, 28, 0.8); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 0, 1); }
+  100% { box-shadow: 0 0 10px rgba(183, 28, 28, 0.8); }
+}
+
+.other-candidates-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.other-candidates-section h2 {
+  margin-bottom: 1rem;
+  color: #1d3557;
+}
+
+.other-candidates-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.other-candidates-list li a {
+  text-decoration: none;
+  color: #e63946;
+  font-weight: bold;
+}
+
+.other-candidates-list li a:hover {
+  text-decoration: underline;
+}
+

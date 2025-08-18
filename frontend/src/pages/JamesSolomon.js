@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { Pie, Bar } from "react-chartjs-2";
+import { Link } from "react-router-dom";
 import "chart.js/auto";
 import "./Draft.css";
 import SolomonPhoto from "./img/solomon.jpg";
+import { HashLink } from "react-router-hash-link";
+
 
 
 export default function Draft() {
@@ -23,8 +26,20 @@ export default function Draft() {
 
   const backendUrl = "https://ali-pay2play-backend.onrender.com";
 
+  const otherCandidates = [
+    { name: "Mussab Ali", path: "/MussabAli" },
+    { name: "Bill O'Dea", path: "/BillODea" },
+    { name: "Jim McGreevey", path: "/JimMcGreevey" },
+    { name: "James Solomon", path: "/JamesSolomon" },
+    { name: "Joyce Watterman", path: "/JoyceWatterman" },
+  ];
+
  
   
+
+  useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, []);
 
   useEffect(() => {
     fetch(`${backendUrl}/api/contributions/James_Solomon`)
@@ -163,7 +178,10 @@ export default function Draft() {
       )}
 
       <div className="red-flag-warning">
-        <p>This candidate has been flagged for having suspicious donations. <a href="#red-flags">Click here to view them.</a></p>
+        <p>
+          This candidate has been flagged for having suspicious donations.{" "}
+          <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
+        </p>
       </div>
 
       <div className="bio-container">
@@ -313,7 +331,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(0)}
           aria-expanded={openIndex === 0}
         >
-          RD Parisi Associates
+          RD Parisi Associates - $31,300
           <span className="accordion-arrow" />
         </button>
         {openIndex === 0 && (
@@ -357,7 +375,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(1)}
           aria-expanded={openIndex === 1}
         >
-          Michael Oriani - Manager of William J Guarini INC
+          Michael Oriani - Manager of William J Guarini INC - $5,500
           <span className="accordion-arrow" />
         </button>
         {openIndex === 1 && (
@@ -398,7 +416,7 @@ export default function Draft() {
     onClick={() => toggleAccordion(2)}
     aria-expanded={openIndex === 2}
   >
-    Wilentz, Goldman, and Spitzer
+    Wilentz, Goldman, and Spitzer - $5,200
     <span className="accordion-arrow" />
   </button>
   {openIndex === 2 && (
@@ -435,14 +453,14 @@ export default function Draft() {
     onClick={() => toggleAccordion(3)}
     aria-expanded={openIndex === 3}
   >
-    Boswell Engineering
+    Boswell Engineering - $2,500
     <span className="accordion-arrow" />
   </button>
   {openIndex === 3 && (
     <div className="accordion-content">
       <ul>
         <li>
-          Solomon has received a donation of $2,500 from the company on April 23, 2025. They hold several contracts around New Jersey, and have been involved in several projects in Hoboken. They were also awarded a contract in 2020 listed below, which Solomon voted Yes to.
+          They hold several contracts around New Jersey, and have been involved in several projects in Hoboken. They were also awarded a contract in 2020 listed below, which Solomon voted Yes to.
         </li>
         <li>
           The Jersey City Municipal Council approved a resolution to award a $73,500 professional engineering services contract to Boswell Engineering, Inc. for the Grand Street Improvements project (No. 19-014-E). The firm was selected based on its qualifications and compliance with the city's Pay-to-Play and political contribution disclosure regulations. The contract will run for 12 months and is exempt from public bidding under New Jersey law for professional services. Funds for the project are available from account #04-215-55-151-990, and all required compliance and disclosure certifications will be filed with the resolution. The award must be publicly announced within 10 days.{" "}
@@ -464,14 +482,14 @@ export default function Draft() {
     onClick={() => toggleAccordion(4)}
     aria-expanded={openIndex === 4}
   >
-    Adams Rehmann & Heggan Associates INC
+    Adams Rehmann & Heggan Associates INC - $5,000 Donation
     <span className="accordion-arrow" />
   </button>
   {openIndex === 4 && (
     <div className="accordion-content">
       <ul>
         <li>
-          Solomon has received a $5,000 donation from the company on March 27, 2025. This company has been awareded several contracts to maintain digital tax maps. The resolutions are explained below:
+          This company has been awareded several contracts to maintain digital tax maps. The resolutions are explained below:
         </li>
         <ul>
           <li>
@@ -520,14 +538,14 @@ export default function Draft() {
     onClick={() => toggleAccordion(5)}
     aria-expanded={openIndex === 5}
   >
-    Anthony Grano, Owner of Persistent Construction Corp
+    Anthony Grano, Owner of Persistent Construction Corp - $2,000 Donation
     <span className="accordion-arrow" />
   </button>
   {openIndex === 5 && (
     <div className="accordion-content">
       <ul>
         <li>
-          Solomon received a donation of $2,000 from Anthony Grano on March 27, 2025. Persistent Construction Corp has received multiple contracts from Jersey City listed below.
+          Persistent Construction Corp has received multiple contracts from Jersey City listed below.
         </li>
         <ul>
           <li>
@@ -567,7 +585,7 @@ export default function Draft() {
     onClick={() => toggleAccordion(6)}
     aria-expanded={openIndex === 6}
   >
-    Antonelli Kantor Rivera
+    Antonelli Kantor Rivera - $3,750 Donation
     <span className="accordion-arrow" />
   </button>
   {openIndex === 6 && (
@@ -591,9 +609,86 @@ export default function Draft() {
   )}
 </div>
 
+      {/* Accordion item 7 */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 7 ? "active" : ""}`}
+          onClick={() => toggleAccordion(7)}
+          aria-expanded={openIndex === 7}
+        >
+          Next Generation Leaders - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 7 && (
+          <div className="accordion-content">
+            <p>
+              The donation from Next Generation Leaders to James Solomon is a red flag because the PAC itself has been donated to by companies that hold contracts with Jersey City. Public contract resolutions show multiple city vendors — including engineering and law firms like Adams, Rehmann & Heggan Associates (ARH) — contributing thousands of dollars to Next Generation Leaders. These are the same types of contractors who regularly seek and receive city business.
+            </p>
+            <p>When Next Generation Leaders then donated $5,000 to Solomon, it created an indirect pipeline: City Contractors → Next Generation Leaders → Candidate. In Solomon’s case, the concern is heightened because Adams, Rehmann & Heegan Associates (who has also been flagged for suspicious donations) not only funded the PAC but also donated to him directly, giving contractors two channels of influence. The companies who have received contracts and have contributed to Next Generation Leaders are listed below.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/410745">COLLIERS ENGINEERING & DESIGN D/B/A MASER CONSULTING, P.A. to Next Generations($1,000 1/17/23)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/391047">Adams, Rehmann, & Heegan to Next Generation Leaders ($500 on 1/25/23, $1,000 on 5/19/23, $1,000 on 9/22/23, $1,000 on 10/20/23)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/93215">COLLIERS ENGINEERING & DESIGN D/B/A MASER CONSULTING, P.A. to Next Generations($4,000 on 11/01/22)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/82736">Adams, Rehmann, & Heegan to Next Generation Leaders ($1,000 on 9/23/22)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/71950">Colliers Engineering & Design D/B/A Maser Consulting, P.A. to Next Generation Leaders ($6,500 on 9/21/20 and $700 on 12/30/20)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/63458">Adams, Rehmann, & Heegan to Next Generation Leaders ($1,000 on 1/15/21 and $2,500 on 10/8/21)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/28021">T&M Associates ($2,500 on 5/1/20)</a></p>
+
+
+
+          </div>
+        )}
+      </div>
+
+      {/* Waters, McPherson, McNeil */}
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
+        onClick={() => toggleAccordion(8)}
+        aria-expanded={openIndex === 8}
+      >
+        Waters, McPherson, McNeil - $1,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 8 && (
+        <div className="accordion-content">
+          <p>The donations from Waters, McPherson, McNeil P.C. to  James Solomon and other Jersey City candidates raise potential red flags due to the firm’s direct financial and business interests with the city, as well as the timing of these contributions. The law firm represents Honeywell International Inc. in environmental remediation projects affecting public rights-of-way in Jersey City, including the execution and termination of Notices in Lieu of Deed Notices, such as the resolution approving the updated NILODN for Fisk Street and other ROWs in July 2024 (<a href="https://cityofjerseycity.civicweb.net/document/406670">Resolution PDF</a>). Additionally, the firm has historically represented developers in high-value waterfront redevelopment projects in the city (<a href="https://www.lawwmm.com/HudsonRiverRedev.asp">Waters, McPherson, McNeil Hudson River Waterfront Redevelopment</a>). The firm has also received substantial payments from the city itself, including $448,690.70 (<a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25</a>), $338,281.63 (<a href="https://cityofjerseycity.civicweb.net/document/403052">5/14/25</a>), $26,852.32 (<a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23</a>) $11,510.03 (<a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/2023</a>). The donations, totaling $31,200 from the firm and $5,200 from David McPherson personally, occurred shortly after or around the time of these municipal approvals and expenditures, creating a perception that the contributions could influence officials overseeing matters directly affecting the firm’s clients. While no direct quid pro quo is proven, the overlap of campaign contributions with public decisions and city payments involving the firm constitutes a potential pay-to-play concern and represents a red flag for regulatory or ethical scrutiny.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
+        onClick={() => toggleAccordion(9)}
+        aria-expanded={openIndex === 9}
+      >
+        Postnet and Rich Mendez, Owner of Postnet - $600
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 9 && (
+        <div className="accordion-content">
+          <p>Solomon has a received a total of $600 from Postnet and Rich Mendez, who is the owner of Postnet. While the donation amounts themselves are modest, the fact that the contributor has received transactionf from the city creates a potential conflict of interest, raising concerns about whether contributions could influence city decisions. The transaction PDFs are listed below.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $860</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318"></a>10/11/22 - $740</p>
+        </div>
+      )}
+    </div>
 
       {/* Add more items below in same pattern */}
     </section>
+
+    <div className="other-candidates-section">
+      <h2>Other Candidates</h2>
+      <ul className="other-candidates-list">
+        {otherCandidates
+          .filter(c => c.name !== "James Solomon") // exclude current candidate
+          .map(c => (
+            <li key={c.name}>
+              <Link to={c.path}>{c.name}</Link>
+            </li>
+        ))}
+      </ul>
+    </div>
 
       
 
