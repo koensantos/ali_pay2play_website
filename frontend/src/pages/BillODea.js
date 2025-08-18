@@ -16,15 +16,15 @@ export default function Draft() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
-  const [openIndex, setOpenIndex] = React.useState(null);
 
-  
-    const toggleAccordion = (index) => {
-      setOpenIndex(openIndex === index ? null : index);
-    };
-  
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const backendUrl = "https://ali-pay2play-backend.onrender.com";
+
   const otherCandidates = [
     { name: "Mussab Ali", path: "/MussabAli" },
     { name: "Bill O'Dea", path: "/BillODea" },
@@ -32,12 +32,13 @@ export default function Draft() {
     { name: "James Solomon", path: "/JamesSolomon" },
   ];
 
- 
   useEffect(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }, []);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
+  // ✅ Single useEffect for all API calls
   useEffect(() => {
+    // contributions
     fetch(`${backendUrl}/api/contributions/Bill_O'Dea`)
       .then((res) => res.json())
       .then((data) => {
@@ -55,24 +56,22 @@ export default function Draft() {
           datasets: [{ data: values, backgroundColor: backgroundColors.slice(0, labels.length) }],
           total,
         });
-      }).catch(console.error);
-  }, []);
+      })
+      .catch(console.error);
 
-  useEffect(() => {
+    // top donors
     fetch(`${backendUrl}/api/top_donors_bar/Bill_O'Dea`)
       .then((res) => res.json())
       .then(setTopDonorsBarData)
       .catch(console.error);
-  }, []);
 
-  useEffect(() => {
+    // top employers
     fetch(`${backendUrl}/api/top_employers_bar/Bill_O'Dea`)
       .then((res) => res.json())
       .then(setTopEmployersBarData)
       .catch(console.error);
-  }, []);
 
-  useEffect(() => {
+    // total donations
     fetch(`${backendUrl}/api/total_donations/Bill_O'Dea`)
       .then(res => res.json())
       .then(data => {
@@ -81,8 +80,9 @@ export default function Draft() {
         }
       })
       .catch(console.error);
-  }, []);
+  }, [backendUrl]);
 
+  // donor search
   function handleSearch(e) {
     e.preventDefault();
     if (!searchTerm.trim()) {
@@ -130,12 +130,11 @@ export default function Draft() {
 
   // Y-axis label wrapping function for charts
   function truncateLabel(label, maxLength = 15) {
-  if (label.length <= maxLength) return label;
-  return label.slice(0, maxLength - 1) + '…';
-}
+    if (label.length <= maxLength) return label;
+    return label.slice(0, maxLength - 1) + "…";
+  }
 
-
-    const donorChartOptions = {
+  const donorChartOptions = {
     indexAxis: "y",
     responsive: true,
     maintainAspectRatio: false,
@@ -149,16 +148,16 @@ export default function Draft() {
       },
       y: {
         ticks: {
-          callback: function(value) {
+          callback: function (value) {
             const label = this.getLabelForValue(value);
             return truncateLabel(label);
           },
           font: { size: 12 },
-          padding: 10
+          padding: 10,
         },
         grid: { display: false },
-      }
-    }
+      },
+    },
   };
 
 
