@@ -744,7 +744,7 @@ export default function Draft() {
         onClick={() => toggleAccordion(16)}
         aria-expanded={openIndex === 16}
       >
-        Spiniello Companies
+        Spiniello Companies - $10,100
         <span className="accordion-arrow" />
       </button>
       {openIndex === 16 && (
@@ -764,7 +764,7 @@ export default function Draft() {
           <h2>Other Candidates</h2>
           <ul className="other-candidates-list">
             {otherCandidates
-              .filter(c => c.name !== "James Solomon") // exclude current candidate
+              .filter(c => c.name !== "Jim McGreevey") // exclude current candidate
               .map(c => (
                 <li key={c.name}>
                   <Link to={c.path}>{c.name}</Link>

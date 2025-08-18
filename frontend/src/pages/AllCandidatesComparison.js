@@ -16,14 +16,21 @@ import "./DonationComparison.css";
 
 // Example hardcoded data (replace with your real numbers)
 const candidateData = [
-  { name: "Mussab Ali", total: 50000, redFlag: 15000 },
-  { name: "Bill O'Dea", total: 40000, redFlag: 5000 },
-  { name: "Jim McGreevey", total: 60000, redFlag: 20000 },
-  { name: "James Solomon", total: 30000, redFlag: 2000 },
+  { name: "Mussab Ali", total: 450908.92, redFlag: 0 },
+  { name: "Bill O'Dea", total: 829745, redFlag: 43075 },
+  { name: "Jim McGreevey", total: 2698055.72, redFlag: 297000 },
+  { name: "James Solomon", total: 905533.33, redFlag: 61850 },
 ];
 
 // Red for red flags, teal for the rest
 const COLORS = ["#E63946", "#2A9D8F"];
+
+// Helper: format large numbers with K/M
+const formatNumberShort = (num) => {
+  if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+  if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, "") + "K";
+  return num.toString();
+};
 
 export default function Comparison() {
   return (
@@ -40,28 +47,29 @@ export default function Comparison() {
       <div className="bar-chart-container">
         <ResponsiveContainer width="100%" height={400}>
           <BarChart
-            data={candidateData.map(c => ({
+            data={candidateData.map((c) => ({
               name: c.name,
               redFlag: c.redFlag,
               other: c.total - c.redFlag,
             }))}
             margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
           >
-            <XAxis dataKey="name" />
-            <YAxis />
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: window.innerWidth < 600 ? 10 : 14 }} // smaller labels on mobile
+            />
+            <YAxis tickFormatter={formatNumberShort} />
             <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
             <Legend />
-            
+
             {/* Bottom part: other donations */}
             <Bar dataKey="other" fill="#1D3557" name="Other Donations" stackId="stack1" />
-            
+
             {/* Top part: red flag donations */}
             <Bar dataKey="redFlag" fill="#E63946" name="Red Flag Donations" stackId="stack1" />
           </BarChart>
         </ResponsiveContainer>
-
       </div>
-
 
       {/* One pie per candidate with legend-based percentages */}
       <h2>Red-Flag Share by Candidate</h2>
@@ -87,8 +95,8 @@ export default function Comparison() {
                   outerRadius={80}
                   dataKey="value"
                   labelLine={false}
-                  label={false}              // ← hide slice labels so nothing gets cut off
-                  isAnimationActive={false}  // optional: reduce first-render jitter
+                  label={false}
+                  isAnimationActive={false}
                 >
                   {chartData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -102,7 +110,7 @@ export default function Comparison() {
                 />
               </PieChart>
 
-              {/* Custom legend with percentages (so they never get clipped) */}
+              {/* Custom legend with percentages */}
               <ul className="mini-legend" aria-label={`${c.name} donation legend`}>
                 <li>
                   <span className="legend-swatch" style={{ backgroundColor: COLORS[0] }} />
