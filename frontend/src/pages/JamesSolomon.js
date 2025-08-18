@@ -31,7 +31,6 @@ export default function Draft() {
     { name: "Bill O'Dea", path: "/BillODea" },
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
-    { name: "Joyce Watterman", path: "/JoyceWatterman" },
   ];
 
  
@@ -669,7 +668,7 @@ export default function Draft() {
         <div className="accordion-content">
           <p>Solomon has a received a total of $600 from Postnet and Rich Mendez, who is the owner of Postnet. While the donation amounts themselves are modest, the fact that the contributor has received transactionf from the city creates a potential conflict of interest, raising concerns about whether contributions could influence city decisions. The transaction PDFs are listed below.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $860</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/77318"></a>10/11/22 - $740</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $740</a></p>
         </div>
       )}
     </div>
