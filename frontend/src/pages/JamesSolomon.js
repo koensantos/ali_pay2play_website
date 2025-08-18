@@ -138,8 +138,8 @@ export default function Draft() {
   const donorChartOptions = {
     indexAxis: "y",
     responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
+    maintainAspectRatio: true,
+    plugins: { legend: { display: true } },
     scales: {
       x: {
         ticks: {
@@ -156,7 +156,7 @@ export default function Draft() {
           font: { size: 12 },
           padding: 10,
         },
-        grid: { display: false },
+        grid: { display: true },
       },
     },
   };
