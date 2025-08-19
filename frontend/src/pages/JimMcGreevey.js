@@ -251,7 +251,7 @@ export default function Draft() {
           <h2>Top 10 Donors</h2>
           <div className="chart-inner-wrapper">
             {topDonorsBarData ? (
-              <Bar data={topDonorsBarData} options={donorChartOptions} />
+              <Bar data={topDonorsBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 20}/>
             ) : <p>Loading top donors...</p>}
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function Draft() {
           <h2>Top 10 Employer Donors</h2>
           <div className="chart-inner-wrapper">
             {topEmployersBarData ? (
-              <Bar data={topEmployersBarData} options={donorChartOptions} />
+              <Bar data={topEmployersBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 20}/>
             ) : <p>Loading top employer donors...</p>}
           </div>
         </div>
