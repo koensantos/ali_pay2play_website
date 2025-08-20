@@ -251,7 +251,7 @@ export default function Draft() {
           <h2>Top 10 Donors</h2>
           <div className="chart-inner-wrapper">
             {topDonorsBarData ? (
-              <Bar data={topDonorsBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 20}/>
+              <Bar data={topDonorsBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 30}/>
             ) : <p>Loading top donors...</p>}
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function Draft() {
           <h2>Top 10 Employer Donors</h2>
           <div className="chart-inner-wrapper">
             {topEmployersBarData ? (
-              <Bar data={topEmployersBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 20}/>
+              <Bar data={topEmployersBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 30}/>
             ) : <p>Loading top employer donors...</p>}
           </div>
         </div>
@@ -619,7 +619,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(10)}
           aria-expanded={openIndex === 10}
         >
-          Nicholas Netta - Netta Architects LLC - $5,000
+          Nicholas Netta - Netta Architects LLC - $7,000
           <span className="accordion-arrow" />
         </button>
         {openIndex === 10 && (
@@ -730,7 +730,7 @@ export default function Draft() {
         Waters, McPherson, McNeil - $36,400 
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 16 && (
+      {openIndex === 15 && (
         <div className="accordion-content">
           <p>The donations from Waters, McPherson, McNeil P.C., including a personal contribution from David McPherson, to Jim McGreevey and other Jersey City candidates raise potential red flags due to the firm’s direct financial and business interests with the city, as well as the timing of these contributions. The law firm represents Honeywell International Inc. in environmental remediation projects affecting public rights-of-way in Jersey City, including the execution and termination of Notices in Lieu of Deed Notices, such as the resolution approving the updated NILODN for Fisk Street and other ROWs in July 2024 (<a href="https://cityofjerseycity.civicweb.net/document/406670">Resolution PDF</a>). Additionally, the firm has historically represented developers in high-value waterfront redevelopment projects in the city (<a href="https://www.lawwmm.com/HudsonRiverRedev.asp">Waters, McPherson, McNeil Hudson River Waterfront Redevelopment</a>). The firm has also received substantial payments from the city itself, including $448,690.70 (<a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25</a>), $338,281.63 (<a href="https://cityofjerseycity.civicweb.net/document/403052">5/14/25</a>), $26,852.32 (<a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23</a>) $11,510.03 (<a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/2023</a>). The donations, totaling $31,200 from the firm and $5,200 from David McPherson personally, occurred shortly after or around the time of these municipal approvals and expenditures, creating a perception that the contributions could influence officials overseeing matters directly affecting the firm’s clients. While no direct quid pro quo is proven, the overlap of campaign contributions with public decisions and city payments involving the firm constitutes a potential pay-to-play concern and represents a red flag for regulatory or ethical scrutiny.</p>
         </div>
@@ -757,6 +757,364 @@ export default function Draft() {
         </div>
       )}
     </div>
+
+    {/* United Sales USA Corp */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
+          onClick={() => toggleAccordion(17)}
+          aria-expanded={openIndex === 17}
+        >
+          United Sales USA Corp - $2,500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 17 && (
+          <div className="accordion-content">
+            <p>United Sales USA Corp has been receiving expenditures from Jersey City since 2019 and have received several contracts with the city. Because of these transactions, this donation has been flagged as suspicious due to possible conflict of interest and pay-to-play concerns. All of the details are listed below.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/419172">Resolution PDF</a> On January 29, 2025, the Jersey City Council approved Resolution 25-067, awarding an open-end, one-year contract to United Sales USA Corp. of Brooklyn, NY, to provide custodial supplies for the Department of Public Works, Division of Solid Waste Recycling. The contract totals $387,786.97, with an initial encumbrance of $60,000 available from the city’s budget. The agreement allows the City to renew for an additional one-year term. Payment will only be made once contract requirements are met, and continuation of the contract depends on future budget appropriations.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/92984">Resolution PDF</a>On June 28, 2023, the Jersey City Council approved Resolution 23-512, renewing an open-end contract with United Sales USA Corporation to supply custodial products for the Department of Public Works, Division of Recycling. The renewal covers the period from June 16, 2023, through June 15, 2024, at a maximum cost of $109,284, with $10,000 initially encumbered from the city budget. This renewal was the final option year from the original 2021 contract, which began at $97,089.55 and was increased annually per the Consumer Price Index. Payments are contingent on performance, compliance with specifications, and the availability of future budget funds</p>
+            <p><a href="https://chatgpt.com/c/68a50106-5348-8333-aeed-108c30d463f0">Resolution PDF</a>On June 15, 2022, the Jersey City Council approved Resolution 22-446 to renew its custodial supplies contract with United Sales USA Corporation.
+The original 2021 contract was for $97,089.55, and the renewal allows spending up to $104,080.00 for one year (June 16, 2022–June 15, 2023), adjusted by the Consumer Price Index.
+The City certified $400.00 immediately available, with the rest to be allocated as orders are placed.
+Payment depends on the contractor meeting specifications and compliance with fiscal laws.
+The contractor must also follow affirmative action requirements under state law.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/48809">Resolution PDF</a> On June 16, 2021, the Jersey City Council approved Resolution 21-455 to award an open-end contract to United Sales USA Corporation for custodial supplies for the Department of Public Works, Division of Recycling and Enforcement.
+The contract was bid in December 2020, with three companies responding, but only United Sales USA submitted a complete and responsive bid.
+United Sales USA’s bid was for $97,089.55, which the Purchasing Agent deemed fair and reasonable.
+An initial $5,000 was certified as available, with the rest of the funds to be allocated as orders are placed during the contract term.
+The one-year contract may be extended for up to two additional years and requires compliance with fiscal laws and affirmative action regulations.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/12343"></a>On September 13, 2019, the Jersey City Council approved Resolution 19-0736 to renew an open-end contract with United Sales USA Corporation for custodial supplies for the Department of Public Works / Division of Buildings and Street Maintenance.
+The original contract was awarded in 2017 for $56,990.00, renewed once in 2018 for $58,585.72, and this resolution exercised the final renewal option.
+The new one-year renewal runs from September 14, 2019 to September 13, 2020, with a maximum contract amount of $59,757.46.
+An initial $10,000 was certified as available, with the remainder to be provided as service orders are placed.
+The contract requires compliance with specifications, fiscal laws, and affirmative action regulations.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Green Flamingo Dispensery */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
+          onClick={() => toggleAccordion(18)}
+          aria-expanded={openIndex === 18}
+        >
+          Green Flamingo Dispensery - $250
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 18 && (
+          <div className="accordion-content">
+            <p>Green Flamingo Dispensery has donated $250 to McGreevey on April 22, 2024. They rely on city approval to run a cannibis business, which they received on February 8, 2023. While the donation is small, the donation can still raise concerns because the company’s success depends on local licensing and regulatory decisions overseen by city officials. The resolution is listed below.</p>
+            <p><strong>Res. 23-099</strong>: On February 8, 2023, the Jersey City Council approved Resolution 23-099 providing local support for Green Flamingo Dispensary, LLC to operate a Class 5 retail cannabis business.
+The resolution was made under the New Jersey Cannabis Regulatory and Marketplace Modernization Act and Jersey City’s own cannabis ordinance.
+Applicants for cannabis licenses must show municipal approval as part of their application to the State Cannabis Regulatory Commission.
+The City’s Cannabis Control Board reviewed Green Flamingo’s application and recommended Council support.
+The resolution confirms that Jersey City allows this type of license, has no cap on cannabis businesses, and gives local approval without preference.
+              <a
+                href="https://cityofjerseycity.civicweb.net/document/83506"
+              >
+                Resolution PDF
+              </a>
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Atalune INC */}
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
+          onClick={() => toggleAccordion(19)}
+          aria-expanded={openIndex === 19}
+        >
+          Atalune INC - $500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 19 && (
+          <div className="accordion-content">
+            <p>Altalune, Inc., which received city approval to operate a retail cannabis business, contributed $500 to Jim McGreevey. This raises concerns because Altalune’s operations are directly dependent on local licensing and oversight. The resolution is listed below.</p>
+            <p><strong>Res 23-989 </strong>On November 29, 2023, the Jersey City Council approved Resolution 23-898 providing local support for Altalune, Inc. to operate a Class 5 retail cannabis business.
+The resolution was made under the New Jersey Cannabis Regulatory and Marketplace Modernization Act and Jersey City’s cannabis ordinance.
+Applicants for cannabis licenses must show municipal approval as part of their application to the State Cannabis Regulatory Commission.
+The City’s Cannabis Control Board reviewed Altalune’s application and recommended Council approval.
+The resolution confirms Jersey City allows this type of license, has no cap on cannabis businesses, and grants local approval without preference. <a href="https://cityofjerseycity.civicweb.net/document/387441">Resolution PDF</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
+          onClick={() => toggleAccordion(20)}
+          aria-expanded={openIndex === 20}
+        >
+          USA Architects - $4,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 20 && (
+          <div className="accordion-content">
+            <p>USA Architects made a significant donation while actively competing for high-value city contracts, such as the City Hall – Building Exterior Rehabilitation ($419,873) and City Hall – Fourth Floor Alterations ($822,503 bid). These projects involve direct oversight by city officials who could influence contract awards, so the contribution creates an appearance of a potential conflict of interest or political leverage. Their bids are listed in the resolutions below.</p>
+            <p><strong>City Hall – Building Exterior Rehabilitation (Res. 22-798, Nov 9, 2022) – $561,286 </strong> <a href="https://cityofjerseycity.civicweb.net/document/77994">Resolution PDF</a></p>
+            <p><strong>City Hall – Fourth Floor Alterations (Res. 22-797, Nov 9, 2022) – $822,503</strong> <a href="https://cityofjerseycity.civicweb.net/document/77542">Resolution PDF</a></p>
+            <p><strong></strong></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 21 ? "active" : ""}`}  
+          onClick={() => toggleAccordion(21)}
+          aria-expanded={openIndex === 21}
+        >
+          A-Tech Concrete Co., Inc. - $1,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 21 && (
+          <div className="accordion-content">
+            <p>A-Tech Concrete donated McGreevey $1,000. This company has received expenditure payments from the city and has bidded on several contracts. This donation has been marked as a red flag because it creates the appearance of a potential conflict of interest, where campaign contributions could influence the awarding of city contracts. Given their ongoing business relationship with the city, even a relatively small donation may raise concerns about favoritism or undue influence in the procurement process. The expenditures and bidded contracts are listed below.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/60449">12/8/21 - $5,065.44</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $32,328.87</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $65,431.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/42857">2/5/21 - $218,501.17</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/40872">1/11/21 - $97,386.48</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $162,171.36</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/37605">11/5/20 - $134,527.93</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/35574">9/29/20 - $19,600</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/33761">9/1/20 - $11,539.39</a></p>
+            <p><strong>Site safety improvements at #3 - $2,499,000.00 </strong><a href="https://cityofjerseycity.civicweb.net/document/33632">Resolution PDF</a></p>
+            <p><strong>Improvements to the playground area in Boyd McGuiness Park - $102,927.00 </strong><a href="https://cityofjerseycity.civicweb.net/document/33431">Resolution PDF</a></p>
+            <p><strong>Site improvements to Ferris Triangle Park - $699,200.00 </strong><a href="https://cityofjerseycity.civicweb.net/document/33188">Resolution PDF</a></p>
+            <p><strong>Site improvements to Audobon Park - $887,500.00 </strong><a href="https://cityofjerseycity.civicweb.net/document/33140">Resolution PDF</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/32473">8/6/20 - $145,850.95</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/28568">6/16/20 - $92.855.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/26642">5/14/20 - $94,080.00</a></p>
+          </div>
+        )}
+      </div>
+
+
+      {/* Reliable Tree Services INC */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
+          onClick={() => toggleAccordion(22)}
+          aria-expanded={openIndex === 22}
+        >
+          Reliable Tree Services INC - $4,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 22 && (
+          <div className="accordion-content">
+            <p>Reliable Tree Services INC's $4,000 donation has been flagged due to a possible conflict of interest, as the company has received city expenditures and has been awarded a contract. This situation raises concerns under Pay-to-Play regulations, where political contributions may influence the awarding of public contracts. Given their financial ties to the city, the donation could create the appearance that the company is seeking preferential treatment or leveraging political contributions to secure business. The expenditures and resolution are listed below. </p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $42,000.000</a></p>
+            <p><strong>Res 23-534 </strong>The City of Jersey City awarded a contract to Reliable Tree Services Inc. for Hamilton Park tree maintenance and removal, Project No. 2023-009, through a public bidding process. Reliable Tree Services submitted the lowest responsible bid of $42,000, with an additional 20% contingency, bringing the total encumbrance to $50,400, available in the city’s capital account. The City’s Purchasing Director certified the bid as fair and reasonable, and the contract requires confirmation that work meets specifications before payment. The award is contingent on the contractor’s compliance with Affirmative Action laws. The Mayor or Business Administrator is authorized to execute the contract on behalf of the city. <a href="https://cityofjerseycity.civicweb.net/document/89081">Resolution PDF</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/55789">9/3/21 - $5,000.00</a></p>
+          </div>
+        )}
+      </div>
+
+      {/* Albio Sires */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
+          onClick={() => toggleAccordion(23)}
+          aria-expanded={openIndex === 23}
+        >
+          Albio Sires - $15,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 23 && (
+          <div className="accordion-content">
+            <p>The donations from Sires-affiliated entities to a Jersey City mayoral candidate could be considered potential red flags because they originate from out-of-district political actors and campaign organizations rather than local constituents, signaling possible external influence on local elections. Sires is a former U.S. Congressman from New Jersey and part of the Democratic establishment, so these contributions may indicate establishment backing rather than grassroots support. The sizeable amounts, combined with the donors’ political connections, raise concerns that the candidate could be favoring outside interests or politically connected groups over local priorities.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Archer & Greiner*/}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
+          onClick={() => toggleAccordion(24)}
+          aria-expanded={openIndex === 24}
+        >
+          Archer & Greiner - $15,600
+          Employee Donations - $17,000
+
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 24 && (
+          <div className="accordion-content">
+            <p>Archer & Greiner, P.C. has received multiple substantial payments from Jersey City over the years, going back to 2021. Recurring city expenditures and significant political contributions from the firm and its employees raises potential concerns about conflicts of interest or the perception of undue influence in the local election.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $371,020.95</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/91884">5/24/23 - $5,253.30</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/89895">4/26/23 - $46,280.96</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/84565">2/7/23 - $31,105.83</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/76497">9/20/22 - $140,568.23</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/47202">4/28/21 - $2,825.24</a></p>
+
+          </div>
+        )}
+      </div>
+
+      {/* Plaza Auto Body Inc */}
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
+          onClick={() => toggleAccordion(25)}
+          aria-expanded={openIndex === 25}
+        >
+          Plaza Auto Body Inc - $700
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 25 && (
+          <div className="accordion-content">
+            <p>Plaza Auto Body Inc has donated $700 to Jim McGreevey. This donation has been deemed suspicious because the company has also received substantial payments from the City of Jersey City for collision repair contracts, creating a potential conflict of interest. This raise questions about whether the contribution could be intended to influence contract renewals or maintain favorable treatment, rather than being a purely voluntary political contribution. </p>
+            <p><strong>Res. 25-354 </strong>The City of Jersey City approved Resolution 25-354 on May 21, 2025, to renew one-year open-end contracts with Plaza Auto Body Inc. and Vavi’s Auto Sales, LLC for collision repairs for the Department of Public Works, Division of Automotive Maintenance. The renewal follows the original contracts awarded in June 2024, with total contract amounts of $176,146.95 for Plaza and $245,786.44 for Vavi, and includes adjustments based on the U.S. Department of Commerce Index Rate. The contracts are effective June 13, 2025, and payments will be made as orders are placed, subject to available funds and certification of compliance with contract specifications. The contractors must also provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination. The resolution ensures that continuation of the contracts depends on the availability of sufficient funds in the 2025 permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/429251">Resolution PDF</a></p>
+            <p><strong>Res. 24-457 </strong>On June 12, 2024, Jersey City approved Resolution 24-457 to award one-year open-end contracts to Plaza Auto Body Inc. and Vavi’s Auto Sales, LLC for collision repairs for the Department of Public Works, Division of Automotive Maintenance, effective June 13, 2024, to June 12, 2025. Plaza was designated the primary vendor with an hourly labor rate of $31 and a total estimated cost of $172,000, while Vavi, the alternate vendor, had an hourly rate of $65 with a total estimated cost of $240,000. The contracts were based on estimated labor of 2,000 hours and $100,000 in parts and materials, with a 10% markup on materials, and the City reserves the right to extend the contracts for two additional one-year terms. Payments are to be made as services are ordered, contingent upon certification that the vendors complied with specifications, and funds are available in the designated automotive operating account. Contractors must also provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination, and continuation of the contracts depends on sufficient appropriation in the 2024 permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/403033">Resolution PDF</a></p>
+            <p><strong>Res. 23-349 </strong>On May 10, 2023, Jersey City approved Resolution 23-349 to renew one-year open-end contracts with Plaza Auto Body Inc., Diamond Auto Sales, and Vavi’s Auto Sales, LLC for collision repairs for the Department of Public Works, Division of Automotive Maintenance, effective May 14, 2023, through May 13, 2024. The contracts are based on estimated labor of 2,000 hours and $100,000 in parts and materials, with hourly labor rates of $32 for Plaza and Diamond and $52 for Vavi, and markups of 5–10%, resulting in total maximum costs of $169,000, $174,000, and $210,000 respectively. The City retains the option to extend the contracts for two additional one-year periods, using prior-year prices adjusted by the Federal Consumer Price Index. Payments are made as services are ordered, contingent upon certification that the vendors have met all specifications, and funds are available in the designated automotive operating account. Contractors are also required to provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination, and continuation of the contracts depends on sufficient appropriations in the City’s budget. <a href="https://cityofjerseycity.civicweb.net/document/89111">Resolution PDF</a></p>
+            <p><strong>Res. 22-367 </strong>On May 11, 2022, Jersey City approved Resolution 22-367 to renew one-year open-end contracts with Plaza Auto Body, DABJC, Inc. (Diamond Auto Body), and Vavi’s Auto Sales, LLC for collision repairs for the Department of Public Works, Division of Automotive Maintenance, effective May 14, 2022, through May 13, 2023. The contracts are based on estimated labor of 2,000 hours and $100,000 in parts and materials, with hourly labor rates of $32 for Plaza and Diamond and $52 for Vavi, and markups of 5–10%, resulting in total maximum costs of $169,000, $174,000, and $210,000 respectively. The City reserves the right to extend the contracts for up to two additional one-year periods, using prior-year prices adjusted by the Federal Consumer Price Index. Payments are made as services are ordered, contingent upon certification that the vendors have met all specifications, and funds are available in the designated automotive operating account. Contractors are required to provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination, and continuation of the contracts depends on sufficient appropriations in the City’s budget. <a href="https://cityofjerseycity.civicweb.net/document/67058">Resolution PDF</a></p>
+            <p><strong>Res. 21-371 </strong>On May 13, 2021, Jersey City approved Resolution 21-371 to award one-year open-end contracts to Plaza Auto Body Inc., Diamond Auto Body, and Vavi’s Auto Sale, LLC for collision repairs for the Department of Public Works, Division of Automotive Maintenance. The contracts are based on estimated labor of 2,000 hours and $100,000 in parts and materials, with hourly labor rates of $32 for Plaza and Diamond and $52 for Vavi, and markups of 5–10%, resulting in total maximum costs of $169,000, $174,000, and $210,000 respectively. The City retains the option to extend the contracts for up to two additional one-year terms according to the bid specifications. Payments are made as services are ordered, contingent upon certification that the vendors have met all specifications, and funds are available in the designated automotive operating account, with a total of $120,000 temporarily encumbered. Contractors must provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination, and continuation of the contracts depends on sufficient appropriations in the City’s budget. <a href="https://cityofjerseycity.civicweb.net/document/37927">Resolution PDF</a></p>
+            <p><strong>Res. 19-693 </strong>On August 7, 2019, Jersey City approved Resolution 19-693 to renew one-year open-end contracts with Plaza Auto Body Inc., A. Lembo Car & Truck Collision Inc., and Diamond Auto Body for collision repairs for the Department of Public Works, Division of Automotive Maintenance, effective August 17, 2019, through August 16, 2020. The contracts are based on an estimated 3,000 labor hours and $100,000 in repair parts and materials, with total maximum costs of $192,236 for Plaza, $200,460 for A. Lembo, and $211,768 for Diamond. Payments are made as services are ordered, contingent on certification that the vendors have met all contract specifications. Funds are temporarily encumbered at $10,000 per vendor, with the balance made available as the City places orders. Vendors are required to provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination, and continuation of the contracts depends on sufficient appropriations in the City’s budget. <a href="https://cityofjerseycity.civicweb.net/document/11455">Resolution PDF</a></p>
+          </div>
+        )}
+      </div>
+
+      {/* RSC Architects */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
+          onClick={() => toggleAccordion(26)}
+          aria-expanded={openIndex === 26}
+        >
+          RSC Architects - $4,900
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 26 && (
+          <div className="accordion-content">
+            <p>The company has donated $4,900 to Jim McGreevey. RSC Architects has been involved with a construct improvement project with St. Ann's Home for the Aged (Res. 24-241) and has bidded for several contracts given by Jersey City. These donations have been deemed as suspicious because they have bidded on multiple city contracts. such as the Pershing Field Pool Natatorium Roof Replacement and City Hall exterior renovations. RSC Architects have also been involved with a construction improvement project for St Ann's Home for the Aged. Even though RSC Architects was not awarded with these contracts, their financial contributions create a perception of influence or preferential treatment in the competitive bidding process. These donations could be used as potential influence for future government members to choose them for city contracts. The biddings and resolution for the improvement project is listed below.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/396829">Improvement Project (pg 42)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/77994">City Hall Building Exterior Rehabilitation - $362,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/77542">City Hall Fourth Floor Alterations - $419,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/43626">Pershing Field Pool Natatorium Roof Replacement - $55,000</a></p>
+          </div>
+        )}
+      </div>
+
+      {/* The Leaf Joiny */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
+          onClick={() => toggleAccordion(27)}
+          aria-expanded={openIndex === 27}
+        >
+          The Leaf Joint - $600
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 27 && (
+          <div className="accordion-content">
+            <p>The Leaf Joint has donated $600 to Jim McGreevey. This donation has been flagged as suspicious because the company has received city approval to operate a retail cannabis business, which creates a potential conflict of interest. The company’s success depends on local licensing and regulatory decisions overseen by city officials, so the contribution could be seen as an attempt to influence those decisions. The resolution is listed below.</p>
+            <p><strong>Res 22-675 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-100 providing local support for The Leaf Joint to operate a Class 5 retail cannabis business. <a href="https://cityofjerseycity.civicweb.net/document/74396">Resolution PDF</a></p>
+          </div>
+        )}
+      </div>
+
+      {/* Hartz Mountain Industries */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 28 ? "active" : ""}`}
+          onClick={() => toggleAccordion(28)}
+          aria-expanded={openIndex === 28}
+        >
+          Hartz Mountain Industries - $7,000
+          Constantino "Gus" Milano, President and COO - $1,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 28 && (
+          <div className="accordion-content">
+            <p>The donations connected to Hartz Mountain Industries raise potential red flag concerns. Hartz has contributed a combined $7,000, including $1,000 from President and COO Constantino “Gus” Milano. This is notable because the company, via its subsidiary 15 Exchange Place Corp., held a license agreement with Jersey City for event space and staging in 2019. They are also the landlord of the property housing RPM Raceway and have been involved with developments in 70 and 90 Hudson Street in the Waterfront. The overlap between Hartz’s business relationship with the city and its sizable campaign contributions to Jim McGreevey highlights the risk of pay-to-play dynamics. The resolutions are listed below for the developments mentioned.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/422902">Res 25-153 listing Hartz Mountain Industries as the landlord. (Page 5)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/67729">Res 22-369 listing Hartz Mountain Industires as developers of 70 and 90 Hudson Street (pg 94)</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/6768">Res 19-509 RESOLUTION AUTHORIZING TI-HEEXECUTION OF A LICENSE AGREENENT
+WITH 15 EXCHANGE PLACE CORPORATION, A SUBSIDIARY CORPORATION OF
+HARTZ MOUNTAIN INDUSTRIES, INC, FOR THE USE OF VARIOUS PROPERTIES
+IN CONNECTION WITH THE CITY OF JERSEY CITY’S FREEDOM AND
+FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/403052">Liberty Science Center Project - $1,500,000</a></p>
+          </div>
+        )}
+      </div>
+
+      {/*Marttine Management*/ }
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 29 ? "active" : ""}`}
+          onClick={() => toggleAccordion(29)}
+          aria-expanded={openIndex === 29}
+        >
+          Marttine Management - $2,500
+          James Marttine / James Martini, Owner - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 29 && (
+          <div className="accordion-content">
+            <p>Donations from Marttine Management can be considered red flags because the company is directly tied to Kushklub, the cannabis business that received City Council approval to operate in Jersey City on August 16, 2023. Marttine Management is listed as the architectural and development entity on site and architectural plans submitted for KushKlub NJ LLC’s cannabis retail project at 550–560 Tonnele Avenue. Contributions from businesses or individuals tied to industries awaiting local approval can create the appearance of influence, even if no direct quid pro quo is proven. This makes donations in proximity to regulatory wins particularly sensitive in discussions of pay-to-play dynamics.</p>
+          </div>
+        )}
+      </div>
+
+      {/* Kad Associates */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 30 ? "active" : ""}`}
+          onClick={() => toggleAccordion(30)}
+          aria-expanded={openIndex === 30}
+        >
+          KAD Associates - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 30 && (
+          <div className="accordion-content">
+            <p>Kad Associates' donations to McGreevey have been deemed as suspicious because they have received several expenditure payments from Jersey City, beginning on April 9 2021. The repeated pattern of payments alongside their political contributions raises concerns about potential conflicts of interest. The overlap suggests that their donations could be seen as a way to maintain goodwill with city leadership, blurring the line between routine business transactions and political influence. The expenditures are listed below.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $3,443.56</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/408268">7/8/24 - $42,566.60</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/56325">9/16/21 - $2,636.27</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $5,703.64</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/46108">4/9/21 - $6,121.50</a></p>
+          </div>
+        )}
+      </div>
+
+        {/* Pennoni */}
+
+
+        {/* Jasco Management Corp */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 31 ? "active" : ""}`}
+          onClick={() => toggleAccordion(31)}
+          aria-expanded={openIndex === 31}
+        >
+          Jasco Management Corp - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 31 && (
+          <div className="accordion-content">
+            <p>Jasco Management Corp.’s $5,000 donation to Jim McGreevey on February 2, 2024, raises concerns because it preceded a major approval the company later received from Jersey City. On October 30, 2024, the City Council unanimously passed Ordinance 24-097, granting Jasco a 99-year franchise right to construct and maintain a large ramp encroachment into the public right-of-way at 307 Pacific Avenue, where the company leases space to the Jersey City Free Public Library. Although the ordinance was framed as serving public accessibility needs, the close proximity between Jasco’s substantial political contribution and the city’s decision to award the company a long-term benefit creates the appearance of pay-to-play dynamics. This overlap makes the donation a potential red flag. </p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/411334">Ord 24-097</a></p>
+          </div>
+        )}
+      </div>
+
+
+
+
+
+
+
+
 
     </section>
 
