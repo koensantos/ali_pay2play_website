@@ -1,8 +1,12 @@
 import React, {useEffect, useState} from "react";
 import { Pie, Bar } from "react-chartjs-2";
+import { Link } from "react-router-dom";
 import "chart.js/auto";
 import "./Draft.css";
 import WattermanPhoto from "./img/watterman.jpg";
+import { HashLink } from "react-router-hash-link";
+
+
 
 export default function Draft() {
   const [chartData, setChartData] = useState(null);
@@ -14,12 +18,28 @@ export default function Draft() {
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
 
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const backendUrl = "https://ali-pay2play-backend.onrender.com";
 
- 
-  
+  const otherCandidates = [
+    { name: "Mussab Ali", path: "/MussabAli" },
+    { name: "Bill O'Dea", path: "/BillODea" },
+    { name: "Jim McGreevey", path: "/JimMcGreevey" },
+    { name: "James Solomon", path: "/JamesSolomon" },
+  ];
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
+  // ✅ Single useEffect for all API calls
+  useEffect(() => {
+    // contributions
     fetch(`${backendUrl}/api/contributions/Joyce_Watterman`)
       .then((res) => res.json())
       .then((data) => {
@@ -37,24 +57,22 @@ export default function Draft() {
           datasets: [{ data: values, backgroundColor: backgroundColors.slice(0, labels.length) }],
           total,
         });
-      }).catch(console.error);
-  }, []);
+      })
+      .catch(console.error);
 
-  useEffect(() => {
+    // top donors
     fetch(`${backendUrl}/api/top_donors_bar/Joyce_Watterman`)
       .then((res) => res.json())
       .then(setTopDonorsBarData)
       .catch(console.error);
-  }, []);
 
-  useEffect(() => {
+    // top employers
     fetch(`${backendUrl}/api/top_employers_bar/Joyce_Watterman`)
       .then((res) => res.json())
       .then(setTopEmployersBarData)
       .catch(console.error);
-  }, []);
 
-  useEffect(() => {
+    // total donations
     fetch(`${backendUrl}/api/total_donations/Joyce_Watterman`)
       .then(res => res.json())
       .then(data => {
@@ -63,8 +81,9 @@ export default function Draft() {
         }
       })
       .catch(console.error);
-  }, []);
+  }, [backendUrl]);
 
+  // donor search
   function handleSearch(e) {
     e.preventDefault();
     if (!searchTerm.trim()) {
@@ -112,16 +131,15 @@ export default function Draft() {
 
   // Y-axis label wrapping function for charts
   function truncateLabel(label, maxLength = 15) {
-  if (label.length <= maxLength) return label;
-  return label.slice(0, maxLength - 1) + '…';
-}
+    if (label.length <= maxLength) return label;
+    return label.slice(0, maxLength - 1) + "…";
+  }
 
-
-    const donorChartOptions = {
+  const donorChartOptions = {
     indexAxis: "y",
     responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
+    maintainAspectRatio: true,
+    plugins: { legend: { display: true } },
     scales: {
       x: {
         ticks: {
@@ -131,22 +149,22 @@ export default function Draft() {
       },
       y: {
         ticks: {
-          callback: function(value) {
+          callback: function (value) {
             const label = this.getLabelForValue(value);
             return truncateLabel(label);
           },
           font: { size: 12 },
-          padding: 10
+          padding: 10,
         },
-        grid: { display: false },
-      }
-    }
+        grid: { display: true },
+      },
+    },
   };
 
 
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
-      <h1>Jim McGreevey: Campaign Finance Visuals</h1>
+      <h1>Joyce Watterman: Campaign Finance Visuals</h1>
 
       {totalDonations !== null && (
         <div className="total-donations-panel">
@@ -155,20 +173,29 @@ export default function Draft() {
         </div>
       )}
 
+      <div className="red-flag-warning">
+        <p>
+          This candidate has been flagged for having suspicious donations.{" "}
+          <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
+        </p>
+      </div>
+
       <div className="bio-container">
         <section className="bio-text">
           <h2>Biography</h2>
-          <p>Joyce Watterman is the current City Council President of Jersey City, the first African American woman to hold that position in the city’s history. She has served on the City Council since 2013 and has been a central figure in shaping local legislation over the past decade. Known for her deep roots in faith and community service, Watterman is also a pastor and co-founder of the Women Working Together empowerment conference. Her public service is shaped by a commitment to housing justice, youth programming, and economic opportunity, and she has consistently positioned herself as a unifier across Jersey City’s diverse communities. She is now running for mayor to become the city’s first woman and first Black mayor.</p>
+          <p>Joyce Watterman currently serves as the Council President of Jersey City, the first woman to ever hold the position. Elected to the council in 2013 as an at-large member, Watterman has been a central figure in city government for over a decade. She has built her career on advocacy for equity, economic opportunity, and community empowerment, often drawing from her own experiences as a lifelong Jersey City resident and minister. Watterman is running for mayor with a focus on uniting the city’s diverse communities, expanding access to resources, and ensuring that growth benefits all residents, not just a few.</p>
+          
           <h2>Policies</h2>
           <ul>
-            <li>Affordable housing: Advocating for more mixed-income development, stronger rent protections, and increased affordable unit requirements in new developments.</li>
-            <li>Workforce development: Supporting job training programs, small business growth, and pathways to careers for underserved residents.</li>
-            <li>Public safety: Backing reforms that blend traditional policing with mental health services and community-based interventions.</li>
-            <li>Youth and education: Promoting afterschool programs, youth mentorship, and city-funded internship opportunities.</li>
-            <li>Equity and representation: Strengthening the city's commitment to diversity in hiring, contracting, and public leadership roles.</li>
+            <li>Economic empowerment: Advocating for workforce development, small business support, and stronger job pipelines for Jersey City residents.</li>
+            <li>Affordable housing: Expanding housing access through inclusionary zoning, affordable housing mandates, and stronger tenant protections.</li>
+            <li>Community services: Strengthening city partnerships with nonprofits, faith-based groups, and community organizations to better deliver services.</li>
+            <li>Public safety: Promoting community-based policing, youth outreach programs, and violence prevention initiatives.</li>
+            <li>Education and youth: Supporting expanded afterschool programs, vocational training, and youth mentorship opportunities.</li>
           </ul>
+          
           <h2>Background</h2>
-          <p>Joyce Watterman was born and raised in Jersey City and has spent her life serving the community through both political and religious leadership. Before entering politics, she worked in faith-based outreach, housing advocacy, and as a minister. She holds a degree in Organizational Leadership from Pillar College and has completed training in nonprofit and theological studies. Her grassroots approach has made her a consistent advocate for marginalized communities, particularly women, renters, and working families. As Council President, she has played a role in key development and zoning decisions, while maintaining a focus on fairness and accessibility in local government. Her campaign presents a vision of experienced leadership grounded in service and faith.</p>
+          <p>Joyce Watterman was born and raised in Jersey City, where she has spent her life serving the community through both public office and her role as co-pastor of the Continuous Flow Christian Center alongside her husband. Before entering politics, she worked extensively with faith-based and nonprofit organizations to provide housing, food, and job support for struggling families. Since joining the City Council, Watterman has become a bridge-builder in city government, often highlighting the voices of underrepresented groups. Her mayoral campaign emphasizes inclusive leadership, equity in city development, and policies that reflect the needs of all Jersey City residents.</p>
         </section>
         <div className="bio-image">
           <img src={WattermanPhoto} alt="Joyce Watterman" />
@@ -227,7 +254,7 @@ export default function Draft() {
           <h2>Top 10 Donors</h2>
           <div className="chart-inner-wrapper">
             {topDonorsBarData ? (
-              <Bar data={topDonorsBarData} options={donorChartOptions} />
+              <Bar data={topDonorsBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 30}/>
             ) : <p>Loading top donors...</p>}
           </div>
         </div>
@@ -236,7 +263,7 @@ export default function Draft() {
           <h2>Top 10 Employer Donors</h2>
           <div className="chart-inner-wrapper">
             {topEmployersBarData ? (
-              <Bar data={topEmployersBarData} options={donorChartOptions} />
+              <Bar data={topEmployersBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 30}/>
             ) : <p>Loading top employer donors...</p>}
           </div>
         </div>
@@ -288,15 +315,28 @@ export default function Draft() {
         )}
       </div>
 
-      <div style={{ marginTop: "3rem", padding: "1rem" }}>
-        <h2>Red Flags</h2>
-        <p>Bill O'Dea has received significant contributions from various sources...</p>
-        <ul>
-          <li>Pay-to-play corporate donors</li>
-          <li>Large individual contributions from high-net-worth individuals</li>
-          <li>Repeated donations from the same entities</li>
-        </ul>
-      </div>
+      
+    <section id="red-flags" className="accordion-container">
+      <h2>Red Flags</h2>
+      <p className="intro">
+        Joyce Watterman has been flagged for suspicious donations listed below.
+      </p>
+    </section>
+
+    <div className="other-candidates-section">
+      <h2>Other Candidates</h2>
+      <ul className="other-candidates-list">
+        {otherCandidates
+          .filter(c => c.name !== "Joyce Watterman") // exclude current candidate
+          .map(c => (
+            <li key={c.name}>
+              <Link to={c.path}>{c.name}</Link>
+            </li>
+        ))}
+      </ul>
+    </div>
+
+      
 
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         <a href={`${backendUrl}/download/Joyce_Watterman_combined_contributions.csv`} download className="btn-download">Download Full Contributions CSV</a>

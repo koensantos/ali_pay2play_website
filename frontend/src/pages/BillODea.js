@@ -251,7 +251,7 @@ export default function Draft() {
           <h2>Top 10 Donors</h2>
           <div className="chart-inner-wrapper">
             {topDonorsBarData ? (
-              <Bar data={topDonorsBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 20} />
+              <Bar data={topDonorsBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 30} />
             ) : <p>Loading top donors...</p>}
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function Draft() {
           <h2>Top 10 Employer Donors</h2>
           <div className="chart-inner-wrapper">
             {topEmployersBarData ? (
-              <Bar data={topEmployersBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 20}/>
+              <Bar data={topEmployersBarData} options={donorChartOptions} height={topDonorsBarData?.labels.length * 30}/>
             ) : <p>Loading top employer donors...</p>}
           </div>
         </div>
@@ -610,6 +610,7 @@ export default function Draft() {
       )}
     </div>
 
+      {/* Leemark Electrics */}
     <div className ="accordion-item">
       <button
         className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
@@ -630,6 +631,341 @@ export default function Draft() {
         </div>
       )}
     </div>
+
+    {/* Connell Foley PAC */}
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
+        onClick={() => toggleAccordion(12)}
+        aria-expanded={openIndex === 12}
+      >
+        Connell Foley PAC - $5,000
+        Employees - $7,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 12 && (
+        <div className="accordion-content">
+          <p>Connell Foley’s deep entanglement in Jersey City politics is underscored by both its financial and political ties. The firm, which represents multiple properties along the Jersey City waterfront, has benefited from a steady stream of lucrative city expenditures ranging from hundreds of thousands to nearly a million dollars across 2023 and 2024. At the same time, Connell Foley’s influence has extended into the political sphere. Maureen Hulings, formerly an administrative assistant at the firm, was appointed by the City Council to serve as the Ward B representative on April 14. 2025. This overlap between a politically connected law firm that profits from substantial city business and its direct pipeline into council membership raises significant concerns about conflicts of interest and the blending of private legal advocacy with public governance in Jersey City.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $42,646.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $129,336.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/427653">Resolution PDF</a>Maureen Hulings was an administrative assistant at Connell Foley, and was voted in by the Jersey City Council to be Ward B's council member.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/416983">12/6/24 - $7,698.98</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $309,445.12</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/409786">8/14/24 - $896,265.38</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/402589">5/8/24 - $72,834.31</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $42,646.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $129,336.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/89130">4/12/23 - $8,169.10</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/86928">3/8/23 - $448,300.11</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/83762">1/25/23 - $701,390.29</a></p>
+
+        </div>
+      )}
+    </div>
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 13 ? "active" : ""}`}
+        onClick={() => toggleAccordion(13)}
+        aria-expanded={openIndex === 13}
+      >
+        Excelsior Plumbing - $5,700
+        UA Plumbers Local 24 PAC - $16,400
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 13 && (
+        <div className="accordion-content">
+          <p>The donations from both Excelsior Plumbing and Plumbers Local 24 to Bill O’Dea raise a red flag because they suggest coordinated financial support from a union and one of its contractors. While unions often contribute to political campaigns, the added donation from a contractor that directly benefits from union projects creates the appearance of a networked effort to amplify influence. This dual backing increases the risk of pay-to-play dynamics, where financial contributions from labor groups and their business partners could be seen as attempts to secure favorable treatment on future contracts, labor agreements, or city-backed projects.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 14 ? "active" : ""}`}
+        onClick={() => toggleAccordion(14)}
+        aria-expanded={openIndex === 14}
+      >
+        Jersey City Officers Associaton - $6,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 14 && (
+        <div className="accordion-content">
+          <p>While it is common for police officer associations to back mayoral candidates with donations, the association has donated to him five different times totaling up to $6,000. This pattern of repeated donations is a potential concern of conflict of interest because O'Dea has proposed modernizing police operations, restructuring enforcement units, and public safety incentives. The overlap of policy benefits and union support may foster the appearance of preferential treatment</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
+        onClick={() => toggleAccordion(15)}
+        aria-expanded={openIndex === 15}
+      >
+        Tom Zuppa (Ward C Candidate for O'Dea) - $250
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 15 && (
+        <div className="accordion-content">
+          <p>Tom Zuppa, a current partner at Chasan Lamparello Mallon & Cappuzzo PC—a firm that has received multiple Jersey City contracts—donated $250 to Bill O’Dea while also running as his Ward C candidate. Although the contribution is small, the overlap between Zuppa’s role at a firm that profits from city business and his political alignment with O’Dea heightens concerns about conflicts of interest. It suggests a blending of private legal interests with public office, raising transparency and pay-to-play questions. The resolutions awarding contracts and expenditure claims fron Jersey City are listed below.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $41,233.38</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $9,996.34</a></p>
+          <p><strong>Res 24-645</strong>The City of Jersey Council approved Resolution 24-645 on August 14, 2024, awarding a one-year contract to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for workers’ compensation claims against Jersey City. The contract allows payment of $1,500 per case, with an additional $1,500 for prolonged litigation, and is capped at $50,000 total. It was awarded as a professional services agreement, exempt from competitive bidding but compliant with New Jersey’s Pay-to-Play and affirmative action requirements. Funds are allocated from the FY 2024 budget, and the agreement must be publicly available and published in a local newspaper. The resolution ensures that the firm meets all legal and compliance standards while providing specialized legal defense services to the city. <a href="https://cityofjerseycity.civicweb.net/document/406521">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/400554">4/22/24 - $38,833.38</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $35.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $1,808.60</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $192.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/93549">6/26/23 - $180.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/92663">6/9/23 - $870.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $4,666.70</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/86739">3/6/23 - $11,136.62</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $465</a></p>
+          <p><strong>Res 23-093 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-093, awarding a one-year professional services contract to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for workers’ compensation claims against the city. The firm is paid $1,500 per case, with an additional $1,500 allowed for protracted litigation, and the total contract is capped at $50,000. The award was made under the Fair and Open provisions of the Pay-to-Play Law and is exempt from competitive bidding as a professional services agreement. The contract requires compliance with affirmative action laws and must be publicly available and published in a local newspaper within ten days of adoption. Funding for the contract is drawn from the FY 2023 budget, with $10,000 certified as available, ensuring the firm can provide legal defense services in accordance with city and state regulations.<a href="https://cityofjerseycity.civicweb.net/document/83684"></a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/83495">1//20/23 - $19,833.98</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $1,500.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/80927">11/23/22 - $195.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $3,959.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $3,646.72</a></p>
+          <p><strong>Res 22-770 </strong>On October 26, 2022, the Jersey City Council approved Resolution 22-770, renewing a professional services agreement with Chasan, Lamparello, Mallon & Cappuzzo, PC to represent Sergeant Rossy Barzola in the ongoing federal lawsuit Donna and Michael Glaesener v. City of Jersey City. The renewal added $50,000 to the contract, bringing the total amount to $200,000, covering legal services and related expenses. The contract was awarded under the Fair and Open provisions of the Pay-to-Play Law and is exempt from competitive bidding as a professional services agreement. The agreement requires compliance with affirmative action laws, and a copy of the resolution and contract must be made publicly available and published in a local newspaper. Funding for the contract comes from the city’s 2022 budget, with additional renewal subject to appropriation in subsequent fiscal years. <a href="https://cityofjerseycity.civicweb.net/document/76326">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $510.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/69755">6/10/22 - $660.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/67909">5/5/22 - $4,762.65</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $2,496.40</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $3,834.95</a></p>
+          <p><strong>Res 22-160 </strong>On February 24, 2022, the Jersey City Council approved Resolution 22-160, renewing a professional services agreement with Chasan, Lamparello, Mallon & Cappuzzo, PC to represent Sergeant Rossy Barzola in the ongoing federal lawsuit Donna and Michel Glaesener v. City of Jersey City. The renewal added $50,000 to the contract, bringing the total to $150,000, including legal expenses. The contract was awarded as a professional services agreement, exempt from competitive bidding but compliant with the Fair and Open provisions of the Pay-to-Play Law. It requires compliance with affirmative action regulations, and copies of the resolution and agreement must be publicly available and published in a local newspaper. Funding for the contract comes from the city’s 2021 budget, with continuation subject to appropriation in subsequent fiscal years.<a href="https://cityofjerseycity.civicweb.net/document/63495">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/63350">2/2/22 - $45</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/62536">1/20/22 - $6,084.42</a></p>
+          <p><strong>Res 22-113 </strong>On February 9, 2022, the Jersey City Council approved Resolution 22-113, awarding a one-year professional services contract to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for workers’ compensation claims filed against the city. The contract is capped at $50,000 and pays $1,500 per case, with an additional $1,500 allowed for protracted litigation. It was awarded as a professional services agreement, exempt from competitive bidding but compliant with the Fair and Open provisions of the Pay-to-Play Law. The firm is required to comply with affirmative action regulations, and a copy of the resolution and agreement must be publicly available and published in a local newspaper. Funding for the contract comes from the FY 2022 budget, with continuation contingent on appropriation of sufficient funds in the permanent budget.<a href="https://cityofjerseycity.civicweb.net/document/61892">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $120.00</a></p>
+          <p><strong>Res 21-880 </strong>On December 15, 2021, the Jersey City Council approved Resolution 21-880, renewing a professional services agreement with Chasan, Lamparello, Mallon & Cappuzzo, PC to represent Police Officer Morton Otundo in the federal lawsuit Samy Faragalla v. City of Jersey City. The contract covers legal services at $150 per hour, with a total not to exceed $50,000, including expenses. The award was made as a professional services agreement, exempt from competitive bidding, and follows the Fair and Open provisions of the Pay-to-Play Law. Compliance with affirmative action regulations is required, and the resolution and agreement must be publicly available and published in a local newspaper. Funding for the contract comes from the city’s 2022 budget, with continuation contingent on appropriation of sufficient funds in both temporary and permanent budgets. <a href="https://cityofjerseycity.civicweb.net/document/59876">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/59833">11/22/21 - $15,729.33</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/59107">11/4/21 - $195.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/58567">10/22/21 - $4,965.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/58054">10/7/21 - $825.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $225.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/49373">6/9/21 - $360.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/46864">4/22/21 - $38.65</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/46108">4/9/21 - $10,252.27</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/43483">2/18/21 - $450.00</a></p>
+          <p><strong>Res 21-213 </strong>On March 10, 2021, the Jersey City Council approved Resolution 21-213, ratifying a professional services agreement with Chasan, Lamparello, Mallon & Cappuzzo, PC to represent Police Officer Morton Otundo in the federal lawsuit Samy Faragalla v. City of Jersey City. The contract covers legal services at $150 per hour, with a total not to exceed $50,000, including expenses. The agreement was awarded as a professional services contract, exempt from competitive bidding, under the Fair and Open provisions of the Pay-to-Play Law. Compliance with affirmative action regulations is required, and the resolution and agreement must be publicly available and published in a local newspaper. Funding comes from the city’s 2021 budget, and continuation of the contract is contingent on the appropriation of sufficient funds in the permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/43440">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/43026">2/9/21 - $1,095.00</a></p>
+          <p><strong>Res 21-091 </strong>On January 27, 2021, the Jersey City Council approved Resolution 21-091, awarding a professional services agreement to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for worker’s compensation claims filed against the city. The contract covers services at $1,500 per case, with an additional $1,500 allowed for protracted litigation, for a total amount not to exceed $50,000. The agreement is classified as a professional services contract, exempt from competitive bidding under the Local Public Contracts Law, and follows the Fair and Open provisions of the Pay-to-Play Law. Compliance with affirmative action regulations is required, and the resolution and agreement must be publicly available and published in a city newspaper. Initial funding of $10,000 was allocated from the 2021 temporary budget, with the remainder provided through the 2021 permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/40147">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/38868">11/25/20 - $165.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/37605">11/5/20 - $4,608.94</a></p>
+          <p><strong>Res 21-046 </strong>On January 13, 2021, the Jersey City Council approved Resolution 21-046, renewing a professional services agreement with Chasan Lamparello Mallon & Cappuzzo, PC to represent Sergeant Rossy Barzola in the ongoing lawsuit filed by Donna and Michel Glaesener. The case alleges assault, violations of civil rights, violations of the New Jersey Constitution, the New Jersey Civil Rights Act, and false arrest. The renewal increases the contract by $50,000, bringing the total to $100,000, including expenses, for a one-year term effective October 18, 2020. The contract is awarded as a professional services agreement exempt from competitive bidding under the Local Public Contracts Law and complies with the Fair and Open provisions of the Pay-to-Play Law. Funds of $3,000 were initially allocated from the 2020 budget, and the continuation of the contract depends on the availability of funds in the 2021 temporary and permanent budgets. <a href="https://cityofjerseycity.civicweb.net/document/37540">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/35574">9/29/20 - $1,262.30</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/28568">6/16/20 - $3,826.27</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/27626">6/4/20 - $1,141.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/20322">2/4/20 - $420</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/19070">1/15/20 - $5,460.28</a></p>
+          <p><strong>Res 19-962 </strong>On December 18, 2019, the Jersey City Council approved Resolution 19-962, awarding a professional services agreement to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for worker’s compensation claim petitions filed against the City. The law firm will handle cases at a rate of $1,500 per case, with an additional $1,500 available for protracted litigation if necessary. The contract is exempt from competitive bidding under the Local Public Contracts Law and follows the Fair and Open provisions of the Pay-to-Play Law. The one-year contract, effective January 1, 2020, has a maximum total amount of $50,000 and requires compliance with affirmative action and pay-to-play regulations. Continuation of the contract depends on the appropriation of sufficient funds in the City’s 2020 temporary and permanent budgets. <a href="https://cityofjerseycity.civicweb.net/document/16079">Resolution PDF</a></p>
+          <p><strong>Res 19-909 </strong>On December 4, 2019, the Jersey City Council approved Resolution 19-909, ratifying a professional services agreement with Chasan, Lamparello, Mallon & Cappuzzo, PC to represent Sergeant Rossy Barzola in the civil rights case filed by Donna and Michel Glaesener. The complaint, filed on September 18, 2019, alleged assault, civil rights violations, and false arrest. The law firm will provide services at $150 per hour, with a total contract amount not to exceed $50,000, including expenses. The contract is exempt from competitive bidding under the Local Public Contracts Law and follows the “fair and open” Pay-to-Play process. Continuation of the contract depends on available funds in the City’s 2019 and 2020 fiscal year budgets, and compliance with affirmative action and pay-to-play regulations is required. <a href="https://cityofjerseycity.civicweb.net/document/15747">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/13574">10/1/19 - $12,666.08</a></p>
+          <p><strong>Res 19-593 </strong>On June 25, 2019, the Jersey City Council approved Resolution 19-593, awarding a professional services agreement to Chasan Lamparello Mallon & Capuzzo, PC to represent the Municipal Council, Council President Rolando Lavarro, and Municipal Clerk Robert Byrne in the Wave Urban Renewal v. City of Jersey City case. The complaint, filed on June 18, 2019, alleged that the City failed to comply with the long-term tax exemption law. The law firm will provide services at $175 per hour, with a total contract amount not to exceed $30,000, including expenses. The contract is exempt from competitive bidding under the Local Public Contracts Law and was awarded through the City’s “fair and open” Pay-to-Play process. Continuation of the contract is contingent on compliance with affirmative action and pay-to-play regulations, and funds have been certified as available in the City’s budget. <a href="https://cityofjerseycity.civicweb.net/document/8419">Resolution PDF</a></p>
+          <p><strong>Res 19-162 </strong>On January 1, 2019, the Jersey City Council ratified Resolution 19-162, awarding a one-year professional services contract to Chasan Lamparello Mallon & Cappuzzo, PC to provide defense counsel for worker’s compensation claims filed against the City. The law firm will be compensated at $1,500 per case, with an option for an additional $1,500 if protracted litigation is necessary, for a total contract amount not to exceed $50,000. This contract is exempt from competitive bidding under the Local Public Contracts Law and was awarded through the City’s fair and open Pay-to-Play process. Continuation of the contract is contingent on compliance with affirmative action laws and the City’s Pay-to-Play Reform Ordinance. Funds have been certified as available in the City’s budget, and a copy of the resolution will be published publicly within ten days of adoption. <a href="https://cityofjerseycity.civicweb.net/document/7925">Resolution PDF (pgs 254-274)</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
+        onClick={() => toggleAccordion(16)}
+        aria-expanded={openIndex === 16}
+      >
+        Mast Construction Services - $5,250
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 16 && (
+        <div className="accordion-content">
+          <p>Mast Construction Services raises potential red flag concerns despite not currently holding direct contracts with Jersey City. The company has made multiple contributions, ranging from $250 to $2,500, both as corporate and “P2P Corporate,” spanning the years 2020 through 2025. While the donations themselves are not unusually large, the repeated contributions over time, combined with Mast’s extensive involvement in high-profile public projects in the region—such as courthouse renovations, Hudson County Community College buildings, and other infrastructure initiatives—suggest a potential interest in maintaining influence or favorable relationships with city officials. Even without formal contracts in Jersey City, their consistent presence and donations indicate strategic relationship-building that could warrant closer scrutiny.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
+        onClick={() => toggleAccordion(17)}
+        aria-expanded={openIndex === 17}
+      >
+        IBEW Local Union 164 - $13,900
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 17 && (
+        <div className="accordion-content">
+          <p>IBEW Local Union #164 PAC presents a potential red flag in the context of Bill O’Dea’s campaign financing. The union has previously received money from Jersey City, establishing a financial connection to municipal resources. At the same time, the PAC has donated heavily to O’Dea’s mayoral campaign, raising concerns about whether these contributions are aimed at securing influence or favorable treatment in future labor negotiations, city contracts, or project approvals. The combination of receiving city funds while simultaneously investing significant political support in a candidate creates a perception of pay-to-play dynamics.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $7.366.59</a></p>
+
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
+        onClick={() => toggleAccordion(18)}
+        aria-expanded={openIndex === 18}
+      >
+        GD Correctional Services LLC - $11,400
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 18 && (
+        <div className="accordion-content">
+          <p>The donations from GD Correctional Services LLC and its president are a red flag because they come directly from a company that relies almost entirely on government contracts in Hudson County. With nearly $11 million in correctional food service contracts already awarded, their financial stability depends on continued public funding. By donating the maximum allowed amount to Councilman O’Dea, who has influence over city and county decisions, the company appears to be investing in political relationships that could safeguard or expand its contracts. Their prior attempt to enter Jersey City’s food service market, even though they were disqualified, shows a clear interest in securing new city contracts.</p>
+          <p><strong>Res 22-605 </strong>The Hudson County Correctional Center’s food services contract with GD Correctional Services, LLC is running out of funds, prompting officials to request an additional $163,264 to cover ongoing expenses. Originally awarded at $9.2 million, the contract has already been increased three times—by $385,000, $975,000, and $250,000—bringing the total contract value to $10,973,264. This request highlights the growing costs tied to the county’s agreement with GD Correctional Services to provide meals at the jail. <a href="https://cityofjerseycity.civicweb.net/document/71984">Resolution PDF (pg 26)</a></p>
+          <p><strong>Res 20-346 </strong>GD Correctional Services submitted the lowest bid—$546,184.86—for Jersey City’s Summer Food Service Program, which would have made them the most cost-effective option on paper. However, their bid was rejected because they were not an approved vendor for the program, which requires compliance with state and federal standards for child nutrition services. As a result, the city was forced to award the contract to Red Rabbit LLC, the lowest responsive bidder at $758,076.54. This shows that while GD Correctional is actively seeking food service contracts beyond correctional facilities, their lack of required program approval disqualified them, highlighting both their aggressive pursuit of public food contracts and the regulatory limits on their eligibility. <a href="https://cityofjerseycity.civicweb.net/document/28357">Resolution PDF (pgs 6-7)</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
+        onClick={() => toggleAccordion(19)}
+        aria-expanded={openIndex === 19}
+      >
+        Boraie Family - $25,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 19 && (
+        <div className="accordion-content">
+          <p>The Boraie family donations represent a significant red flag due to both their size and concentration. Multiple members of the family—including Ana, Sam, Omar, Hiam, and Wasseem Boraie—have contributed large amounts, often through affiliated entities like Spring Street Development Urban Renewal LLC and Albany Street Plaza Urban Renewal LLC. Omar Boraie, as the founder and chairman of Boraie Development LLC, has direct business interests in real estate development within New Brunswick, and these donations could be seen as an attempt to exert influence over municipal decisions that affect their projects. The fact that contributions come from several family members and related companies suggests a coordinated strategy to amplify their political impact, rather than independent civic engagement. Such a pattern raises concerns about potential conflicts of interest, as city decisions could indirectly benefit their family’s substantial real estate holdings.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
+        onClick={() => toggleAccordion(20)}
+        aria-expanded={openIndex === 20}
+      >
+        Anthony and Angelo Beskaly: John & Maryan LLC - $6,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 20 && (
+        <div className="accordion-content">
+          <p>John & Maryann, LLC represents a notable red flag in terms of campaign contributions because, in addition to receiving payments from the City of Jersey City on two occasions, employees associated with the company have collectively donated $6,000 to O’Dea’s campaign. This financial relationship raises concerns about potential conflicts of interest, especially given that the company owns multiple properties across the city, including parcels directly affected by redevelopment and eminent domain decisions. The combination of city payments, employee donations, and widespread property holdings suggests a situation where campaign contributions could be perceived as a way to gain influence or favorable treatment in city planning and redevelopment decisions. This creates a heightened risk of public perception that financial support may be tied to municipal actions that benefit the company’s real estate interests.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410960">9/11/24 - $7,349.94</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/32473">8/6/20 - $8,800.00</a></p>
+          <p><strong>Res 22-905 </strong>John & Maryann, LLC is a property owner whose parcels are included in the Ocean Avenue South Expansion Study Area being considered for redevelopment by the City of Jersey City. Under this process, the Planning Board has identified portions of the study area—specifically Block 27201 Lots 21, 23, 24, and 25—as a “Condemnation Area” in need of redevelopment, which would allow the city or a designated redevelopment entity to use eminent domain to acquire properties against the owners’ will. John & Maryann, LLC, as the last known owner of one or more parcels in this area, is formally notified so that they have the opportunity to participate in the public hearing, present objections or support, and potentially challenge the designation in court within 45 days if the city moves forward with the condemnation redevelopment. Essentially, they are directly affected stakeholders in a process that could lead to the compulsory sale of their property for public redevelopment purposes. <a href="https://cityofjerseycity.civicweb.net/document/79183">Resolution PDF (pg 9)</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
+        onClick={() => toggleAccordion(21)}
+        aria-expanded={openIndex === 21}
+      >
+        Armando Derrico and Beatrice Sangosse: Pinnacle Development Group - $5,750
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 21 && (
+        <div className="accordion-content">
+            <p>The donations from Armando Derrico, owner of Pinnacle Development Group, and Beatrice Sangosse, an associate working under both Pinnacle Development Group and Weichert Realtors, represent a potential red flag. Both have made contributions to O’Dea while their company actively engages in real estate projects in Jersey City, as evidenced by their portfolio showcasing multiple local properties. Large donations from individuals with direct business interests in the city raise concerns about possible conflicts of interest, particularly regarding zoning, approvals, or redevelopment decisions. This overlap between financial support and local business activity makes these donations a noteworthy red flag.</p>
+            <a href="https://pdgbuilding.com/portfolio">Pinnacle Development's Portfolio</a>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
+        onClick={() => toggleAccordion(22)}
+        aria-expanded={openIndex === 22}
+      >
+        Ronnie Greco, President of Jersey City Education Association - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 22 && (
+        <div className="accordion-content">
+            <p>Ronnie Greco’s donation to O’Dea is a red flag because, as president of the Jersey City Education Association, he holds a key leadership role in a powerful local union that directly interacts with city government on education policies, budgets, and contracts. Large contributions from union leaders can create the appearance of seeking influence or preferential treatment from elected officials, raising concerns about potential conflicts of interest. The combination of his position, the size of the donation, and the union’s stake in city decisions makes this contribution particularly sensitive from an ethical and transparency perspective.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
+        onClick={() => toggleAccordion(23)}
+        aria-expanded={openIndex === 23}
+      >
+        Scott Grogan & Deirdre Owen: Landmark Developers: $5,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 23 && (
+        <div className="accordion-content">
+            <p>The donations from Scott Grogan and Deidre Owens of Landmark Developers to O’Dea are a red flag because the company is actively involved in significant Jersey City projects, including the Liberty House and Hudson House developments. In addition, Landmark Developers formally communicated with Robert Byrne, the City Clerk, through letters regarding proposed projects and NJDEP applications, showing active engagement with city officials on development matters. As CFO and representatives of a firm directly affected by city approvals and permits, their contributions could be perceived as an attempt to gain political favor or influence decisions benefiting their business interests. Their letters are listed in the agendas below.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/17855">1/8/20 Agenda, 6.17</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/17087">12/18/19 Agenda, 6.40</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
+        onClick={() => toggleAccordion(24)}
+        aria-expanded={openIndex === 24}
+      >
+        Mark Grossbard, CEO of Kai Strategic Insurance and VP of Insurance World: $5,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 24 && (
+        <div className="accordion-content">
+          <p>Mark Grossbard’s $5,000 donation to O’Dea is a red flag because he is CEO of Kai Strategic Insurance, a company that has received substantial payments from Jersey City—over $2.7 million across recent expenditures. The large sums combined with his personal political contribution create the appearance of a potential conflict of interest. The timing and scale of the donation relative to the city’s financial interactions with Kai Strategic Insurance could be perceived as an attempt to gain influence or preferential treatment, raising concerns about transparency and ethical optics.</p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $602,197.40</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/418957">1/9/25 - $561,050.40</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/412698">10/16/24 - $1,568,074.46</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
+        onClick={() => toggleAccordion(25)}
+        aria-expanded={openIndex === 25}
+      >
+        Albert Mauti, Co-Founder of M&M Construction: $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 25 && (
+        <div className="accordion-content">
+          <p>Albert Mauti, as the co-founder of M & M Construction Company, which received a substantial $5.64 million contract from the City of Jersey City for the construction of Engine Co. #10 and Ladder 12 and has received several expenditure payments from Jersey City, donated to O’Dea’s campaign. This contribution is a red flag because it comes directly from a principal of a company that benefits from significant city expenditures, creating a potential conflict of interest. The donation raises concerns about the possibility of political influence, as the company’s financial interests could be seen as linked to O’Dea’s political support. The contract itself involved multiple payments and oversight from city officials, meaning any perceived favoritism or expectation of favorable treatment could compromise the integrity of the procurement process.</p>
+          <p><strong>Res 21-242 </strong>The City of Jersey Council awarded a contract to M & M Construction Company, Inc. for the construction of Engine Co. #10 and Ladder 12 – a new firehouse, Project No. 18-004, for the Department of Administration, Division of Architecture. The contract was the result of a public bidding process, where M & M Construction was the lowest responsive and responsible bidder after the lowest bid from Thomas & Sons Builders was deemed non-responsive. The total bid amount is $5,642,000, with a total encumbrance of $6,206,200 available across multiple capital accounts. Payments will be made once city officials certify that the materials and services are delivered in accordance with the contract. The contract award is subject to compliance with New Jersey’s Affirmative Action Amendments to the Law Against Discrimination, and the Mayor or Business Administrator is authorized to execute the contract on behalf of the city. <a href="https://cityofjerseycity.civicweb.net/document/44316"></a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/71510">7/8/22 - $101,626.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/68836">5/20/22 - $198,450.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $73,500.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $242,007.39</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/60449">12/8/21 - $24,500</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/58567">10/22/21 - $175,665.00</a></p>
+        </div>
+      )}
+    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
 
 
 

@@ -17,8 +17,8 @@ import "./DonationComparison.css";
 // Example hardcoded data (replace with your real numbers)
 const candidateData = [
   { name: "Mussab Ali", total: 450908.92, redFlag: 0 },
-  { name: "Bill O'Dea", total: 829745, redFlag: 43075 },
-  { name: "Jim McGreevey", total: 2698055.72, redFlag: 408550 },
+  { name: "Bill ODea", total: 829745, redFlag: 176625 },
+  { name: "Jim McGreevey", total: 2698055.72, redFlag: 504450 },
   { name: "James Solomon", total: 905533.33, redFlag: 61850 },
 ];
 
@@ -85,30 +85,36 @@ export default function Comparison() {
           ];
 
           return (
-            <div key={c.name} className="pie-chart-item">
-              <h3>{c.name}</h3>
-              <PieChart width={220} height={220} role="img" aria-label={`${c.name} donation breakdown`}>
-                <Pie
-                  data={chartData}
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  dataKey="value"
-                  labelLine={false}
-                  label={false}
-                  isAnimationActive={false}
-                >
-                  {chartData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip
-                  formatter={(value, name) => [
-                    `$${Number(value).toLocaleString()}`,
-                    name,
-                  ]}
-                />
-              </PieChart>
+          <div key={c.name} className="pie-chart-item">
+            {/* Candidate name as a clickable link */}
+            <h3>
+              <Link to={`/${c.name.replace(/\s+/g, "")}`}>
+                {c.name}
+              </Link>
+            </h3>
+
+            <PieChart width={220} height={220} role="img" aria-label={`${c.name} donation breakdown`}>
+              <Pie
+                data={chartData}
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                dataKey="value"
+                labelLine={false}
+                label={false}
+                isAnimationActive={false}
+              >
+                {chartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <Tooltip
+                formatter={(value, name) => [
+                  `$${Number(value).toLocaleString()}`,
+                  name,
+                ]}
+              />
+            </PieChart>
 
               {/* Custom legend with percentages */}
               <ul className="mini-legend" aria-label={`${c.name} donation legend`}>

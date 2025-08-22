@@ -783,7 +783,7 @@ The contract was bid in December 2020, with three companies responding, but only
 United Sales USA’s bid was for $97,089.55, which the Purchasing Agent deemed fair and reasonable.
 An initial $5,000 was certified as available, with the rest of the funds to be allocated as orders are placed during the contract term.
 The one-year contract may be extended for up to two additional years and requires compliance with fiscal laws and affirmative action regulations.</p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/12343"></a>On September 13, 2019, the Jersey City Council approved Resolution 19-0736 to renew an open-end contract with United Sales USA Corporation for custodial supplies for the Department of Public Works / Division of Buildings and Street Maintenance.
+            <p><a href="https://cityofjerseycity.civicweb.net/document/12343">Resolution PDf</a>On September 13, 2019, the Jersey City Council approved Resolution 19-0736 to renew an open-end contract with United Sales USA Corporation for custodial supplies for the Department of Public Works / Division of Buildings and Street Maintenance.
 The original contract was awarded in 2017 for $56,990.00, renewed once in 2018 for $58,585.72, and this resolution exercised the final renewal option.
 The new one-year renewal runs from September 14, 2019 to September 13, 2020, with a maximum contract amount of $59,757.46.
 An initial $10,000 was certified as available, with the remainder to be provided as service orders are placed.
@@ -1107,6 +1107,125 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
           </div>
         )}
       </div>
+
+
+      {/* Remington and Vernick Engineers */}
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 31 ? "active" : ""}`}
+          onClick={() => toggleAccordion(31)}
+          aria-expanded={openIndex === 31}
+        >
+          Remington and Vernick Engineers - $2,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 31 && (
+          <div className="accordion-content">
+            <p>A $2,000 donation to McGreevey is a red flag because the firm has directly provided professional engineering and design services for city projects, such as structural plans and geotechnical work for public buildings. This creates a potential conflict of interest: the donation could be perceived as an attempt to influence McGreevey or maintain favorable relations with the city administration, which could indirectly affect contract approvals, project oversight, or future business opportunities. Even if the donation is legal and disclosed, the fact that the donor is a company actively involved in city projects heightens the appearance of impropriety. The red flag arises from the overlap between the donor’s financial contribution and their professional interest in city decisions.</p>
+            <p><strong>Res 23-514 </strong>Remington & Vernick Engineers is acting as the structural engineering consultant for the Engine 10 / Ladder 12 Fire Station project in Jersey City. Their role involves updating the structural design to account for new site conditions, including modifications to the foundation system based on geotechnical findings. They ensure that all structural plans comply with the 2021 International Building Code and coordinate closely with other consultants, including Netta Architects, Langan (geotechnical), and Polise Engineering (MEP), to integrate these updates into the overall project documents. Additionally, they provide construction administration support by reviewing contractor submittals, participating in progress meetings, and assisting the city with interpretation of structural aspects of the contract documents. <a href="https://cityofjerseycity.civicweb.net/document/93088">Resolution PDF</a></p>
+            <p><strong>Ord 22-112 </strong>Remington & Vernick are involved as the design and engineering consultants, having provided the proposed layout and plans for the renovations and expansions at 514 Newark Avenue. Their work includes designing the modifications to ensure ADA compliance, improving facilities to reduce COVID-19 transmission risks, and creating space for showers, laundry, and congregate meals for residents experiencing homelessness. Essentially, Remington & Vernick’s plans form the basis for the City and Garden State Community Development Corporation to implement the Hudson CASA Coordinated Entry Program at the property. Their proposed layout is incorporated into the ordinance as part of the city’s authorization to proceed with the $2,100,400 in improvements. <a href="https://cityofjerseycity.civicweb.net/document/81763">Ordinance PDF</a></p>
+            <p><strong>6.19</strong>This letter, dated April 10, 2025, from James L. Hankins, P.E., a project manager and engineer at Remington & Vernick Engineers, was sent to Sean J. Gallagher, the Jersey City Clerk, regarding the NJDEP Waterfront Development Individual Permit for the Van Winkle Combined Sewer Outfall project in Jersey City. It indicates that Remington & Vernick Engineers are acting as the engineering consultants responsible for preparing and submitting technical documentation and permitting materials to the New Jersey Department of Environmental Protection. The correspondence highlights Vernick’s direct involvement in the regulatory and design aspects of the waterfront development project. <a href="https://cityofjerseycity.civicweb.net/document/427697"></a>4/23/25 Agenda</p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 32 ? "active" : ""}`}
+          onClick={() => toggleAccordion(32)}
+          aria-expanded={openIndex === 32}
+        >
+          Mana Miami Management - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 32 && (
+          <div className="accordion-content">
+            <p>This donation could be considered a red flag because Mana Miami Management, a company based in Miami, contributed to both McGreevey and O’Dea, despite having no apparent local ties to Jersey City. Out-of-state corporate donations to local candidates can raise concerns about potential influence or interests outside the immediate community. The fact that the company is involved in multiple contributions suggests a pattern that might be aimed at currying favor with officials who could affect policies, contracts, or decisions impacting their broader business interests.</p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 33 ? "active" : ""}`}
+          onClick={() => toggleAccordion(33)}
+          aria-expanded={openIndex === 33}
+        >
+          New York Stone - $5,200
+          Employees of New York Stone - $25,400
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 33 && (
+          <div className="accordion-content">
+            <p>The donations from New York Stone—$5,200 from the company and $25,400 from its employees—are a red flag given that the company not only has multiple projects in Jersey City relating to hotels but also maintains a warehouse in the city for storing their stone slabs. This local presence indicates direct, ongoing business interests that could be affected by city policies, approvals, or contracts. Contributions to candidates like McGreevey may therefore be perceived as attempts to curry favor or ensure favorable treatment from officials who have influence over municipal decisions that impact their operations. The combination of substantial donations and a physical stake in the city heightens the potential for conflicts of interest or the appearance of undue influence.</p>
+        </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 34 ? "active" : ""}`}
+          onClick={() => toggleAccordion(34)}
+          aria-expanded={openIndex === 34}
+        >
+          Eastern Millwork - $10,400
+          Andrew Campbell, CEO/Founder - $5,200
+          Natalya Campbell - $5,200
+          Heiko Sieling, COO - $5,200
+
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 33 && (
+          <div className="accordion-content">
+            <p>The donations from Eastern Millwork—$10,400 in total, including contributions from CEO Andrew Campbell, co-founder Natalya Campbell, and COO Heiko Sieling—are a red flag because the company has significant projects in Jersey City, such as Hudson Exchange Phase 1B and Liberty National Villas. These projects suggest that Eastern Millwork has ongoing business interests that could be directly affected by municipal decisions or approvals. Contributions to McGreevey may create, or appear to create, a conflict of interest, as the company could benefit from favorable treatment, zoning approvals, or city contracts. The combination of sizable donations and active projects in the city raises concerns about potential influence over elected officials.</p>
+            <p><a href="https://easternmillwork.com/portfolio-item/hudson-exchange-phase-1b">HUDSON EXCHANGE PHASE 1B</a></p>
+            <p><a href="https://easternmillwork.com/portfolio-item/liberty-national-villas">Liberty National Villas Project</a></p>
+        </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 34 ? "active" : ""}`}
+          onClick={() => toggleAccordion(34)}
+          aria-expanded={openIndex === 34}
+        >
+          Union City First - $15,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 34 && (
+          <div className="accordion-content">
+           <p>Brian Stack, the long-serving Mayor of Union City, wields significant influence in Hudson County politics, and his PAC, Union City First Inc., donated $15,000 to Jim McGreevey. This is a red flag because Stack has a history of consolidating political power, which has drawn scrutiny and controversy. For example, he has been criticized for controlling local elections through endorsements and campaign funding, which some observers say limits competition and concentrates power within Union City’s political machine. Stack has also faced allegations of patronage, with claims that city jobs and contracts were awarded to supporters or allies, fueling concerns about conflicts of interest. These patterns make substantial donations from his PAC potentially indicative of attempts to maintain influence or leverage over elected officials, raising questions about transparency and ethical boundaries in campaign finance.</p>
+        </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 35 ? "active" : ""}`}
+          onClick={() => toggleAccordion(35)}
+          aria-expanded={openIndex === 35}
+        >
+          New Jersey Together Political Action Committee - $17,300
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 35 && (
+          <div className="accordion-content">
+            <p>The $8,300 donation from the New Jersey Together Political Action Committee (PAC) to former Governor Jim McGreevey in March 2025 raises concerns due to the PAC's nonpartisan stance and its focus on community organizing rather than direct political campaigns. Given that McGreevey has been out of office for over a decade and is not actively running for any position, such a substantial contribution from a nonpartisan organization is unusual and could suggest an attempt to influence future political activities or gain favor with a former high-ranking official. While New Jersey Together's mission is to develop leaders and strengthen communities through partnerships with religious congregations, non-profits, and neighborhood organizations, its involvement in political contributions, especially to individuals not currently holding office, is atypical and warrants scrutiny.</p>
+        </div>
+        )}
+    </div>
+
+
+
+
+
+
+
+
+
+
+      
 
 
 
