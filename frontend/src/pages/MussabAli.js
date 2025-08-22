@@ -28,6 +28,7 @@ export default function Draft() {
     { name: "Bill O'Dea", path: "/BillODea" },
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
+    { name: "Joyce Watterman", path: "/JoyceWatterman"}
   ];
 
   useEffect(() => {

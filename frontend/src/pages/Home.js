@@ -13,6 +13,7 @@ const candidates = [
   { name: "Bill O'Dea", path: "/BillODea", image: odeaImg },
   { name: "Jim McGreevey", path: "/JimMcGreevey", image: mcgreeveyImg },
   { name: "James Solomon", path: "/JamesSolomon", image: solomonImg },
+  { name: "Joyce Watterman", path: "/JoyceWatterman", image: wattermanImg}
 ];
 
 export default function Home() {
