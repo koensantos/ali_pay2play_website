@@ -372,13 +372,14 @@ export default function Draft() {
           aria-expanded={openIndex === 1}
         >
           Michael Oriani - Manager of William J Guarini INC - $5,500
+          William Guarini - $500
           <span className="accordion-arrow" />
         </button>
         {openIndex === 1 && (
           <div className="accordion-content">
             <p>
               Solomon has received a donation of $5,500 from Oriani on March 27,
-              2025. Due to his high position in the company, and that fact they
+              2025 and a $500 donation from William Guarini on May 21, 2025. Due to his high position in the company, and that fact they
               have received contracts from Jersey City, it has been flagged as a
               suspicious donation.
             </p>
@@ -413,12 +414,13 @@ export default function Draft() {
     aria-expanded={openIndex === 2}
   >
     Wilentz, Goldman, and Spitzer - $5,200
+    Everett Johnson - $1,500
     <span className="accordion-arrow" />
   </button>
   {openIndex === 2 && (
     <div className="accordion-content">
       <p>
-        Solomon has received a total of $5,200 from Wilentz, Goldman, and Spitzer, a law firm that has been awarded multiple contracts by the city below. The law firm has been awarded contracts for bond counsel services, which amounts to upwards of $270,000 in total.
+        Solomon has received $1,500 from Everett Johnson, who is a shareholder and co-chair of the Public Finance Team and the firm's Equal Opportunity Committee, and a total of $5,200 from Wilentz, Goldman, and Spitzer, a law firm that has been awarded multiple contracts by the city below. The law firm has been awarded contracts for bond counsel services, which amounts to upwards of $270,000 in total.
       </p>
       <ul>
         <li>
