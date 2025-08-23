@@ -20,7 +20,7 @@ const candidateData = [
   { name: "Bill ODea", total: 829745, redFlag: 176625 },
   { name: "Jim McGreevey", total: 2698055.72, redFlag: 504450 },
   { name: "James Solomon", total: 905533.33, redFlag: 94100 },
-  { name: "Joyce Watterman", total: 100000, redFlag: 35800}
+  { name: "Joyce Watterman", total: 279641, redFlag: 35800}
 ];
 
 // Red for red flags, teal for the rest
