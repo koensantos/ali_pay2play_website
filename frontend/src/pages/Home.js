@@ -9,10 +9,10 @@ import solomonImg from "./img/solomon.jpg";
 import wattermanImg from "./img/watterman.jpg";
 
 const candidates = [
-  { name: "Mussab Ali", path: "/MussabAli", image: mussabImg },
+  { name: "James Solomon", path: "/JamesSolomon", image: solomonImg },
   { name: "Bill O'Dea", path: "/BillODea", image: odeaImg },
   { name: "Jim McGreevey", path: "/JimMcGreevey", image: mcgreeveyImg },
-  { name: "James Solomon", path: "/JamesSolomon", image: solomonImg },
+  { name: "Mussab Ali", path: "/MussabAli", image: mussabImg },
   { name: "Joyce Watterman", path: "/JoyceWatterman", image: wattermanImg}
 ];
 

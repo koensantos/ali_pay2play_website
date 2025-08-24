@@ -1192,6 +1192,7 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
           aria-expanded={openIndex === 34}
         >
           Union City First - $15,000
+          Brian P Stack for Senate - $5,000
           <span className="accordion-arrow" />
         </button>
         {openIndex === 34 && (
@@ -1212,10 +1213,231 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         </button>
         {openIndex === 35 && (
           <div className="accordion-content">
-            <p>The $8,300 donation from the New Jersey Together Political Action Committee (PAC) to former Governor Jim McGreevey in March 2025 raises concerns due to the PAC's nonpartisan stance and its focus on community organizing rather than direct political campaigns. Given that McGreevey has been out of office for over a decade and is not actively running for any position, such a substantial contribution from a nonpartisan organization is unusual and could suggest an attempt to influence future political activities or gain favor with a former high-ranking official. While New Jersey Together's mission is to develop leaders and strengthen communities through partnerships with religious congregations, non-profits, and neighborhood organizations, its involvement in political contributions, especially to individuals not currently holding office, is atypical and warrants scrutiny.</p>
+            <p>The $17,300 donation from the New Jersey Together Political Action Committee (PAC) to former Governor Jim McGreevey in March 2025 raises concerns due to the PAC's nonpartisan stance and its focus on community organizing rather than direct political campaigns. Given that McGreevey has been out of office for over a decade and has not actively running for any position until this election, such a substantial contribution from a nonpartisan organization is unusual and could suggest an attempt to influence future political activities or gain favor with a former high-ranking official. While New Jersey Together's mission is to develop leaders and strengthen communities through partnerships with religious congregations, non-profits, and neighborhood organizations, its involvement in political contributions, especially to individuals not currently holding office, is atypical and warrants scrutiny.</p>
         </div>
         )}
     </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 36 ? "active" : ""}`}
+          onClick={() => toggleAccordion(36)}
+          aria-expanded={openIndex === 36}
+        >
+          Craig Guy for Hudson County Executive - $5,500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 36 && (
+          <div className="accordion-content">
+            <p>The donations from Craig Guy for Hudson County Executive to Jim McGreevey — $5,000 in June 2024 and $500 in April 2025 — raise red flag concerns. Craig Guy, as Hudson County Executive, oversees significant influence over county resources, contracts, and political networks. Contributions from his campaign committee to McGreevey, who is running for mayor of Jersey City, suggest a tightening of the county political machine around McGreevey’s candidacy. These donations may signal an effort to consolidate power and ensure alignment between county and city leadership, blurring the lines between independent campaigns and entrenched political patronage.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 37 ? "active" : ""}`}
+          onClick={() => toggleAccordion(37)}
+          aria-expanded={openIndex === 37}
+        >
+          Raj Mukherji for Senate - $16,400
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 37 && (
+          <div className="accordion-content">
+            <p>Senator Raj Mukherji’s campaign committees contributed over $16,000 to Jim McGreevey’s mayoral run—including $5,000 twice in December 2023 and additional contributions in March 2024. Mukherji wields considerable influence as a state senator and long-standing Hudson County political figure. His push to replace Jersey City’s fully elected Board of Education with an appointed model—a move broadly criticized as undemocratic and a power grab—has sparked intense backlash from local educators, parents, and elected officials, who argue it strips residents of their voice. These paired developments—a sizable multi-cycle donation combined with efforts to restructure school governance—signal concerning consolidation of political power and raise serious ethical red flags about democratic accountability and undue influence.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 38 ? "active" : ""}`}
+          onClick={() => toggleAccordion(38)}
+          aria-expanded={openIndex === 38}
+        >
+          Election Fund of Daniel Reiman - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 38 && (
+          <div className="accordion-content">
+            <p>Daniel Reiman’s campaign entity donated $5,000 to McGreevey—an amount notably high for a single political contribution. This contribution raises red-flag concerns given Reiman’s long tenure as Mayor of Carteret, and his past controversies. Reiman has faced serious reputational challenges, including sexual predator allegations from a former acquaintance that he publicly contested as defamatory. While Reiman denied these claims, the combination of the controversy and the sizable donation suggests possible reputational leverage or political alignment, which warrant careful scrutiny for potential ethical concerns or attempts to influence.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 38 ? "active" : ""}`}
+          onClick={() => toggleAccordion(38)}
+          aria-expanded={openIndex === 38}
+        >
+          Josh Gottheimer for Congress - $5,200
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 38 && (
+          <div className="accordion-content">
+            <p>Josh Gottheimer’s donation can be flagged as a red flag given his history of controversy. While representing New Jersey in Congress, Gottheimer has faced criticism for being closely aligned with Wall Street and corporate donors, often clashing with progressives within his own party who argue that his positions favor corporate interests over working-class constituents. He has also been accused of undermining party unity by opposing more progressive legislation on healthcare and financial regulation. A contribution from Gottheimer could therefore suggest potential alignment with big-money politics rather than grassroots-driven priorities, raising concerns about outside influence in Jersey City’s mayoral race.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 39 ? "active" : ""}`}
+          onClick={() => toggleAccordion(39)}
+          aria-expanded={openIndex === 39}
+        >
+          Vin Gopal for Senate - $14,400
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 39 && (
+          <div className="accordion-content">
+            <p>Senator Vin Gopal has been at the center of several controversial actions related to New Jersey education that could raise red flags for donors. In 2025, he threatened to withhold state funding from school districts that did not offer kindergarten programs, a move that could force teacher layoffs and cut essential programs, disproportionately affecting vulnerable communities. In 2023, he criticized the State Board of Education for considering sanctions on districts slow to implement equity plans, arguing that such measures could remove funding that students rely on, sparking backlash from education advocates. Gopal also pushed for increased scrutiny and transparency over school curricula, including legislation in 2022 requiring schools to post health and sex education materials online before the school year, a move that critics say inflamed public distrust and political tension. These controversies highlight his significant influence over funding and policy in education, and contributions to his campaign,like the $14,400 from Gopal for Senate,may raise concerns about potential conflicts of interest or attempts to curry favor with a politically powerful figure involved in contentious, high-stakes decisions affecting school districts, including those in Jersey City.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 40 ? "active" : ""}`}
+          onClick={() => toggleAccordion(40)}
+          aria-expanded={openIndex === 40}
+        >
+          Kyle Antonucci, Phoenix Warehouse  - $5,200
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 40 && (
+          <div className="accordion-content">
+            <p>The $5,200 donation to Jim McGreevey from Kyle Antonucci, Director of Operations at Phoenix Warehouse of NJ, could be considered a red flag. Phoenix Warehouse is an active site under the New Jersey Department of Environmental Protection’s Contaminated Site Remediation & Redevelopment Program, which involves regulatory oversight for soil remediation. Given Antonucci’s executive role and the company’s involvement in redevelopment projects subject to city approvals, the donation raises potential ethical concerns. While legally permissible, the contribution could be perceived as an attempt to gain favor or influence decisions related to redevelopment or regulatory matters, creating a possible conflict of interest and drawing scrutiny in Jersey City’s politically sensitive environment. <a href="https://cityofjerseycity.civicweb.net/document/90485">May 10 2023 Agenda (pg 7)</a></p>
+        </div>
+        )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 41 ? "active" : ""}`}
+        onClick={() => toggleAccordion(41)}
+        aria-expanded={openIndex === 41}
+      >
+        Samer and Omar Boraie, Boraie Development LLC - $10,400
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 41 && (
+        <div className="accordion-content">
+          <p>The substantial donations from Samer and Omar Boraie of Boraie Development LLC to Jim McGreevey could be considered a red flag due to their extensive real estate holdings and ongoing large-scale redevelopment projects across New Jersey, including Newark, New Brunswick, and Atlantic City. With multiple high-rise residential and mixed-use developments totaling hundreds of thousands of square feet, these projects often require city approvals, zoning changes, or other municipal decisions. Contributions of this size from influential developers could be perceived as an attempt to gain favor or influence city decision-making, raising potential ethical concerns about conflicts of interest and pay-to-play dynamics, even if the donations themselves are legal.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 42 ? "active" : ""}`}
+        onClick={() => toggleAccordion(42)}
+        aria-expanded={openIndex === 42}
+      >
+        Anthony Diaco, Founder of AJD Construction - $5,200
+        Zackary,Diaco, AJD Construction - $5,200
+        Nick Diaco, AJD Construction - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 42 && (
+        <div className="accordion-content">
+          <p>The donations from Zackary Diaco ($5,200), Nick Diaco ($5,200), and Anthony Diaco ($5,200)—all tied to AJD Construction, the general contractor for the 808 Pavonia Owner Urban Renewal project—are potential red flags because of the close financial and regulatory connection between the contractor and the city. AJD Construction is executing a project that qualifies for a Long-Term Tax Exemption under Ordinance 24-086, which allows the developer to receive a significant property tax abatement contingent on completing specific infrastructure and residential improvements. At the same time, the city has already made expenditures toward the company (e.g., $14,692.50 on 6/4/20), demonstrating direct public investment or support. Large personal contributions from the contractor’s executives and trade employees could be perceived as attempts to gain political favor or influence decisions related to approvals, tax incentives, or oversight of the redevelopment project. While legal, the combination of substantial city-backed incentives and large contributions from a contractor benefiting from the project creates the appearance of a potential conflict of interest or pay-to-play dynamic, making these donations ethically sensitive.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410733">Ord 24-086</a>AJD Construction’s role as the general contractor for the 808 Pavonia Owner Urban Renewal project is directly tied to the financial and regulatory framework established by the City of Jersey City through the Long-Term Tax Exemption ordinance. This ordinance allows developers to receive a tax abatement—effectively paying only a percentage of gross revenue instead of full property taxes—in exchange for constructing significant residential, commercial, and public infrastructure improvements. Under this framework, AJD Construction is responsible for executing the project in compliance with the city-approved site plans, public infrastructure requirements, and redevelopment agreements. Their construction work enables the developer to qualify for the staged tax exemptions and financial incentives outlined in the ordinance, linking AJD’s performance directly to the economic benefits provided by the city’s policy. This connection means that AJD Construction’s role is not only operational but also integral to realizing the tax benefits granted under municipal law.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/27626">6/4/20 - $14,692.50</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 43 ? "active" : ""}`}
+        onClick={() => toggleAccordion(43)}
+        aria-expanded={openIndex === 43}
+      >
+        Edward Farmer, President and CEO of Millennium Strategies - $5,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 43 && (
+        <div className="accordion-content">
+          <p>The $5,500 donation from Edward Farmer, President and CEO of Millennium Strategies, raises a red flag because his firm holds a long-standing and lucrative relationship with Jersey City through its grant writing and consulting contracts. Since at least 2016, Millennium Strategies has been awarded or renewed contracts with the city worth hundreds of thousands of dollars annually, with payments documented across multiple years and resolutions showing consistent renewals. The most recent agreements (Res. 23-504 and Res. 24-681) extend the firm’s contract at annual costs of $156,000, demonstrating Millennium’s ongoing financial reliance on the city. A political donation from the company’s chief executive to local officials who oversee or influence these contracts could create the appearance of a pay-to-play arrangement, where contributions may help secure or maintain public contracts. Even if fully legal under New Jersey’s pay-to-play and disclosure laws, the timing and size of Farmer’s donation are concerning because they overlap with repeated city approvals of significant payments to his firm, making it a potential conflict-of-interest risk.</p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/427629">4/17/25 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/425256">3/24/25 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/422620">2/24/25 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/418957">1/9/25 - $26,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $39,000</a></p>
+         <p><strong>Res 24-681 </strong>On September 11, 2024, Jersey City approved a resolution to renew its contract with Millennium Strategies, LLC for grant writing and consulting services. The original two-year, $300,000 contract from 2021 included three one-year renewal options, and this is the second renewal. The new agreement extends services from June 1, 2024, through May 31, 2025, at a cost of $156,000. Of that amount, $94,500 has already been budgeted for 2024, with future payments contingent on appropriations. Millennium will continue helping the city secure funding while remaining subject to affirmative action and anti-discrimination requirements. <a href="https://cityofjerseycity.civicweb.net/document/408741">Resolution PDF</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/403052">5/17/24 - $26,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/398781">4/9/24 - $26,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $13,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $39,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/99143">9/5/23 - $51,000</a></p>
+         <p><strong>Res 23-504 </strong>On June 28, 2023, Jersey City approved Resolution 23-504 to renew its contract with Millennium Strategies, LLC for grant writing and consulting services. The original two-year, $300,000 contract from 2021 included renewal options, and this resolution exercised the first one-year renewal. The new contract term runs from June 1, 2023 through May 31, 2024, at a total cost not to exceed $156,000. An initial $1,500 was allocated from the 2023 temporary budget, with the balance to be covered by the permanent and subsequent budgets. Millennium will continue assisting the city in securing outside funding, subject to compliance with affirmative action and anti-discrimination laws. <a href="https://cityofjerseycity.civicweb.net/document/92661">Resolution PDF</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/89720">4/24/23 - $25,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/86739">3/6/23 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/81765">12/9/22 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/80927">11/23/22 - $25,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/78580">11/4/22 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $37,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/68836">5/20/22 - $37,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/62536">1/20/22 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/60449">12/8/21 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/59833">11/22/21 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/59107">11/4/21 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/58054">10/7/21 - $12,500</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $25,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $36,000</a></p>
+         <p><strong>Res 21-453 </strong>On June 16, 2021, Jersey City approved Resolution 21-453 awarding a two-year, $300,000 contract to Millennium Strategies, LLC for grant writing and consulting services. The contract was awarded through a competitive contracting process under New Jersey law, with Millennium selected as the best-qualified firm after a review of proposals. The agreement includes the option for up to three additional one-year renewals, which could bring the total contract value to $768,000 over five years. The initial payment of $25,000 was certified as available in the city’s budget at the time of approval. The contract requires Millennium to comply with affirmative action and anti-discrimination laws, and payments are contingent on certification that services are properly delivered. <a href="https://cityofjerseycity.civicweb.net/document/48085">Resolution PDF</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/46108">4/9/21 - $24,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/43483">2/18/21 - $12,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $12,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/38868">11/25/20 - $12,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/34825">9/17/20 - $36,000</a></p>
+         <p><strong>Res 20-302 </strong>On April 22, 2020, Jersey City approved Resolution 20-302 renewing its contract with Millennium Strategies, LLC for grant consulting services. The original two-year contract, first awarded in 2016 for $264,000, included three optional one-year renewals, and this resolution exercised the third and final renewal option. The renewal set the contract cost at $144,000 for the year beginning June 1, 2020. Of this amount, $72,000 was certified as available in the city’s temporary budget, with the remaining funds to be allocated in the permanent and subsequent fiscal year budgets. As with prior agreements, the renewal required compliance with affirmative action laws and conditioned payments on verified delivery of services. <a href="https://cityofjerseycity.civicweb.net/document/23626">Resolution PDF</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/17964">1/6/20 - $24,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/17017">12/11/19 - $12,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/14345">10/16/19 - $12,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/12926">9/17/19 - $12,000</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/11373">9/3/19 - $12,000</a></p>
+         <p><strong>Res 19-470 </strong>On May 22, 2019, Jersey City adopted Resolution 19-470, renewing its contract with Millennium Strategies, LLC for grant consulting services. The original contract, awarded in 2016 for $264,000, allowed up to three one-year renewals at an annual cost of $144,000, and this resolution exercised the second renewal option. The renewed term covered June 1, 2019 through May 31, 2020, with funding beginning with $20,000 allocated in the city’s temporary budget. As with prior contracts, payments were conditioned on proof of services delivered and compliance with the Local Fiscal Affairs Law. Additionally, the renewal required compliance with affirmative action laws and public notice of the award within ten days. <a href="https://cityofjerseycity.civicweb.net/document/5992">Resolution PDF</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 44 ? "active" : ""}`}
+        onClick={() => toggleAccordion(44)}
+        aria-expanded={openIndex === 44}
+      >
+        Johnathan Feifer, Park Stone - $3,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 44 && (
+        <div className="accordion-content">
+          <p>Jonathan Feifer’s $3,000 donation to Jim McGreevey through his firm, Park Stone, raises clear red flag concerns because of the company’s direct involvement in real estate development in Jersey City, one of the most politically sensitive and lucrative sectors in the city. Park Stone specializes in opportunistic investments, including ground-up development and repositioning of multi-family and mixed-use properties, which are projects that require favorable zoning decisions, city approvals, and political backing. Given McGreevey’s potential influence over development policy and contracts, a donation from a developer with clear financial interests in Jersey City creates the appearance of pay-to-play politics. This dynamic suggests that Feifer and Park Stone could be seeking favorable treatment for future projects in exchange for campaign support. In a city already plagued by concerns about developer influence, this contribution underscores the deep entanglement between political fundraising and real estate interests. <a href="https://parkstonemanagement.com/about-us.html">Park Stone Website</a></p>
+        </div>
+      )}
+    </div>
+
+
+
+
+
+
+    
+
+
+
+
 
 
 

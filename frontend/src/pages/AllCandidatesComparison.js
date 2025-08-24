@@ -18,7 +18,7 @@ import "./DonationComparison.css";
 const candidateData = [
   { name: "Mussab Ali", total: 450908.92, redFlag: 0 },
   { name: "Bill ODea", total: 829745, redFlag: 176625 },
-  { name: "Jim McGreevey", total: 2698055.72, redFlag: 504450 },
+  { name: "Jim McGreevey", total: 2693055.72, redFlag: 590650 },
   { name: "James Solomon", total: 905533.33, redFlag: 94100 },
   { name: "Joyce Watterman", total: 279641, redFlag: 35800}
 ];
