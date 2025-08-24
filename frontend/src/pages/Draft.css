@@ -244,7 +244,7 @@ button[type="submit"] {
 
   .chart-inner-wrapper {
     width: 100%;
-    height: 400px; /* fixed height but width is responsive */
+    height: 600px; /* fixed height but width is responsive */
     max-width: 100%;
   }
 
