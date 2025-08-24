@@ -384,11 +384,13 @@ export default function Draft() {
           onClick={() => toggleAccordion(3)}
           aria-expanded={openIndex === 3}>
           Charles and Seryl Kushner - Kushner Company - $20,200
+          Nicole Meyer Kushner, President of Kushner Companies - $5,200
+          Joseph Meyer - $5,200
           <span className="accordion-arrow" />
         </button>
         {openIndex === 3 && (
            <div className="accordion-content">
-            <p>Charles and Seryl Kushner have donated $10,100 each to McGreevey's campaign in 2023 and 2024. Charles and Seryl has donated $100,000 to the Make America Great Again PAC in 2015 and $1 million to America First PAC in 2023, a pro-Trump PAC. They have also held a fundraiser for Trump in their Long Branch home in 2017. They have also begun real estate developments in Jersey City, such as One Journal Square, 65 Bay Street, known as Trump Bay Street, and Journal Squared. These developments  have often been shadowed by ethical, legal, and labor disputes, ranging from funding transparency to compliance with labor laws and local governance challenges.</p>
+            <p>Charles and Seryl Kushner have donated $10,100 each to McGreevey's campaign in 2023 and 2024. Nicole Kushner Meyers, sister of Jared Kushner, and her husband Joseph Meyers, each donated $5,200 to McGreeyey's campaign. Charles and Seryl has donated $100,000 to the Make America Great Again PAC in 2015 and $1 million to America First PAC in 2023, a pro-Trump PAC. They have also held a fundraiser for Trump in their Long Branch home in 2017. They have also begun real estate developments in Jersey City, such as One Journal Square, 65 Bay Street, known as Trump Bay Street, and Journal Squared. These developments  have often been shadowed by ethical, legal, and labor disputes, ranging from funding transparency to compliance with labor laws and local governance challenges.</p>
             <p>The support of McGreevey shows the favorability of his campaign to their real estate interests. These donations have been deemed a red flag because of the history of the donations of the Kushners, their alignment with Donald Trump, and possible real estate favorability for current projects. </p>
             <p>Furthermore, Jersey City has accepeted a donation of $47,800, which was approved on November 14, 2024. The donation was to the  Department of Recreation and Youth Development to provide financial support to any Pershing Field Pool projects and f a new refrigeration system at the Lafayette Pool complex concession stand. This was voted unanimously by the Jersey City Council. <a href="https://cityofjerseycity.civicweb.net/document/413754/Aquatics%20Donation.pdf?handle=A5324B6A2456431F8E32B36D6938E0E7">Donation PDF</a></p>
           </div>
@@ -1427,6 +1429,96 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         </div>
       )}
     </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 44 ? "active" : ""}`}
+        onClick={() => toggleAccordion(44)}
+        aria-expanded={openIndex === 44}
+      >
+        Bikram Gill, Carepoint Health System - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 44 && (
+        <div className="accordion-content">
+          <p>Bikram Gill’s $5,200 donation to Jim McGreevey is a red flag because of his position as a trustee of CarePoint Health, the parent system of Christ Hospital, Hoboken University Medical Center, and Bayonne Medical Center. Jersey City has repeatedly passed resolutions (<a href="https://cityofjerseycity.civicweb.net/document/89649">Res 23-332</a> in 2023 and <a href="https://cityofjerseycity.civicweb.net/document/412156">Res 24-735</a> in 2024) explicitly calling for state and county leaders to provide financial support and long-term stabilization for CarePoint’s hospitals, including advocating for tens of millions of dollars in funding. As a trustee, Gill has a direct governance role in an organization that stands to benefit from these public subsidies, restructuring plans, and political backing. His donation creates the appearance that CarePoint’s leadership is financially supporting a candidate who could influence the city’s advocacy and allocation of resources. This overlap between campaign contributions and ongoing government efforts to secure CarePoint’s financial survival raises serious concerns about conflicts of interest and pay-to-play dynamics.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 45? "active" : ""}`}
+        onClick={() => toggleAccordion(45)}
+        aria-expanded={openIndex === 45}
+      >
+        Scott Heagney, Owner of GPI Builders & Engineers - $7,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 45 && (
+        <div className="accordion-content">
+          <p>Scott Heagney’s donations to Jim McGreevey raise serious pay-to-play concerns because his company, GPI Engineers and Builders, is heavily dependent on public-sector contracts, including its multimillion-dollar role in the Pulaski Skyway rehabilitation project. As a firm whose revenue comes from government-funded infrastructure work, GPI’s success is closely tied to political decision-making around contracts, funding, and development priorities. By contributing to McGreevey’s mayoral campaign, Heagney creates the appearance of buying access or favorable consideration for future projects in Jersey City, blurring the line between civic participation and self-interested influence. This intersection of political donations and lucrative public contracts highlights a potential conflict of interest and fits a broader pattern of pay-to-play dynamics in local politics. <a href="https://www.gpinet.com/projects/pulaski-skyway-rehabilitation">Link to their project.</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 46? "active" : ""}`}
+        onClick={() => toggleAccordion(46)}
+        aria-expanded={openIndex === 46}
+      >
+        Donald Scarinci - $40,800
+        Dave Hollenbeck - $5,200
+        Kenneth J Hollenbeck - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 46 && (
+        <div className="accordion-content">
+          <p>These donations are a red flag because Scarinci & Hollenbeck, the law firm behind them, is one of the most prominent municipal law firms in New Jersey, earning millions in public contracts for services like municipal counsel, redevelopment, and bond work. When multiple attorneys from the firm each give the legal maximum to the same candidate, it suggests a coordinated effort to secure political goodwill. This is concerning because the firm regularly represents cities and agencies in Hudson County—exactly the type of entities that could be impacted by the mayor’s decisions. If the candidate were to win, awarding future legal contracts to Scarinci & Hollenbeck could create an apparent quid pro quo, blurring the line between public service and private profit. The scale and pattern of these donations look less like community support and more like a strategic investment in influence.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 47? "active" : ""}`}
+        onClick={() => toggleAccordion(47)}
+        aria-expanded={openIndex === 47}
+      >
+        Connell Foley PAC - $5,200
+        Leo Hurley, Partner and Co-Chair - $5,200
+        Philip McGovern, Partner - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 47 && (
+        <div className="accordion-content">
+          <p>Connell Foley’s deep entanglement in Jersey City politics is underscored by both its financial and political ties. The firm, which represents multiple properties along the Jersey City waterfront, has benefited from a steady stream of lucrative city expenditures ranging from hundreds of thousands to nearly a million dollars across 2023 and 2024. At the same time, Connell Foley’s influence has extended into the political sphere. Maureen Hulings, formerly an administrative assistant at the firm, was appointed by the City Council to serve as the Ward B representative on April 14. 2025. This overlap between a politically connected law firm that profits from substantial city business and its direct pipeline into council membership raises significant concerns about conflicts of interest and the blending of private legal advocacy with public governance in Jersey City.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $42,646.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $129,336.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/427653">Resolution PDF</a>Maureen Hulings was an administrative assistant at Connell Foley, and was voted in by the Jersey City Council to be Ward B's council member.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/416983">12/6/24 - $7,698.98</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $309,445.12</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/409786">8/14/24 - $896,265.38</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/402589">5/8/24 - $72,834.31</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $42,646.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $129,336.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/89130">4/12/23 - $8,169.10</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/86928">3/8/23 - $448,300.11</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/83762">1/25/23 - $701,390.29</a></p>
+        </div>
+      )}
+    </div>
+
+     
+
+    
+
+    
+
+
+
+
 
 
 
