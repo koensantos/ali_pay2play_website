@@ -993,7 +993,7 @@ export default function Draft() {
       <div style={{ marginTop: "2rem", display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
         <a href={`${backendUrl}/download/Bill_O'Dea_combined_contributions.csv`} download className="btn-download">Download Full Contributions CSV</a>
         <a href="/" className="btn-return">Return to Home Page</a>
-        <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=454445">View Full ELEC Records</a>
+        <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=459066">View Full ELEC Records</a>
       </div>
     </div>
   );
