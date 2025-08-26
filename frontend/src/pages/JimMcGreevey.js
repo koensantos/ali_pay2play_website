@@ -1510,6 +1510,145 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
       )}
     </div>
 
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 48? "active" : ""}`}
+        onClick={() => toggleAccordion(48)}
+        aria-expanded={openIndex === 48}
+      >
+        Najarian Associates - $5,000
+        Tavit Najarian, Founder and President - $5,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 48 && (
+        <div className="accordion-content">
+          <p>Najarian Associates has played a pivotal role in major redevelopment work right here in Jersey City—notably earning a Brownfield Redevelopment Outstanding Achievement Award from K. Hovnanian Companies for their work transforming a chromium-contaminated site into the waterfront <a href="https://www.najarian.com/projects/society-hill-droyers-point">“Society Hill at Droyers Point” residential complex</a>. Their work included environmental assessment, remediation planning, obtaining NJDEP No-Further-Action approvals, and securing a slew of critical permits from local and state agencies—all integral to enabling redevelopment. Given this close intersection of Najarian’s business interests with city and state regulatory authority, the simultaneous $5,000 corporate donation from Najarian Associates and $5,000 personal donation from founder Tavit Najarian to a candidate who could influence such approvals understandably creates the appearance of pay-to-play or undue influence. The concern isn’t hypothetical—it comes from the firm’s known dependence on approvals and trust from municipal agencies to deliver projects. That alignment between their business model and political contribution makes this a clear and credible red flag.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 49? "active" : ""}`}
+        onClick={() => toggleAccordion(49)}
+        aria-expanded={openIndex === 49}
+      >
+        Stephen Nislick - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 49 && (
+        <div className="accordion-content">
+          <p>Stephen Nislick’s $5,200 donation to Jim McGreevey raises serious red flags given Nislick’s controversial history as a political power broker and donor. Nislick, a New Jersey real estate developer and founder of NYCLASS (New Yorkers for Clean, Livable and Safe Streets), is best known for bankrolling campaigns to ban horse-drawn carriages in New York City. In 2013, his group poured over $1 million into a super PAC that was later investigated for potential campaign finance violations and pay-to-play tactics tied to Bill de Blasio’s mayoral run. Beyond the carriage issue, Nislick’s dual role as a developer and political financier has long sparked concerns over whether his donations are leveraged to gain influence on land use, zoning, or city contracts. McGreevey’s acceptance of the maximum individual contribution from a figure repeatedly tied to pay-to-play scandals suggests a troubling willingness to align with donors whose reputations are linked to backroom political influence, raising questions about transparency and potential conflicts of interest in his campaign.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 50 ? "active" : ""}`}
+        onClick={() => toggleAccordion(50)}
+        aria-expanded={openIndex === 50}
+      >
+        Kevin J. O'Toole ($31,400) & Thomas Scrivo ($31,400) – Managing Partners, O'Toole Scrivo, LLC
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 50 && (
+        <div className="accordion-content">
+          <p>The donations from Kevin J. O’Toole ($31,400) and Thomas Scrivo ($31,400), both managing partners of O’Toole Scrivo, LLC, to Jim McGreevey represent significant red flags due to their extensive connections to government projects and redevelopment in New Jersey. Kevin O’Toole, a former state senator and current Chair of the Port Authority of New York and New Jersey, oversees major infrastructure investments, while Thomas Scrivo, a former Chief Counsel to Governor Christie and ex-chair of the New Jersey Economic Development Authority, has direct influence over land use and municipal approvals. Their firm specializes in municipal law, redevelopment, and regulatory compliance—fields directly affected by decisions from city officials. Accepting these large contributions from individuals and a firm whose business success depends on government contracts creates a strong appearance of pay-to-play, suggesting that the donations could be intended to gain access or favorable treatment. McGreevey’s acceptance of multiple high-dollar contributions from such politically connected figures raises serious questions about potential conflicts of interest and the transparency of his campaign funding.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 51 ? "active" : ""}`}
+        onClick={() => toggleAccordion(51)}
+        aria-expanded={openIndex === 51}
+      >
+        Dylan Oanano, Vice President of Blue Star Glass - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 51 && (
+        <div className="accordion-content">
+          <p>Dylan Oanono’s $5,200 donation to Jim McGreevey is a strong red flag because he is the Vice President of Blue Star Glass, a company that had actively engaged in a real estate development project in Jersey City: <a href="https://bluestarglass.net/projects/hudson-house-lofts">Hudson House Lofts – Phase II</a>By contributing to a mayoral candidate, Oanono is in a position to potentially influence city decisions that could benefit his company’s ongoing or future projects. The overlap between his corporate interests and political contributions raises clear concerns about pay-to-play dynamics, especially since McGreevey could be involved in approvals, permits, or zoning decisions affecting Blue Star’s developments if he were elected mayor. Accepting donations from executives tied to local development projects blurs the line between private business interests and public policy, creating both a real and perceived conflict of interest that undermines public trust.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 52 ? "active" : ""}`}
+        onClick={() => toggleAccordion(52)}
+        aria-expanded={openIndex === 52}
+      >
+        Lou Cappelli – $5,200
+        Michael Perrucci – $5,200
+        Douglas Steinhardt – $5,000
+        Brian Tipton – $3,500
+        Christian M. Perrucci – $8,600
+        Florio Perrucci Steinhardt Cappelli Tipto and Taylor
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 52 && (
+        <div className="accordion-content">
+          <p>Five attorneys from the law firm Florio Perrucci Steinhardt Cappelli Tipto and Taylor contributed large sums to Jim McGreevey’s mayoral campaign: Lou Cappelli ($5,200), Christian Perrucci ($1,000), Michael Perrucci ($5,200), Douglas Steinhardt ($5,000), Brian Tipton ($1,000), Christian Perrucci ($2,500), Brian Tipton ($2,500), and Christian M. Perrucci ($5,000). The concentration of donations from multiple employees of the same firm is a strong red flag because the firm may have legal or business interests that intersect with Jersey City government decisions. Coordinated high-dollar contributions from the same professional network raise concerns about potential pay-to-play dynamics. Accepting multiple significant donations from a single law firm blurs the line between private financial interests and public policy, making these contributions worth public scrutiny for possible conflicts of interest.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 53 ? "active" : ""}`}
+        onClick={() => toggleAccordion(53)}
+        aria-expanded={openIndex === 53}
+      >
+        Leonard Savino, Principal of Langan Engineering - $2,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 53 && (
+        <div className="accordion-content">
+          <p>Leonard Savino’s donation to the Jersey City mayoral campaign could be considered a red flag because he is a senior principal at Langan Engineering and Environmental Services, a firm that has repeatedly received substantial city contracts, including environmental consulting, site investigations, and demolition services. The firm’s contracts were awarded under the Fair and Open Pay-to-Play process, which legally permits contributions from executives, but the concentration of donations from high-level employees alongside lucrative city contracts raises concerns about the appearance of a conflict of interest. While there is no proof of wrongdoing, the pattern suggests that executives with direct influence over a firm’s business could be using political contributions to maintain favorable access or visibility with city officials. The overlap between Savino’s professional role and the firm’s ongoing city projects makes this donation worth scrutiny, as it highlights the broader tension between public contracting and private political giving in Jersey City.</p>
+          <p><strong>Res 25-546 </strong>The Jersey City Council approved Resolution 25-546 on August 20, 2025, awarding a professional services contract to Langan Engineering and Environmental Services, LLC for the demolition of the County Administration Building. The contract covers demolition services, material testing, design, specifications, and bid documents under Project No. 2023-019. Four firms submitted proposals, with bids ranging from $171,750 to $2,276,385, and Langan was selected despite not being the lowest bidder, based on qualifications reviewed by city departments. The contract is valued at $395,030 for a 24-month period and is being awarded under the Fair and Open Pay-to-Play Law provisions. Funding will come from the Municipal Court Capital Account, and the award requires compliance with affirmative action laws and public notice requirements. <a href="https://cityofjerseycity.civicweb.net/document/435637">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $13,330</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $225</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/76260">9/16/22 - $975</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $375</a></p>
+          <p><strong>Res 22-259 </strong>The Jersey City Council approved Resolution 22-529, amending a professional services contract with Langan Engineering and Environmental Services, Inc. for the new firehouse project at 627 Grand Street. The original 2020 contract, valued at $50,300, was for environmental remediation services related to contaminated fill material and NJDEP compliance. Due to the discovery of contaminated groundwater, the contract had previously been increased by $9,500, bringing the total to $59,800. The new amendment adds $36,100 for Langan to provide geotechnical engineering services, including oversight of a revised micropile foundation design and quality assurance site visits. This raises the total contract amount to $95,900, with funds available from the City’s capital account. <a href="https://cityofjerseycity.civicweb.net/document/70700">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64284">2/17/22 - $562.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $8,256.03</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/59833">11/22/21 - $3,885</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/49373">6/9/21 - $2,536.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/44797">3/18/21 - $6,810.21</a></p>
+          <p><strong>Res 20-749 </strong>The Jersey City Council approved Resolution 20-749, awarding a professional services contract to Langan Engineering and Environmental Services, Inc. for the new firehouse project at 627 Grand Street. The contract, valued at $50,300, covers Licensed Site Remediation Professional (LSRP) services to address contaminated groundwater and impacted fill material, ensuring compliance with NJDEP regulations. The award was made under the Pay-to-Play Law and the city’s contractor reform ordinance, with Langan certifying it had made no reportable political contributions in the prior year. The agreement, authorized for a 24-month term, was issued without public bidding under the Local Public Contracts Law. Funding for the contract was confirmed from the City’s Firehouse Buildings capital account. <a href="https://cityofjerseycity.civicweb.net/document/35742">Resolution PDF</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/26642">5/14/20 - $19,810.80</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $21,320.61</a></p>
+          <p><strong>Res 19-172 </strong>The Jersey City Council authorized awarding a $45,275 professional engineering services contract to Langan Engineering and Environmental Services, Inc. for a Phase II site investigation at the planned Rescue 1 Firehouse site at 612–616 Communipaw Avenue. The need for this investigation arose after the Phase I review identified areas requiring further geophysical study. Funding was confirmed from the city’s capital account, and the contract term was set for 12 months. The agreement was awarded without competitive bidding as a professional services contract under the Local Public Contracts Law but followed the Fair and Open Pay-to-Play process. Langan submitted the required compliance certifications, and the resolution mandated public notice and adherence to affirmative action requirements. <a href="https://cityofjerseycity.civicweb.net/document/7925">Resolution PDF (pg 504)</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+  <button
+    className={`accordion-header ${openIndex === 54 ? "active" : ""}`}
+    onClick={() => toggleAccordion(54)}
+    aria-expanded={openIndex === 54}
+  >
+    Howard & Jonathan Schwartz, Partners of BNE Real Estate Group - $6,200
+    <span className="accordion-arrow" />
+  </button>
+  {openIndex === 54 && (
+    <div className="accordion-content">
+      <p>Howard and Jonathan Schwartz, both partners at BNE Real Estate Group, contributed $5,200 and $1,000 respectively to the Jersey City mayoral campaign. This is a strong red flag because BNE Real Estate leases multiple properties in Jersey City, including <a href="https://lifebybne.com/communities">One Ten, 100 House, and The Enclave</a>, giving the partners a direct financial interest in local policy, zoning, and leasing regulations. By donating significant amounts, the Schwartzes could be perceived as attempting to influence city decisions that might benefit their properties. While the donations may comply with legal pay-to-play rules if properly disclosed, the fact that both partners contributed creates a clear perception of a conflict of interest. Accepting contributions from executives whose business depends on city approvals blurs the line between public governance and private gain, warranting public scrutiny.</p>
+    </div>
+  )}
+</div>
+
+
+
+
+
+
+
      
 
     
