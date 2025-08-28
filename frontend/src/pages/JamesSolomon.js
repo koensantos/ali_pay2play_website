@@ -176,7 +176,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $94,100.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $104,700.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -318,7 +318,7 @@ export default function Draft() {
       <section id="red-flags" className="accordion-container">
       <h2>Red Flags</h2>
       <p className="intro">
-        James Solomon has been flagged for suspicious donations listed below.
+       James Solomon’s campaign emphasizes that corruption erodes public trust and imposes financial burdens on Jersey City residents, pointing to examples such as tax breaks for luxury developers and contracts awarded to politically-connected vendors. His site claims he is the only mayoral candidate committed to ending these practices and remaining independent, highlighting that developers and political machine figures have already contributed $424,905 to his opponents. Despite this stance, Solomon has accepted donations from at least 24 individuals and companies considered high-risk for conflicts of interest, totaling $104,770. Notable contributors include RD Parisi Associates, Wilentz, Goldman & Spitzer, and Adams Rehmann & Heegan—entities he has publicly criticized for their influence and dealings in city politics. This contradiction between his pledge to reject developer and politically-connected donations and the reality of his campaign contributions undermines his stated anti-corruption position and raises serious concerns about pay-to-play perceptions, particularly given his tenure on the city council from 2017 to 2025 under Mayor Fulop, a period marked by multiple controversies. James accusing other candidates of corruption while accepting questionable donations himself calls into question his commitment to genuine reform and ethical governance. All of the red flag donations are listed below.  
       </p>
 
       {/* Accordion item 0 */}
@@ -328,29 +328,16 @@ export default function Draft() {
           onClick={() => toggleAccordion(0)}
           aria-expanded={openIndex === 0}
         >
-          RD Parisi Associates - $31,300
+          Robert Parisi - $5,000
+          Rob Parisi, Owner of RD Parisi Associates - $5,200
+          Sheila Parisi - $5,200
+          RD Parisi Associates - $20,400
           <span className="accordion-arrow" />
         </button>
         {openIndex === 0 && (
           <div className="accordion-content">
             <p>
-              Solomon has received a total of $31,300 from donations from the
-              company and Robert Parisi, the owner of RD Parisi Associates, and
-              his wife.
-            </p>
-            <p>
-              RD Parisi was voted in unanimously to replace Acrisure for
-              providing Jersey City with insurance consulting services and to
-              be the city's broker for obtaining and monitoring the city's
-              health benefits, prescription, and stop-loss coverage. That vote
-              occurred on and approved on October 17, 2024. Solomon has
-              received two $5,200 on August 26, 2024, and on September 30,
-              2024.
-            </p>
-            <p>
-              This information can be found on the 2024 pay2play contributions
-              list on the NJ Elec website under "Team Soloman for JC." (That is
-              not a typo. The link to the website is listed below.)
+              Solomon has accepted a total of $31,300 in contributions from Robert Parisi, owner of RD Parisi Associates, his wife Sheila Parisi, and the firm itself. RD Parisi Associates was unanimously approved by the Jersey City Council on October 17, 2024, to replace Acrisure as the city’s insurance consultant and to act as the broker for health benefits, prescription coverage, and stop-loss insurance. Notably, Solomon’s campaign reported receiving two maximum individual contributions of $5,200 from the Parisis just weeks earlier, on August 26, 2024, and September 30, 2024. This sequence raises a serious pay-to-play red flag, as the donations coincided with the firm securing a lucrative city contract. Such timing creates the appearance of potential influence and undermines Solomon’s public pledge to reject developer and politically connected money. Documentation of the two mentioned donations is publicly available on the 2024 Pay-to-Play contributions list on the NJ ELEC website under “Team Soloman for JC”.
             </p>
             <p>
               <a
@@ -361,6 +348,15 @@ export default function Draft() {
                 Pay2Play Contributions Website
               </a>
             </p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/20/25 - $37,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $37,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $37,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/429486">5/2/25 - $37,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/427629">4/17/25 - $74,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $37,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/421779">2/7/25 - $74,000</a></p>
+            <p><strong>Res 24-776 </strong>The Jersey City Council passed Resolution 24-776 on October 17, 2024, awarding RD Parisi Associates a one-year, $440,000 contract to serve as the city’s broker of record for health benefits, prescription coverage, and stop-loss insurance. The contract was awarded as an Extraordinary Unspecifiable Service (EUS) under New Jersey’s Local Public Contracts Law, following a Request for Quotations (RFQ) process. The agreement allows the city to renew the contract for up to two additional one-year terms. RD Parisi certified compliance with the city’s Pay-to-Play Reform Ordinance by stating it had not made reportable political contributions in the year prior to the award. The resolution also requires public notice of the award, compliance with affirmative action laws, and continued funding approval in future budgets. Solomon voted yes on this resolution.<a href="https://cityofjerseycity.civicweb.net/document/412367">Resolution PDF</a></p>
+
           </div>
         )}
       </div>
@@ -379,10 +375,7 @@ export default function Draft() {
         {openIndex === 1 && (
           <div className="accordion-content">
             <p>
-              Solomon has received a donation of $5,500 from Oriani on March 27,
-              2025 and a $500 donation from William Guarini on May 21, 2025. Due to his high position in the company, and that fact they
-              have received contracts from Jersey City, it has been flagged as a
-              suspicious donation.
+              On March 27, 2025, Solomon received a $5,500 contribution from Oriani, a manager at William Guarini, Inc., followed by a $500 donation from William Guarini, Inc. itself on May 21, 2025. The company has been awarded contracts with the City of Jersey City, making the timing and source of these donations particularly troubling. The fact that both a senior executive and the company he manages contributed directly to Solomon’s campaign while holding active business with the city raises clear red flags of potential pay-to-play influence.
             </p>
             <p>
               Res 24-335: The City of Jersey City approved Resolution 24-335 on
@@ -402,6 +395,41 @@ export default function Draft() {
               >
                 Resolution PDF
               </a>
+
+              <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $246.17</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/433084">6/3/25 - $1,599.38</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $5,800</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $33,333.40</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/411476">9/19/24 - $18,282.16</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $38,056.23</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/408268">7/8/24 - $25,290</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $45,555.80</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/396109">3/1/24 - $17,041.58</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $9,015.71</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $6,800</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/92663">6/9/23 - $5,800</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $660</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/71510">7/8/22 - $6,985.08</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $900</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/65863">3/17/22 - $4,628.40</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/59107">11/4/21 - $2,761.28</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/58567">10/22/21 - $225</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/55789">9/3/21 - $1,246.03</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $1,549.72</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $681</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $294.72</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/46108">4/9/21 - $2,614.53</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/44797">3/18/21 - $1,315.60</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/41559">1/25/21 - $1,991.80</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/40872">$3,124.91 - 1/11/21</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/38868">$1,834.27 - 11/25/20</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/37605">$1,670.10 - 11/5/20</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/33761">$3,885.82 - 9/1/20</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/27626">6/4/20 - $8,500</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/23359">3/18/20 - $5,495.42</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/20322">2/4/20 - $742.50</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/17017">12/11/19 - $570</a></p>
+
             </p>
           </div>
         )}
@@ -415,15 +443,19 @@ export default function Draft() {
     aria-expanded={openIndex === 2}
   >
     Wilentz, Goldman, and Spitzer - $5,200
-    Everett Johnson - $1,500
+    Everett Johnson, co-chair of Public Finance Team - $1,500
     <span className="accordion-arrow" />
   </button>
   {openIndex === 2 && (
     <div className="accordion-content">
       <p>
-        Solomon has received $1,500 from Everett Johnson, who is a shareholder and co-chair of the Public Finance Team and the firm's Equal Opportunity Committee, and a total of $5,200 from Wilentz, Goldman, and Spitzer, a law firm that has been awarded multiple contracts by the city below. The law firm has been awarded contracts for bond counsel services, which amounts to upwards of $270,000 in total.
+        Solomon has received a total of <strong>$1,500 from Everett Johnson</strong>, a shareholder and co-chair of the Public Finance Team at Wilentz, Goldman & Spitzer, as well as <strong>$5,200 directly from the firm</strong>. Wilentz, Goldman & Spitzer has been awarded multiple professional services agreements with Jersey City to serve as bond counsel, with contract amounts reaching well over <strong>$270,000</strong>. Given that both a top executive of the firm and the firm itself contributed to Solomon’s campaign while holding lucrative city contracts, these donations raise significant concerns about potential pay-to-play influence.
       </p>
+
       <ul>
+        <li>
+          Res 25-554 - On August 20, 2025, Jersey City approved Resolution 25-544, awarding a one-year professional services contract to Wilentz, Goldman & Spitzer, P.A. to serve as bond counsel. The firm will handle legal work for the issuance, sale, and delivery of city bonds, notes, refundings, and related financing matters. The contract runs from August 1, 2025 to July 31, 2026 and is capped at $200,000, with $100,000 already allocated. Fees include flat charges for bond sales and ordinances, plus hourly billing rates of $250/hr for attorneys and $90/hr for paralegals, with higher rates for redevelopment projects. The contract was awarded through a fair and open RFQ process, exempt from public bidding under New Jersey’s Local Public Contract Law. Solomon did not vote for this. <a href="https://cityofjerseycity.civicweb.net/document/435603">Resolution PDF</a>
+        </li>
         <li>
           Res 24-577 - The Jersey City Municipal Council approved a resolution to amend its professional services agreement with Wilentz, Goldman & Spitzer, P.A., which provides bond counsel services to the city. The original contract, approved in November 2023, was for $185,000, but all funds have been expended. This amendment increases the contract by $85,000, bringing the total to $270,000, in order to cover outstanding invoices. The contract was awarded under the fair and open provisions of New Jersey’s Pay-to-Play law and qualifies as a professional service exempt from public bidding.{" "}
           <a
@@ -441,6 +473,12 @@ export default function Draft() {
           </a>
         </li>
       </ul>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/419239">1/14/25 - $165,334.20</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/414090">11/14/24 - $76,693.73</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $179,614.00</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/96129">8/16/23 - $74,522.31</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/81004">11/23/22 - $160,827.62</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/40872">1/11/21 - $3,220</a></p>
     </div>
   )}
 </div>
@@ -466,10 +504,13 @@ export default function Draft() {
           <a
             href="https://cityofjerseycity.civicweb.net/document/34505/Resolution%20Awarding%20a%20Professional%20Services%20Con.pdf?handle=C23EDB7B40904F9DBBAB8254A67B2500"
           >
-            Resolution
+            Resolution PDF
           </a>
         </li>
       </ul>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $73,500</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $1098</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $585</a></p>
     </div>
   )}
 </div>
@@ -481,7 +522,7 @@ export default function Draft() {
     onClick={() => toggleAccordion(4)}
     aria-expanded={openIndex === 4}
   >
-    Adams Rehmann & Heggan Associates INC - $5,000 Donation
+    Adams Rehmann & Heggan Associates INC - $5,000
     <span className="accordion-arrow" />
   </button>
   {openIndex === 4 && (
@@ -526,6 +567,14 @@ export default function Draft() {
           <li>Res 19-582 (Cannot Access)</li>
         </ul>
       </ul>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $13,046.25</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $23,966.25</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $8,737</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/418957">1/9/25 - $3,952.72</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/416983">12/6/24 - $12,120.88</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $5,291.55</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $11,939.10</a></p>
+      <p><a href="https://cityofjerseycity.civicweb.net/document/411476">9/19/24 - $32,410</a></p>
     </div>
   )}
 </div>
@@ -655,36 +704,20 @@ export default function Draft() {
       )}
     </div>
 
+    
+
     <div className="accordion-item">
       <button
         className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
         onClick={() => toggleAccordion(9)}
         aria-expanded={openIndex === 9}
       >
-        Postnet and Rich Mendez, Owner of Postnet - $600
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 9 && (
-        <div className="accordion-content">
-          <p>Solomon has a received a total of $600 from Postnet and Rich Mendez, who is the owner of Postnet. While the donation amounts themselves are modest, the fact that the contributor has received transactionf from the city creates a potential conflict of interest, raising concerns about whether contributions could influence city decisions. The transaction PDFs are listed below.</p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $860</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $740</a></p>
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
-        onClick={() => toggleAccordion(10)}
-        aria-expanded={openIndex === 10}
-      >
         Ravi Bhalla, Mayor of Hoboken - $2,000
         Amardeep Bhalla, Ravi's Brother - $1,750
         Ranbir Bhalla, Ravi's Father - $1,750
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 10 && (
+      {openIndex === 9 && (
         <div className="accordion-content">
           <p>Ravi Bhalla, mayor of Hoboken and a client contact for T&M Associates, personally contributed $2,000 to James Solomon’s campaign, while his father, Rabinder Bhalla, and his brother, Amardeep Bhalla, each contributed $1,750. T&M Associates holds several contracts with Jersey City, creating a potential pay-to-play appearance where contributions from individuals linked to municipal contractors might influence city decisions. Bhalla has also faced multiple controversies, including allegations of parking ticket manipulation, a censure by the New Jersey Supreme Court for ethics violations, and lawsuits claiming quid pro quo or political pressure related to city operations; following these allegations, Hoboken City Council members called for state and federal investigations into his conduct. The combination of Bhalla’s municipal connections, his firm’s city contracts, his family’s donations, and his past controversies strengthens the need for scrutiny to ensure transparency and prevent conflicts of interest.</p>
         </div>
@@ -694,14 +727,14 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
-        onClick={() => toggleAccordion(11)}
-        aria-expanded={openIndex === 11}
+        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
+        onClick={() => toggleAccordion(10)}
+        aria-expanded={openIndex === 10}
       >
         Vincent Buono, President of Munidex INC - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 11 && (
+      {openIndex === 10 && (
         <div className="accordion-content">
           <p>Vincent Buono, president of Munidex Inc., contributed $1,000 to James Solomon’s campaign. Munidex Inc. has received multiple payments from the City of Jersey City over several years, including amounts of $11,153 (twice), $6,360, $17,499, $6,235, $17,500, $6,113, $5,760, and $5,875, with transactions spanning from 2019 through 2025. Given that Munidex is a vendor receiving significant city funds, Buono’s contribution to a councilmember’s campaign could create the appearance of a pay-to-play scenario, where political donations might influence city contracts or payments. While the contribution is legal, the repeated business relationship between Munidex and the city warrants scrutiny to ensure transparency and prevent any perception of conflict of interest.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $11,153.00</a></p>
@@ -719,14 +752,14 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
-        onClick={() => toggleAccordion(12)}
-        aria-expanded={openIndex === 12}
+        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
+        onClick={() => toggleAccordion(11)}
+        aria-expanded={openIndex === 11}
       >
         Rich Christie, President of Christie Engineering - $750
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 12 && (
+      {openIndex === 11 && (
         <div className="accordion-content">
           <p><a href="https://cityofjerseycity.civicweb.net/document/67367">4/22/22 - $9,600</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $9,200.00</a></p>
@@ -737,9 +770,9 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 13 ? "active" : ""}`}
-        onClick={() => toggleAccordion(13)}
-        aria-expanded={openIndex === 13}
+        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
+        onClick={() => toggleAccordion(12)}
+        aria-expanded={openIndex === 12}
       >
         Sean Gallagher - $300
         Anna Gallagher - $5,500
@@ -754,9 +787,9 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 14 ? "active" : ""}`}
-        onClick={() => toggleAccordion(14)}
-        aria-expanded={openIndex === 14}
+        className={`accordion-header ${openIndex === 13 ? "active" : ""}`}
+        onClick={() => toggleAccordion(13)}
+        aria-expanded={openIndex === 13}
       >
         Jillian Hernandez, Owner of the Brunswick School - $5,200
         <span className="accordion-arrow" />
@@ -770,11 +803,11 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
-        onClick={() => toggleAccordion(15)}
-        aria-expanded={openIndex === 15}
+        className={`accordion-header ${openIndex === 14 ? "active" : ""}`}
+        onClick={() => toggleAccordion(14)}
+        aria-expanded={openIndex === 14}
       >
-        Joseph Luppino, 1st st Vice President of Government and Business Banking - Freedom Bank - $1,000
+        Joseph Luppino, 1st Vice President of Government and Business Banking - Freedom Bank - $1,000
         <span className="accordion-arrow" />
       </button>
       {openIndex === 15 && (
@@ -787,9 +820,9 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
-        onClick={() => toggleAccordion(16)}
-        aria-expanded={openIndex === 16}
+        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
+        onClick={() => toggleAccordion(15)}
+        aria-expanded={openIndex === 15}
       >
         Israel Nieves, McGreevey's Council At-Large Candidate - $500
         <span className="accordion-arrow" />
@@ -803,14 +836,14 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
-        onClick={() => toggleAccordion(17)}
-        aria-expanded={openIndex === 17}
+        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
+        onClick={() => toggleAccordion(16)}
+        aria-expanded={openIndex === 16}
       >
         Marc Wesson, Treasurer of Jersey City Parks Coalition, and Partner of Tenmarc Building - $4,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 17 && (
+      {openIndex === 16 && (
         <div className="accordion-content">
           <p>The donations from Marc Wesson, a partner in the Tenmarc Building and treasurer of the Jersey City Parks Coalition, raise a significant red flag for Solomon’s campaign. The Tenmarc Building was specifically mentioned in the Planning Board’s resolution concerning Ordinance No. 20-103, which adopted amendments to the Morris Canal Redevelopment Plan, including the creation of the Berry Lane Park North Zone. The resolution noted that while some maps indicated the area as open space, existing structures—including the Tenmarc Building—were excluded from public acquisition and would remain privately owned. Wesson’s financial contributions could therefore be perceived as an attempt to influence city officials in matters affecting redevelopment projects near his property interests, particularly given the ordinance’s provisions for mixed-use development, public recreation space, and community-focused amenities. These connections create the appearance of a conflict of interest, making the donations a strong red flag. <a href="https://cityofjerseycity.civicweb.net/document/61998">Ordinance PDF (Tenmarc Building mentioned on pg 8)</a></p>
         </div>
@@ -819,9 +852,9 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
-        onClick={() => toggleAccordion(18)}
-        aria-expanded={openIndex === 18}
+        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
+        onClick={() => toggleAccordion(17)}
+        aria-expanded={openIndex === 17}
       >
         Charles Wilkes - $500
         Matt Schiller - $250
@@ -841,9 +874,9 @@ export default function Draft() {
 
     <div className ="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
-        onClick={() => toggleAccordion(19)}
-        aria-expanded={openIndex === 19}
+        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
+        onClick={() => toggleAccordion(18)}
+        aria-expanded={openIndex === 18}
       >
         Anthony Catanio, Owner of Leemark Electrics - $500
         <span className="accordion-arrow" />
@@ -862,9 +895,9 @@ export default function Draft() {
 
     <div className ="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
-        onClick={() => toggleAccordion(20)}
-        aria-expanded={openIndex === 20}
+        className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
+        onClick={() => toggleAccordion(19)}
+        aria-expanded={openIndex === 19}
       >
         Claims Resolution INC - $1,000
         <span className="accordion-arrow" />
@@ -886,9 +919,9 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
-        onClick={() => toggleAccordion(21)}
-        aria-expanded={openIndex === 21}
+        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
+        onClick={() => toggleAccordion(20)}
+        aria-expanded={openIndex === 20}
       >
         Mark Grossbard, CEO of Kai Strategic Insurance and VP of Insurance World: $1,000
         <span className="accordion-arrow" />
@@ -905,19 +938,33 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
-        onClick={() => toggleAccordion(22)}
-        aria-expanded={openIndex === 22}
+        className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
+        onClick={() => toggleAccordion(21)}
+        aria-expanded={openIndex === 21}
       >
-        Paul Sartor, President and CEO of Paulus, Sokolowsky & Sartor - $1,000
+        Donald Shauger II - $1,000
+        Donald Shauger Sr. - $1,000
         <span className="accordion-arrow" />
       </button>
       {openIndex === 22 && (
         <div className="accordion-content">
-          <p>Mark Sartor, affiliated with Paulus, Sokolowski & Sartor (PS&S), donated $1,000 to Councilmember Solomon despite PS&S actively pursuing multiple city contracts. Notably, PS&S submitted a $710,400 bid for the HMR Architects City Hall Fourth Floor project (Res. 22-797), far above the winning bid of $367,500 by HMR Architects and other competitors such as DMR Architects ($307,270), The Goldstein Partnership ($309,900), LAN Associates ($325,000), and Clark Caton Hintz ($329,683). Additionally, PS&S submitted a $24,250 bid for electrical engineering services at Canco Park (Res. 22-421) and a $78,915 bid for window replacement and exterior repairs at the Joseph Connors Senior Center (Res. 20-213). This donation is a potential red flag because it comes from a firm with multiple active bids for city projects, suggesting a possible attempt to curry favor or influence municipal decisions, even when their bids were not successful. The combination of the donation and the firm’s vested interest in city contracts makes it politically sensitive and notable for transparency purposes.</p>
-           <p><a href="https://cityofjerseycity.civicweb.net/document/77542">Resolution PDF (PS&S bidded $710,400.00)</a></p>
-           <p><a href="https://cityofjerseycity.civicweb.net/document/67682">Resolution PDF (PS&S bidded $24,250.00)</a></p>
-           <p><a href="https://cityofjerseycity.civicweb.net/document/22151">Resolution PDF (PS&S bidded $78,915.00)</a></p>
+          <p>Donald Shauger II and Donald Shauger Sr., executives of The Shauger Group Inc., each donated $1,000 to Councilmember Solomon on June 30, 2025. This is notable given the scope of their company’s work in Jersey City. Their projects include Phase V Water and Sewer Main Upgrades, involving the installation of 7,000 LF of 12-inch watermain, 4,000 LF of 8-inch watermain, new valves, hydrants, and service connections throughout Jersey City, as well as 11,000 LF of new PVC sewer main with associated manholes and cleanouts. They also carried out the Large Valve Replacement Project, replacing 30 of the most defective valves in the city’s water distribution system, which involved excavation, timber shoring, temporary bypass piping, and maintaining water service to residents during construction. The size and timing of these donations could raise concerns about potential influence or the appearance of a conflict of interest. <a href="https://shauger.com/major-projects">Shauger Group's Major Projects</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
+        onClick={() => toggleAccordion(22)}
+        aria-expanded={openIndex === 22}
+      >
+        IBEW Local Union 164 - $2,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 22 && (
+        <div className="accordion-content">
+          <p>On June 30, 2025, IBEW Local 164 donated $2,500 to James Solomon’s mayoral campaign, just five days after receiving a $7,366.59 payment from the City of Jersey City. While unions frequently engage in local politics, the timing of this transaction raises significant concerns. Pay-to-play risks often emerge when an organization that benefits financially from city expenditures turns around and contributes to a candidate for mayor, the office that directly oversees city contracts and spending. Even if no explicit quid pro quo is proven, the sequence suggests a potential exchange of public funds for political influence. This kind of donation blurs the line between civic engagement and transactional politics, undermining trust in fair governance and making it a strong red flag in the campaign finance record.</p>
         </div>
       )}
     </div>
@@ -928,16 +975,41 @@ export default function Draft() {
         onClick={() => toggleAccordion(23)}
         aria-expanded={openIndex === 23}
       >
-        Donald Shauger II - $1,000
-        Donal Shauger Sr. - $1,000
+        Dane Calcagni, Director of Research and Information - $350
+        Alex Chang, Chief Happiness Officer - $300
+        Leia Duif, Associate - $2,120
+        Thomas Gibbons, Associate - $1,000
+        Sawyer Smith, Founder and Principal - $1000
+        Selina Vargas, Associate - $250
+        Corcoran Sawyer Smith
         <span className="accordion-arrow" />
       </button>
       {openIndex === 23 && (
         <div className="accordion-content">
-          <p>Donald Shauger II and Donald Shauger Sr., executives of The Shauger Group Inc., each donated $1,000 to Councilmember Solomon on June 30, 2025. This is notable given the scope of their company’s work in Jersey City. Their projects include Phase V Water and Sewer Main Upgrades, involving the installation of 7,000 LF of 12-inch watermain, 4,000 LF of 8-inch watermain, new valves, hydrants, and service connections throughout Jersey City, as well as 11,000 LF of new PVC sewer main with associated manholes and cleanouts. They also carried out the Large Valve Replacement Project, replacing 30 of the most defective valves in the city’s water distribution system, which involved excavation, timber shoring, temporary bypass piping, and maintaining water service to residents during construction. The size and timing of these donations could raise concerns about potential influence or the appearance of a conflict of interest. <a href="https://shauger.com/major-projects">Shauger Group's Major Projects</a></p>
+          <p>Employees from a prominent Jersey City real estate brokerage, which manages over 100 luxury and high-end properties in the city, collectively contributed to James Solomon’s mayoral campaign. Donors include Dane Calcagni, Alex Chang, Leia Duif, Thomas Gibbons, Sawyer Smith, and Selina Vargas, all affiliated with the company’s Jersey City office. While Solomon has pledged not to accept direct contributions from developers, these donations from employees who work in the real estate development sector raise questions about the potential for indirect influence. Even if the contributions are legal and within pledge boundaries, the concentration of donations from individuals connected to a firm heavily involved in local property development creates the appearance of a possible conflict of interest or pay-to-play scenario, making this a notable red flag in the campaign finance record.</p>
+          <a href="https://www.corcoran.com/search/for-sale/location/downtown-jersey-city-nj/regionId/130?gad_source=1&gad_campaignid=18224731163&gclid=CjwKCAjw2brFBhBOEiwAVJX5GFqbC2SPYJ-FP6J13_w02DuiOqCOWPOp6mvDa8FSSfI_tVhnif3CABoCzCsQAvD_BwE">Listings of properties under them in Jersey City.</a>
         </div>
       )}
     </div>
+
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
+        onClick={() => toggleAccordion(24)}
+        aria-expanded={openIndex === 24}
+      >
+        Christopher Warren, Partner from Scarinci & Hollenbeck - $5,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 24 && (
+        <div className="accordion-content">
+          <p>Christopher Warren’s $5,000 contribution to James Solomon’s mayoral campaign on March 31, 2025, takes on additional scrutiny given the broader activities of Scarinci Hollenbeck in Jersey City. Donald Pepe, another partner at the firm, has actively interacted with the city on multiple ordinances and resolutions, demonstrating the firm’s ongoing involvement in municipal matters. This context suggests that the firm not only has clients affected by city decisions but also maintains direct channels of influence with city officials. While no explicit quid pro quo is documented, the donation from Warren,combined with the firm’s city engagement,creates a plausible appearance of potential influence, making it a notable red flag in the campaign finance record.</p>
+         </div>
+      )}
+    </div>
+
+    
 
 
 

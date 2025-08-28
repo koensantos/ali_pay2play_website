@@ -243,14 +243,18 @@ button[type="submit"] {
   }
 
   .chart-inner-wrapper {
-    width: 100%;
-    height: 600px; /* fixed height but width is responsive */
-    max-width: 100%;
+    height: 400px; /* fixed height but width is responsive */
   }
 
   .legend-description {
     font-size: 1rem;
     padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-inner-wrapper {
+    height: 300px; /* scale further for small phones */
   }
 }
 

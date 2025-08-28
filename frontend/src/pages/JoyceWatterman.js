@@ -473,7 +473,7 @@ export default function Draft() {
           Frank Robinson, Associate of Garden Greenz - $1,500
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 5 && (
+        {openIndex === 6 && (
           <div className="accordion-content">
             <p>Watterman has received a total of $5,700 from both Brian Markey, the owner of Garden Greenz, and Frank Robinson, an associate. These donations have been flagged as potentially concerning because they come from individuals with a business seeking city approval and influence. Additionally, Frank Robinson has been accused of using hateful slurs in a video circulating online, which raises further ethical questions about accepting contributions from him. While the donations are legal, the combination of business interests and controversial behavior suggests they may warrant closer scrutiny for potential conflicts of interest or public perception issues.</p>
             <p>
@@ -509,12 +509,14 @@ export default function Draft() {
           className ={`accordion-header ${openIndex === 8 ? "active" : ""}`}
           onClick={() => toggleAccordion(8)}
           aria-expanded={openIndex === 8}>
-          Anthony and Frank Ralph Grano, Persistent Construction Corp - $3,200
+          Anthony and Frank Ralph Grano, Persistent Construction Corp - $4,840
+          Nicole Grano - $1,600
+          Dominic Grano - $1,600
           <span className="accordion-arrow" />
         </button>
         {openIndex === 8 && (
           <div className="accordion-content">
-            <p>Anthony and Frank Ralph Grano, owners of Persistent Construction Corp, contributed a total of $3,200 to Joyce Watterman’s campaign. These donations are considered potential red flags because Persistent Construction Corp has been awarded contracts by Jersey City. When individuals or businesses that are actively seeking or receiving city contracts contribute to a candidate’s campaign, it creates the appearance of a pay-to-play scenario, where financial support could be perceived as influencing municipal contracting decisions. While the contributions are legal, their connection to city contracts warrants closer scrutiny to ensure transparency and prevent conflicts of interest.</p>
+            <p>Anthony and Frank Ralph Grano, owners of Persistent Construction Corp, along with family members Nicole and Dominic Grano, contributed a combined total of $8,040 to Joyce Watterman’s campaign. These donations raise potential red flags because Persistent Construction Corp has been awarded multiple contracts by Jersey City, including snow removal services for the Department of Public Works and emergency construction projects like parklets. Contributions from businesses actively seeking or holding city contracts create the appearance of a pay-to-play scenario, where financial support could be perceived as influencing municipal contracting decisions. While the donations are legal, their connection to ongoing and prior city contracts warrants scrutiny to ensure transparency, avoid conflicts of interest, and maintain public trust.</p>
             <p><strong>Res 24-859</strong> The City of Jersey City has renewed an open-end contract with Persistent Construction, Inc. for snow removal services for the Department of Public Works, Division of Sanitation. This renewal, approved on November 26, 2024, is for an additional one-year period effective from January 1, 2025, to December 31, 2025. The total cost of this renewed contract will not exceed $1,130,370.00, with an initial allocation of $10,000.00 from the Division of Sanitation Operating Account. <a href="https://cityofjerseycity.civicweb.net/document/413259/R0210559_%20Renewal%201_1%20for%20Snow%20Removal%20Only.pdf?handle=EE9FDAD333FA488CBBBAF537DB24F84A">Resolution PDF</a></p>
             <p><strong>Res 23-931 </strong>On December 13, 2023, Jersey City approved Resolution 23-931, awarding a one-year open-end contract to Persistent Construction Inc. for snow removal services for the Department of Public Works, Division of Sanitation. The contract is valued at $1,102,800.00, with an initial encumbrance of $10,000.00 from the 2024 operating budget. The agreement includes set unit costs and allows for an optional one-year extension. The contract is contingent on compliance with affirmative action requirements and the availability of future budget appropriations. Payments will be made only upon certified completion of services according to specifications. <a href="https://cityofjerseycity.civicweb.net/document/413259/R0210559_%20Renewal%201_1%20for%20Snow%20Removal%20Only.pdf?handle=EE9FDAD333FA488CBBBAF537DB24F84A">Resolution PDF</a></p>
             <p><strong>Res 21-334 </strong>The City of Jersey City ratified an emergency contract with Persistent Construction, Inc. for $24,000.00 to build six parklets across the city. This initiative aimed to create outdoor spaces for small businesses and residents for social distancing and reopening efforts during the COVID-19 pandemic. The contract was awarded as an emergency measure, exempting it from public bidding requirements. Brian D. Platt, the then Business Administrator, issued an emergency certification on October 17, 2020, formally authorizing the parklet construction due to the public health emergency. Paul Russo, the Municipal Engineer, certified that the services rendered by Persistent Construction, Inc. were fair and reasonable. <a href="https://cityofjerseycity.civicweb.net/document/46245/Resolution%20ratifying%20an%20emergency%20contract%20awar.pdf?handle=91AC5DC128344431A12830A6261832AD">Resolution PDF</a></p>
@@ -529,16 +531,103 @@ export default function Draft() {
           onClick={() => toggleAccordion(9)}
           aria-expanded={openIndex === 9}
         >
-          Dave Jefferson, Owner of The Leaf Joint - $500
+          Dave Jefferson, Owner of The Leaf Joint - $2,775
           <span className="accordion-arrow" />
         </button>
         {openIndex === 9 && (
           <div className="accordion-content">
-            <p>Dave Jefferson, owner of The Leaf Joint, contributed $500 to Joyce Watterman’s campaign. This donation is a potential red flag because Jefferson’s business received approval from the Jersey City Council to operate within the city. Contributions from individuals who are seeking or have obtained city approval for their businesses can create the appearance of a pay-to-play scenario, where political support might influence municipal decisions.</p>
+            <p>Dave Jefferson, owner of The Leaf Joint, contributed $2,775 to Joyce Watterman’s campaign. This donation is a potential red flag because Jefferson’s business required and received approval from the Jersey City Council to operate a Class 5 retail cannabis establishment within the city. When individuals who are seeking or have obtained municipal approvals contribute to a candidate’s campaign, it can create the appearance of a pay-to-play scenario, where financial support might be perceived as influencing official decisions. While the contribution is legal, its connection to city approvals warrants scrutiny to maintain transparency and public trust.</p>
             <p><strong>Res 22-675 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-100 providing local support for The Leaf Joint to operate a Class 5 retail cannabis business. <a href="https://cityofjerseycity.civicweb.net/document/74396">Resolution PDF</a></p>
           </div>
         )}
       </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
+          onClick={() => toggleAccordion(10)}
+          aria-expanded={openIndex === 10}
+        >
+          Concrete Rising - $5,200
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 10 && (
+          <div className="accordion-content">
+            <p>The $5,200 donation from Concrete Rising to Watterman raises a potential red flag because the company is actively involved in high-value construction projects in Jersey City, including the 631-unit mixed-use building at 400 Claremont Avenue and the 33-story high-rise residential tower with a 6-story parking garage at 88 Regent Street. While there is no direct evidence of a current contract between Concrete Rising and the city, these projects—valued at $13.2 million and $20.7 million respectively—depend on local development approvals, permits, and policies that city officials influence. As such, contributions to elected officials could be seen as a way to maintain goodwill or influence future municipal decisions, making the donation a potential pay-to-play concern, even if no direct contract has yet been awarded.</p>
+            <p><a href="https://www.concreterising.com">Concrete Rising Website</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
+          onClick={() => toggleAccordion(11)}
+          aria-expanded={openIndex === 11}
+        >
+          Chris Murphy, Partner of Murphy Schiller & Wilkes LLP - $1,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 11 && (
+          <div className="accordion-content">
+            <p>The $1,000 donation from Chris Murphy, partner at Murphy Schiller & Wilkes LLP, to Watterman is a red flag because the firm has actively represented clients in projects requiring significant city approvals, including 660 Tonnele TMW, LLC’s Class 5 Cannabis Retail Establishment “The Medicine Woman,” for which Murphy Schiller & Wilkes LLP handled zoning variances, site plan approvals, and conditional use approvals. Additionally, the firm has submitted large expenditure claims to the city—$124,500.90 on 8/14/24 and $105,367.50 on 5/8/24—demonstrating that it receives substantial payments from municipal projects. This combination of providing legal services for high-stakes city projects while simultaneously donating to a city official creates a potential pay-to-play appearance and raises concerns about conflicts of interest and undue influence.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/409786">8/14/24 - $124,500.90</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/402589">5/8/24 - $105,367.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/89627">Resolution 23-362</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 12? "active" : ""}`}
+        onClick={() => toggleAccordion(12)}
+        aria-expanded={openIndex === 12}
+      >
+        Najarian Associates - $1,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 12 && (
+        <div className="accordion-content">
+          <p>The $1,000 donation from Najarian Associates to Watterman is a red flag because the firm has been deeply involved in major redevelopment projects in Jersey City, including the award-winning transformation of a chromium-contaminated site into the “Society Hill at Droyers Point” residential complex. Their work required extensive environmental assessments, remediation planning, NJDEP approvals, and numerous local permits, all of which rely on close interaction with city regulatory authorities. Given this history, the corporate donation to a city official who could influence such approvals raises concerns about the appearance of pay-to-play or potential undue influence, as the firm’s business success is closely tied to municipal decisions.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 13? "active" : ""}`}
+        onClick={() => toggleAccordion(13)}
+        aria-expanded={openIndex === 13}
+      >
+        John Fio Rito - $1,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 13 && (
+        <div className="accordion-content">
+          <p>The $1,500 donation from John Fio Rito to Watterman is a clear red flag because Fio Rito has extensive real estate holdings and development projects in Jersey City that directly require municipal approvals. His portfolio includes projects such as the 80-unit Bright and Varick residential building, the 83-unit Baker Building with tax abatement, the Mill Rocks 39-unit development, and multiple historic building renovations and condominium conversions across the city, all of which necessitated permits, site plan approvals, and compliance with city regulations. Given that these projects rely on approvals from local agencies, this contribution raises concerns about potential pay-to-play, as it could create the appearance that Fio Rito’s political donation was intended to influence or secure favorable treatment for his developments.</p>
+          <a href="https://www.pointcapdev.com/completed-projects">Point Capital Projects</a>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 14? "active" : ""}`}
+        onClick={() => toggleAccordion(14)}
+        aria-expanded={openIndex === 14}
+      >
+        Art Johnson, Waterfront Management - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 14 && (
+        <div className="accordion-content">
+          <p>Art Johnson, through Waterfront Management HC LLC, contributed $5,200 to Joyce Watterman’s campaign. Johnson is a principal in the development of The Element, a $120 million, 631-unit mixed-use residential complex at 400 Claremont Avenue in Jersey City. The project includes micro-units, extensive amenities, and is situated within a Qualified Opportunity Zone, offering significant tax benefits. Given the scale of the development and its reliance on municipal approvals, the donation raises concerns about potential pay-to-play implications. While legal, such contributions from developers with active city projects warrant scrutiny to ensure transparency and prevent undue influence over local decision-making.</p>
+          <a href="https://www.globest.com/2020/02/24/art-johnson-lands-120m-loan-for-jersey-city-property">Art Johnson Lands $120M Loan For Jersey City Property</a>
+        </div>
+      )}
+    </div>
+
 
 
 
