@@ -141,7 +141,7 @@ export default function Draft() {
     scales: {
       x: {
         ticks: {
-          callback: (value) => "$" + value.toLocaleString(),
+          callback: (value) => "$" + Number(value).toLocaleString(),
         },
         beginAtZero: true,
       },
