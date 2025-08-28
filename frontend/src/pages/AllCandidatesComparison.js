@@ -57,7 +57,7 @@ export default function Comparison() {
           >
             <XAxis
               dataKey="name"
-              tick={{ fontSize: window.innerWidth < 600 ? 10 : 14 }} // smaller labels on mobile
+              tick={{ fontSize: window.innerWidth < 600 ? 10 : 10 }} // smaller labels on mobile
             />
             <YAxis tickFormatter={formatNumberShort} />
             <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
