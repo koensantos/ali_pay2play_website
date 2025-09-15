@@ -345,8 +345,7 @@ export default function Draft() {
     <section id="red-flags" className="accordion-container">
       <h2>Red Flags</h2>
       <p className="intro">
-        Joyce Watterman has been flagged for suspicious donations listed below.
-      </p>
+Joyce Watterman’s campaign has been flagged for receiving suspicious donations, totaling $49,815. These contributions come from individuals and entities that may present potential conflicts of interest, raising questions about the alignment of her fundraising practices with her public commitment to ethical governance. While her campaign emphasizes transparency and accountability, the presence of these red-flag donations highlights the need for continued scrutiny and oversight. This list is subject to updates as more information and quarterly reports become available.      </p>
 
       <div className ="accordion-item">
       <button
