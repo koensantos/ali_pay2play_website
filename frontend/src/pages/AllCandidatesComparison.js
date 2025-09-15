@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom";
 import {
   BarChart,
@@ -13,6 +13,8 @@ import {
   Cell,
 } from "recharts";
 import "./DonationComparison.css";
+
+
 
 // Example hardcoded data (replace with your real numbers)
 const candidateData = [
@@ -29,11 +31,11 @@ const candidateData = [
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
     { name: "Joyce Watterman", path: "/JoyceWatterman" },
-    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
+    { name: "Transparency Dashboard", path: "/comparison" }
   ];
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  
+
+
 // Red for red flags, teal for the rest
 const COLORS = ["#E63946", "#2A9D8F"];
 
@@ -45,6 +47,7 @@ const formatNumberShort = (num) => {
 };
 
 export default function Comparison() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="comparison-page">
 

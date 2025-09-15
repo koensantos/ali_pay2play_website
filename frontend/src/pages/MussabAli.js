@@ -30,7 +30,7 @@ export default function Draft() {
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
     { name: "Joyce Watterman", path: "/JoyceWatterman"},
-    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
+    { name: "Transparency Dashboard", path: "/comparison" }
   ];
 
   useEffect(() => {
@@ -163,8 +163,7 @@ export default function Draft() {
 
 
   return (
-    <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
-
+    <div style={{ padding: "2rem", paddingTop: "4rem", maxWidth: 900, margin: "0 auto" }}>
        <div className="mobile-header">
               <button
                 className="hamburger"
@@ -195,6 +194,12 @@ export default function Draft() {
           <p>${totalDonations.toLocaleString()}</p>
         </div>
       )}
+
+      <div className="green-flag-warning">
+        <p>
+          This candidate has been verified as having no potential pay-to-play, developer, or any conflict of interest donations.{" "}
+        </p>
+      </div>
 
       <div className="bio-container">
         <section className="bio-text">
@@ -328,11 +333,6 @@ export default function Draft() {
             </table>
           </div>
         )}
-      </div>
-
-      <div style={{ marginTop: "3rem", padding: "1rem" }}>
-        <h2>Red Flags</h2>
-        <p>Mussab Ali has pledged that he will not take any pay2play corporate money. So far, he has stayed true to his promise, as none of his donations are pay2play or possible conflicts of interest. All of his contributions are available to download using the link at the end of the page if you want to investigate for yourself.</p>
       </div>
 
       <div className="other-candidates-section">

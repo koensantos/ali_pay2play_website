@@ -17,6 +17,7 @@ export default function Draft() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -32,7 +33,7 @@ export default function Draft() {
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
     { name: "Joyce Watterman", path: "/JoyceWatterman"},
-    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
+    { name: "Transparency Dashboard", path: "/comparison" }
   ];
 
   useEffect(() => {
@@ -165,7 +166,7 @@ export default function Draft() {
 
 
   return (
-    <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
+    <div style={{ padding: "2rem", paddingTop: "4rem", maxWidth: 900, margin: "0 auto" }}>
 
        <div className="mobile-header">
               <button
@@ -633,7 +634,7 @@ export default function Draft() {
                 </li>
               </ul>
               <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $73,500</a></p>
-              <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $1098</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $1,098</a></p>
               <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $585</a></p>
             </div>
           )}
@@ -1127,7 +1128,7 @@ export default function Draft() {
         Donald Shauger Sr. - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 20 && (
+      {openIndex === 21 && (
         <div className="accordion-content">
           <p>Donald Shauger II and Donald Shauger Sr., executives of The Shauger Group Inc., each donated $1,000 to Councilmember Solomon on June 30, 2025. This is notable given the scope of their company’s work in Jersey City. Their projects include Phase V Water and Sewer Main Upgrades, involving the installation of 7,000 LF of 12-inch watermain, 4,000 LF of 8-inch watermain, new valves, hydrants, and service connections throughout Jersey City, as well as 11,000 LF of new PVC sewer main with associated manholes and cleanouts. They also carried out the Large Valve Replacement Project, replacing 30 of the most defective valves in the city’s water distribution system, which involved excavation, timber shoring, temporary bypass piping, and maintaining water service to residents during construction. The size and timing of these donations could raise concerns about potential influence or the appearance of a conflict of interest. <a href="https://shauger.com/major-projects">Shauger Group's Major Projects</a></p>
         </div>
@@ -1143,7 +1144,7 @@ export default function Draft() {
         IBEW Local Union 164 - $2,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 21 && (
+      {openIndex === 22 && (
         <div className="accordion-content">
           <p>On June 30, 2025, IBEW Local 164 donated $2,500 to James Solomon’s mayoral campaign, just five days after receiving a $7,366.59 payment from the City of Jersey City. While unions frequently engage in local politics, the timing of this transaction raises significant concerns. Pay-to-play risks often emerge when an organization that benefits financially from city expenditures turns around and contributes to a candidate for mayor, the office that directly oversees city contracts and spending. Even if no explicit quid pro quo is proven, the sequence suggests a potential exchange of public funds for political influence. This kind of donation blurs the line between civic engagement and transactional politics, undermining trust in fair governance and making it a strong red flag in the campaign finance record.</p>
         </div>

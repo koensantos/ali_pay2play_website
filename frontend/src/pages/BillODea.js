@@ -32,7 +32,7 @@ export default function Draft() {
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
     { name: "Joyce Watterman", path: "/JoyceWatterman" },
-    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
+    { name: "Transparency Dashboard", path: "/comparison" }
   ];
 
   useEffect(() => {
@@ -165,7 +165,7 @@ export default function Draft() {
 
 
   return (
-    <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
+    <div style={{ padding: "2rem", paddingTop: "4rem", maxWidth: 900, margin: "0 auto" }}>
       <div className="mobile-header">
         <button
           className="hamburger"
@@ -375,14 +375,14 @@ export default function Draft() {
 
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 1 ? "active" : ""}`}
-          onClick={() => toggleAccordion(1)}
-          aria-expanded={openIndex === 1}
+          className={`accordion-header ${openIndex === 2 ? "active" : ""}`}
+          onClick={() => toggleAccordion(2)}
+          aria-expanded={openIndex === 2}
         >
           IBEW Local Union 164 - $50,400
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 1 && (
+        {openIndex === 2 && (
           <div className="accordion-content">
             <p>The donations from IBEW Local Union 164 to Bill O’Dea, totaling $50,400, raise a strong red flag given the union’s extensive financial ties with Jersey City. Public records show that IBEW Local 164 has received significant city payments over multiple years, including large expenditures in 2021, 2022, 2024, and 2025. The sequence of receiving municipal funds and then contributing heavily to O’Dea’s campaign creates the appearance of a pay-to-play cycle, where taxpayer money flows to the union and then back into local politics. This dynamic heightens concerns about whether the union is seeking to preserve or expand its influence over future contracts and city decisions. While no direct illegality is proven, the overlap between city expenditures and campaign donations underscores the risk of undue influence and the need for greater transparency.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $8,672.67</a></p>
@@ -396,16 +396,16 @@ export default function Draft() {
       {/* William J Guarini Plumbing */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 2 ? "active" : ""}`}
-          onClick={() => toggleAccordion(2)}
-          aria-expanded={openIndex === 2}
+          className={`accordion-header ${openIndex === 3 ? "active" : ""}`}
+          onClick={() => toggleAccordion(3)}
+          aria-expanded={openIndex === 3}
         >
           Kyrsta Gomes, - $2,500
           Matthew LeFurge, Project Manager - $5,100
           William J Guarini Plumbing - $4,475
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 2 && (
+        {openIndex === 3 && (
           <div className="accordion-content">
             <p>O'Dea has received a total of $12,075 in campaign contributions, including $4,475 from William J. Guarini, INC, $2,500 from Krysta Gomes, and $5,100 from Matthew LeFurge. These donations are considered potentially problematic because William J. Guarini, INC holds an active contract with the city, creating a possible conflict of interest and raising pay-to-play concerns. They have also received several expenditure payments from the city. These donations are to be scruntized because it represents possible pay-to-play or conflict of interest concerns. The total amount makes it seem like the company and its employees are looking to be favorable to O'Dea if he was elected mayor. The related resolution is listed below for reference.</p>
             <p>
@@ -455,14 +455,14 @@ export default function Draft() {
       {/* Royal Printing Services */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 3 ? "active" : ""}`}
-          onClick={() => toggleAccordion(3)}
-          aria-expanded={openIndex === 3}
+          className={`accordion-header ${openIndex === 4 ? "active" : ""}`}
+          onClick={() => toggleAccordion(4)}
+          aria-expanded={openIndex === 4}
         >
           Royal Printing Services - $2,600
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 3 && (
+        {openIndex === 4 && (
           <div className="accordion-content">
             <p>O'Dea has received a $2,600 donation from the company on May 24, 2022. This company has received several contracts related to ballots for elections and other printing needs listed below.</p>
             <p>
@@ -502,9 +502,9 @@ export default function Draft() {
       {/* McManimon, Scotland & Baumann, LLC */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 4 ? "active" : ""}`}
-          onClick={() => toggleAccordion(4)}
-          aria-expanded={openIndex === 4}
+          className={`accordion-header ${openIndex === 5 ? "active" : ""}`}
+          onClick={() => toggleAccordion(5)}
+          aria-expanded={openIndex === 5}
         >
           Joseph Baumann, Member - $400
           John Cavaliere, Member - $400
@@ -522,7 +522,7 @@ export default function Draft() {
           Eric Tomaszweski - $400
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 4 && (
+        {openIndex === 5 && (
           <div className="accordion-content">
             <p>
             On March 14, 2025, fourteen employees of McManimon, Scotland & Baumann, LLC each donated to O'Dea’s campaign, totaling $5,400. These coordinated contributions are a red flag because the firm has received numerous contracts from Jersey City in recent years, covering matters such as land use, litigation, tax issues, and real estate. Many of these contracts were awarded without public bidding under the professional services exemption, with values ranging from tens of thousands to hundreds of thousands of dollars. In addition, the firm has been paid repeatedly through city expenditures for legal services across multiple departments. The timing and scale of these donations, combined with the firm’s ongoing financial relationship with the city, raise concerns about potential conflicts of interest and pay-to-play practices.
@@ -633,14 +633,14 @@ export default function Draft() {
     {/*Nicholas Netta*/}
     <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 5 ? "active" : ""}`}
-          onClick={() => toggleAccordion(5)}
-          aria-expanded={openIndex === 5}
+          className={`accordion-header ${openIndex === 6 ? "active" : ""}`}
+          onClick={() => toggleAccordion(6)}
+          aria-expanded={openIndex === 6}
         >
           Nicholas Netta - Netta Architects LLC - $250
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 5 && (
+        {openIndex === 6 && (
           <div className="accordion-content">
             <p>
             O'Dea received a $250 contribution from Nicholas Netta. This donation raises concerns because Netta Architects LLC has been awarded multiple contracts and amendments with Jersey City, particularly for the design and construction administration of new firehouse projects. These contracts, which have grown significantly through amendments addressing environmental issues, design changes, and project delays, now total over $1 million. In addition, the firm has been paid repeatedly through city expenditures for architectural services over several years. The overlap between campaign contributions and substantial city contracts creates the appearance of a potential conflict of interest and pay-to-play risk.
@@ -683,9 +683,9 @@ export default function Draft() {
     {/*Florio Kenny Raval, LLP*/}
     <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 6 ? "active" : ""}`}
-          onClick={() => toggleAccordion(6)}
-          aria-expanded={openIndex === 6}
+          className={`accordion-header ${openIndex === 7 ? "active" : ""}`}
+          onClick={() => toggleAccordion(7)}
+          aria-expanded={openIndex === 7}
         >
           Edward Florio, Senior Partner - $4,000
           Bernie Kenny, Senior Partner - $1,000
@@ -693,7 +693,7 @@ export default function Draft() {
           Florio Kenny Raval, LLP - $2,300
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 6 && (
+        {openIndex === 7 && (
           <div className="accordion-content">
             <p>
             O'Dea has received a total of $9,800 connected to Florio Kenny Raval, LLP—$2,300 from the law firm itself, $2,500 from Managing Partner Niti Raval, $1,000 from Senior Partner Bernie Kenny, and $4,000 from Senior Partner Edward Florio. While the dollar amounts may not be the largest compared to other donors, the concern arises because Florio Kenny Raval has secured numerous lucrative contracts with Jersey City, including multimillion-dollar agreements to represent the City in tax appeals and high-profile litigation involving police officers and civil rights cases. These contracts have been repeatedly renewed and expanded over the years, with individual amendments often adding tens or hundreds of thousands of dollars in legal fees. In addition to the resolutions, the firm has also received a steady stream of direct payments from the City for legal services. The overlap between campaign donations and significant ongoing city business creates the appearance of a conflict of interest and raises potential pay-to-play concerns.
@@ -786,14 +786,14 @@ export default function Draft() {
     {/* Spiniello Companies */}
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 7 ? "active" : ""}`}
-        onClick={() => toggleAccordion(7)}
-        aria-expanded={openIndex === 7}
+        className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
+        onClick={() => toggleAccordion(8)}
+        aria-expanded={openIndex === 8}
       >
         Spiniello Companies - $10,400
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 7 && (
+      {openIndex === 8 && (
         <div className="accordion-content">
          <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $58,942.69</a></p>
          <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $124,284.38</a></p>
@@ -807,14 +807,14 @@ export default function Draft() {
     {/* Waters, McPherson, McNeil */}
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
-        onClick={() => toggleAccordion(8)}
-        aria-expanded={openIndex === 8}
+        className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
+        onClick={() => toggleAccordion(9)}
+        aria-expanded={openIndex === 9}
       >
         Waters, McPherson, McNeil - $6,750 
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 8 && (
+      {openIndex === 9 && (
         <div className="accordion-content">
           <p>The donations from Waters, McPherson, McNeil P.C. to Bill O'Dea and other Jersey City candidates raise potential red flags due to the firm’s direct financial and business interests with the city, as well as the timing of these contributions. The law firm represents Honeywell International Inc. in environmental remediation projects affecting public rights-of-way in Jersey City, including the execution and termination of Notices in Lieu of Deed Notices, such as the resolution approving the updated NILODN for Fisk Street and other ROWs in July 2024 (<a href="https://cityofjerseycity.civicweb.net/document/406670">Resolution PDF</a>). Additionally, the firm has historically represented developers in high-value waterfront redevelopment projects in the city (<a href="https://www.lawwmm.com/HudsonRiverRedev.asp">Waters, McPherson, McNeil Hudson River Waterfront Redevelopment</a>). The firm has also received substantial payments from the city itself, including $448,690.70 (<a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25</a>), $338,281.63 (<a href="https://cityofjerseycity.civicweb.net/document/403052">5/14/25</a>), $26,852.32 (<a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23</a>) $11,510.03 (<a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/2023</a>). The donations, totaling $31,200 from the firm and $5,200 from David McPherson personally, occurred shortly after or around the time of these municipal approvals and expenditures, creating a perception that the contributions could influence officials overseeing matters directly affecting the firm’s clients. While no direct quid pro quo is proven, the overlap of campaign contributions with public decisions and city payments involving the firm constitutes a potential pay-to-play concern and represents a red flag for regulatory or ethical scrutiny.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $338,281.63</a></p>
@@ -844,9 +844,9 @@ export default function Draft() {
 
     <div className="accordion-item"> 
       <button
-        className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
-        onClick={() => toggleAccordion(9)}
-        aria-expanded={openIndex === 9}
+        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
+        onClick={() => toggleAccordion(10)}
+        aria-expanded={openIndex === 10}
       >
         AMI Hospitality - $1,000
         <span className="accordion-arrow" />
@@ -862,9 +862,9 @@ export default function Draft() {
       {/* Leemark Electrics */}
     <div className ="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
-        onClick={() => toggleAccordion(10)}
-        aria-expanded={openIndex === 10}
+        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
+        onClick={() => toggleAccordion(11)}
+        aria-expanded={openIndex === 11}
       >
         Leemark Electrics - $3,000
         <span className="accordion-arrow" />
@@ -884,15 +884,15 @@ export default function Draft() {
     {/* Connell Foley PAC */}
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
-        onClick={() => toggleAccordion(11)}
-        aria-expanded={openIndex === 11}
+        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
+        onClick={() => toggleAccordion(12)}
+        aria-expanded={openIndex === 12}
       >
         Connell Foley PAC - $5,000
         Employees - $7,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 11 && (
+      {openIndex === 12 && (
         <div className="accordion-content">
           <p>Connell Foley’s deep entanglement in Jersey City politics is underscored by both its financial and political ties. The firm, which represents multiple properties along the Jersey City waterfront, has benefited from a steady stream of lucrative city expenditures ranging from hundreds of thousands to nearly a million dollars across 2023 and 2024. At the same time, Connell Foley’s influence has extended into the political sphere. Maureen Hulings, formerly an administrative assistant at the firm, was appointed by the City Council to serve as the Ward B representative on April 14. 2025. This overlap between a politically connected law firm that profits from substantial city business and its direct pipeline into council membership raises significant concerns about conflicts of interest and the blending of private legal advocacy with public governance in Jersey City.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $42,646.04</a></p>
@@ -913,15 +913,15 @@ export default function Draft() {
     </div>
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
-        onClick={() => toggleAccordion(12)}
-        aria-expanded={openIndex === 12}
+        className={`accordion-header ${openIndex === 13 ? "active" : ""}`}
+        onClick={() => toggleAccordion(13)}
+        aria-expanded={openIndex === 13}
       >
         Excelsior Plumbing - $11,200
         UA Plumbers Local 24 PAC - $16,400
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 12 && (
+      {openIndex === 13 && (
         <div className="accordion-content">
           <p>The donations from both Excelsior Plumbing and Plumbers Local 24 to Bill O’Dea raise a red flag because they suggest coordinated financial support from a union and one of its contractors. While unions often contribute to political campaigns, the added donation from a contractor that directly benefits from union projects creates the appearance of a networked effort to amplify influence. This dual backing increases the risk of pay-to-play dynamics, where financial contributions from labor groups and their business partners could be seen as attempts to secure favorable treatment on future contracts, labor agreements, or city-backed projects.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $8,056.14</a></p>
@@ -968,22 +968,6 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 13 ? "active" : ""}`}
-        onClick={() => toggleAccordion(13)}
-        aria-expanded={openIndex === 13}
-      >
-        Jersey City Officers Associaton - $6,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 13 && (
-        <div className="accordion-content">
-          <p>While it is common for police officer associations to back mayoral candidates with donations, the association has donated to him five different times totaling up to $6,000. This pattern of repeated donations is a potential concern of conflict of interest because O'Dea has proposed modernizing police operations, restructuring enforcement units, and public safety incentives. The overlap of policy benefits and union support may foster the appearance of preferential treatment</p>
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
         className={`accordion-header ${openIndex === 14 ? "active" : ""}`}
         onClick={() => toggleAccordion(14)}
         aria-expanded={openIndex === 14}
@@ -1006,7 +990,7 @@ export default function Draft() {
           <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $4,666.70</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/86739">3/6/23 - $11,136.62</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $465</a></p>
-          <p><strong>Res 23-093 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-093, awarding a one-year professional services contract to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for workers’ compensation claims against the city. The firm is paid $1,500 per case, with an additional $1,500 allowed for protracted litigation, and the total contract is capped at $50,000. The award was made under the Fair and Open provisions of the Pay-to-Play Law and is exempt from competitive bidding as a professional services agreement. The contract requires compliance with affirmative action laws and must be publicly available and published in a local newspaper within ten days of adoption. Funding for the contract is drawn from the FY 2023 budget, with $10,000 certified as available, ensuring the firm can provide legal defense services in accordance with city and state regulations.<a href="https://cityofjerseycity.civicweb.net/document/83684"></a></p>
+          <p><strong>Res 23-093 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-093, awarding a one-year professional services contract to Chasan, Lamparello, Mallon & Cappuzzo to provide defense counsel for workers’ compensation claims against the city. The firm is paid $1,500 per case, with an additional $1,500 allowed for protracted litigation, and the total contract is capped at $50,000. The award was made under the Fair and Open provisions of the Pay-to-Play Law and is exempt from competitive bidding as a professional services agreement. The contract requires compliance with affirmative action laws and must be publicly available and published in a local newspaper within ten days of adoption. Funding for the contract is drawn from the FY 2023 budget, with $10,000 certified as available, ensuring the firm can provide legal defense services in accordance with city and state regulations.<a href="https://cityofjerseycity.civicweb.net/document/83684">Resolution PDF</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/83495">1//20/23 - $19,833.98</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $1,500.50</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/80927">11/23/22 - $195.00</a></p>
@@ -1190,7 +1174,7 @@ export default function Draft() {
       {openIndex === 22 && (
         <div className="accordion-content">
           <p>Albert Mauti, as the co-founder of M & M Construction Company, which received a substantial $5.64 million contract from the City of Jersey City for the construction of Engine Co. #10 and Ladder 12 and has received several expenditure payments from Jersey City, donated to O’Dea’s campaign. This contribution is a red flag because it comes directly from a principal of a company that benefits from significant city expenditures, creating a potential conflict of interest. The donation raises concerns about the possibility of political influence, as the company’s financial interests could be seen as linked to O’Dea’s political support. The contract itself involved multiple payments and oversight from city officials, meaning any perceived favoritism or expectation of favorable treatment could compromise the integrity of the procurement process.</p>
-          <p><strong>Res 21-242 </strong>The City of Jersey Council awarded a contract to M & M Construction Company, Inc. for the construction of Engine Co. #10 and Ladder 12 – a new firehouse, Project No. 18-004, for the Department of Administration, Division of Architecture. The contract was the result of a public bidding process, where M & M Construction was the lowest responsive and responsible bidder after the lowest bid from Thomas & Sons Builders was deemed non-responsive. The total bid amount is $5,642,000, with a total encumbrance of $6,206,200 available across multiple capital accounts. Payments will be made once city officials certify that the materials and services are delivered in accordance with the contract. The contract award is subject to compliance with New Jersey’s Affirmative Action Amendments to the Law Against Discrimination, and the Mayor or Business Administrator is authorized to execute the contract on behalf of the city. <a href="https://cityofjerseycity.civicweb.net/document/44316"></a></p>
+          <p><strong>Res 21-242 </strong>The City of Jersey Council awarded a contract to M & M Construction Company, Inc. for the construction of Engine Co. #10 and Ladder 12 – a new firehouse, Project No. 18-004, for the Department of Administration, Division of Architecture. The contract was the result of a public bidding process, where M & M Construction was the lowest responsive and responsible bidder after the lowest bid from Thomas & Sons Builders was deemed non-responsive. The total bid amount is $5,642,000, with a total encumbrance of $6,206,200 available across multiple capital accounts. Payments will be made once city officials certify that the materials and services are delivered in accordance with the contract. The contract award is subject to compliance with New Jersey’s Affirmative Action Amendments to the Law Against Discrimination, and the Mayor or Business Administrator is authorized to execute the contract on behalf of the city. <a href="https://cityofjerseycity.civicweb.net/document/44316">Resolution PDF</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/71510">7/8/22 - $101,626.00</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/68836">5/20/22 - $198,450.00</a></p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $73,500.00</a></p>
@@ -1208,6 +1192,7 @@ export default function Draft() {
           aria-expanded={openIndex === 23}
         >
           Frank Robinson, Associate of Garden Greenz - $5,000
+          Brian Markey, Owner of Garden Greenz - $2,800
           <span className="accordion-arrow" />
         </button>
         {openIndex === 23 && (
@@ -1357,35 +1342,16 @@ export default function Draft() {
     )}
   </div>
 
-  <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 5 ? "active" : ""}`}
-          onClick={() => toggleAccordion(5)}
-          aria-expanded={openIndex === 5}
-        >
-          Brain Markey, Owner of Garden Greenz - $2,800
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 5 && (
-          <div className="accordion-content">
-            <p>O'Dea has received a total of $2,800 from Brian Markey. These donations have been flagged as potentially concerning because they come from individuals with a business seeking city approval and influence. While the donations are legal, the business interests may warrant closer scrutiny for potential conflicts of interest or public perception issues.</p>
-            <p>
-              <p><strong>Res 22-765 </strong> The Jersey City Council provides support for Garden Greenz to run a cannabis business. </p><a href="https://cityofjerseycity.civicweb.net/document/77364">Resolution PDF</a>
-            </p>
-          </div>
-        )}
-      </div>
-
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
-          onClick={() => toggleAccordion(8)}
-          aria-expanded={openIndex === 8}
+          className={`accordion-header ${openIndex === 32 ? "active" : ""}`}
+          onClick={() => toggleAccordion(32)}
+          aria-expanded={openIndex === 32}
         >
           Dave Jefferson, Owner of The Leaf Joint - $1,350
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 8 && (
+        {openIndex === 32 && (
           <div className="accordion-content">
             <p>Dave Jefferson, owner of The Leaf Joint, contributed $1,350 to O'Dea’s campaign. This donation is a potential red flag because Jefferson’s business required and received approval from the Jersey City Council to operate a Class 5 retail cannabis establishment within the city. When individuals who are seeking or have obtained municipal approvals contribute to a candidate’s campaign, it can create the appearance of a pay-to-play scenario, where financial support might be perceived as influencing official decisions. While the contribution is legal, its connection to city approvals warrants scrutiny to maintain transparency and public trust.</p>
             <p><strong>Res 22-675 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-100 providing local support for The Leaf Joint to operate a Class 5 retail cannabis business. <a href="https://cityofjerseycity.civicweb.net/document/74396">Resolution PDF</a></p>
