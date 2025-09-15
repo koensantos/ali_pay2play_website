@@ -54,11 +54,10 @@ export default function Home() {
         </div>
 
         <p className="intro">
-          This platform promotes transparency around campaign contributions to Jersey City's 2025 mayoral candidates.
-          We break down donation trends, pay-to-play patterns, and top donors—giving voters a clearer picture of the financial forces behind each campaign.
+          This platform is dedicated to promoting transparency in Jersey City’s 2025 mayoral race. We break down donation trends, highlight potential pay-to-play patterns, and showcase top donors—giving voters a clearer understanding of the financial influences shaping each campaign.
         </p>
         <p className="disclaimer">
-          <strong>Disclaimer:</strong> This site is continually updated based on publicly available campaign finance data. If new candidates enter the race or more donations are reported, those changes will be reflected here. While we aim to make the data digestible and transparent, we encourage users to do their own research and consult official NJ ELEC records for complete accuracy.
+          <strong>Disclaimer:</strong> This site is continually updated using publicly available campaign finance data. As new candidates enter the race or additional donations are reported, our information will be revised accordingly. While we strive to present the data in a clear and accessible way, we encourage users to conduct their own research and consult official NJ ELEC records for complete accuracy.
         </p>
       </header>
 
