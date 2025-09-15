@@ -32,6 +32,8 @@ const candidateData = [
     { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
   ];
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  
 // Red for red flags, teal for the rest
 const COLORS = ["#E63946", "#2A9D8F"];
 

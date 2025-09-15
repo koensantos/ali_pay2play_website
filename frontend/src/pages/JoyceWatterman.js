@@ -17,6 +17,7 @@ export default function Draft() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchStatus, setSearchStatus] = useState(null);
   const [totalDonations, setTotalDonations] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const [openIndex, setOpenIndex] = useState(null);
 
