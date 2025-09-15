@@ -201,7 +201,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $590,650.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $1,091,533.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -341,7 +341,7 @@ export default function Draft() {
 
       <section id="red-flags" className="accordion-container">
         <h2>Red Flags</h2>
-        <p>Jim McGreevey has received the most pay2play and conflict of interest donations out of all the candidates. They are all listed below (Disclaimer: This list is being updated as more research and more donations come through with quarterly reports. This is as up-to-date as it can be.):</p>
+        <p>Jim McGreevey's mayoral campaign in Jersey City has received the highest amount of donations linked to potential pay-to-play, conflicts of interest, or suspicious actors, totaling $1,091,533. Despite his public stance on ethical governance, a significant portion of these funds comes from individuals and entities with notable political and business influence, including Eliot Spitzer and Charles Kushner. This discrepancy between McGreevey’s stated commitment to transparency and the sources of his campaign contributions raises concerns about the perception of pay-to-play politics. As more donations are reported and quarterly filings are updated, this list continues to evolve, highlighting the ongoing scrutiny of his fundraising practices.</p>
         {/* Accordion item 0 */}
       <div className="accordion-item">
         <button

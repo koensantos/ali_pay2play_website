@@ -202,7 +202,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $104,700.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $141,720.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
