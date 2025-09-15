@@ -378,12 +378,21 @@ def get_total_donations(candidate):
 
     df = pd.read_csv(filepath)
     df.drop_duplicates(inplace=True)
+
+    # Convert ContributionAmount to numeric (coerce errors to NaN)
+    df["ContributionAmount"] = pd.to_numeric(df["ContributionAmount"], errors="coerce")
+
+    # Sum only valid numbers
     total = df["ContributionAmount"].sum()
-    total = float(round(total, 2))  
+
+    # Round the total safely
+    total = round(float(total), 2)
+
     return jsonify({
         "candidate": candidate,
-        "total_donations": round(total, 2)
+        "total_donations": total
     })
+
 
 @app.route('/download/p2p-2024')
 def download_p2p_contributions():
