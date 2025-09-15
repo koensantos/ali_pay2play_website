@@ -340,7 +340,7 @@ export default function Draft() {
 
       <section id="red-flags" className="accordion-container">
       <h2>Red Flags</h2>
-      <p>Bill O'Dea has received suspicious donations that are listed below:</p>
+      <p>Bill O'Dea's mayoral campaign in Jersey City has raised significant funds, with over $220,000 reported in the second quarter of 2025 and nearly $1.25 million in cash on hand heading into the fall election season. He has emphasized that his campaign is focused on "putting Jersey City first," expressing gratitude for support from residents who resist the influence of outside political bosses. Despite this stance, his campaign has accepted donations from entities that could be perceived as having potential conflicts of interest, totaling $228,475, including IBEW Local Union No. 164 PAC and Florio Kenny Reval LLC. This raises questions about the consistency of his commitment to integrity and whether his fundraising practices fully align with his stated values.</p>
 
       {/* Sal's Electric CO. */}
       <div className="accordion-item">
@@ -1284,7 +1284,7 @@ export default function Draft() {
     {openIndex === 28 && (
       <div className="accordion-content">
         <p>
-         
+          Jeffrey Persky, Executive Vice President of the Kushner Real Estate Group (KRE Group), contributed to Bill O’Dea’s mayoral campaign. This raises concerns because KRE Group is one of the most active real estate developers in Jersey City, with major projects such as Journal Squared, 235 Grand, 18 Park, Bay 151, and 485 Marin. These developments depend on zoning approvals, tax abatements, and city planning decisions, creating a direct overlap between the company’s financial interests and the authority of the mayor’s office. While such contributions may be legal under New Jersey’s campaign finance rules, they exemplify the “pay-to-play” dynamic in which powerful developers support candidates who will ultimately hold sway over their projects. <a href="https://thekregroup.com/residential/urban-living">Kushner Real Estate Group</a>
         </p>
       </div>
     )}
