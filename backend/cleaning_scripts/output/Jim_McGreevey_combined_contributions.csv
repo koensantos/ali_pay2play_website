@@ -488,7 +488,7 @@ Individual - Large,2000,DANIELLE,CORCIONE,,12/12/2023,CSG LAW,ATTORNEY,VERONA,NJ
 Individual - Small,200,DANIELLE,CORCIONE,,12/09/2024,CSG LAW,ATTORNEY,VERONA,NJ
 Individual - Small,200,STEPHEN,CORDARO,,12/05/2024,CHIESA  SHAHINIAN AND GIANTOMASI,ATTORNEY,ESSEX FELLS,NJ
 Individual - Small,300,STEPHEN,CORDARO,,12/12/2023,CHIESA  SHAHINIAN AND GIANTOMASI,ATTORNEY,ESSEX FELLS,NJ
-Individual - Large,5000,JOHN,CORZINE,,03/30/2024,SELF-EMPLOYED,FINANCIAL SERVICES/BANKING,NEW YORK CITY,NV
+Individual - Large,5000,JOHN,CORZINE,,03/30/2024,SELF-EMPLOYED,FINANCIAL SERVICES/BANKING,NEW YORK CITY,NY
 Individual - Small,300,PATRICIA,COSTELLO,,12/03/2024,CSG LAW,ATTORNEY,ASBURY PARK,NJ
 Individual - Small,300,PATRICIA,COSTELLO,,12/03/2024,CSG LAW,ATTORNEY,ASBURY PARK,NJ
 Individual - Medium,750,PATRICIA,COSTELLO,,12/15/2023,CSG LAW,ATTORNEY,ASBURY PARK,NJ
@@ -1103,7 +1103,7 @@ Individual - Small,250,DANIELA,SARBU,,04/01/2025,SELF-EMPLOYED,REAL ESTATE,SUMMI
 Individual - Small,300,DANIELA,SARBU,,06/19/2024,SELF-EMPLOYED,REAL ESTATE,SUMMIT,NJ
 Individual - Small,250,WAYNE,SARGENT,,02/19/2024,SOURCE POINT,INFORMATION TECHNOLOGY/COMPUTER SCIENCE,WESTMORELAND,NJ
 Individual - Small,250,WAYNE,SARGENT,,02/19/2024,SOURCE POINT,INFORMATION TECHNOLOGY/COMPUTER SCIENCE,WESTMORELAND,NJ
-Individual - Small,300,CLARIMONDO,SARNI,,12/11/2025,,RETIRED,JERSEY CITY,NJ
+Individual - Small,300,CLARIMONDO,SARNI,,12/11/2024,,RETIRED,JERSEY CITY,NJ
 Individual - Medium,1000,JAMES,SARTOR,,06/13/2024,PS&S LLC,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,WARREN,NJ
 Individual - Medium,1000,VINCENT,SARUBBI,,06/17/2024,ARCHER & GREINER PC,ATTORNEY,HADDON HEIGHTS,NJ
 Individual - Medium,500,MICHAEL,SASSANO,,03/22/2025,SELF EMPLOYED,REAL ESTATE,HILLSDALE,NJ
@@ -1287,7 +1287,7 @@ Individual - Small,300,ELIZABETH,YOO,,12/13/2023,CSG LAW,ATTORNEY,FORT LEE,NJ
 Individual - Large,5000,JACQUES,YOUSSEF,,06/12/2024,NEW YORK STONE,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,STATEN ISLAND,NY
 Individual - Small,300,JESSICA,ZAFONTE,,12/19/2023,CSG LAW,ATTORNEY,NEW YORK,NY
 Individual - Medium,1000,GARY,ZAMPELLA,,03/06/2024,WELLS FARGO,ACCOUNTANTS/AUDITORS,SEASIDE HEIGHTS,NJ
-Individual - Medium,1000,JOE,ZAUGG,,09/05/2024,SLRDONI CONSTRUCTION,CONSTRUCTION TRADE/LABOR TRADE,MILLSTONE,NJ
+Individual - Medium,1000,JOE,ZAUGG,,09/05/2024,SORDONI CONSTRUCTION,CONSTRUCTION TRADE/LABOR TRADE,MILLSTONE,NJ
 Individual - Medium,1000,NATHAN,ZEMEL,,03/17/2025,NATHAN ZEMEL MD,PHYSICIAN,NEWARK,NJ
 Individual - Medium,500,MELISSA,ZEMSKY,,03/27/2024,SELF-EMPLOYED,ATTORNEY,WESTFIELD,NJ
 Individual - Medium,1000,JUDITH,ZOFFINGER,,02/13/2025,RETIRED,RETIRED,NAPLES,FL
@@ -1557,3 +1557,279 @@ Individual - Medium,1000,Ralph,,,04/29/25,Inspired BVY Somerset Development,Mana
 Individual - Large,5000,Christian M. ,Perucci,,04/01/24,Florio Perrucci Steinhardt Cappelli & Tipton LLC,,Cherry Hill,NJ
 Individual - Small,300,Keith,Furlong,,01/25/24,Gateway Media,,N Haledon,NJ
 Individual - Small,250,Frederick W.,Alworth,,10/01/24,Gibbons P.C.,,Randolph,NJ
+Corporate, 1000,,,A Plus Heating Plumbing,03/11/25,A Plus Heating Plumbing,,Newark,NJ
+Individual - Medium,667,Debra,Abittan,,03/28/25,Bergerorg LLC,Real Estate,Great Neck,NY
+Individual - Medium,500,Christopher,Adams,,09/26/24,McCarter & English LLP,Attorney,Colts Neck,NJ
+Individual - Large,5000,Richard,Alaimo,,08/21/24,Richard A Alaimo Associates,Consultant,Mount Holly,NJ
+Indiviudal - Large,2500,Carmine,Alampi,,09/13/24,Law Office of Carmine R Alampi LLC,Attorney,Paramus,NJ
+Indiviudal - Large,5000,Carmine,Alampi,,12/06/24,Law Office of Carmine R Alampi LLC,Attorney,Paramus,NJ
+Corporate,6500,,,Albany Street Plaza Urban Renewal,03/28/25,Albany Street Plaza Urban Renewal,,New Brusnwick,NJ
+Corporate,5200,,,Archer & Greiner,,12/06/24,Archer & Greiner,,Voorhees,NJ
+Policital Committee,35000,,,Atucope The Voice of Transit Workers,03/31/25,Atucope the Voice of Transit Workers,,Silver Springs,DC
+Political Committee,1000,,,B.A.C Administrative Distric Council of NJ,03/06/25,B.A.C Administrative District Council of NJ,,Bordentown,NJ
+Corporate,1000,,,Bank Group,03/12/25,Bank Group,,North Bergen,NJ
+Other,2650,,,Batch 1,03/31/25,Batch 1,,,
+Individual - Medium,667,Benjy,Berger,,03/28/25,Berger Organization,Real Estate,New Rochelle,NY
+Individual - Medium,667,Brendan,Berger,,03/28/25,Bergerorg LLC,Real Estate,Livingston,NJ
+Individual - Medium,667,Bruce,Berger,,03/28/25,Bergerorg LLC,Management/Administrator/Executive,Newark,NJ
+Individual - Large,2600,Bruce,Berger,,09/30/24,Bergerorg LLC,Management/Administrator/Executive,Newark,NJ
+Individual - Medium,664,Emily,Berger,,03/28/25,Berger Organization,Real Estate,Livingston,NJ
+Individual - Medium,667,Jared,Berger,,03/28/25,Bergerorg LLC,Real Estate,Newark,NJ
+Individual - Large,2600,Jared,Berger,,09/30/24,Bergerorg LLC,Management/Administrator/Executive,Newark,NJ
+Individual - Medium,667,Kirk,Berger,,03/28/25,Military Kirk Building LLC,Real Estate,Manhasset,NY
+Individual - Medium,1500,Bonnie P,Bergstein,,03/12/25,Self-Employed,Architect/Surveyor/Planner,New York,NY
+Individual - Large,5200,Eric,Bernstein,,12/26/24,Eric M. Bernstein & Associates LLC,Attorney,Bridgewater,NJ
+Individual - Large,13900,Eric P,Bernstein,,03/20/25,Eric M. Bernstein & Associates LLC,Attorney,Bridgewater,NJ
+Individual - Large,2500,Angelo P,Beskaly,,03/12/25,John and Maryan LLC,Real Estate,Franklin Lakes,NJ
+Corporate,1000,,,Blue Vaz Services,03/14/25,Blue Vaz Services,,Elizabeth,NJ
+Individual - Medium,1000,Alessandro,Bonati,,02/24/25,New York Stone,Management/Administrator/Executive,Jersey City,NJ
+Individual - Large,5000,Scott,Booth,,12/31/24,CBD Project Management LLC,Construction Labor/Labor Trade,Roseland,NJ
+Individual - Large,5000,Omar,Boraie,,09/19/24,Boraie Development LLC,Real Estate,New Brunswick,NJ
+Individual - Large,5000,Wassen,Boraie,,12/31/24,Albany Street Plaza Urban Renewal LLC,Architect/Surveyor/Planner,New Brunswick,NJ
+Corporate,1000,,,Boswell Engineering,11/19/24,Boswell Engineering,,South Hackensack,NJ
+Corporate,1000,,,Boswell Engineering,08/26/24,Boswell Engineering,,South Hackensack,NJ
+Corporate,2500,,,Boswell Engineering,02/07/25,Boswell Engineering,,South Hackensack,NJ
+Individual - Large,5000,Joan A,Brower,09/23/24,Retired,Retired,Toms River,NJ
+Individual - Small,250,Richard P,Brown,,03/28/25,Retired,Retired,Ramsey,NJ
+Individual - Large,5000,Robert,Brown,,09/23/24,John M Sanzari INC,Management/Administrator/Executive,Carlstadt,NJ
+Individual - Large,2500,Melissa P,Bryson,,02/21/25,Greenberg Traurig,Attorney,New York,NY
+Individual - Large,5000,Helen,Brzozowski,,11/25/24,Union City Board of Education,Education/Professor/Teacher,Union City, NJ
+Individual - Large,2000,Helen,Brzozowski,,09/03/24,Union City Board of Education,Education/Professor/Teacher,Union City, NJ
+Individual - Large,5000,Helen,Brzozowski,,03/02/25,Union City Board of Education,Education/Professor/Teacher,Union City, NJ
+Coporate,5000,,,BYLS Realty,03/31/25,BYLS Realty,,Lakewood,NJ
+Union,1000,,,C.F.C.W Local 360,10/15/24,C.F.C.W Local 360,,Berlin, NJ
+Individual - Large,10000,Andrew,Campbell,,11/15/24,Eastern Millwork,Management/Administrator/Executive,Jersey City,NJ
+Individual - Large,10000,Andrew,Campbell,,09/10/24,Eastern Millwork,Management/Administrator/Executive,Jersey City,NJ
+Individual - Large,2500,Andrew,Campbell,,03/20/25,Eastern Millwork,Management/Administrator/Executive,Jersey City,NJ
+Individual - Medium,1500,Jason,Capizzi,,09/16/24,JP Capizzi LLC,Attorney,Union City,NJ
+Political Committee,5000,,,Carteret General Democratic Organization,03/27/25,Carteret General Democratic Organization,,Carteret,NJ
+Individual - Large,2500,Frank P,Caruso,,03/28/25,Hoagland Longo Moran Dunst & Doukas LLP,Attorney,New Brunswick,NJ
+Individual - Small,300,Anthony,Cifelli,,9/30/24,The Venn Group LLC,Consultant,Basking Ridge,NJ
+Corporate,1000,,,Cinelli Scrap Metals INC,03/11/25,Cinelli Scrap Metals INC,,Jersey City,NJ
+Individual - Medium,1000,Michael P,Cioban,,03/27/25,Milesell and Assoc,Architect/Surveyor/Planner,Cedar Grove,NJ
+Corporate,1000,,,Clarus Management,03/05/25,Clarus Management,,Whippany,NJ
+Individual - Large,2500,Bill,Colgan,,03/03/25,GP Management LLC,Architect/Surveyor/Planner,Summit,NJ
+Individual - Medium,1000,Bill,Colgan,,09/26/24,GP Management LLC,Architect/Surveyor/Planner,Summit,NJ
+Individual - Medium,834,Craig,Coughlin,,12/04/24,Rainone Coughling Minchello,Attorney,Fords,NJ
+Corporate,2000,,,Craven Point Service Center INC,03/11/25,Craven Point Service Center INC,,Watchung,NJ
+Individual - Medium,500,Dennis,Culnan,,09/30/24,Phoenix Strategies INC,Consultant,Mount Laurel,NJ
+Corporate,1000,,,Direct Waste Services INC,03/21/25,Direct Waste Services INC,,Newark,NJ
+Individual - Small,250,Matthew,Doherty,,10/01/24,Unemployed,Unemployed,Belmar,NJ
+Individual - Medium,1000,Cornelius,Durkin,,08/02/24,Retired,Retired,Caldwell,NJ
+Corporate,5000,,,Eastern Millwork,03/28/25,Eastern Millwork,,Jersey City,NJ
+Candidate,10000,,,Election Fund of Sen Codey,03/27/25,Election Fund of Sen Codey,,West Orange,NJ
+Corporate,1000,,,F&E Services INC,03/24/25,F&E Services INC,,Fairfield,NJ
+Corporate,2500,,,Federal Business Centers INC,03/26/25,Federal Business Centers INC,,Edison,NJ
+Individual - Large,2500,Joseph,Feldman,,12/05/24,Dana Septimus & Joseph Feldman,Attorney,Tenafly,NJ
+Individual - Large,2500,John P,Fio Rito,,09/09/24,Self-Employed,Real Estate,Verona,NJ
+Individual - Large,1500,John P,Fio Rito,,02/05/25,Self-Employed,Real Estate,Verona,NJ
+Individual - Large,5000,Joanne,Fletcher,,03/25/25,Jersey City School,Office Worker,Jersey City,NJ
+Individual - Medium,500,John P,Franconeri,,03/11/25,John Franconeri,Physician,Bayonne,NJ
+Individual - Large,8500,Anthony,Franklin,,09/30/24,Retired,Retired,Montclair,NJ
+Corporate,5200,,,French & Parrello Associates,12/06/24,French & Parrello Associates,,Wall,NJ
+Corporate,300,,,G Eon Designs,03/04/25,G Eon Designs,,Jersey City,NJ
+Individual - Large,10000,Howard,Geneslaw,,09/30/24,Gibbons Law,Attorney,Newark,NJ
+Corporate,5000,,,Geswelli Realty,03/25/25,Geswelli Realty,,Longboat Key,FL
+Individual - Large,5200,Frank,Giantomasi,,12/10/24,CSG Law,Attorney,Roseland,NJ
+Corporate,1000,,,Glen Ridge Redevelopers Urban Renewal Entity,03/05/25,Glen Ridge Redevelopers Urban Renewal Entity,,Whippany,NJ
+Individual - Small,250,Judith,Gottlieb,,08/25/24,Retired,Retired,Clark,NJ
+Individual - Small,250,Judith P,Gottlieb,,03/19/25,Retired,Retired,Clark,NJ
+Individual - Large,5000,John,Graham,,02/10/25,Foundation Risk Partners,Insurance,Verona,NJ
+Union,16400,,,Greater NJ Carpenters Pec,09/10/24,Greater NJ Carpenters Pec,,Philadelphia,PA
+Union,16400,,,Greater NJ Carpenters Pec,09/30/24,Greater NJ Carpenters Pec,,Philadelphia,PA
+Union,32800,,,Greater NJ Carpenters Pec,11/19/24,Greater NJ Carpenters Pec,,Philadelphia,PA
+Union,21800,,,Greater NJ Carpenters Pec,03/31/25,Greater NJ Carpenters Pec,,Philadelphia,PA
+Union,16400,,,Greater NJ Carpenters Pec,12/31/24,Greater NJ Carpenters Pec,,Philadelphia,PA
+Individual - Large,2500,Scott,Grogan,,03/31/25,Retired,Retired,Wayne,NJ
+Individual - Large,2000,Joseph P,Hamilton,,03/23/25,Automatic Door Systems LLC,Construction Trade/Labor Trade,Bay Head,NY
+Corporate,1000,,,Hanover Town Center,03/05/25,Hanover Town Center,,Whippany,NJ
+Individual - Small,250,Marta,Harrison,,09/26/24,Unemployed,Unemployed,Lakewood Township,NJ
+Individual - Large,2500,Joseph,Hayden,,03/05/25,Pashman Stein Walder Hayden,Attorney,Hoboken,NJ
+Union,2500,,,Heavy and General Construction Laborers Union Local 472 PAC,09/10/24,Heavy and General Construction Laborers Union Local 472 PAC,,Newark,NJ
+Union,2500,,,Heavy and General Construction Laborers Union Local 472 PAC,09/11/24,Heavy and General Construction Laborers Union Local 472 PAC,,Newark,NJ
+Union,2500,,,Heavy and General Construction Laborers Union Local 472 PAC,02/25/25,Heavy and General Construction Laborers Union Local 472 PAC,,Newark,NJ
+Corporate,500,,,Hoboken Strategy Group,09/06/24,Hoboken Strategy Group,,Avon-by-the-Sea,NJ
+Individual - Large,5200,Kenneth,Hollenbeck,,12/11/24,Scarinci and Hollenbeck,Attorney,Little Falls,NJ
+Individual - Large,12500,Kenneth,Hollenbeck,,04/28/25,Scarinci and Hollenbeck,Attorney,Little Falls,NJ
+Corporate,12200,,,Hugo Neu Corporation,03/28/25,Hugo Neu Corporation,,03/28/25,Kearny,NJ
+Corporate,20800,,,Hugo Neu Corporation,03/28/25,Hugo Neu Corporation,,09/18/24,Kearny,NJ
+Individual - Medium,1000,Antonio,Ibarria,,09/22/24,El Especialito,Management/Administrator/Executive,West New York,NJ
+Individual - Medium,1000,Antonio P,Ibarria,,03/05/25,El Especialito,Management/Administrator/Executive,West New York,NJ
+Individual - Medium,1000,Antonio,Ibarria,,03/25/25,El Especialito,Management/Administrator/Executive,West New York,NJ
+Corporate,2500,,,Imperial Painting and Coating,09/10/24,Imperial Painting and Coating,,West Orange,NJ
+Individual - Medium,1000,Lawrence,Inserra Jr,,12/27/24,Inserra Supermarkets,Hospitality/Hotel/Food/Beverage,Mahwah,NJ
+Corporate,1500,,,IT Solutions Group INC,03/05/25,IT Solutions Group INC,,Jersey City,NJ
+Corporate,300,,,IT Solutions Group INC,03/05/25,IT Solutions Group INC,,Jersey City,NJ
+Individual - Medium,1777,Alia,Jaludi,,08/23/24,Union City Board of Education,Education/Professor/Teacher,Westwood,NJ
+Individual - Medium,1200,Alia,Jaludi,,12/07/24,Union City Board of Education,Education/Professor/Teacher,Westwood,NJ
+Individual - Medium,1000,Alia,Jaludi,,12/07/24,Union City Board of Education,Education/Professor/Teacher,Westwood,NJ
+Corporate,2500,,,JCT Solutions,03/20/25,JCT Solutions,,Springfield,NJ
+Corporate,2500,,,JDA Group Captial Account,02/25/25,JDA Group Capital Account,,Hoboken,NJ
+Corporate,1000,,,Joel Mittman INC,03/14/25,Joel Mittman INC,,Whitestone,NY
+Corporate,5000,,,JSQ Properties,03/31/25,JSQ Properties,,Farmingdale,NJ
+Individual - Small,300,Katchen,William,,08/29/24,William Katchen CPA LLC,Accountants/Auditors,Cliffside Park,NJ
+Individual - Small,300,Shaun,Keegan,,09/26/24,Solar Landscaping Origination,Management/Administrative/Executive,Avon-by-the-Sea,NJ
+Individual - Large,2500,Jason,Kimmel,,03/12/25,Extended 28 LLC,Construction Trade/Labor Trade,Newark,NJ
+Individual - Medium,500,Valet P,King,,03/21/25,Valent King NY LLC,Construction Trade/Labor Trade,Ramsey,NJ
+Individual - Medium,1000,Bradford P,Klatt,,Loginal Buildings,Real Estate,Livingston,NJ
+Individual - Large,20800,Charles,Kushner,,Kushner Company,Real Estate,Long Branch,NJ
+Individual - Medium,1000,Ralph,Lamparello,,09/23/24,Chasen Lamparellop Mallon and Cappuzzo,Attorney,Secaucus,NJ
+Corporate,2500,,,Leemark Electric INC,02/25/25,Leemark Electric INC,,Jersey City,NJ
+Individual - Large,2500,Dieter,Lerch,,03/18/25,Lerch Vinci and Bliss LLP,Accountants/Auditors,Fair Lawn,NJ
+Individual - Large,5200,Paul,Levinsohn,,09/12/24,Paul Levinsohn Real Estate,Real Estate,New York City,NY
+Individual - Large,5500,Paul,Levinsohn,,01/30/25,Paul Levinsohn Real Estate,Real Estate,New York City,NY
+Individual - Medium,500,Mark P,Madaio,,03/11/25,Mark Madaio ESQ,Attorney,Bergenfield,NJ
+Individual - Medium,1000,Dean P,Marchetto,,03/26/25,MHS,Architect/Surveyor/Planner,Hoboken,NJ
+Individual - Large,5000,Fredric L,Marcus,,03/19/25,Marcus Fredric,Attorney,Newark,NJ
+Corporate,2500,,,Mast Construction Services INC,09/16/24,Mast Construction Services INC,,Little Falls,NJ
+Corporate,500,,,Mast Construction Services INC,02/20/25,Mast Construction Services INC,,Little Falls,NJ
+Corporate,500,,,Mast Construction Services INC,02/28/25,Mast Construction Services INC,,Little Falls,NJ
+Corporate,500,,,Mast Construction Services INC,12/06/24,Mast Construction Services INC,,Little Falls,NJ
+Individual - Medium,1500,Barry,Maurillo,,09/16/24,In The Park Chateau Caterers LLC,Hospitality/Hotel/Food/Beverage,East Brunswick,NJ
+Individual - Medium,1000,Barry,Maurillo,,09/09/24,In The Park Chateau Caterers LLC,Hospitality/Hotel/Food/Beverage,East Brunswick,NJ
+Individual - Large,10400,David,McPherson,,09/18/24,Waters McPherson McNeill PC,Attorney,Secaucus,NJ
+Individual - Large,6700,David,McPherson,,02/27/25,Waters McPherson McNeill PC,Attorney,Secaucus,NJ
+Individual - Large,10400,Mark,McPherson,,09/18/24,Waters McPherson McNeill PC,Attorney,Secaucus,NJ
+Corporate,3000,,,MHS Architecture,03/27/25,MHS Architecture,,Hoboken,NJ
+Individual - Medium,833,David,Minchello,,12/04/24,Rainone Coughlin Minchello,Attorney,Morristown,NJ
+Corporate,5000,,,Mission Fifty,03/13/25,Mission Fifty,,Hoboken,NJ
+Individual - Large,5000,Anna,Murano,,09/24/24,Joseph M Sanzani INC,Construction Trade/Labor Trade,Carlstadt,NJ
+Corporate,1500,,,Murtosa INC,03/05/25,Murtosa INC,,Jersey City,NJ
+Political Committee,7000,,,New Jersey for All,09/30/24,New Jersey for All,,Washington,DC
+Political Committee,7000,,,New Jersey for Our Future,09/30/24,New Jersey for Our Future,,Washington,DC
+Political Committee,20000,,,New Jersey State Laborers,03/26/25,New Jersey State Laborers,,East Brunswick,NJ
+Political Committee,50000,,,New Jersey State Laborers,12/19/24,New Jersey State Laborers,,East Brunswick,NJ
+Political Committee,6000,,,New Jersey Together Political Action Committee,09/30/24,New Jersey Together Political Action Committee,,Washington,DC
+Corporate,1000,,,New York Room Corp,03/11/25,New York Room Corp,,Newark,NJ
+Individual - Large,5000,Stephen P,Nislick,,03/17/25,Self-Employed,Attorney,Hardwick,NJ
+Corporate,5000,,,NJ Public Charter Schools Action Fund INC,03/17/25,NJ Public Charter Schools Action Fund INC,,Hamilton,NJ
+Corporate,1000,,,NJ Public Charter Schools Action Fund INC,09/17/24,NJ Public Charter Schools Action Fund INC,,Hamilton,NJ
+Corporate,1000,,,North Jersey Exterminating CO INC,02/15/25,North Jersey Exterminating CO INC,,Union City,NJ
+Corporate,1000,,,Norwegian Holding Company,03/13/25,Norwegian Holding Company,,Hoboken,NJ
+Individual - Medium,Michael,Nowak,,09/26/24,MRC,Retail Sales,Brick,NJ
+Individual - Small,Timothy,O'Brien,,12/09/24,City of Jersey City,Law Enforcement,Jersey City,NJ
+Individual - Large,13000,Kevin,O'Toole,,12/04/24,O'Tool Scrivo LLC,Attorney,Cedar Grove,NJ
+Individual - Large,15000,Kevin,O'Toole,,03/13/25,O'Tool Scrivo LLC,Attorney,Cedar Grove,NJ
+Corporate,20000,,,Oscar DC Construction,09/25/24,Oscar DC Construction,,North Bergen,NJ
+Individual - Medium,1000,Alexis P,Pacheco,,03/28/25,Chase Maintenance and Renewal LLC,Construction Trade/Labor Trade,Hoboken,NJ
+Individual - Large,5000,Jason P,Pascale,,03/25/25,Smart Choice Realty LLC,Real Estate,Secaucus,NJ
+Individual - Large,7500,Hema,Patel,,12/20/24,Elite MSO,Management/Administrator/Executive,Cedar Grove,NJ
+Individual - Large,2500,Hema,Patel,,09/23/24,Elite MSO,Management/Administrator/Executive,Cedar Grove,NJ
+Corporate,1000,,,Pennoni,09/30/24,Pennoni,,Philadelphia,PA
+Corporate,4000,,,Pennoni,03/13/25,Pennoni,,Philadelphia,PA
+Corporate,1000,,,Pennoni,02/27/25,Pennoni,,Philadelphia,PA
+Corporate,1000,,,Pennoni,12/12/24,Pennoni,,Philadelphia,PA
+Individual - Medium,1000,Christiano,Pereira,,03/17/25,CBA Architecture,Architect/Surveyor/Planner,Norwood,NJ
+Individual - Medium,1000,Eric P,Petron,,03/07/25,Undercliff Ave LLC,Architect/Surveyor/Planner,North Bergen,NJ
+Individual - Small,300,Sean,Pickett,,12/09/24,Jersey City Police Dept,Law Enforcement,Jersey City,NJ
+Corporate,5500,,,Premier Facility Managemnet,03/20/25,Premier Facility Managemnet,,Woodland Park,NJ
+Individual - Medium,833,Louis,Rainone,,12/04/24,Rainone Coughlin Minchello LLC,Attorney,Middletown,NJ
+Corporate,5500,,,Ramas Contractors Operating Acct,03/28/25,Ramas Contractors Operating Acct,,Elizabeth,NJ
+Corporate,2500,,,Reliable Tree Services INC,03/04/25,Reliable Tree Services INC,,Cliffside Park,NJ
+Corporate,1000,,,Reliable Tree Services INC,12/01/24,Reliable Tree Services INC,,Cliffside Park,NJ
+Corporate,2500,,,Reliable Tree Services INC,08/26/24,Reliable Tree Services INC,,Cliffside Park,NJ
+Corporate,5200,,,Reliable Tree Services INC,09/25/24,Reliable Tree Services INC,,Cliffside Park,NJ
+Corporate,2500,,,Robert Treat Hotel INC,09/11/24,Robert Treat Hotel INC,,Newark,NJ
+Individual - Medium,500,Steven P,Rogut,,03/19/25,Rogut McCarthy LLC,Attorney,Cranford,NJ
+Corporate,300,,,Round World Consulting,09/05/24,Round World Consulting,,Belmar,NJ
+Corporate,1000,,,RSC Architects,03/10/25,RSC Architects,,Hackensack,NJ
+Individual - Medium,1500,Gina Marie,Sandwith,,12/11/24,Jersey City Police Dept,Law Enforcement,South Amboy,NJ
+Individual - Medium,1000,Eugen,Sarbu,,09/23/24,The Waldo School,Management/Adminstrator/Executive,Summit,NJ
+Individual - Large,20000,Donald,Scarinci,,12/11/24,Scarinci and Hollenbeck LLC,Attorney,Little Falls,NJ
+Individual - Large,5200,Donald,Scarinci,,09/19/24,Scarinci and Hollenbeck LLC,Attorney,Little Falls,NJ
+Individual - Medium,500,Frank P,Scarpa,,03/28/25,Retired,Retired,Lyndhurst,NJ
+Individual - Large,13000,Thomas,Scrivo,,12/04/24,O'Tool Scrivo LLC,Attorney,Livingston,NJ
+Individual - Large,15000,Thomas,Scrivo,,03/13/25,O'Tool Scrivo LLC,Attorney,Livingston,NJ
+Individual - Large,5000,Thomas,Scuderi,,09/24/24,Connelly Foley Attorneys at Law,Attorney,Paramus,NJ
+Individual - Large,10000,Victor V,Scudiery,,09/05/24,Scudiery Enterprises Airport Plaza,Consultant,Hazlet,NJ
+Individual - Large,2500,Dana,Septimus,,12/05/24,Dana Septimus & Joseph Feldman,Attorney,Tenafly,NJ
+Individual - Medium,667,Jamie,Seslowe,,03/28/25,Bergerorg LLC,Real Estate,Scarsdale,NY
+Individual - Medium,1000,Eric,Shuffler,,09/24/24,Retired,Retired,New York,NY
+Individual - Large,2500,Heiko P,Sieling,,03/28/25,Eastern Millwork INC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Medium,1000,Arthur,Sills,,09/19/24,Sills Cummis and Gross PC,Attorney,Newark,NJ
+Individual - Large,5000,Arthur,Sills,,03/20/25,Sills Cummis and Gross PC,Attorney,Newark,NJ
+Individual - Small,350,Arthur,Sills,,03/27/25,Sills Cummis and Gross PC,Attorney,Newark,NJ
+Corporate,2500,,,SJS Strategies,03/20/25,SJS Strategies,,Monroe Township,NJ
+Individual - Medium,1000,Leon P,Sokol,,02/28/25,Retired,Retired,Tenafly,NJ
+Corporate,2500,,,South 12th Street Development Group,03/27/25,South 12th Street Development Group,,Linden,NJ
+Individual - Large,10000,Eliot,Spitzer,,03/20/25,Self-Employed,Real Estate,New York,NY
+Corporate,500,,,Sunshine Trading & Funding INC,12/30/24,Sunshine Trading & Funding INC,,Elmwood Park,NJ
+Coporate,1000,,,T&M Associates,12/05/24,T&M Associates,,Middletown,NJ
+Coporate,1000,,,T&M Associates,09/11/24,T&M Associates,,Middletown,NJ
+Coporate,1000,,,T&M Associates,03/10/25,T&M Associates,,Middletown,NJ
+Individual - Small,250,Maricar P,Taino,,03/28/25,Unemployed,Unemployed,Jersey City,NJ
+Corporate,5500,,,Ten Park Place Associates INC,03/28/25,Ten Park Place Associates INC,,Newark,NJ
+Individual - Small,300,Tom,Toranco,,09/30/24,Torango Associates LLC,Management/Administrator/Executive,Edison,NJ
+Corporate,300,,,Torsiello Construction Management CO,09/30/24,Torsiello Construction Management CO,,Edison,NJ
+Corporate,5200,,,Trilon Service Holdings INC,09/26/24,Trilon Service Holdings INC,,Denver,CO
+Corporate,5200,,,Trilon Service Holdings INC,02/05/25,Trilon Service Holdings INC,,Denver,CO
+Corporate,5200,,,Trilon Service Holdings INC,08/23/24,Trilon Service Holdings INC,,Denver,CO
+Individual - Small,300,Stephen,Trowbridge,,12/10/24,Retired,Retired,Jersey City,NJ
+Political Committee,4200,,,U.F.C.W Local 360 Political Account,03/24/25,U.F.C.W Local 360 Political Account,,West Berlin,NJ
+Other,9,,,Valley National Bank,10/31/24,Valley National Bank,,Bloomfield,NJ
+Other,11.81,,,Valley National Bank,11/30/24,Valley National Bank,,Bloomfield,NJ
+Other,0.68,,,Valley National Bank,10/01/24,Valley National Bank,,Bloomfield,NJ
+Other,20.35,,,Valley National Bank,1/31/25,Valley National Bank,,Bloomfield,NJ
+Other,19.76,,,Valley National Bank,2/28/25,Valley National Bank,,Bloomfield,NJ
+Other,21.95,,,Valley National Bank,3/31/25,Valley National Bank,,Bloomfield,NJ
+Other,14.12,,,Valley National Bank,12/31/24,Valley National Bank,,Bloomfield,NJ
+Individual - Large,5000,Peter P,Vanderdrift,,03/24/25,Third Bridge Group,Management/Administrator,Executive,New York,NY
+Individual - Medium,1000,Arthur P,Vito,,02/15/25,Power Health Wellness INC,Medical Professional(Not Physician),Guttenberg,NJ
+Individual - Medium,500,Rurvin,Vyak,,12/30/24,Sharpeye Security LLC,Management/Administrator/Executive,Rutherford,NJ
+Political Committee,5000,,,Weehawken and You Re-election Committee 2026,03/25/25,Weehawken and You Re-election Committee 2026,,Weehawken,NJ
+Individual - Large,2500,Jack,Weiner,,09/29/24,Northeast Business Consulting LLC,Consultant,Easton,PA
+Individual - Large,5000,Paul,Weiner,,09/23/24,Weiner Law Group LLP,Attorney,Parsippany,NJ
+Individual - Large,5000,Paul,Weiner,,03/19/25,Weiner Law Group LLP,Attorney,Parsippany,NJ
+Individual - Large,5000,Paul,Weiner,,03/19/25,Weiner Law Group LLP,Attorney,Parsippany,NJ
+Individual - Large,5000,Paul,Weiner,,12/17/24,Weiner Law Group LLP,Attorney,Parsippany,NJ
+Individual - Medium,667,Arielle,Wertentheil,,03/28/25,Bergerorg LLC,Real Estate,Newark,NJ
+Individual - Medium,1000,Massimo,Yezzi,,09/25/24,Yezzi Associates,Architect/Surveyor/Planner,Toms River,NJ
+Individual - Medium,1000,Jacques,Youssef,,09/30/24,New York Stone,Management/Administrator/Executive,Staten Island,NY
+Individual - Medium,1000,Jacques P,Youssef,,02/25/25,New York Stone,Management/Administrator/Executive,Staten Island,NY
+Individual - Large,5000,Shraga,Zeldes,,03/31/25,Yeshiva Ohr Shraga,Real Estate,Lakewood,NJ
+Individual - Medium,1000,George,Zoffinger,,03/20/25,Retired,Retired,Naples,FL
+Individual - Medium,1000,Judith P,Zoffinger,,03/20/25,Retired,Retired,Naples,FL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

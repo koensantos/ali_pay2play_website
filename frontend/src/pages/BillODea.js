@@ -31,6 +31,7 @@ export default function Draft() {
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
     { name: "Joyce Watterman", path: "/JoyceWatterman" },
+    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
   ];
 
   useEffect(() => {
@@ -164,6 +165,29 @@ export default function Draft() {
 
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
+      <div className="mobile-header">
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          ☰ <span className="menu-label">Menu</span>
+        </button>
+        {menuOpen && (
+          <nav className="mobile-menu">
+            {otherCandidates.map((candidate) => (
+              <Link
+                to={candidate.path}
+                key={candidate.name}
+                onClick={() => setMenuOpen(false)}
+              >
+                {candidate.name}
+              </Link>
+            ))}
+          </nav>
+        )}
+      </div>
+
       <h1>Bill O'Dea: Campaign Finance Visuals</h1>
 
       {totalDonations !== null && (
@@ -329,7 +353,7 @@ export default function Draft() {
         </button>
         {openIndex === 1 && (
           <div className="accordion-content">
-            <p>O'Dea has received several donations totaling $1,000. The company has received several contracts listed below.</p>
+            <p>O'Dea has received several donations totaling $1,000. These donations have been flagged as a red flag because the company has been awarded two different contracts from Jersey City and has also received several expenditure payments from the city. Such contributions create the appearance of a potential conflict of interest, as they may be perceived as an attempt to influence city officials or secure favorable treatment in future contracting decisions. While no direct wrongdoing is proven, the overlap between campaign donations and city business highlights the need for transparency and careful ethical scrutiny.</p>
             <p>
               <strong>Res 24-628:</strong> The City of Jersey City approved Resolution 24-628 on August 14, 2024, awarding a contract worth $198,718.00 to Sal Electric Co., Inc.. This contract is for the purchase and installation of an overhead lighting system at Pershing Field Pool for the Department of Recreation and Youth Development. The contract was awarded through the New Jersey Cooperative Purchasing Alliance (NJCPA), Bergen County Coop, and is a one-time purchase, meaning it will be completed upon the delivery of the goods and services.{" "}
               <a href="https://cityofjerseycity.civicweb.net/document/408768/For%20the%20purchase%20and%20installation%20of%20overhead%20l.pdf?handle=8FB0E9F68E884AEF808E9FF82DAD570F">Resolution PDF</a>
@@ -338,6 +362,32 @@ export default function Draft() {
               <strong>Res 21-745:</strong> On October 27, 2021, Jersey City approved Resolution 21-745, awarding a $244,678 contract to Sal Electric Co., Inc. for the installation of EV chargers for five electric garbage trucks. The contract was issued under the New Jersey Cooperative Purchasing Alliance (NJCPA) with Bergen County as the lead agency, which allows municipalities to jointly procure goods and services. Funding is sourced from two capital accounts, with purchase orders totaling the full amount. The contract is considered fair and reasonable by the City Purchasing Agent and will be completed upon delivery and proper certification of service. Payment will be issued in accordance with Local Fiscal Affairs Law, once the contractor meets all obligations.{" "}
               <a href="https://cityofjerseycity.civicweb.net/document/58165/For%20the%20installation%20of%20EV%20Chargers%20for%20five%20el.pdf?handle=9F498EC97B8947708056BB4A8A252A79">Resolution PDF</a>
             </p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/429486">5/2/25 - $200,218.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $57,978</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $60,500.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/64284">2/17/22 - $66,850.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/62536">1/20/22 - $61,500.00</a></p>
+          </div>
+
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 1 ? "active" : ""}`}
+          onClick={() => toggleAccordion(1)}
+          aria-expanded={openIndex === 1}
+        >
+          IBEW Local Union 164 - $50,400
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 1 && (
+          <div className="accordion-content">
+            <p>The donations from IBEW Local Union 164 to Bill O’Dea, totaling $50,400, raise a strong red flag given the union’s extensive financial ties with Jersey City. Public records show that IBEW Local 164 has received significant city payments over multiple years, including large expenditures in 2021, 2022, 2024, and 2025. The sequence of receiving municipal funds and then contributing heavily to O’Dea’s campaign creates the appearance of a pay-to-play cycle, where taxpayer money flows to the union and then back into local politics. This dynamic heightens concerns about whether the union is seeking to preserve or expand its influence over future contracts and city decisions. While no direct illegality is proven, the overlap between city expenditures and campaign donations underscores the risk of undue influence and the need for greater transparency.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $8,672.67</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $10,086.83</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $65,573.14</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/53126">8/17/21 - $44,465.12</a></p>
           </div>
         )}
       </div>
@@ -349,18 +399,54 @@ export default function Draft() {
           onClick={() => toggleAccordion(2)}
           aria-expanded={openIndex === 2}
         >
-          William J Guarini Plumbing - $10,575
+          Kyrsta Gomes, - $2,500
+          Matthew LeFurge, Project Manager - $5,100
+          William J Guarini Plumbing - $4,475
           <span className="accordion-arrow" />
         </button>
         {openIndex === 2 && (
           <div className="accordion-content">
-            <p>O'Dea has received a total of $10,575, with $2,975 coming from the company itself, $2,500 from Krysta Gomes, and $5,100 from Matthew LeFurge. These donations have been flagged as suspicious because William J. Guarini, INC has a contract with the city, raising concerns of potential conflict of interest and pay2play. The resolution is listed below.</p>
+            <p>O'Dea has received a total of $12,075 in campaign contributions, including $4,475 from William J. Guarini, INC, $2,500 from Krysta Gomes, and $5,100 from Matthew LeFurge. These donations are considered potentially problematic because William J. Guarini, INC holds an active contract with the city, creating a possible conflict of interest and raising pay-to-play concerns. They have also received several expenditure payments from the city. These donations are to be scruntized because it represents possible pay-to-play or conflict of interest concerns. The total amount makes it seem like the company and its employees are looking to be favorable to O'Dea if he was elected mayor. The related resolution is listed below for reference.</p>
             <p>
               <strong>Res 24-335:</strong> The City of Jersey City approved Resolution 24-335 on May 8, 2024, authorizing a contract award of $120,000.00 to William J. Guarini, Inc. for citywide plumbing services. This contract was awarded through the New Jersey Cooperative Purchasing Alliance (NJCPA), Bergen County Coop, for the Department of Public Works, Division of Buildings and Street Maintenance. The contract term is effective from May 9, 2024, through December 31, 2024. Initial funding of $20,000.00 is available in the operating account, with the continuation of the contract subject to the availability of funds in the 2024 fiscal year permanent budget.
             </p>
             <p>
               <a href="https://cityofjerseycity.civicweb.net/document/400643/For%20citywide%20plumbing%20services.pdf?handle=95AFC000E6434A69ACCECA47B7C171D8">Resolution PDF</a>
             </p>
+
+            <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $246.17</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/433084">6/3/25 - $1,599.38</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $5,800</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $33,333.40</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/411476">9/19/24 - $18,282.16</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $38,056.23</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/408268">7/8/24 - $25,290</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $45,555.80</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/396109">3/1/24 - $17,041.58</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $9,015.71</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $6,800</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/92663">6/9/23 - $5,800</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $660</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/71510">7/8/22 - $6,985.08</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $900</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/65863">3/17/22 - $4,628.40</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/59107">11/4/21 - $2,761.28</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/58567">10/22/21 - $225</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/55789">9/3/21 - $1,246.03</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $1,549.72</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $681</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $294.72</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/46108">4/9/21 - $2,614.53</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/44797">3/18/21 - $1,315.60</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/41559">1/25/21 - $1,991.80</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/40872">$3,124.91 - 1/11/21</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/38868">$1,834.27 - 11/25/20</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/37605">$1,670.10 - 11/5/20</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/33761">$3,885.82 - 9/1/20</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/27626">6/4/20 - $8,500</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/23359">3/18/20 - $5,495.42</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/20322">2/4/20 - $742.50</a></p>
+              <p><a href="https://cityofjerseycity.civicweb.net/document/17017">12/11/19 - $570</a></p>
           </div>
         )}
       </div>
@@ -387,13 +473,27 @@ export default function Draft() {
               <a href="https://cityofjerseycity.civicweb.net/document/96696/For%20printing%20service%20for%20the%20year%20in%20review%20mas.pdf?handle=75ADD11D40454B3F82E076E64AB06F5F">Resolution PDF</a>
             </p>
             <p>
-              <strong>Res 23-653:</strong> This resolution from the City of Jersey City ratifies a contract awarded to Royal Printing Service for printing official election machine and sample ballots for the Primary Election held on June 6, 2023. Hudson County Clerk E. Junior Maldonado designated Royal Printing Service as the official printer for Hudson County ballots. The contract is for the sum of $84,300.00 and is exempt from public bidding under N.J.S.A. 40A:11-5(1)(1) because it pertains to services necessary for conducting an election. Royal Printing Service also submitted certifications related to business entity disclosure, political contributions, and compliance with the City's Pay-to-Play Reform Ordinance and affirmative action requirements. The resolution was approved on September 7, 2023.
+              <strong>Res 23-653:</strong> This resolution from the City of Jersey City ratifies a contract awarded to Royal Printing Service for printing official election machine and sample ballots for the Primary Election held on June 6, 2023. Hudson County Clerk E. Junior Maldonado designated Royal Printing Service as the official printer for Hudson County ballots. The contract is for the sum of $84,300.00 and is exempt from public bidding under N.J.S.A. 40A:11-5(1)(1) because it pertains to services necessary for conducting an election. Royal Printing Service also submitted certifications related to business entity disclosure, political contributions, and compliance with the City's Pay-to-Play Reform Ordinance and affirmative action requirements. The resolution was approved on September 7, 2023. <a href="https://cityofjerseycity.civicweb.net/document/96266">Resolution PDF</a>
             </p>
             <p>
               <strong>Res 20-666:</strong> The City of Jersey City has ratified a contract award to Royal Printing Service for printing official election machine and sample ballots for the July 7, 2020, primary election. The contract amount is $83,177.00. This contract was exempt from public bidding as per N.J.S.A. 40A:11-5(1)(1) because it involves goods and services necessary for conducting an election. Royal Printing Service was designated as the official ballot printer for Hudson County by the County Clerk. The resolution also states that the City is acquiring these services directly and openly as a statutorily permitted contract under the "Pay-to-Play Law".{" "}
               <a href="https://cityofjerseycity.civicweb.net/document/33849/Reso%20Contract%20Royal%20Printing.pdf?handle=B70083430C774A3B9D26CD8B7E237BA9">Resolution PDF</a>
             </p>
-            <p><strong>Res 19-466 (Need Access)</strong></p>
+            <p><strong>Res 19-460 </strong>The City of Jersey City ratified a contract with Royal Printing Service for $78,710 to print official election machine and sample ballots for the June 4, 2019, primary election. The contract is exempt from public bidding under N.J.S.A. 40A:11-5(1)(l) because it is necessary for conducting the election. Royal Printing Service submitted all required certifications, including the Business Entity Disclosure, Chapter 271 Political Contribution Disclosure, and compliance with the City’s Pay-to-Play Reform Ordinance, confirming no prohibited contributions were made. The contract also requires the company to comply with affirmative action and anti-discrimination laws. Funds for the contract are available in Account No. 201-01-201-20-121-305, and all supporting documentation is placed on file with the resolution. <a href="https://cityofjerseycity.civicweb.net/document/5982">Resolution PDF</a></p>
+
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $87,672.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $84,300</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/242953">10/5/23 - $84,300</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/170562">9/20/23 - $31,134.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/73623">8/17/22 - $84,300</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/69017">5/25/22 - $35,969.70</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/63350">2/2/22 - $2,500</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/58567">10/22/21 - $230</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $80,285.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/37605">11/5/20 - $600</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/35574">9/29/20 - $83,177.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $1400</a></p>
+
           </div>
         )}
       </div>
@@ -405,71 +505,129 @@ export default function Draft() {
           onClick={() => toggleAccordion(4)}
           aria-expanded={openIndex === 4}
         >
-          McManimon, Scotland & Baumann, LLC - $5,400
+          Joseph Baumann, Member - $400
+          John Cavaliere, Member - $400
+          Jennifer Credidio, Member - $400
+          Andrea Dobin, Member - $200
+          Matthew Jessup, Member - $400
+          Leaf Kauman, Member - $400
+          Christopher Langhart, Member - $400
+          Bakari Lee, Member - $400
+          Kevin McManimon, Member - $400
+          William Northgrave, Member - $400
+          William Opel, Member - $400
+          Jeffrey Sherry - $400
+          Anthony Sodono - $400
+          Eric Tomaszweski - $400
           <span className="accordion-arrow" />
         </button>
         {openIndex === 4 && (
           <div className="accordion-content">
-            <p>14 different employees of the law firm have donated a total of $5,400 to O'Dea's campaign. The firm has been awarded several contracts by Jersey City for several years. They are listed below.</p>
+            <p>
+            On March 14, 2025, fourteen employees of McManimon, Scotland & Baumann, LLC each donated to O'Dea’s campaign, totaling $5,400. These coordinated contributions are a red flag because the firm has received numerous contracts from Jersey City in recent years, covering matters such as land use, litigation, tax issues, and real estate. Many of these contracts were awarded without public bidding under the professional services exemption, with values ranging from tens of thousands to hundreds of thousands of dollars. In addition, the firm has been paid repeatedly through city expenditures for legal services across multiple departments. The timing and scale of these donations, combined with the firm’s ongoing financial relationship with the city, raise concerns about potential conflicts of interest and pay-to-play practices.
+            </p>
 
-      <p>
-        <strong>Res 24-415:</strong> This resolution from the City of Jersey City ratifies the renewal of a professional services agreement with the law firm McManimon, Scotland & Baumann, LLC. The firm is retained to represent the City and the Jersey City Planning Board in the case of "Clinton Crescent N. Madison Community v. Planning Board of the City of Jersey City, et al". This agreement is a renewal of a previous contract approved on March 23, 2023. The renewed contract is for one year, effective from January 1, 2024, and the total amount, including expenses, is not to exceed $130,000.00, with an hourly rate of $200.00. The resolution was approved on May 22, 2024. <a href="https://cityofjerseycity.civicweb.net/document/400402/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=A1DE271A561E40F58E59AE031B98951B">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 24-415:</strong> This resolution from the City of Jersey City ratifies the renewal of a professional services agreement with the law firm McManimon, Scotland & Baumann, LLC. The firm is retained to represent the City and the Jersey City Planning Board in the case of "Clinton Crescent N. Madison Community v. Planning Board of the City of Jersey City, et al". This agreement is a renewal of a previous contract approved on March 23, 2023. The renewed contract is for one year, effective from January 1, 2024, and the total amount, including expenses, is not to exceed $130,000.00, with an hourly rate of $200.00. The resolution was approved on May 22, 2024. <a href="https://cityofjerseycity.civicweb.net/document/400402/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=A1DE271A561E40F58E59AE031B98951B">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 24-416:</strong> The firm will continue to provide local land use legal counsel services in connection with the Sixth Street Embankment settlement. This is a renewal of previous agreements from 2020, 2021, and 2023. The contract is effective for one year, beginning on January 8, 2024, and the total contract amount is increased by an additional $50,000.00, making the new total contract amount $250,000.00, including expenses. The firm will be compensated at a rate of $200.00 per hour, including expenses. The resolution was approved on May 22, 2024. <a href="https://cityofjerseycity.civicweb.net/document/400567/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=A47EB30F6274413582FF3637B66C3CB3">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 24-416:</strong> The firm will continue to provide local land use legal counsel services in connection with the Sixth Street Embankment settlement. This is a renewal of previous agreements from 2020, 2021, and 2023. The contract is effective for one year, beginning on January 8, 2024, and the total contract amount is increased by an additional $50,000.00, making the new total contract amount $250,000.00, including expenses. The firm will be compensated at a rate of $200.00 per hour, including expenses. The resolution was approved on May 22, 2024. <a href="https://cityofjerseycity.civicweb.net/document/400567/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=A47EB30F6274413582FF3637B66C3CB3">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 24-350:</strong> On May 8, 2024, Jersey City approved Resolution 24-350, ratifying the renewal of a professional services agreement with the law firm McManimon, Scotland & Baumann, LLC to provide legal advice on tax matters. This renewal adds $30,000 to the contract, bringing the total contract amount to $90,000, with services billed at $200/hour including expenses. The contract qualifies as a professional service under NJ law, allowing it to be awarded without public bidding, and is compliant with Pay-to-Play and affirmative action regulations. Funding of $1,000 is currently available under PO#151260, with continuation subject to future appropriations. The agreement will be made publicly available and published in a local newspaper as required. <a href="https://cityofjerseycity.civicweb.net/document/400377/R0208646_%20TAX%20MATTERS%20McManimon,%20Scotland%20_%20Bau.pdf?handle=D80A870BC86F420BA33BAB53914D5612">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 24-350:</strong> On May 8, 2024, Jersey City approved Resolution 24-350, ratifying the renewal of a professional services agreement with the law firm McManimon, Scotland & Baumann, LLC to provide legal advice on tax matters. This renewal adds $30,000 to the contract, bringing the total contract amount to $90,000, with services billed at $200/hour including expenses. The contract qualifies as a professional service under NJ law, allowing it to be awarded without public bidding, and is compliant with Pay-to-Play and affirmative action regulations. Funding of $1,000 is currently available under PO#151260, with continuation subject to future appropriations. The agreement will be made publicly available and published in a local newspaper as required. <a href="https://cityofjerseycity.civicweb.net/document/400377/R0208646_%20TAX%20MATTERS%20McManimon,%20Scotland%20_%20Bau.pdf?handle=D80A870BC86F420BA33BAB53914D5612">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 23-937:</strong> On December 13, 2023, Jersey City approved Resolution 23-937, renewing a professional services agreement with McManimon, Scotland & Baumann, LLC to continue providing legal advice on tax matters. The renewal adds $30,000 to the contract, bringing the total to $60,000, with services billed at $200 per hour, including expenses. The agreement qualifies as a professional service under NJ law and is awarded without competitive bidding but in compliance with Pay-to-Play and affirmative action requirements. Funding of $1,000 is currently available under PO#149888, with future payments contingent on budget appropriations. The agreement will also be published for public inspection as required by law. <a href="https://cityofjerseycity.civicweb.net/document/340819/R0207074_%20Legal%20Advice%20_%20Tax%20Matters%20Counsel.pdf?handle=00E83E9537EE4E22880398A6652964C1">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 23-937:</strong> On December 13, 2023, Jersey City approved Resolution 23-937, renewing a professional services agreement with McManimon, Scotland & Baumann, LLC to continue providing legal advice on tax matters. The renewal adds $30,000 to the contract, bringing the total to $60,000, with services billed at $200 per hour, including expenses. The agreement qualifies as a professional service under NJ law and is awarded without competitive bidding but in compliance with Pay-to-Play and affirmative action requirements. Funding of $1,000 is currently available under PO#149888, with future payments contingent on budget appropriations. The agreement will also be published for public inspection as required by law. <a href="https://cityofjerseycity.civicweb.net/document/340819/R0207074_%20Legal%20Advice%20_%20Tax%20Matters%20Counsel.pdf?handle=00E83E9537EE4E22880398A6652964C1">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 23-893:</strong> On November 29, 2023, Jersey City approved Resolution 23-893, ratifying a professional services agreement with McManimon, Scotland & Baumann, LLC to represent the City and the Jersey City Planning Board in the lawsuit LHN Owner, LLC and LHN II, LLC v. City of Jersey City et al. The contract runs for one year starting July 1, 2023, with a maximum value of $50,000, billed at $175 per hour including expenses. The agreement is awarded without public bidding under NJ’s professional services and Pay-to-Play laws. An initial $5,000 is available under PO#149796, with further payments contingent on future budget appropriations. The law firm must also comply with affirmative action requirements, and the resolution will be published for public notice. <a href="https://cityofjerseycity.civicweb.net/document/340822/Ratifying%20a%20professional%20services%20agreement%20wit.pdf?handle=DBEE892609C2458FB7CE464EC417A4F1">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 23-893:</strong> On November 29, 2023, Jersey City approved Resolution 23-893, ratifying a professional services agreement with McManimon, Scotland & Baumann, LLC to represent the City and the Jersey City Planning Board in the lawsuit LHN Owner, LLC and LHN II, LLC v. City of Jersey City et al. The contract runs for one year starting July 1, 2023, with a maximum value of $50,000, billed at $175 per hour including expenses. The agreement is awarded without public bidding under NJ’s professional services and Pay-to-Play laws. An initial $5,000 is available under PO#149796, with further payments contingent on future budget appropriations. The law firm must also comply with affirmative action requirements, and the resolution will be published for public notice. <a href="https://cityofjerseycity.civicweb.net/document/340822/Ratifying%20a%20professional%20services%20agreement%20wit.pdf?handle=DBEE892609C2458FB7CE464EC417A4F1">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 23-233:</strong> On March 23, 2023, Jersey City approved Resolution 23-233, ratifying a professional services agreement with McManimon, Scotland & Baumann, LLC to represent the city in the lawsuit Jeff Joseph & Syringa Ko v. City of Jersey City, et al. The agreement is for one year starting January 1, 2023, at an hourly rate of $200, with a contract not to exceed $65,000, including expenses. The contract is awarded without public bidding as a professional service under NJ law and complies with Pay-to-Play and affirmative action requirements. The firm submitted all necessary political contribution and compliance certifications. An initial $8,775 is available under PO#147555, and future payments are contingent on budget appropriations. <a href="https://cityofjerseycity.civicweb.net/document/84747/R0204518_%20J.%20Joseph%20_%20S.%20KO%20V.%20City.pdf?handle=213EE25053064041A00AC79B6B1ABC2D">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 23-233:</strong> On March 23, 2023, Jersey City approved Resolution 23-233, ratifying a professional services agreement with McManimon, Scotland & Baumann, LLC to represent the city in the lawsuit Jeff Joseph & Syringa Ko v. City of Jersey City, et al. The agreement is for one year starting January 1, 2023, at an hourly rate of $200, with a contract not to exceed $65,000, including expenses. The contract is awarded without public bidding as a professional service under NJ law and complies with Pay-to-Play and affirmative action requirements. The firm submitted all necessary political contribution and compliance certifications. An initial $8,775 is available under PO#147555, and future payments are contingent on budget appropriations. <a href="https://cityofjerseycity.civicweb.net/document/84747/R0204518_%20J.%20Joseph%20_%20S.%20KO%20V.%20City.pdf?handle=213EE25053064041A00AC79B6B1ABC2D">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 23-234:</strong> On March 23, 2023, Jersey City approved Resolution 23-234, ratifying a professional services agreement with McManimon, Scotland & Baumann, LLC to represent the City and the Jersey City Planning Board in the lawsuit Clinton Crescent N. Madison Community v. Planning Board of the City of Jersey City, et al. The contract runs for one year starting January 1, 2023, at an hourly rate of $200, with a total not to exceed $65,000, including expenses. The firm complied with all Pay-to-Play and political contribution disclosure laws and submitted necessary certifications. An initial $2,255 is available under PO#147554, and continued payment depends on future budget appropriations. The agreement is awarded without public bidding under NJ’s professional services exemption. <a href="https://cityofjerseycity.civicweb.net/document/84602/R0204517_%20Clinton%20N.%20Madison%20Community%20V.%20City.pdf?handle=5BED33AC16F043ABA1192E32BD057D6B">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 23-234:</strong> On March 23, 2023, Jersey City approved Resolution 23-234, ratifying a professional services agreement with McManimon, Scotland & Baumann, LLC to represent the City and the Jersey City Planning Board in the lawsuit Clinton Crescent N. Madison Community v. Planning Board of the City of Jersey City, et al. The contract runs for one year starting January 1, 2023, at an hourly rate of $200, with a total not to exceed $65,000, including expenses. The firm complied with all Pay-to-Play and political contribution disclosure laws and submitted necessary certifications. An initial $2,255 is available under PO#147554, and continued payment depends on future budget appropriations. The agreement is awarded without public bidding under NJ’s professional services exemption. <a href="https://cityofjerseycity.civicweb.net/document/84602/R0204517_%20Clinton%20N.%20Madison%20Community%20V.%20City.pdf?handle=5BED33AC16F043ABA1192E32BD057D6B">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 23-147:</strong> Jersey City renewed its professional services agreement with the law firm McManimon, Scotland & Baumann, LLC to provide land use legal counsel for the ongoing Sixth Street Embankment settlement. The renewal adds $50,000 to the existing contract, bringing the total to $200,000. The agreement runs for one year from January 8, 2023, with services billed at $200 per hour, and is exempt from public bidding under New Jersey's Local Public Contracts Law. The contract complies with the City’s Pay-to-Play Reform Ordinance and Affirmative Action requirements, and $5,000 is currently available under PO# 147342. <a href="https://cityofjerseycity.civicweb.net/document/82313/R0204266_%20Renewal%206th%20Street%20Embankmentof%20a%20pro.pdf?handle=E0DB7272AA564D3F9C3B17C50B635603">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 23-147:</strong> Jersey City renewed its professional services agreement with the law firm McManimon, Scotland & Baumann, LLC to provide land use legal counsel for the ongoing Sixth Street Embankment settlement. The renewal adds $50,000 to the existing contract, bringing the total to $200,000. The agreement runs for one year from January 8, 2023, with services billed at $200 per hour, and is exempt from public bidding under New Jersey's Local Public Contracts Law. The contract complies with the City’s Pay-to-Play Reform Ordinance and Affirmative Action requirements, and $5,000 is currently available under PO# 147342. <a href="https://cityofjerseycity.civicweb.net/document/82313/R0204266_%20Renewal%206th%20Street%20Embankmentof%20a%20pro.pdf?handle=E0DB7272AA564D3F9C3B17C50B635603">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 22-533:</strong> The City of Jersey City awarded a $30,000 professional services contract to McManimon, Scotland & Baumann, LLC to provide legal advice and counsel on certain tax matters for one year beginning May 9, 2022. Services will be billed at $150/hour, including expenses. The agreement was awarded as a non-fair and open contract under New Jersey’s Pay-to-Play Law and Local Public Contracts Law, exempt from public bidding. The firm submitted all required disclosures and compliance certifications. $5,000 was confirmed available in Account No. 01-201-20-155-312; PO#145279. <a href="https://cityofjerseycity.civicweb.net/document/69116/Ratifying%20a%20professional%20services%20agreement%20wit.pdf?handle=68CFB4EA959848CFAC4D49581A8C3787">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 22-533:</strong> The City of Jersey City awarded a $30,000 professional services contract to McManimon, Scotland & Baumann, LLC to provide legal advice and counsel on certain tax matters for one year beginning May 9, 2022. Services will be billed at $150/hour, including expenses. The agreement was awarded as a non-fair and open contract under New Jersey’s Pay-to-Play Law and Local Public Contracts Law, exempt from public bidding. The firm submitted all required disclosures and compliance certifications. $5,000 was confirmed available in Account No. 01-201-20-155-312; PO#145279. <a href="https://cityofjerseycity.civicweb.net/document/69116/Ratifying%20a%20professional%20services%20agreement%20wit.pdf?handle=68CFB4EA959848CFAC4D49581A8C3787">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 21-881:</strong> The City of Jersey City awarded a $50,000 professional services contract to McManimon, Scotland & Baumann, LLC for legal advice and counsel on certain real estate matters for a one-year term starting July 1, 2021. The firm will be compensated at an hourly rate of $150, including expenses. The contract was awarded as a professional services agreement exempt from public bidding under New Jersey law and through the “fair and open” Pay-to-Play process. All necessary certifications were submitted, and $15,000 in funds were confirmed available in Account No. 01-201-20-155-312; PO# 142935. <a href="https://cityofjerseycity.civicweb.net/document/58918/Professional%20Services%20Agreement%20with%20McManimon,.pdf?handle=10305472AC3141D98AF60C9E7AEA9C7E">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 21-881:</strong> The City of Jersey City awarded a $50,000 professional services contract to McManimon, Scotland & Baumann, LLC for legal advice and counsel on certain real estate matters for a one-year term starting July 1, 2021. The firm will be compensated at an hourly rate of $150, including expenses. The contract was awarded as a professional services agreement exempt from public bidding under New Jersey law and through the “fair and open” Pay-to-Play process. All necessary certifications were submitted, and $15,000 in funds were confirmed available in Account No. 01-201-20-155-312; PO# 142935. <a href="https://cityofjerseycity.civicweb.net/document/58918/Professional%20Services%20Agreement%20with%20McManimon,.pdf?handle=10305472AC3141D98AF60C9E7AEA9C7E">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 21-882:</strong> Resolution 21-882 renews a professional services agreement between the City of Jersey City and the law firm McManimon, Scotland & Baumann, LLC. The firm will continue to provide local land use counsel services related to the Sixth Street Embankment settlement. The renewed contract is effective January 8, 2022, for one year, with an additional $50,000 added, bringing the total contract value to $100,000 at a rate of $200/hour. The agreement was awarded under the “fair and open” Pay-to-Play law and does not require public bidding. The firm has submitted all required compliance certifications, and the agreement is subject to the appropriation of funds in the 2022 budget. <a href="https://cityofjerseycity.civicweb.net/document/59897/Professional%20Services%20Agreement%20with%20McManimon,.pdf?handle=AB8D18072714463A87C21B0457170563">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 21-882:</strong> Resolution 21-882 renews a professional services agreement between the City of Jersey City and the law firm McManimon, Scotland & Baumann, LLC. The firm will continue to provide local land use counsel services related to the Sixth Street Embankment settlement. The renewed contract is effective January 8, 2022, for one year, with an additional $50,000 added, bringing the total contract value to $100,000 at a rate of $200/hour. The agreement was awarded under the “fair and open” Pay-to-Play law and does not require public bidding. The firm has submitted all required compliance certifications, and the agreement is subject to the appropriation of funds in the 2022 budget. <a href="https://cityofjerseycity.civicweb.net/document/59897/Professional%20Services%20Agreement%20with%20McManimon,.pdf?handle=AB8D18072714463A87C21B0457170563">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 21-209:</strong> Resolution 21-209 renews a professional services agreement between the City of Jersey City and the law firm McManimon, Scotland & Baumann, LLC to provide local land use counsel services for the Sixth Street Embankment settlement. The contract is effective January 8, 2021, for one year, with a total value not to exceed $50,000 at a rate of $200 per hour. The contract was awarded through a fair and open process under the New Jersey Pay-to-Play Law and exempt from public bidding under state law. The law firm has submitted all required certifications, including compliance with affirmative action and pay-to-play ordinances. Funding of $5,000 is available in the city’s budget, and the contract continuation depends on available appropriations in the 2021 budget. <a href="https://cityofjerseycity.civicweb.net/document/41732/Professional%20Services%20Agreement%20with%20McManimon%20.pdf?handle=B356A4FDC23F4914A6B3F927FF91EA72">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 21-209:</strong> Resolution 21-209 renews a professional services agreement between the City of Jersey City and the law firm McManimon, Scotland & Baumann, LLC to provide local land use counsel services for the Sixth Street Embankment settlement. The contract is effective January 8, 2021, for one year, with a total value not to exceed $50,000 at a rate of $200 per hour. The contract was awarded through a fair and open process under the New Jersey Pay-to-Play Law and exempt from public bidding under state law. The law firm has submitted all required certifications, including compliance with affirmative action and pay-to-play ordinances. Funding of $5,000 is available in the city’s budget, and the contract continuation depends on available appropriations in the 2021 budget. <a href="https://cityofjerseycity.civicweb.net/document/41732/Professional%20Services%20Agreement%20with%20McManimon%20.pdf?handle=B356A4FDC23F4914A6B3F927FF91EA72">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 20-658:</strong> The City of Jersey City awarded a one-year professional services agreement to the law firm McManimon, Scotland & Baumann, LLC to provide legal services related to insurance coverage litigation for multiple matters. The contract, effective August 5, 2020, is valued up to $50,000 at an hourly rate of $150, including expenses. The award was made through a fair and open process under the New Jersey Local Unit Pay-to-Play Law and is exempt from public bidding under state law. The firm submitted all required certifications, including compliance with affirmative action and the city’s pay-to-play reform ordinance. Funding of $10,000 was available in the city’s 2020 budget, with contract continuation subject to appropriation of funds in future budgets. <a href="https://cityofjerseycity.civicweb.net/document/32364/Professional%20Service%20Agreement%20with%20McManimon,%20.pdf?handle=83A8F0E18ABB4C09B72B27FD05393F8A">Resolution PDF</a>
-      </p>
+                <p>
+                  <strong>Res 20-658:</strong> The City of Jersey City awarded a one-year professional services agreement to the law firm McManimon, Scotland & Baumann, LLC to provide legal services related to insurance coverage litigation for multiple matters. The contract, effective August 5, 2020, is valued up to $50,000 at an hourly rate of $150, including expenses. The award was made through a fair and open process under the New Jersey Local Unit Pay-to-Play Law and is exempt from public bidding under state law. The firm submitted all required certifications, including compliance with affirmative action and the city’s pay-to-play reform ordinance. Funding of $10,000 was available in the city’s 2020 budget, with contract continuation subject to appropriation of funds in future budgets. <a href="https://cityofjerseycity.civicweb.net/document/32364/Professional%20Service%20Agreement%20with%20McManimon,%20.pdf?handle=83A8F0E18ABB4C09B72B27FD05393F8A">Resolution PDF</a>
+                </p>
 
-      <p>
-        <strong>Res 20-050:</strong> The City of Jersey City awarded a one-year professional services contract to the law firm McManimon, Scotland & Baumann, LLC to provide local land use counsel services for the Sixth Street Embankment settlement. The contract, effective January 8, 2020, is for a total amount not to exceed $50,000 at an hourly rate of $150, including expenses. The award was made through a fair and open process in compliance with the New Jersey Local Unit Pay-to-Play Law and is exempt from public bidding under state law. The law firm submitted all required certifications, including compliance with the City’s Contractor Pay-to-Play Reform Ordinance and affirmative action laws. Funding of $10,000 was certified available in the city’s 2020 budget, with continuation contingent on the appropriation of sufficient funds. <a href="https://cityofjerseycity.civicweb.net/document/18463/Professional%20Service%20Contract%20for%20McManimon%20Sco.pdf?handle=E64B23B3A080462781CE8F41FE179D62:">Resolution PDF</a>
-      </p>
-          </div>
-        )}
-      </div>
+                <p>
+                  <strong>Res 20-050:</strong> The City of Jersey City awarded a one-year professional services contract to the law firm McManimon, Scotland & Baumann, LLC to provide local land use counsel services for the Sixth Street Embankment settlement. The contract, effective January 8, 2020, is for a total amount not to exceed $50,000 at an hourly rate of $150, including expenses. The award was made through a fair and open process in compliance with the New Jersey Local Unit Pay-to-Play Law and is exempt from public bidding under state law. The law firm submitted all required certifications, including compliance with the City’s Contractor Pay-to-Play Reform Ordinance and affirmative action laws. Funding of $10,000 was certified available in the city’s 2020 budget, with continuation contingent on the appropriation of sufficient funds. <a href="https://cityofjerseycity.civicweb.net/document/18463/Professional%20Service%20Contract%20for%20McManimon%20Sco.pdf?handle=E64B23B3A080462781CE8F41FE179D62:">Resolution PDF</a>
+                </p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $357.87</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $13,536.39</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $18,338</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/408268">7/8/24 - $8,877.55</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $7,665.46</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/398781">4/9/24 - $22,168.47</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/396109">3/1/24 - $840</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/394633">2/5/24 - $380</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/393695">1/22/24 - $780.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $3,520</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $1,933.66</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/357072">11/6/23 - $3,151.25</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $8,826.25</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/99143">9/5/23 - $10,108.17</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $9,860</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/93549">6/26/23 - $5,100.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/92663">6/9/23 - $4,120</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/89720">4/24/23 - $5,200</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $18,730</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/84304">2/3/23 - $7,400</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $18,956.85</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/80927">11/23/22 - $17,439.12</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $2,520.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/2/22 - $1,000</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $6,240</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $11,050</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/69755">6/10/22 - $1,360</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/65863">3/17/22 - $3,412.10</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $7,187.33</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $6,153.50</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/59107">11/4/21 - $12,668.25</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/55789">9/3/21 - $200</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $380.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $1,421.28</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/49373">6/9/21 - $1,840.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/47945">5/7/21 - $7,710.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/46108">4/9/21 - $2,715.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/44797">3/18/21 - $3,105</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/43483">2/18/21 - $885</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/43026">2/9/21 - $3,960</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/41559">1/25/21 - $16,595.70</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/38868">11/25/20 - $4,170.00</a></p>
+                <p><a href="https://cityofjerseycity.civicweb.net/document/33761">9/1/20 - $32,567.98</a></p>
+                    </div>
+                  )}
+                </div>
 
     {/*Nicholas Netta*/}
     <div className="accordion-item">
@@ -483,10 +641,40 @@ export default function Draft() {
         </button>
         {openIndex === 5 && (
           <div className="accordion-content">
-            <p>O'Dea has received a total of $250 from Nicholas Netta. Netta Architects has received several contracts and amendments related to constuction projects with firehouses. This has beend deemed a suspicious donation because it could represent conflict of interest with the company.</p>
+            <p>
+            O'Dea received a $250 contribution from Nicholas Netta. This donation raises concerns because Netta Architects LLC has been awarded multiple contracts and amendments with Jersey City, particularly for the design and construction administration of new firehouse projects. These contracts, which have grown significantly through amendments addressing environmental issues, design changes, and project delays, now total over $1 million. In addition, the firm has been paid repeatedly through city expenditures for architectural services over several years. The overlap between campaign contributions and substantial city contracts creates the appearance of a potential conflict of interest and pay-to-play risk.
+            </p>
             <p><strong>Res 25-077 </strong>This resolution ratifies a third amendment to a contract with Netta Architects for services related to the Engine Co. #10 and Ladder #12 New Firehouse project. The original contract was for schematic design, design development, construction documents, and construction administration services. Previous amendments were made due to geotechnical and environmental evaluations, contaminated groundwater, and design changes, which increased the contract amount and extended the term. Due to COVID-19 supply chain issues, unforeseen subsurface conditions, and a Stop Work Order, the project experienced extensive delays, and the initial construction company was declared in default. This third amendment provides an additional $384,676.72 for supplemental geotechnical investigation services, modifications to contract documents, and additional bid assistance and construction administration services, bringing the total contract amount to $1,080,830.00. The contract term is also extended for an additional twenty-four months, from June 28, 2023, to June 28, 2025. <a href="https://cityofjerseycity.civicweb.net/document/93088/R0205683_%20NETTA%20ARCHITECTS%20Amending%20Resolution.pdf?handle=F8D8DEFAC3D64A89BAD9FE83F3C75CC6">Resolution PDF</a></p>
             <p><strong>Res 22-420 </strong>This resolution from the City of Jersey City ratifies a second amendment to a professional services contract with Netta Architects. The amendment is for schematic design, design development, construction documents, and construction administration services for the new Engine Co #10 and Ladder #12 Firehouse. Due to unforeseen site conditions, including the need for geotechnical and environmental evaluations and subsequent redesign, the contract amount was increased by an additional $220,500.00, bringing the total to $818,000.00. The original contract for $498,500.00 was awarded in August 2018 for a 36-month term, with previous amendments increasing the total to $597,500.00. This agreement was processed as a professional service, exempt from public bidding, and complies with "Pay-to-Play" regulations. <a href="https://cityofjerseycity.civicweb.net/document/66670/Resolution%20Ratifying%20a%20Second%20Amendment%20to%20a%20co.pdf?handle=F0C6148D03F74F37A3A38DCDD3F0750C">Resolution PDF</a></p>
             <p><strong>Res 20-541 </strong>The City of Jersey City has authorized an amendment to its contract with Netta Architects for services related to the Engine Co. #10 - New Firehouse project. This amendment, approved on August 12, 2020, increases the total contract amount by an additional $29,400.00, bringing the new total to $626,900.00. The amendment is necessary due to the discovery of contaminated groundwater at the site, requiring the design and incorporation of a sub-slab vapor mitigation system. Netta Architects will provide architectural, MEP engineering, and civil engineering services for this additional work. The original contract and previous amendments were also for schematic design, design development, construction documents, and construction administration services. <a href="https://cityofjerseycity.civicweb.net/document/31444/Resolution%20authorizing%20an%20amendment%20to%20Netta%20Ar.pdf?handle=B97332BC06AE4503AFEA397F2A18DF96">Resolution PDF</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $2,210</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $24,717.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/425256">3/24/25 - $3,562.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $4,504.07</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $14,754.61</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $21,037.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/408268">7/8/24 - $47,562.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $34,009.16</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $51,042.93</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $8,656.76</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/76260">9/16/22 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/69755">6/10/22 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/68836">5/20/22 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $17,313.32</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/59833">11/22/21 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/58567">10/22/21 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/56325">9/16/21 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $8,656.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/30334">7/9/20 - $3,000</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/25215">4/15/20 - $29,880.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/23359">3/18/20 - $39,840</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/20322">2/4/20 - $134,480.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/17017">12/11/19 - $34,660.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $60,000</a></p>
           </div>
         )}
     </div>
@@ -498,12 +686,17 @@ export default function Draft() {
           onClick={() => toggleAccordion(6)}
           aria-expanded={openIndex === 6}
         >
+          Edward Florio, Senior Partner - $4,000
+          Bernie Kenny, Senior Partner - $1,000
+          Niti Raval, Managing Partner - $2,500
           Florio Kenny Raval, LLP - $2,300
           <span className="accordion-arrow" />
         </button>
         {openIndex === 6 && (
           <div className="accordion-content">
-            <p>O'Dea has received a total of $2,300 from the lawfirm itself. He has also received $2,500 from Niti Raval, $1,000 from Bernie Kenny, and $4,000 from Edward Florio. This amounts the total donations to $9,800 in support of O'Dea. They have received several contracts related to different cases in Jersey City listed below.</p>
+            <p>
+            O'Dea has received a total of $9,800 connected to Florio Kenny Raval, LLP—$2,300 from the law firm itself, $2,500 from Managing Partner Niti Raval, $1,000 from Senior Partner Bernie Kenny, and $4,000 from Senior Partner Edward Florio. While the dollar amounts may not be the largest compared to other donors, the concern arises because Florio Kenny Raval has secured numerous lucrative contracts with Jersey City, including multimillion-dollar agreements to represent the City in tax appeals and high-profile litigation involving police officers and civil rights cases. These contracts have been repeatedly renewed and expanded over the years, with individual amendments often adding tens or hundreds of thousands of dollars in legal fees. In addition to the resolutions, the firm has also received a steady stream of direct payments from the City for legal services. The overlap between campaign donations and significant ongoing city business creates the appearance of a conflict of interest and raises potential pay-to-play concerns.
+            </p>
             <p><strong>Res 25-077 </strong>The Jersey City Council passed Resolution 25-077 on January 29, 2025, renewing its professional services agreement with the law firm Florio, Kenny, Raval, LLP to represent the city in ongoing tax appeal matters. This marks the latest in a series of annual renewals and amendments since 2018, bringing the total contract amount to $1,425,000. The firm will continue providing legal services at an hourly rate of $175, and $5,000 in funds are currently available for the renewed term. The contract is awarded under the “fair and open” process outlined in New Jersey’s Pay-to-Play law and is exempt from competitive bidding due to its professional services status. Continuation of the agreement depends on future budget appropriations. <a href="https://cityofjerseycity.civicweb.net/document/419119/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=4A986F87F8A5407D9E83B296CF75CA56">Resolution PDF</a></p>
             <p><strong>Res 25-078 </strong>Resolution 25-078, approved on January 29, 2025, renews a professional services agreement with the law firm Florio Kenny Raval, LLP to represent former police officer Omar Polanco in the ongoing lawsuit Estate of Robertson v. City of Jersey City et al.. This renewal adds $50,000 to the legal services contract, bringing the total to $180,000, and sets the term for one year beginning January 1, 2025. The firm will be paid an hourly rate of $175, and the award follows New Jersey’s Pay-to-Play Law under the "fair and open" process. The agreement is exempt from public bidding as a professional service under state law. Continuation of the contract is contingent on sufficient funds being appropriated in the 2025 permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/419112/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=8A06D8321D8D4A1588FC68A7F0B12B4B">Resolution PDF</a></p>
             <p><strong>Res 25-079 </strong>Resolution 25-079, approved January 29, 2025, renews a professional services agreement with the law firm Florio Kenny Raval, LLP to represent Police Officer Christopher Fodor in the ongoing lawsuit Arthur Jones v. City of Jersey City et al.. The contract renewal is for one year starting January 1, 2025, with an additional $50,000, bringing the total contract amount to $100,000. The firm will provide services at an hourly rate of $175, and the contract is awarded under New Jersey’s “fair and open” Pay-to-Play Law without competitive bidding. The contract continuation is contingent on the appropriation of sufficient funds in the City’s 2025 permanent budget. The resolution requires publication in a newspaper within 10 days and compliance with Affirmative Action laws. <a href="https://cityofjerseycity.civicweb.net/document/419126/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=9B7970B91EB8423EB3A2A6EE11EC47C0">Resolution PDF</a></p>
@@ -529,6 +722,62 @@ export default function Draft() {
             <p><strong>Res 20-746 </strong>The Jersey City Municipal Council approved an amendment to its professional services agreement with the law firm Florio Kenny Raval, LLP to continue serving as special counsel in tax appeal litigation. Originally approved in 2018 for $150,000 and renewed in 2019 and 2020 for $75,000 and $50,000 respectively, the contract is now being increased by an additional $50,000, bringing the current total to $100,000. The firm will continue providing legal services at a rate of $150 per hour. The amendment was necessary because previously allocated funds had been fully expended, and the City is still engaged in ongoing tax appeal cases. The required funds are available and certified by the Chief Financial Officer, and the resolution mandates public notice within ten days of adoption. <a href="https://cityofjerseycity.civicweb.net/document/35710/Professional%20Service%20Agreement%20with%20Florio%20Kenn.pdf?handle=4341F1D1B4324EDD95CB9CCBF3E2712F">Resolution PDF</a></p>
             <p><strong>Res 20-265 </strong>The Jersey City Council approved the renewal of a one-year professional services contract with the law firm Florio Kenny Raval, LLP to continue representing the city in tax appeal matters. Originally approved in 2018 and previously renewed in 2019, the contract was extended again in 2020 with an additional $50,000, bringing the total not to exceed $275,000. The firm will continue to be paid at a rate of $150 per hour, including expenses. The contract was awarded through the "fair and open process" under the state’s Pay-to-Play law and is exempt from public bidding as a professional service. The agreement includes compliance with affirmative action laws and funding availability has been certified by the city’s CFO. <a href="https://cityofjerseycity.civicweb.net/document/21169/Professional%20Service%20Contract%20for%20Florio%20Kenny%20.pdf?handle=93DBC1697F0D4862980AF0D2947F90DD">Resolution PDF</a></p>
             <p><strong>Res 19-961 </strong>The Jersey City Council approved a one-year professional services agreement with Florio Kenny Raval LLP, effective January 1, 2020, for an amount not to exceed $50,000. The firm will provide defense counsel services for workers' compensation claim petitions filed against the city, charging $1,500 per case with the possibility of an additional $1,500 for complex litigation. The contract was awarded under the “fair and open” provisions of New Jersey’s Pay-to-Play law and is exempt from public bidding. The firm met compliance requirements under the city’s Pay-to-Play Reform Ordinance and affirmative action laws. The contract is contingent upon the appropriation of funds in the city’s 2020 budgets. <a href="https://cityofjerseycity.civicweb.net/document/16768/FKR%20WC%20Def%20Counsel%20via%20RFQ.pdf?handle=3433651C7EDE45F89E91DF8F7FA9CE3E">Resolution PDF</a></p>
+          
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $107,555.66</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $18,836.75</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/418957">1/9/25 - $9,100</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/416983">12/6/24 - $6,422.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $23,791.22</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $9,187.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $13,509.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $40,460.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/411476">9/19/24 - $11,427.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $16,117.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $8,666.09</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/408268">7/8/24 - $68,763.94</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $27,655</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $3,150</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/402302">5/3/24 - $20,960.93</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/400554">4/22/24 - $13,663.43</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/395534">2/20/24 - $192.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $16,668.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $8,522.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/357072">11/6/23 - $13,562.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $11,322.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $4,637.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/99143">9/5/23 - $58,893.10</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $19,207.50</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $44,710.57</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $30,933.30</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/81765">12/9/22 - $10,654.44</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/80927">11/23/22 - $27,103.45</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $2,145</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $14,967.42</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/2/22 - $16,592.12</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $9,390</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/71510">7/8/22 - $9,915</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $5,481.90</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/70072">6/15/22 - $1,199.33</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/67909">5/5/22 - $68,055</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/67367">4/22/22 - $4,525</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $16,868.04</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/59833">11/22/21 - $10,170</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/52979">8/13/21 - $9,095.00</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $14,490</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $4,805</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/49373">6/9/21 - $6,915</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/47945">5/7/21 - $18,870</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/44797">3/18/21 - $7,742.19</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/43026">2/9/21 - $4,260</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/40872">1/11/21 - $21,776.15</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/38868">11/25/20 - $41,050</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/37605">11/5/20 - $45,210</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/26640">5/14/20 - $2,850</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/22804">3/3/20 - $47,910.74</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/20322">2/4/20 - $22,174.53</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/19070">1/15/20 - $1,747.71</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/17017">12/11/19 - $10,925.52</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/11373">9/3/19 - $42,568.39</a></p>
           </div>
         )}
     </div>
@@ -561,12 +810,28 @@ export default function Draft() {
         onClick={() => toggleAccordion(8)}
         aria-expanded={openIndex === 8}
       >
-        Waters, McPherson, McNeil - $6,250 
+        Waters, McPherson, McNeil - $6,750 
         <span className="accordion-arrow" />
       </button>
       {openIndex === 8 && (
         <div className="accordion-content">
           <p>The donations from Waters, McPherson, McNeil P.C. to Bill O'Dea and other Jersey City candidates raise potential red flags due to the firm’s direct financial and business interests with the city, as well as the timing of these contributions. The law firm represents Honeywell International Inc. in environmental remediation projects affecting public rights-of-way in Jersey City, including the execution and termination of Notices in Lieu of Deed Notices, such as the resolution approving the updated NILODN for Fisk Street and other ROWs in July 2024 (<a href="https://cityofjerseycity.civicweb.net/document/406670">Resolution PDF</a>). Additionally, the firm has historically represented developers in high-value waterfront redevelopment projects in the city (<a href="https://www.lawwmm.com/HudsonRiverRedev.asp">Waters, McPherson, McNeil Hudson River Waterfront Redevelopment</a>). The firm has also received substantial payments from the city itself, including $448,690.70 (<a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25</a>), $338,281.63 (<a href="https://cityofjerseycity.civicweb.net/document/403052">5/14/25</a>), $26,852.32 (<a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23</a>) $11,510.03 (<a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/2023</a>). The donations, totaling $31,200 from the firm and $5,200 from David McPherson personally, occurred shortly after or around the time of these municipal approvals and expenditures, creating a perception that the contributions could influence officials overseeing matters directly affecting the firm’s clients. While no direct quid pro quo is proven, the overlap of campaign contributions with public decisions and city payments involving the firm constitutes a potential pay-to-play concern and represents a red flag for regulatory or ethical scrutiny.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $338,281.63</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/403052">5/17/24 - $448,690.70</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/402589">5/8/24 - $5,669.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $20,644.31</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/391059">1/10/24 - $19,280.53</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23 - $26,582.32</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $10,854.87</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/93739">6/28/23 - $1,887.06</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/92928">6/14/23 - $29,577.57</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/83762">1/25/23 - $272,354.59</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/81004">11/23/22 - $1,270.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/76497">9/20/22 - $14,639.41</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/74749">9/8/22 - $10,524.42</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/70072">6/15/22 - $7,925.09</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/69013">5/25/22 - $41,436.65</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/66949">4/13/22 - $3,962.86</a></p>
         </div>
       )}
     </div>
@@ -651,13 +916,51 @@ export default function Draft() {
         onClick={() => toggleAccordion(12)}
         aria-expanded={openIndex === 12}
       >
-        Excelsior Plumbing - $5,700
+        Excelsior Plumbing - $11,200
         UA Plumbers Local 24 PAC - $16,400
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 13 && (
+      {openIndex === 12 && (
         <div className="accordion-content">
           <p>The donations from both Excelsior Plumbing and Plumbers Local 24 to Bill O’Dea raise a red flag because they suggest coordinated financial support from a union and one of its contractors. While unions often contribute to political campaigns, the added donation from a contractor that directly benefits from union projects creates the appearance of a networked effort to amplify influence. This dual backing increases the risk of pay-to-play dynamics, where financial contributions from labor groups and their business partners could be seen as attempts to secure favorable treatment on future contracts, labor agreements, or city-backed projects.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $8,056.14</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $7,419.72</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/427629">4/17/25 - $5,370.76</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/425256">3/24/25 - $7,504.70</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/422620">2/24/25 - $16,322.11</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $13,002.28</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $22,526.24</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $7,888.33</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $8,811.42</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $17,609.14</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/408429">7/10/24 - $18,760.01</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $15,417.57</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $32,920.14</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394633">2/5/24 - $14,804.74</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $27,780.42</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $13,926.95</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $8,530.24</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $5,093.89</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $16,285.21</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $12,591.65</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $14,343.82</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $17,570.63</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $20,854.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17//23 - $23,685.07</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $21,810.42</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/81765">12/9/22 - $16,061.33</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/78580">11/4/22 - $15,549.44</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $12,500.35</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/2/22 - $8,047.44</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $7,510.95</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/71510">7/8/22 - $25,612.22</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/67367">4/22/22 - $13,967.32</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $2,422.61</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/62536">1/20/22 - $7,959.99</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $30,843.78</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/58727">10/26/21 - $32,532.20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/48651">5/26/21 - $37,995.86</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/46338">4/14/21 - $37,995.86</a></p>
         </div>
       )}
     </div>
@@ -671,7 +974,7 @@ export default function Draft() {
         Jersey City Officers Associaton - $6,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 14 && (
+      {openIndex === 13 && (
         <div className="accordion-content">
           <p>While it is common for police officer associations to back mayoral candidates with donations, the association has donated to him five different times totaling up to $6,000. This pattern of repeated donations is a potential concern of conflict of interest because O'Dea has proposed modernizing police operations, restructuring enforcement units, and public safety incentives. The overlap of policy benefits and union support may foster the appearance of preferential treatment</p>
         </div>
@@ -687,7 +990,7 @@ export default function Draft() {
         Tom Zuppa (Ward C Candidate for O'Dea) - $250
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 15 && (
+      {openIndex === 14 && (
         <div className="accordion-content">
           <p>Tom Zuppa, a current partner at Chasan Lamparello Mallon & Cappuzzo PC—a firm that has received multiple Jersey City contracts—donated $250 to Bill O’Dea while also running as his Ward C candidate. Although the contribution is small, the overlap between Zuppa’s role at a firm that profits from city business and his political alignment with O’Dea heightens concerns about conflicts of interest. It suggests a blending of private legal interests with public office, raising transparency and pay-to-play questions. The resolutions awarding contracts and expenditure claims fron Jersey City are listed below.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $41,233.38</a></p>
@@ -755,7 +1058,7 @@ export default function Draft() {
         onClick={() => toggleAccordion(15)}
         aria-expanded={openIndex === 15}
       >
-        Mast Construction Services - $5,250
+        Mast Construction Services - $6,250
         <span className="accordion-arrow" />
       </button>
       {openIndex === 15 && (
@@ -765,34 +1068,18 @@ export default function Draft() {
       )}
     </div>
 
+
+
     <div className = "accordion-item">
       <button
         className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
         onClick={() => toggleAccordion(16)}
         aria-expanded={openIndex === 16}
       >
-        IBEW Local Union 164 - $13,900
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 16 && (
-        <div className="accordion-content">
-          <p>IBEW Local Union #164 PAC presents a potential red flag in the context of Bill O’Dea’s campaign financing. The union has previously received money from Jersey City, establishing a financial connection to municipal resources. At the same time, the PAC has donated heavily to O’Dea’s mayoral campaign, raising concerns about whether these contributions are aimed at securing influence or favorable treatment in future labor negotiations, city contracts, or project approvals. The combination of receiving city funds while simultaneously investing significant political support in a candidate creates a perception of pay-to-play dynamics.</p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $7.366.59</a></p>
-
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
-        onClick={() => toggleAccordion(17)}
-        aria-expanded={openIndex === 17}
-      >
         GD Correctional Services LLC - $11,400
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 17 && (
+      {openIndex === 16 && (
         <div className="accordion-content">
           <p>The donations from GD Correctional Services LLC and its president are a red flag because they come directly from a company that relies almost entirely on government contracts in Hudson County. With nearly $11 million in correctional food service contracts already awarded, their financial stability depends on continued public funding. By donating the maximum allowed amount to Councilman O’Dea, who has influence over city and county decisions, the company appears to be investing in political relationships that could safeguard or expand its contracts. Their prior attempt to enter Jersey City’s food service market, even though they were disqualified, shows a clear interest in securing new city contracts.</p>
           <p><strong>Res 22-605 </strong>The Hudson County Correctional Center’s food services contract with GD Correctional Services, LLC is running out of funds, prompting officials to request an additional $163,264 to cover ongoing expenses. Originally awarded at $9.2 million, the contract has already been increased three times—by $385,000, $975,000, and $250,000—bringing the total contract value to $10,973,264. This request highlights the growing costs tied to the county’s agreement with GD Correctional Services to provide meals at the jail. <a href="https://cityofjerseycity.civicweb.net/document/71984">Resolution PDF (pg 26)</a></p>
@@ -803,25 +1090,9 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
-        onClick={() => toggleAccordion(18)}
-        aria-expanded={openIndex === 18}
-      >
-        Boraie Family - $25,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 18 && (
-        <div className="accordion-content">
-          <p>The Boraie family donations represent a significant red flag due to both their size and concentration. Multiple members of the family—including Ana, Sam, Omar, Hiam, and Wasseem Boraie—have contributed large amounts, often through affiliated entities like Spring Street Development Urban Renewal LLC and Albany Street Plaza Urban Renewal LLC. Omar Boraie, as the founder and chairman of Boraie Development LLC, has direct business interests in real estate development within New Brunswick, and these donations could be seen as an attempt to exert influence over municipal decisions that affect their projects. The fact that contributions come from several family members and related companies suggests a coordinated strategy to amplify their political impact, rather than independent civic engagement. Such a pattern raises concerns about potential conflicts of interest, as city decisions could indirectly benefit their family’s substantial real estate holdings.</p>
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
-        onClick={() => toggleAccordion(19)}
-        aria-expanded={openIndex === 19}
+        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
+        onClick={() => toggleAccordion(17)}
+        aria-expanded={openIndex === 17}
       >
         Anthony and Angelo Beskaly: John & Maryan LLC - $6,000
         <span className="accordion-arrow" />
@@ -838,14 +1109,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
-        onClick={() => toggleAccordion(20)}
-        aria-expanded={openIndex === 20}
+        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
+        onClick={() => toggleAccordion(18)}
+        aria-expanded={openIndex === 18}
       >
         Armando Derrico and Beatrice Sangosse: Pinnacle Development Group - $5,750
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 20 && (
+      {openIndex === 18 && (
         <div className="accordion-content">
             <p>The donations from Armando Derrico, owner of Pinnacle Development Group, and Beatrice Sangosse, an associate working under both Pinnacle Development Group and Weichert Realtors, represent a potential red flag. Both have made contributions to O’Dea while their company actively engages in real estate projects in Jersey City, as evidenced by their portfolio showcasing multiple local properties. Large donations from individuals with direct business interests in the city raise concerns about possible conflicts of interest, particularly regarding zoning, approvals, or redevelopment decisions. This overlap between financial support and local business activity makes these donations a noteworthy red flag.</p>
             <a href="https://pdgbuilding.com/portfolio">Pinnacle Development's Portfolio</a>
@@ -855,14 +1126,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
-        onClick={() => toggleAccordion(21)}
-        aria-expanded={openIndex === 21}
+        className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
+        onClick={() => toggleAccordion(19)}
+        aria-expanded={openIndex === 19}
       >
         Ronnie Greco, President of Jersey City Education Association - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 21 && (
+      {openIndex === 19 && (
         <div className="accordion-content">
             <p>Ronnie Greco’s donation to O’Dea is a red flag because, as president of the Jersey City Education Association, he holds a key leadership role in a powerful local union that directly interacts with city government on education policies, budgets, and contracts. Large contributions from union leaders can create the appearance of seeking influence or preferential treatment from elected officials, raising concerns about potential conflicts of interest. The combination of his position, the size of the donation, and the union’s stake in city decisions makes this contribution particularly sensitive from an ethical and transparency perspective.</p>
         </div>
@@ -871,14 +1142,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
-        onClick={() => toggleAccordion(22)}
-        aria-expanded={openIndex === 22}
+        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
+        onClick={() => toggleAccordion(20)}
+        aria-expanded={openIndex === 20}
       >
         Scott Grogan & Deirdre Owen: Landmark Developers: $5,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 22 && (
+      {openIndex === 20 && (
         <div className="accordion-content">
             <p>The donations from Scott Grogan and Deidre Owens of Landmark Developers to O’Dea are a red flag because the company is actively involved in significant Jersey City projects, including the Liberty House and Hudson House developments. In addition, Landmark Developers formally communicated with Robert Byrne, the City Clerk, through letters regarding proposed projects and NJDEP applications, showing active engagement with city officials on development matters. As CFO and representatives of a firm directly affected by city approvals and permits, their contributions could be perceived as an attempt to gain political favor or influence decisions benefiting their business interests. Their letters are listed in the agendas below.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/17855">1/8/20 Agenda, 6.17</a></p>
@@ -889,14 +1160,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
-        onClick={() => toggleAccordion(23)}
-        aria-expanded={openIndex === 23}
+        className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
+        onClick={() => toggleAccordion(21)}
+        aria-expanded={openIndex === 21}
       >
         Mark Grossbard, CEO of Kai Strategic Insurance and VP of Insurance World: $5,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 23 && (
+      {openIndex === 21 && (
         <div className="accordion-content">
           <p>Mark Grossbard’s $5,000 donation to O’Dea is a red flag because he is CEO of Kai Strategic Insurance, a company that has received substantial payments from Jersey City—over $2.7 million across recent expenditures. The large sums combined with his personal political contribution create the appearance of a potential conflict of interest. The timing and scale of the donation relative to the city’s financial interactions with Kai Strategic Insurance could be perceived as an attempt to gain influence or preferential treatment, raising concerns about transparency and ethical optics.</p>
            <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $602,197.40</a></p>
@@ -908,14 +1179,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
-        onClick={() => toggleAccordion(24)}
-        aria-expanded={openIndex === 24}
+        className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
+        onClick={() => toggleAccordion(22)}
+        aria-expanded={openIndex === 22}
       >
         Albert Mauti, Co-Founder of M&M Construction: $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 24 && (
+      {openIndex === 22 && (
         <div className="accordion-content">
           <p>Albert Mauti, as the co-founder of M & M Construction Company, which received a substantial $5.64 million contract from the City of Jersey City for the construction of Engine Co. #10 and Ladder 12 and has received several expenditure payments from Jersey City, donated to O’Dea’s campaign. This contribution is a red flag because it comes directly from a principal of a company that benefits from significant city expenditures, creating a potential conflict of interest. The donation raises concerns about the possibility of political influence, as the company’s financial interests could be seen as linked to O’Dea’s political support. The contract itself involved multiple payments and oversight from city officials, meaning any perceived favoritism or expectation of favorable treatment could compromise the integrity of the procurement process.</p>
           <p><strong>Res 21-242 </strong>The City of Jersey Council awarded a contract to M & M Construction Company, Inc. for the construction of Engine Co. #10 and Ladder 12 – a new firehouse, Project No. 18-004, for the Department of Administration, Division of Architecture. The contract was the result of a public bidding process, where M & M Construction was the lowest responsive and responsible bidder after the lowest bid from Thomas & Sons Builders was deemed non-responsive. The total bid amount is $5,642,000, with a total encumbrance of $6,206,200 available across multiple capital accounts. Payments will be made once city officials certify that the materials and services are delivered in accordance with the contract. The contract award is subject to compliance with New Jersey’s Affirmative Action Amendments to the Law Against Discrimination, and the Mayor or Business Administrator is authorized to execute the contract on behalf of the city. <a href="https://cityofjerseycity.civicweb.net/document/44316"></a></p>
@@ -931,14 +1202,14 @@ export default function Draft() {
 
     <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
-          onClick={() => toggleAccordion(25)}
-          aria-expanded={openIndex === 25}
+          className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
+          onClick={() => toggleAccordion(23)}
+          aria-expanded={openIndex === 23}
         >
           Frank Robinson, Associate of Garden Greenz - $5,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 25 && (
+        {openIndex === 23 && (
           <div className="accordion-content">
             <p>The $5,000 donation from Frank Robinson is a significant red flag given his recent controversies as co-owner of Garden Greenz. Multiple Jersey City cannabis commissioners alleged that Robinson was caught on video using racist and homophobic slurs, including the n-word and f-word, while also engaging in intimidation of other businesses. These incidents prompted strong condemnation from board members, who stated that his behavior violated the city’s principles of diversity and inclusion and was “truly disturbing.” Accepting financial support from Robinson raises serious concerns about a candidate’s alignment with community values, tolerance, and responsible business practices, especially in a city where inclusion and equity are key political issues.</p>
             <p>
@@ -953,14 +1224,14 @@ export default function Draft() {
 
        <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
-          onClick={() => toggleAccordion(26)}
-          aria-expanded={openIndex === 26}
+          className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
+          onClick={() => toggleAccordion(24)}
+          aria-expanded={openIndex === 24}
         >
           Chisea Shaninian & Giantomisi - $1,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 26 && (
+        {openIndex === 24 && (
           <div className="accordion-content">
           <p>The $1,000 donation from Chiesa Shahinian & Giantomasi PC raises concerns because the firm has been directly awarded legal service contracts by Jersey City, including a 2023 agreement worth up to $40,000 to represent police officers in a lawsuit tied to the Estate of Hiram Gonzalez. While the firm did comply with all required pay-to-play and disclosure rules, the fact that an active city contractor is also making political contributions to a candidate like O’Dea creates the appearance of potential conflicts of interest. Even if technically legal, these kinds of donations raise questions about whether firms with ongoing or future business before the city may be attempting to maintain goodwill or secure favorable treatment through campaign contributions.</p>
           <p><strong>Res 23-481 </strong>This resolution ratifies a professional services agreement with the law firm Chiesa Shahinian & Giantomasi PC to represent Jersey City Police Officers Leon Tucker and Saad Hashmi in a lawsuit related to the Estate of Hiram Gonzalez. The contract, effective March 29, 2023, is for up to $40,000 at an hourly rate of $175, and includes expenses. The firm has complied with all required political contribution disclosures and the City's Pay-to-Play laws. Funds of $5,000 are available for this purpose in the current budget, with continuation contingent on future budget appropriations. The resolution and related documents will be made publicly available as required by law. <a href="https://cityofjerseycity.civicweb.net/document/90902/R0205489_%20Chiesa%20Shahinian%20_%20Giantomasi.pdf?handle=30D5C0EA4875471BAE6D17B7FF828B36">Resolution PDF</a></p>
@@ -970,19 +1241,166 @@ export default function Draft() {
 
       <div className = "accordion-item">
       <button 
-        className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
-        onClick={() => toggleAccordion(27)}
-        aria-expanded={openIndex === 27}>
+        className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
+        onClick={() => toggleAccordion(25)}
+        aria-expanded={openIndex === 25}>
         Peter Roselle - President of Regional Industries LLC, Meadowbrook Industries LLC, and Waste Industries LLC - $500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 27 && (
+      {openIndex === 25 && (
         <div className="accordion-content">
           <p>The 500 dollar donation to O'Dea is a red flag because Regional Industries currently has a five-year, 77.5 million dollar contract with Jersey City with relations to night collection of garbage and recyclables. This is clear pay-to-play behavior, as a company holding a lucrative city contract is contributing directly to a candidate who could influence or oversee future contract negotiations, extensions, or oversight. The donation suggests an effort to maintain favorable political ties, raising concerns about conflicts of interest and undermining public trust in fair governance.</p>
           <p><strong>Res 20-586 </strong>This resolution (Res. 20-586, approved August 12, 2020) awards a five-year, $77.5 million contract to Regional Industries LLC for night collection of solid waste and recyclables for Jersey City’s Department of Public Works, Division of Sanitation. The contract runs from September 1, 2020, to August 31, 2025, per bid specifications and state regulations. Regional Industries submitted the only bid, which the Purchasing Director deemed fair and reasonable. An initial $400,000 is allocated from account 01-201-26-290-314, with future payments subject to annual budget appropriations. The contract requires compliance with affirmative action laws, proper receipt of services before payment, and execution by the Mayor or Business Administrator.</p>
         </div>
       )}
     </div>
+
+    <div className = "accordion-item">
+      <button 
+        className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
+        onClick={() => toggleAccordion(26)}
+        aria-expanded={openIndex === 26}>
+          Richard Sciaretta, Managing Partner of Claremont Development - $2,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 26 && (
+        <div className="accordion-content">
+          <p>Richard Sciaretta, managing partner of Claremont Development, contributed $2,500 to Bill O’Dea’s campaign in August 2024. Claremont Development is a major real estate developer with longstanding interests in Jersey City, particularly in large-scale residential and mixed-use projects, such as St. Lucy's Tower, the Rivet and Rivet 28, and new dorms in Saint Peter's University. The donation is notable because O’Dea has positioned himself as a watchdog against unchecked development, yet his acceptance of funds from a prominent developer may raise questions about consistency. Real estate donations are often scrutinized in Jersey City politics, where concerns about overdevelopment and affordability remain front and center. Sciaretta’s contribution could be interpreted as an attempt to maintain influence over zoning and development decisions should O’Dea become mayor. Critics might argue that this fits into a broader pattern of developers seeking access through campaign contributions. Supporters, however, may downplay the donation as a routine part of political fundraising. Still, in the context of Jersey City’s history with pay-to-play, the $2,500 from Claremont Development raises a clear red flag.</p>
+          <p><a href="https://www.claredev.com/projects">Claremont Development's Projects</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button 
+        className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
+        onClick={() => toggleAccordion(27)}
+        aria-expanded={openIndex === 27}>
+          Richard Ranalli, Managing Partner of Rivermayn - $2,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 27 && (
+        <div className="accordion-content">
+          <p>Richard Sciaretta, managing partner of Claremont Development, contributed $2,500 to Bill O’Dea’s campaign in August 2024. Claremont Development is a major real estate developer with longstanding interests in Jersey City, particularly in large-scale residential and mixed-use projects, such as St. Lucy's Tower, the Rivet and Rivet 28, and new dorms in Saint Peter's University. The donation is notable because O’Dea has positioned himself as a watchdog against unchecked development, yet his acceptance of funds from a prominent developer may raise questions about consistency. Real estate donations are often scrutinized in Jersey City politics, where concerns about overdevelopment and affordability remain front and center. Sciaretta’s contribution could be interpreted as an attempt to maintain influence over zoning and development decisions should O’Dea become mayor. Critics might argue that this fits into a broader pattern of developers seeking access through campaign contributions. Supporters, however, may downplay the donation as a routine part of political fundraising. Still, in the context of Jersey City’s history with pay-to-play, the $2,500 from Claremont Development raises a clear red flag.</p>
+          <p><a href="https://www.claredev.com/projects">Claremont Development's Projects</a></p>
+        </div>
+      )}
+    </div>
+
+   <div className="accordion-item">
+    <button 
+      className={`accordion-header ${openIndex === 28 ? "active" : ""}`}
+      onClick={() => toggleAccordion(28)}
+      aria-expanded={openIndex === 28}>
+         Jeffrey Persky, Executive Vice President of Kushner Real Estate Group - $1,500
+      <span className="accordion-arrow" />
+    </button>
+    {openIndex === 28 && (
+      <div className="accordion-content">
+        <p>
+         
+        </p>
+      </div>
+    )}
+  </div>
+
+  <div className="accordion-item">
+    <button 
+      className={`accordion-header ${openIndex === 29 ? "active" : ""}`}
+      onClick={() => toggleAccordion(29)}
+      aria-expanded={openIndex === 29}>
+        Edward Geerlof, CEO of Noble Construction Group - $11,000
+      <span className="accordion-arrow" />
+    </button>
+    {openIndex === 29 && (
+      <div className="accordion-content">
+        <p>
+          Noble Construction Group’s ties to Jersey City development raise questions about their $11,000 donation to Bill O’Dea’s campaign. The firm has been directly involved in major local projects such as Summit Avenue, Hudson Exchange Phases 1A, 1B, and 2, Gulls Cove, 55 Hudson, 110 First Street, and Cast Iron Lofts—developments that required significant city approvals and oversight. With their CEO contributing a sizable donation, the optics suggest a possible pay-to-play dynamic, where large contributions may buy influence or favorable treatment in future city contracts and approvals. Given O’Dea’s long history in Hudson County politics and the concentration of donations from developers, critics may see this as a red flag, pointing to the longstanding problem of developers attempting to shape policy through financial support. Even if not illegal, such a connection risks undermining public trust, as voters may question whether O’Dea will prioritize residents’ needs—such as affordability and transparency—over the interests of developers bankrolling his campaign. This is especially sensitive in Jersey City, where rapid development has fueled gentrification concerns and fears of political favoritism. For many residents, large developer-linked donations symbolize an old-school machine-style politics that continues to dominate Hudson County. The donation, therefore, is controversial not just for the amount, but for the deeper implications it carries in a city struggling with trust in local governance.
+        </p>
+        <p><a href="https://ncgllc.com/portfolio">Noble Construction's Projects</a></p>
+      </div>
+    )}
+  </div>
+
+  <div className="accordion-item">
+    <button 
+      className={`accordion-header ${openIndex === 30 ? "active" : ""}`}
+      onClick={() => toggleAccordion(30)}
+      aria-expanded={openIndex === 30}>
+        Euro Concrete - $5,000
+      <span className="accordion-arrow" />
+    </button>
+    {openIndex === 30 && (
+      <div className="accordion-content">
+        <p>
+            Euro Concrete donated $5,000 to Bill O’Dea’s campaign. Their own project portfolio lists multiple active or recent Jersey City construction sites — including 96 Tonnelle Ave, 2958 JFK Blvd, 682 Route 440, 135 Columbus Dr., 337 Johnston Ave, and 177 Academy St. This establishes a direct business interest in Jersey City development. When a contractor with substantial work in the city makes the maximum contribution to a mayoral candidate, it raises concerns of pay-to-play dynamics: a company with current and potential future contracts aligning itself financially with the candidate who could influence city approvals and development pipelines. The overlap between Euro Concrete’s active Jersey City projects and their maximum donation makes this contribution especially concerning.        </p>
+        <p><a href="https://euroconcrete.com/index.html">Euro Concrete Website.</a></p>
+      </div>
+    )}
+  </div>
+
+  <div className="accordion-item">
+    <button 
+      className={`accordion-header ${openIndex === 31 ? "active" : ""}`}
+      onClick={() => toggleAccordion(31)}
+      aria-expanded={openIndex === 31}>
+        Del-Sano Contracting - $2,500
+      <span className="accordion-arrow" />
+    </button>
+    {openIndex === 31 && (
+      <div className="accordion-content">
+        <p>
+          Del-Sano Contracting Corporation donated $2,500 to Bill O’Dea’s campaign on May 29, 2024. At the same time, the company lists multiple Jersey City projects in its portfolio, including Ocean Green Senior Apartments, NJCU School of Business, and St. Peter’s School of Business and Education. This overlap creates a direct pay-to-play concern: a company that has profited from municipal and institutional projects in Jersey City is now financially backing a candidate for mayor, potentially to secure favorable treatment in future contracting decisions. Given Jersey City’s long history of corruption tied to developers and contractors, this contribution raises serious questions about whether the donation was motivated by civic engagement or by an expectation of political access and influence.        </p>
+        <p><a href="https://www.delsano.com/projects.html">Del-Sano Projects.</a></p>
+      </div>
+    )}
+  </div>
+
+  <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 5 ? "active" : ""}`}
+          onClick={() => toggleAccordion(5)}
+          aria-expanded={openIndex === 5}
+        >
+          Brain Markey, Owner of Garden Greenz - $2,800
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 5 && (
+          <div className="accordion-content">
+            <p>O'Dea has received a total of $2,800 from Brian Markey. These donations have been flagged as potentially concerning because they come from individuals with a business seeking city approval and influence. While the donations are legal, the business interests may warrant closer scrutiny for potential conflicts of interest or public perception issues.</p>
+            <p>
+              <p><strong>Res 22-765 </strong> The Jersey City Council provides support for Garden Greenz to run a cannabis business. </p><a href="https://cityofjerseycity.civicweb.net/document/77364">Resolution PDF</a>
+            </p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
+          onClick={() => toggleAccordion(8)}
+          aria-expanded={openIndex === 8}
+        >
+          Dave Jefferson, Owner of The Leaf Joint - $1,350
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 8 && (
+          <div className="accordion-content">
+            <p>Dave Jefferson, owner of The Leaf Joint, contributed $1,350 to O'Dea’s campaign. This donation is a potential red flag because Jefferson’s business required and received approval from the Jersey City Council to operate a Class 5 retail cannabis establishment within the city. When individuals who are seeking or have obtained municipal approvals contribute to a candidate’s campaign, it can create the appearance of a pay-to-play scenario, where financial support might be perceived as influencing official decisions. While the contribution is legal, its connection to city approvals warrants scrutiny to maintain transparency and public trust.</p>
+            <p><strong>Res 22-675 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-100 providing local support for The Leaf Joint to operate a Class 5 retail cannabis business. <a href="https://cityofjerseycity.civicweb.net/document/74396">Resolution PDF</a></p>
+          </div>
+        )}
+      </div>
+
+
+
+
+    
+
+
+
+
+    
 
 
 

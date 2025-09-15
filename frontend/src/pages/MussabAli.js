@@ -28,7 +28,8 @@ export default function Draft() {
     { name: "Bill O'Dea", path: "/BillODea" },
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
     { name: "James Solomon", path: "/JamesSolomon" },
-    { name: "Joyce Watterman", path: "/JoyceWatterman"}
+    { name: "Joyce Watterman", path: "/JoyceWatterman"},
+    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
   ];
 
   useEffect(() => {
@@ -162,6 +163,29 @@ export default function Draft() {
 
   return (
     <div style={{ padding: "2rem", maxWidth: 900, margin: "0 auto" }}>
+
+       <div className="mobile-header">
+              <button
+                className="hamburger"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle menu"
+              >
+                ☰ <span className="menu-label">Menu</span>
+              </button>
+              {menuOpen && (
+                <nav className="mobile-menu">
+                  {otherCandidates.map((candidate) => (
+                    <Link
+                      to={candidate.path}
+                      key={candidate.name}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {candidate.name}
+                    </Link>
+                  ))}
+                </nav>
+              )}
+            </div>
       <h1>Mussab Ali: Campaign Finance Visuals</h1>
 
       {totalDonations !== null && (

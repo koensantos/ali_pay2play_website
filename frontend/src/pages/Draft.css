@@ -392,3 +392,18 @@ button[type="submit"] {
   text-decoration: underline;
 }
 
+/* Show hamburger on mobile only */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #1d3557;
+    padding: 0.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}

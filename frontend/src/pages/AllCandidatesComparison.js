@@ -17,11 +17,20 @@ import "./DonationComparison.css";
 // Example hardcoded data (replace with your real numbers)
 const candidateData = [
   { name: "Mussab Ali", total: 450908.92, redFlag: 0 },
-  { name: "Bill ODea", total: 829745, redFlag: 182825 },
-  { name: "Jim McGreevey", total: 2693055.72, redFlag: 799450 },
-  { name: "James Solomon", total: 904533.33, redFlag: 104770 },
-  { name: "Joyce Watterman", total: 279641, redFlag: 56815}
+  { name: "Bill ODea", total: 829745, redFlag: 157825 },
+  { name: "Jim McGreevey", total: 2693055.72, redFlag: 890992 },
+  { name: "James Solomon", total: 904533.33, redFlag: 141720 },
+  { name: "Joyce Watterman", total: 279641, redFlag: 49815}
 ];
+
+  const otherCandidates = [
+    { name: "Mussab Ali", path: "/MussabAli" },
+    { name: "Bill O'Dea", path: "/BillODea" },
+    { name: "Jim McGreevey", path: "/JimMcGreevey" },
+    { name: "James Solomon", path: "/JamesSolomon" },
+    { name: "Joyce Watterman", path: "/JoyceWatterman" },
+    { name: "All Candidates Comparison", path: "/AllCandidatesComparison" }
+  ];
 
 // Red for red flags, teal for the rest
 const COLORS = ["#E63946", "#2A9D8F"];
@@ -36,6 +45,29 @@ const formatNumberShort = (num) => {
 export default function Comparison() {
   return (
     <div className="comparison-page">
+
+       <div className="mobile-header">
+              <button
+                className="hamburger"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle menu"
+              >
+                ☰ <span className="menu-label">Menu</span>
+              </button>
+              {menuOpen && (
+                <nav className="mobile-menu">
+                  {otherCandidates.map((candidate) => (
+                    <Link
+                      to={candidate.path}
+                      key={candidate.name}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {candidate.name}
+                    </Link>
+                  ))}
+                </nav>
+              )}
+        </div>
       <h1>Donation Comparison</h1>
       <p className="description">
         This page compares <strong>total donations</strong> with <strong>red-flag donations</strong> for each
