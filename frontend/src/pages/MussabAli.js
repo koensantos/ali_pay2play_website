@@ -197,7 +197,7 @@ export default function Draft() {
 
       <div className="green-flag-warning">
         <p>
-          This candidate has been verified as having no potential pay-to-play, developer, or any conflict of interest donations.{" "}
+          This candiate has been verified as having no potential pay to play, or any conflict of interest donations.{" "}
         </p>
       </div>
 
