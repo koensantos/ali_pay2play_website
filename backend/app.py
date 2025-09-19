@@ -14,8 +14,9 @@ app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
         "origins": [
-            "http://pay2playjc.com",  # production domain
-            "http://localhost:3000"   # local dev
+            "https://pay2playjc.com",                  # new frontend
+            "http://localhost:3000",                   # local dev
+            "https://www.pay2playjc.com"               # optional www subdomain
         ]
     }
 })
