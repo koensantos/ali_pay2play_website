@@ -14,12 +14,15 @@ app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
         "origins": [
-            "https://pay2playjc.com",                  # new frontend
-            "http://localhost:3000",                   # local dev
-            "https://www.pay2playjc.com"               # optional www subdomain
+            "https://pay2playjc.com",
+            "https://www.pay2playjc.com",   # optional
+            "https://ali-pay2play-website.vercel.app",  # old/staging
+            "www.pay2playjc.com",         # optional
+            "http://localhost:3000"         # dev
         ]
     }
 })
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
