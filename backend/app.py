@@ -12,7 +12,6 @@ from cleaning_scripts import campaigndonations
 app = Flask(__name__)
 CORS(app, resources={r"/*": {
     "origins": [
-        "https://ali-pay2play-website.vercel.app",
         "pay2playjc.com"
         "http://localhost:3000"  # for local dev
     ]
