@@ -80,35 +80,6 @@ export default function Comparison() {
         pay-to-play patterns. The bar chart shows totals side-by-side per candidate. The pies show each
         candidate’s red-flag share as a percentage of their own total.
       </p>
-
-      {/* Side-by-side totals vs. red flags */}
-      <div className="bar-chart-container">
-        <ResponsiveContainer width="100%" height={400}>
-          <BarChart
-            data={candidateData.map((c) => ({
-              name: c.name,
-              redFlag: c.redFlag,
-              other: c.total - c.redFlag,
-            }))}
-            margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
-          >
-            <XAxis
-              dataKey="name"
-              tick={{ fontSize: window.innerWidth < 600 ? 8 : 8 }} // smaller labels on mobile
-            />
-            <YAxis tickFormatter={formatNumberShort} />
-            <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
-            <Legend />
-
-            {/* Bottom part: other donations */}
-            <Bar dataKey="other" fill="#1D3557" name="Other Donations" stackId="stack1" />
-
-            {/* Top part: red flag donations */}
-            <Bar dataKey="redFlag" fill="#E63946" name="Red Flag Donations" stackId="stack1" />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-
       {/* One pie per candidate with legend-based percentages */}
       <h2>Red-Flag Share by Candidate</h2>
       <div className="pie-chart-grid">
@@ -168,6 +139,33 @@ export default function Comparison() {
             </div>
           );
         })}
+      </div>
+
+      <div className="bar-chart-container">
+        <ResponsiveContainer width="100%" height={400}>
+          <BarChart
+            data={candidateData.map((c) => ({
+              name: c.name,
+              redFlag: c.redFlag,
+              other: c.total - c.redFlag,
+            }))}
+            margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+          >
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: window.innerWidth < 600 ? 8 : 8 }} // smaller labels on mobile
+            />
+            <YAxis tickFormatter={formatNumberShort} />
+            <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
+            <Legend />
+
+            {/* Bottom part: other donations */}
+            <Bar dataKey="other" fill="#1D3557" name="Other Donations" stackId="stack1" />
+
+            {/* Top part: red flag donations */}
+            <Bar dataKey="redFlag" fill="#E63946" name="Red Flag Donations" stackId="stack1" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
 
       <div className="back-link">
