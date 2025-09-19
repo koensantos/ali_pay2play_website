@@ -16,9 +16,7 @@ CORS(app, resources={
         "origins": [
             "https://pay2playjc.com",
             "https://www.pay2playjc.com",   # optional
-            "https://ali-pay2play-website.vercel.app",  # old/staging
-            "www.pay2playjc.com",         # optional
-            "http://localhost:3000"         # dev
+            "pay2playjc.com",         # optional
         ]
     }
 })
