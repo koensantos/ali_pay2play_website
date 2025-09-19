@@ -9,13 +9,14 @@ from rapidfuzz import fuzz
 
 from cleaning_scripts import campaigndonations
 
-app = Flask(__name__)
-CORS(app, resources={r"/*": {
-    "origins": [
-        "pay2playjc.com"
-        "http://localhost:3000"  # for local dev
-    ]
-}})
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "https://pay2playjc.com",  # production domain
+            "http://localhost:3000"   # local dev
+        ]
+    }
+})
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
