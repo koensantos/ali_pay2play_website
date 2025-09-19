@@ -9,6 +9,8 @@ from rapidfuzz import fuzz
 
 from cleaning_scripts import campaigndonations
 
+app = Flask(__name__)
+
 CORS(app, resources={
     r"/*": {
         "origins": [
