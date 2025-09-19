@@ -12,7 +12,7 @@ from cleaning_scripts import campaigndonations
 CORS(app, resources={
     r"/*": {
         "origins": [
-            "https://pay2playjc.com",  # production domain
+            "http://pay2playjc.com",  # production domain
             "http://localhost:3000"   # local dev
         ]
     }
