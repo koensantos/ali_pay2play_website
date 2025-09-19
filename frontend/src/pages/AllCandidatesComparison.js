@@ -142,6 +142,8 @@ export default function Comparison() {
       </div>
 
       <div className="bar-chart-container">
+      <h2>Red-Flag Bar Chart Comparison</h2>
+
         <ResponsiveContainer width="100%" height={400}>
           <BarChart
             data={candidateData.map((c) => ({
