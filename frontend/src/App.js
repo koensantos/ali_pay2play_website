@@ -7,6 +7,8 @@ import BillODea from "./pages/BillODea";
 import JoyceWatterman from "./pages/JoyceWatterman";
 import JamesSolomon from "./pages/JamesSolomon";
 import AllCandidatesComparison from "./pages/AllCandidatesComparison";
+import { Analytics } from '@vercel/analytics/next';
+
 
 
 export default function App() {
