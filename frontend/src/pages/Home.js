@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-import { Analytics } from '@vercel/analytics/next';
 
 
 import mussabImg from "./img/mussab.jpg";
@@ -24,7 +23,6 @@ export default function Home() {
 
   return (
     <div className="homepage">
-      <Analytics />
       {/* Fixed Mobile Header */}
       <div className="mobile-header">
         <button
