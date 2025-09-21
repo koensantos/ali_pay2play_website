@@ -7,11 +7,14 @@ import BillODea from "./pages/BillODea";
 import JoyceWatterman from "./pages/JoyceWatterman";
 import JamesSolomon from "./pages/JamesSolomon";
 import AllCandidatesComparison from "./pages/AllCandidatesComparison";
+import { Analytics } from '@vercel/analytics/react';
+
 
 
 
 export default function App() {
   return (
+    <>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,6 +26,8 @@ export default function App() {
         <Route path="/comparison" element={<AllCandidatesComparison />} />
       </Routes>
     </Router>
+    <Analytics />
+    </>
   );
 }
 
