@@ -1190,6 +1190,24 @@ export default function Draft() {
       )}
     </div>
 
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
+        onClick={() => toggleAccordion(25)}
+        aria-expanded={openIndex === 25}
+      >
+        Irene Barnaby, Agent at Compass NJ - $2,900
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 25 && (
+        <div className="accordion-content">
+          <p>
+            Irene Barnaby, an executive with Compass NJ, personally donated a total of $2,900 to Solomon's campaign in 2024 and 2025. While the donations were made in her name rather than by Compass directly, the connection to a major real estate brokerage raises concern. Compass is deeply tied to Jersey City’s real estate market and stands to benefit from zoning, planning, and development decisions shaped by city leadership. Because executives of real estate firms have a direct financial interest in policies that affect property values and development opportunities, this contribution presents a potential conflict of interest and is appropriately marked as a strong red flag.
+          </p>
+         </div>
+      )}
+    </div>
+
     
 
 
