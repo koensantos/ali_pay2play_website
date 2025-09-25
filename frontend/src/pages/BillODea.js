@@ -200,7 +200,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $228,475.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $307,475.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -1263,7 +1263,7 @@ export default function Draft() {
         className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
         onClick={() => toggleAccordion(27)}
         aria-expanded={openIndex === 27}>
-          Richard Ranalli, Managing Partner of Rivermayn - $2,500
+          Richard Ranalli, Managing Partner of Rivermayn - $1,500
         <span className="accordion-arrow" />
       </button>
       {openIndex === 27 && (
@@ -1359,6 +1359,151 @@ export default function Draft() {
           </div>
         )}
       </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 33 ? "active" : ""}`}
+          onClick={() => toggleAccordion(33)}
+          aria-expanded={openIndex === 33}
+        >
+          Sprinkler Fitters Local #696 - $5,200
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 33 && (
+          <div className="accordion-content">
+            <p>
+              Local 696, the sprinkler fitters union, donated \$5,200 to Bill O’Dea’s campaign while simultaneously receiving multiple payments from Jersey City through its various funds, including pension, welfare, training, building trades, and sprinkler industry accounts. These expenditures, tied to labor and benefit obligations across city building and infrastructure projects, establish a financial relationship between the city and the union. While such payments may reflect contractual obligations, the union’s political contributions create the appearance of a conflict of interest. This overlap between city disbursements and campaign donations raises pay-to-play concerns and represents a strong red flag.
+            </p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $6,064.57</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $4,399.35</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $23,006.28</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/398846">4/10/24 - $5,411.17</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/394633">2/5/24 - $6,288.38</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/393695">1/22/24 - $11,123.66</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $12,534.94</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $14,470.30</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $11,478.59</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $14,177.51</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $16,616.19</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $7,483.77</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/89720">4/24/23 - $6,536.28</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $1,345.07</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $1,057.04</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $9,258.33</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $1,545.12</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/76260">9/16/22 - $13,002.43</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/22/22 - $2,317.81</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/73114">8/12/22 - $13,069.01</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/59833">11/22/21 - $108.88</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/59215">11/09/21 - $362.94</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/58727">10/26/21 - $544.42</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/56489">9/20/21 - $330.25</a></p>
+           <p><a href="https://cityofjerseycity.civicweb.net/document/46338">4/14/21 - $2,796.19</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 34 ? "active" : ""}`}
+          onClick={() => toggleAccordion(34)}
+          aria-expanded={openIndex === 34}
+        >
+          32BJ United America Dream Fund PAC - $15,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 34 && (
+          <div className="accordion-content">
+            <p>A significant red flag arises from the $15,000 contribution from the 32BJ United America Dream Fund PAC to Bill O’Dea’s campaign on June 18, 2025. This donation preceded the Jersey City Council’s September 10, 2025 resolution supporting 32BJ SEIU security officers in their 2025 contract campaign. The timing and alignment of the donation with these council actions suggest a potential conflict of interest and raise pay-to-play concerns, as the political committee making the contribution represents a union directly impacted by city contracts. Such a pattern of giving signals the possibility of undue influence over municipal decision-making, even in the absence of explicit legal violations.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436644">Res 25-574 - Sep 10, 2025</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/343830">Res 23-805 - Nov 8, 2023</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 35 ? "active" : ""}`}
+          onClick={() => toggleAccordion(35)}
+          aria-expanded={openIndex === 35}
+        >
+          Pipefitters Local Union 274 - $10,500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 35 && (
+          <div className="accordion-content">
+            <p>Pipefitters Local Union 274 donated \$10,500 to Bill O’Dea’s campaign. The union has received multiple payments from Jersey City for labor and benefits, including \$57,210.94 on 1/6/22, \$9,858.07 on 7/9/21, and \$58,795.54 on 4/14/21, demonstrating a direct financial relationship with the city. Contributions from unions with municipal exposure present a potential conflict of interest, as elected officials could influence decisions affecting union members’ pay, benefits, or work opportunities. Given this overlap between campaign donations and city expenditures, the contribution raises clear pay-to-play concerns and is appropriately classified as a strong red flag.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $57,210.94</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/51506">7/9/21 - $9,858.07</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/46338">4/14/21 - $58,795.54</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 36 ? "active" : ""}`}
+          onClick={() => toggleAccordion(36)}
+          aria-expanded={openIndex === 36}
+        >
+          Businesses for Better Neighborhoods - $42,500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 36 && (
+          <div className="accordion-content">
+           <p>A potential red flag emerges around the nonprofit Businesses for Better Neighborhoods, which donated a total of $42,500 to Bill O’Dea’s campaign in 2024. Public records list the group at the same 537 North Avenue, Plainfield address as Landmark Hospitality, a company that owns two luxury event venues in Jersey City, Hudson House and Liberty House, both of which depend heavily on city approvals, permits, and favorable relationships with local government. The unusually large nonprofit contributions, coupled with the shared address and direct business interests in Jersey City, raise concerns about whether these donations reflect genuine community advocacy or are instead a vehicle for advancing a developer’s agenda. While more transparency is needed to fully establish the nature of this nonprofit’s role, the overlap of large campaign donations, real estate interests, and businesses reliant on city regulation is a clear warning sign of potential pay-to-play influence.</p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 37 ? "active" : ""}`}
+          onClick={() => toggleAccordion(37)}
+          aria-expanded={openIndex === 37}
+        >
+          Junior Maldonado, Hudson County Clerk - $5,750
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 37 && (
+          <div className="accordion-content">
+            <p>Hudson County Clerk Junior Maldonado, a longtime figure within the Hudson County Democratic Organization (HCDO), directed a total of $5,750 to Bill O’Dea’s campaign between November 2023 and March 2025 through his election committee. While Maldonado’s office does not oversee city contracting, his position as county clerk gives him influence within the broader Hudson County political machine. The scale and frequency of these contributions point to more than routine political support, suggesting a deliberate effort to align O’Dea with the HCDO establishment. This alignment raises concerns about Jersey City’s political independence, as significant financial backing from county power brokers can translate into expectations of political favors or patronage. The donations therefore represent a strong red flag, not only because of their size but also because they reinforce the broader issue of county machine dominance in Jersey City politics.</p>
+          </div>
+        )}
+      </div>
+
+      <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 76 ? "active" : ""}`}
+        onClick={() => toggleAccordion(76)}
+        aria-expanded={openIndex === 76}
+      >
+        B.A.C Administrative District Council of NJ - $3,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 76 && (
+        <div className="accordion-content">
+          <p>
+            The B.A.C. Administrative District Council of New Jersey contributed $3,000 to O'Dea's campaign, while records show the City of Jersey City has paid the union substantial sums for various projects, including $36,506.07 on April 6, 2023, and $28,265.70 on March 17, 2023, among numerous other disbursements exceeding $100,000 since early 2023. This overlap between significant campaign contributions and recurring city expenditures creates a strong pay-to-play concern. While unions have a legitimate role in supporting candidates, the scale of financial ties in this case raises questions about whether public contracting decisions could be influenced by political donations, signaling a potential conflict of interest.
+          </p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $7,614.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $6,980.80</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $3,080.16</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $4,956.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $8,538.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $5,155.92</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $267.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $3,427.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $6,355.20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $14,012.29</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $36,506.07</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $28,265.70</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $5,481.36</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $5,185.98</a></p>
+        </div>
+      )}
+    </div>
+
 
 
 

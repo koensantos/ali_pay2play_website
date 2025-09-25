@@ -19,9 +19,9 @@ import "./DonationComparison.css";
 // Example hardcoded data (replace with your real numbers)
 const candidateData = [
   { name: "Mussab Ali", total: 458408.92, redFlag: 0 },
-  { name: "Bill ODea", total: 1042602.5, redFlag: 228475 },
-  { name: "Jim McGreevey", total: 3614480.39, redFlag: 1091533 },
-  { name: "James Solomon", total: 1232474.33, redFlag: 141720 },
+  { name: "Bill ODea", total: 1042602.5, redFlag: 307475 },
+  { name: "Jim McGreevey", total: 3614480.39, redFlag: 1258633 },
+  { name: "James Solomon", total: 1232474.33, redFlag: 162120 },
   { name: "Joyce Watterman", total: 286641, redFlag: 49815}
 ];
 
@@ -173,6 +173,9 @@ export default function Comparison() {
       <div className="back-link">
         <Link to="/">← Back to Homepage</Link>
       </div>
+
+      <footer>PAID FOR BY ALI FOR JERSEY CITY
+PO BOX 8237, JERSEY CITY, NJ 07308</footer>
     </div>
   );
 }

@@ -201,7 +201,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $1,091,533.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $1,258,633.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -2224,6 +2224,160 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
       )}
     </div>
 
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 73 ? "active" : ""}`}
+        onClick={() => toggleAccordion(73)}
+        aria-expanded={openIndex === 73}
+      >
+        Adam Altman, Managing Member at KABR - $1,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 73 && (
+        <div className="accordion-content">
+          <p>
+            Adam Altman, a managing member of KABR Group, donated $1,000 to McGreevey’s campaign in 2024. KABR Group is a prominent real estate investment and development firm with multiple high-profile projects in Jersey City, including 26 Journal Square, 30 Journal Square, the Canopy by Hilton Hotel, 65 Bay Street, and the Arts & Powerhouse Building. Because these projects rely on city approvals, zoning decisions, and ongoing support from local leadership, Altman’s donation raises clear concerns about pay-to-play and potential conflicts of interest. Given the direct financial stake KABR has in Jersey City’s development landscape, this contribution is a strong red flag.
+          </p>
+          <p><a href="https://kabrgroup.com/portfolio/properties">KABR's Projects</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 74 ? "active" : ""}`}
+        onClick={() => toggleAccordion(74)}
+        aria-expanded={openIndex === 74}
+      >
+        Greater NJ Carpenters PAC - $120,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 74 && (
+        <div className="accordion-content">
+          <p>
+            The Greater NJ Carpenters, through their PAC, have donated $120,200 to Jim McGreevey’s Jersey City mayoral campaign while simultaneously receiving a long series of substantial expenditure payments from the City of Jersey City. Public records show repeated payments from April 2021 through September 2025, including $143,038.07 (4/14/21), $90,258.05 (9/7/21), $77,426.57 (1/6/22), $168,212.69 (6/24/24), $117,874.81 (1/22/24), and dozens of others ranging from $15,129 to over $72,000, with many months showing multiple payments. Altogether, these expenditures represent millions of dollars directed to the union over four years. The overlap between such consistent, large-scale municipal payments and the PAC’s significant political contributions to McGreevey represents a strong red flag for potential pay-to-play and conflict of interest concerns, raising questions about whether the union’s financial support could influence the city’s contracting and expenditure decisions.
+          </p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/436931">9/3/25 - $25,521.66</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $15,941.21</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $58,510.39</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $33,158.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/425256">3/24/25 - $38,253.15</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/422620">2/24/25 - $36,687.15</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $28,140.29</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $29,116.55</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $36,667.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $30,217.54</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $32,504.19</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $34,820.65</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $168,212.69</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $66,602.78</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394633">2/5/24 - $56,934.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/393695">1/22/24 - $117,874.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $72,711.03</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $53,607.40</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $45,114.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $55,762.64</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $56,410.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $35,196.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $37,071.05</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $37,835.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $41,939.10</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $48,206.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $58,599.19</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/81765">12/9/22 - $49,546.18</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $44,633.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $37,863.91</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/2/22 - $29,022.48</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/73623">8/17/22 - $15,129.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $44,999.56</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/67367">4/22/22 - $44,485.55</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $46,873.61</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $22,919.20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64284">2/17/22 - $36,280.73</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $77,426.57</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/55896">9/7/21 - $90,258.05</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/46338">4/14/21 - $143,038.07</a></p>
+
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 75 ? "active" : ""}`}
+        onClick={() => toggleAccordion(75)}
+        aria-expanded={openIndex === 75}
+      >
+        William Baroni - $2,500
+        Wendy Neu - $5,200
+        Hugo Neu Corporation - $33,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 75 && (
+        <div className="accordion-content">
+          <p>
+            Hugo Neu and its principals have made significant contributions to Jim McGreevey’s mayoral campaign, including maximum-level individual donations from Wendy Neu (\$5,200) and William Baroni (\$2,500), as well as large corporate contributions of \$12,200 and \$20,800 from Hugo Neu Corporation. At the same time, Hugo Neu remains the property owner of the contaminated 1 Jersey Avenue site, where NJDEP oversight has resulted in a Response Action Outcome, a Soil Remedial Action Permit, and a Classification Exception Area/Well Restriction Area due to ongoing soil and groundwater contamination. This overlap between substantial political giving and unresolved regulatory obligations tied to a major redevelopment property in Jersey City presents a strong red flag for potential pay-to-play concerns and conflicts of interest, raising questions about whether campaign contributions could influence the city’s handling of environmental and development matters involving Hugo Neu.
+          </p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/383306">November 8, 2023 Agenda</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/93909">June 28, 2023 Agenda</a></p>
+
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 76 ? "active" : ""}`}
+        onClick={() => toggleAccordion(76)}
+        aria-expanded={openIndex === 76}
+      >
+        B.A.C Administrative District Council of NJ - $6,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 76 && (
+        <div className="accordion-content">
+          <p>
+            The B.A.C. Administrative District Council of New Jersey contributed $6,000 to McGreevey's campaign, while records show the City of Jersey City has paid the union substantial sums for various projects, including $36,506.07 on April 6, 2023, and $28,265.70 on March 17, 2023, among numerous other disbursements exceeding $100,000 since early 2023. This overlap between significant campaign contributions and recurring city expenditures creates a strong pay-to-play concern. While unions have a legitimate role in supporting candidates, the scale of financial ties in this case raises questions about whether public contracting decisions could be influenced by political donations, signaling a potential conflict of interest.
+          </p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $7,614.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $6,980.80</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $3,080.16</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $4,956.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $8,538.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $5,155.92</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $267.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $3,427.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $6,355.20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $14,012.29</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $36,506.07</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $28,265.70</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $5,481.36</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $5,185.98</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 77 ? "active" : ""}`}
+        onClick={() => toggleAccordion(77)}
+        aria-expanded={openIndex === 77}
+      >
+        Khacharurian Engineering Assoc INC - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 77 && (
+        <div className="accordion-content">
+          <p>
+            Khacharurian Engineering Associates, Inc., an MEP engineering firm with multiple active projects in Jersey City, contributed $5,200 to Jim McGreevey’s mayoral campaign. Given the firm’s ongoing and potential city development projects relating to real estate projects, such as 425 Summit Avenue and 351 Marin Boulevard, this donation raises a strong red flag for pay-to-play concerns. The contribution creates the appearance of a conflict of interest, as the firm could potentially benefit from favorable city approvals, expedited permitting, or informal influence over municipal decisions. The timing and size of the donation, relative to the firm’s business interests in the city, further underscore the risk of perceived or actual undue influence.
+          </p>
+          <p><a href="https://www.keaengineers.com/featured-mep-projects">Featured Projects</a></p>
+        </div>
+      )}
+    </div>
+
+
+
 
 
 
@@ -2302,6 +2456,8 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         <a href="/" className="btn-return">Return to Home Page</a>
         <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=454445">View Full ELEC Records</a>
       </div>
+      <footer>PAID FOR BY ALI FOR JERSEY CITY
+PO BOX 8237, JERSEY CITY, NJ 07308</footer>
     </div>
   );
 }

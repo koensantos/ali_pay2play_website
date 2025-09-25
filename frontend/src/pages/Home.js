@@ -56,10 +56,24 @@ export default function Home() {
         </div>
 
         <p className="intro">
-          This platform is dedicated to promoting transparency in Jersey City’s 2025 mayoral race. Our goal is to help voters understand the financial influences shaping each campaign by breaking down donation trends, highlighting potential pay-to-play patterns, and showcasing top donors. The totals shown for each candidate include personal contributions, pay-to-play contributions from the New Jersey ELEC database, and joint committee contributions. We encourage Jersey City residents to explore the site and share it widely to promote informed voting and civic engagement.        </p>
-        <p className="disclaimer">
-          <strong>Disclaimer:</strong> This site is continually updated using publicly available campaign finance data. As new candidates enter the race or additional donations are reported, our information will be revised accordingly. While we strive to present the data in a clear and accessible way, we encourage users to conduct their own research and consult official NJ ELEC records for complete accuracy.
-        </p>
+    This platform is dedicated to promoting transparency in Jersey City’s 2025 mayoral race. 
+    Our goal is to help voters understand the financial influences shaping each campaign by 
+    breaking down donation trends, highlighting potential pay-to-play patterns, and showcasing 
+    top donors. The totals shown for each candidate include personal contributions, pay-to-play 
+    contributions from the New Jersey ELEC database, and joint committee contributions. We 
+    encourage Jersey City residents to explore the site and share it widely to promote informed 
+    voting and civic engagement.
+  </p>
+  <p className="credit">
+    <strong>Created and maintained by Koen Mitchel Santos, Jersey City resident.</strong>
+  </p>
+  <p className="disclaimer">
+    <strong>Disclaimer:</strong> This site is continually updated using publicly available 
+    campaign finance data. As new candidates enter the race or additional donations are reported, 
+    our information will be revised accordingly. While we strive to present the data in a clear 
+    and accessible way, we encourage users to conduct their own research and consult official 
+    NJ ELEC records for complete accuracy.
+  </p>  
       </header>
 
       <section className="candidate-section">
@@ -73,6 +87,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <footer>PAID FOR BY ALI FOR JERSEY CITY
+PO BOX 8237, JERSEY CITY, NJ 07308</footer>
     </div>
   );
 }

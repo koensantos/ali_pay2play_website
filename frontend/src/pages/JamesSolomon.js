@@ -202,7 +202,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $141,720.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $162,120.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -1208,6 +1208,44 @@ export default function Draft() {
       )}
     </div>
 
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
+          onClick={() => toggleAccordion(26)}
+          aria-expanded={openIndex === 26}
+        >
+          IBEW Local Union 164 - $2,500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 26 && (
+          <div className="accordion-content">
+            <p>The donations from IBEW Local Union 164 to Solomon, totaling $2,500, raise a strong red flag given the union’s extensive financial ties with Jersey City. Public records show that IBEW Local 164 has received significant city payments over multiple years, including large expenditures in 2021, 2022, 2024, and 2025. The sequence of receiving municipal funds and then contributing heavily to O’Dea’s campaign creates the appearance of a pay-to-play cycle, where taxpayer money flows to the union and then back into local politics. This dynamic heightens concerns about whether the union is seeking to preserve or expand its influence over future contracts and city decisions. While no direct illegality is proven, the overlap between city expenditures and campaign donations underscores the risk of undue influence and the need for greater transparency.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $8,672.67</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $10,086.83</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $65,573.14</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/53126">8/17/21 - $44,465.12</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
+          onClick={() => toggleAccordion(27)}
+          aria-expanded={openIndex === 27}
+        >
+          32BJ United America Dream Fund PAC - $15,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 27 && (
+          <div className="accordion-content">
+            <p>A significant red flag arises from the $15,000 contribution from the 32BJ United America Dream Fund PAC to James Solomon's campaign on June 26, 2025. This donation preceded the Jersey City Council’s September 10, 2025 resolution supporting 32BJ SEIU security officers in their 2025 contract campaign. The timing and alignment of the donation with these council actions suggest a potential conflict of interest and raise pay-to-play concerns, as the political committee making the contribution represents a union directly impacted by city contracts. Such a pattern of giving signals the possibility of undue influence over municipal decision-making, even in the absence of explicit legal violations.</p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/436644">Res 25-574 - Sep 10, 2025</a></p>
+            <p><a href="https://cityofjerseycity.civicweb.net/document/343830">Res 23-805 - Nov 8, 2023</a></p>
+          </div>
+        )}
+      </div>
+
     
 
 
@@ -1240,6 +1278,9 @@ export default function Draft() {
         <a href="/" className="btn-return">Return to Home Page</a>
         <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=436752">View Full ELEC Records</a>
       </div>
+
+      <footer>PAID FOR BY ALI FOR JERSEY CITY
+PO BOX 8237, JERSEY CITY, NJ 07308</footer>
     </div>
   );
 }
