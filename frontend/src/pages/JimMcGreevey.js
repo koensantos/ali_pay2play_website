@@ -2457,9 +2457,7 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=454445">View Full ELEC Records</a>
       </div>
       <footer className="footer">
-  <div className="footer-box">
-    <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
-  </div>
+  <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
 </footer>
 
     </div>

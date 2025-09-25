@@ -483,14 +483,12 @@ button[type="submit"] {
 .footer {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 
-.footer-box {
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  font-weight: bold;
+.footer p {
+  font-size: 0.7rem; /* makes it small */
+  color: #555;       /* subtle gray */
+  margin: 0;
 }
+

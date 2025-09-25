@@ -56,14 +56,9 @@ export default function Home() {
         </div>
 
         <p className="intro">
-    This platform is dedicated to promoting transparency in Jersey City’s 2025 mayoral race. 
-    Our goal is to help voters understand the financial influences shaping each campaign by 
-    breaking down donation trends, highlighting potential pay-to-play patterns, and showcasing 
-    top donors. The totals shown for each candidate include personal contributions, pay-to-play 
-    contributions from the New Jersey ELEC database, and joint committee contributions. We 
-    encourage Jersey City residents to explore the site and share it widely to promote informed 
-    voting and civic engagement.
+    This platform is dedicated to promoting transparency in Jersey City’s 2025 mayoral race. As part of Mussab Ali’s pay to play pledge we want to to help voters understand the financial influences shaping each campaign by breaking down donation trends, highlighting potential pay-to-play patterns, and showcasing top donors. The totals shown for each candidate include personal contributions, pay-to-play contributions from the New Jersey ELEC database, and joint committee contributions. We encourage Jersey City residents to explore the site and share it widely to promote informed voting and civic engagement.
   </p>
+  <p className = "intro"> All donations are up to date as of 2025 Q2 filing deadline </p>
   <p className="credit">
     <strong>Created and maintained by Koen Mitchel Santos, Jersey City resident.</strong>
   </p>
@@ -88,10 +83,8 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
-  <div className="footer-box">
-    <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
-  </div>
+     <footer className="footer">
+  <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
 </footer>
 
     </div>

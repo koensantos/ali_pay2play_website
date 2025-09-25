@@ -174,10 +174,8 @@ export default function Comparison() {
         <Link to="/">← Back to Homepage</Link>
       </div>
 
-      <footer className="footer">
-  <div className="footer-box">
-    <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
-  </div>
+    <footer className="footer">
+  <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
 </footer>
 
     </div>
