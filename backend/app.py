@@ -9,7 +9,6 @@ from rapidfuzz import fuzz
 
 from cleaning_scripts import campaigndonations
 
-from vercel.analytics.react import Analytics
 
 app = Flask(__name__)
 
