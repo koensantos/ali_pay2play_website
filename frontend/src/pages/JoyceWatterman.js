@@ -673,8 +673,12 @@ Joyce Watterman’s campaign has been flagged for receiving suspicious donations
         <a href="/" className="btn-return">Return to Home Page</a>
         <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=461973">View Full ELEC Records</a>
       </div>
-      <footer>PAID FOR BY ALI FOR JERSEY CITY
-PO BOX 8237, JERSEY CITY, NJ 07308</footer>
+      <footer className="footer">
+  <div className="footer-box">
+    <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
+  </div>
+</footer>
+
     </div>
   );
 }

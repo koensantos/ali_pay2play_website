@@ -1563,6 +1563,13 @@ export default function Draft() {
         <a href="/" className="btn-return">Return to Home Page</a>
         <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=459066">View Full ELEC Records</a>
       </div>
+
+      <footer className="footer">
+  <div className="footer-box">
+    <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
+  </div>
+</footer>
+
     </div>
   );
 }
