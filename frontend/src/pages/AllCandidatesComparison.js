@@ -19,10 +19,10 @@ import "./DonationComparison.css";
 // Example hardcoded data (replace with your real numbers)
 const candidateData = [
   { name: "Mussab Ali", total: 458408.92, redFlag: 0 },
-  { name: "James Solomon", total: 1232474.33, redFlag: 162120 },
-  { name: "Jim McGreevey", total: 3614480.39, redFlag: 1258633 },
-  { name: "Bill ODea", total: 1042602.5, redFlag: 307475 },
-  { name: "Joyce Watterman", total: 286641, redFlag: 49815}
+  { name: "James Solomon", total: 1232474.33, redFlag: 142220 },
+  { name: "Jim McGreevey", total: 3614480.39, redFlag: 1257283 },
+  { name: "Bill ODea", total: 1042602.5, redFlag: 315225 },
+  { name: "Joyce Watterman", total: 286641, redFlag: 46140}
 ];
 
   const otherCandidates = [

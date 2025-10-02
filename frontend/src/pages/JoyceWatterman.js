@@ -201,7 +201,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling $49,815.{" "}
+          This candidate has been flagged for having suspicious donations, totaling $46,140.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -346,28 +346,6 @@ export default function Draft() {
       <h2>Red Flags</h2>
       <p className="intro">
 Joyce Watterman’s campaign has been flagged for receiving suspicious donations, totaling $49,815. These contributions come from individuals and entities that may present potential conflicts of interest, raising questions about the alignment of her fundraising practices with her public commitment to ethical governance. While her campaign emphasizes transparency and accountability, the presence of these red-flag donations highlights the need for continued scrutiny and oversight. This list is subject to updates as more information and quarterly reports become available.      </p>
-
-      <div className ="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 0 ? "active" : ""}`}
-        onClick={() => toggleAccordion(0)}
-        aria-expanded={openIndex === 0}
-      >
-        Leemark Electrics - $250
-        Anthony Cantanio, Owner - $650
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 0 && (
-        <div className="accordion-content">
-          <p>Leemark Electrics has donated $250 to Watterman, while Anthony Cantanio, an individual donor, has contributed a total of $650. Leemark Electrics is a company with an established presence in Jersey City, having completed multiple projects related to lighting, power distribution, and other electrical services. Beyond its project work, the company has also received city expenditures and, notably, was awarded a contract in October 2020. The donation raises concerns because of this existing financial relationship with the city. When a company that benefits from municipal contracts also contributes to a political campaign, it can create the perception of a “pay-to-play” dynamic,where donations are used to maintain or secure government business. For this reason, the contribution from Leemark Electrics has been flagged as a red flag. Additional details regarding their projects, expenditures, and contracts are outlined below.</p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/44186">$32,700 - 3/4/21</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/35805">Resolution PDF</a></p>
-          <p><a href ="https://cityofjerseycity.civicweb.net/document/30560">$9,800 - 2/19/20</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/23359">$4,120 - 3/18/20</a></p>
-
-        </div>
-      )}
-    </div>
 
     {/* Remington and Vernick Engineers */}
       <div className="accordion-item">
@@ -534,20 +512,19 @@ Joyce Watterman’s campaign has been flagged for receiving suspicious donations
         )}
       </div>
 
-      {/* The Leaf Joint */}
       <div className="accordion-item">
         <button
           className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
           onClick={() => toggleAccordion(8)}
           aria-expanded={openIndex === 8}
         >
-          Dave Jefferson, Owner of The Leaf Joint - $2,775
+          Concrete Rising - $5,200
           <span className="accordion-arrow" />
         </button>
         {openIndex === 8 && (
           <div className="accordion-content">
-            <p>Dave Jefferson, owner of The Leaf Joint, contributed $2,775 to Joyce Watterman’s campaign. This donation is a potential red flag because Jefferson’s business required and received approval from the Jersey City Council to operate a Class 5 retail cannabis establishment within the city. When individuals who are seeking or have obtained municipal approvals contribute to a candidate’s campaign, it can create the appearance of a pay-to-play scenario, where financial support might be perceived as influencing official decisions. While the contribution is legal, its connection to city approvals warrants scrutiny to maintain transparency and public trust.</p>
-            <p><strong>Res 22-675 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-100 providing local support for The Leaf Joint to operate a Class 5 retail cannabis business. <a href="https://cityofjerseycity.civicweb.net/document/74396">Resolution PDF</a></p>
+            <p>The $5,200 donation from Concrete Rising to Watterman raises a potential red flag because the company is actively involved in high-value construction projects in Jersey City, including the 631-unit mixed-use building at 400 Claremont Avenue and the 33-story high-rise residential tower with a 6-story parking garage at 88 Regent Street. While there is no direct evidence of a current contract between Concrete Rising and the city, these projects—valued at $13.2 million and $20.7 million respectively—depend on local development approvals, permits, and policies that city officials influence. As such, contributions to elected officials could be seen as a way to maintain goodwill or influence future municipal decisions, making the donation a potential pay-to-play concern, even if no direct contract has yet been awarded.</p>
+            <p><a href="https://www.concreterising.com">Concrete Rising Website</a></p>
           </div>
         )}
       </div>
@@ -558,27 +535,10 @@ Joyce Watterman’s campaign has been flagged for receiving suspicious donations
           onClick={() => toggleAccordion(9)}
           aria-expanded={openIndex === 9}
         >
-          Concrete Rising - $5,200
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 9 && (
-          <div className="accordion-content">
-            <p>The $5,200 donation from Concrete Rising to Watterman raises a potential red flag because the company is actively involved in high-value construction projects in Jersey City, including the 631-unit mixed-use building at 400 Claremont Avenue and the 33-story high-rise residential tower with a 6-story parking garage at 88 Regent Street. While there is no direct evidence of a current contract between Concrete Rising and the city, these projects—valued at $13.2 million and $20.7 million respectively—depend on local development approvals, permits, and policies that city officials influence. As such, contributions to elected officials could be seen as a way to maintain goodwill or influence future municipal decisions, making the donation a potential pay-to-play concern, even if no direct contract has yet been awarded.</p>
-            <p><a href="https://www.concreterising.com">Concrete Rising Website</a></p>
-          </div>
-        )}
-      </div>
-
-      <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
-          onClick={() => toggleAccordion(10)}
-          aria-expanded={openIndex === 10}
-        >
           Chris Murphy, Partner of Murphy Schiller & Wilkes LLP - $1,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 10 && (
+        {openIndex === 9 && (
           <div className="accordion-content">
             <p>The $1,000 donation from Chris Murphy, partner at Murphy Schiller & Wilkes LLP, to Watterman is a red flag because the firm has actively represented clients in projects requiring significant city approvals, including 660 Tonnele TMW, LLC’s Class 5 Cannabis Retail Establishment “The Medicine Woman,” for which Murphy Schiller & Wilkes LLP handled zoning variances, site plan approvals, and conditional use approvals. Additionally, the firm has submitted large expenditure claims to the city—$124,500.90 on 8/14/24 and $105,367.50 on 5/8/24—demonstrating that it receives substantial payments from municipal projects. This combination of providing legal services for high-stakes city projects while simultaneously donating to a city official creates a potential pay-to-play appearance and raises concerns about conflicts of interest and undue influence.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/409786">8/14/24 - $124,500.90</a></p>
@@ -590,16 +550,33 @@ Joyce Watterman’s campaign has been flagged for receiving suspicious donations
 
       <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 11? "active" : ""}`}
-        onClick={() => toggleAccordion(11)}
-        aria-expanded={openIndex === 11}
+        className={`accordion-header ${openIndex === 10? "active" : ""}`}
+        onClick={() => toggleAccordion(10)}
+        aria-expanded={openIndex === 10}
       >
         Najarian Associates - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 11 && (
+      {openIndex === 10 && (
         <div className="accordion-content">
           <p>The $1,000 donation from Najarian Associates to Watterman is a red flag because the firm has been deeply involved in major redevelopment projects in Jersey City, including the award-winning transformation of a chromium-contaminated site into the “Society Hill at Droyers Point” residential complex. Their work required extensive environmental assessments, remediation planning, NJDEP approvals, and numerous local permits, all of which rely on close interaction with city regulatory authorities. Given this history, the corporate donation to a city official who could influence such approvals raises concerns about the appearance of pay-to-play or potential undue influence, as the firm’s business success is closely tied to municipal decisions.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 11? "active" : ""}`}
+        onClick={() => toggleAccordion(11)}
+        aria-expanded={openIndex === 11}
+      >
+        John Fio Rito - $1,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 11 && (
+        <div className="accordion-content">
+          <p>The $1,500 donation from John Fio Rito to Watterman is a clear red flag because Fio Rito has extensive real estate holdings and development projects in Jersey City that directly require municipal approvals. His portfolio includes projects such as the 80-unit Bright and Varick residential building, the 83-unit Baker Building with tax abatement, the Mill Rocks 39-unit development, and multiple historic building renovations and condominium conversions across the city, all of which necessitated permits, site plan approvals, and compliance with city regulations. Given that these projects rely on approvals from local agencies, this contribution raises concerns about potential pay-to-play, as it could create the appearance that Fio Rito’s political donation was intended to influence or secure favorable treatment for his developments.</p>
+          <a href="https://www.pointcapdev.com/completed-projects">Point Capital Projects</a>
         </div>
       )}
     </div>
@@ -610,27 +587,10 @@ Joyce Watterman’s campaign has been flagged for receiving suspicious donations
         onClick={() => toggleAccordion(12)}
         aria-expanded={openIndex === 12}
       >
-        John Fio Rito - $1,500
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 12 && (
-        <div className="accordion-content">
-          <p>The $1,500 donation from John Fio Rito to Watterman is a clear red flag because Fio Rito has extensive real estate holdings and development projects in Jersey City that directly require municipal approvals. His portfolio includes projects such as the 80-unit Bright and Varick residential building, the 83-unit Baker Building with tax abatement, the Mill Rocks 39-unit development, and multiple historic building renovations and condominium conversions across the city, all of which necessitated permits, site plan approvals, and compliance with city regulations. Given that these projects rely on approvals from local agencies, this contribution raises concerns about potential pay-to-play, as it could create the appearance that Fio Rito’s political donation was intended to influence or secure favorable treatment for his developments.</p>
-          <a href="https://www.pointcapdev.com/completed-projects">Point Capital Projects</a>
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 13? "active" : ""}`}
-        onClick={() => toggleAccordion(13)}
-        aria-expanded={openIndex === 13}
-      >
         Art Johnson, Waterfront Management - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 13 && (
+      {openIndex === 12 && (
         <div className="accordion-content">
           <p>Art Johnson, through Waterfront Management HC LLC, contributed $5,200 to Joyce Watterman’s campaign. Johnson is a principal in the development of The Element, a $120 million, 631-unit mixed-use residential complex at 400 Claremont Avenue in Jersey City. The project includes micro-units, extensive amenities, and is situated within a Qualified Opportunity Zone, offering significant tax benefits. Given the scale of the development and its reliance on municipal approvals, the donation raises concerns about potential pay-to-play implications. While legal, such contributions from developers with active city projects warrant scrutiny to ensure transparency and prevent undue influence over local decision-making.</p>
           <a href="https://www.globest.com/2020/02/24/art-johnson-lands-120m-loan-for-jersey-city-property">Art Johnson Lands $120M Loan For Jersey City Property</a>

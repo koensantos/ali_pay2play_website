@@ -201,7 +201,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $1,258,633.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $1,257,283.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -1052,67 +1052,16 @@ The contract requires compliance with specifications, fiscal laws, and affirmati
         )}
       </div>
 
-      {/* Green Flamingo Dispensery */}
       <div className="accordion-item">
         <button
           className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
           onClick={() => toggleAccordion(18)}
           aria-expanded={openIndex === 18}
         >
-          Green Flamingo Dispensery - $250
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 18 && (
-          <div className="accordion-content">
-            <p>Green Flamingo Dispensery has donated $250 to McGreevey on April 22, 2024. They rely on city approval to run a cannibis business, which they received on February 8, 2023. While the donation is small, the donation can still raise concerns because the company’s success depends on local licensing and regulatory decisions overseen by city officials. The resolution is listed below.</p>
-            <p><strong>Res. 23-099</strong>: On February 8, 2023, the Jersey City Council approved Resolution 23-099 providing local support for Green Flamingo Dispensary, LLC to operate a Class 5 retail cannabis business.
-The resolution was made under the New Jersey Cannabis Regulatory and Marketplace Modernization Act and Jersey City’s own cannabis ordinance.
-Applicants for cannabis licenses must show municipal approval as part of their application to the State Cannabis Regulatory Commission.
-The City’s Cannabis Control Board reviewed Green Flamingo’s application and recommended Council support.
-The resolution confirms that Jersey City allows this type of license, has no cap on cannabis businesses, and gives local approval without preference.
-              <a
-                href="https://cityofjerseycity.civicweb.net/document/83506"
-              >
-                Resolution PDF
-              </a>
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Atalune INC */}
-
-      <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
-          onClick={() => toggleAccordion(19)}
-          aria-expanded={openIndex === 19}
-        >
-          Atalune INC - $500
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 19 && (
-          <div className="accordion-content">
-            <p>Altalune, Inc., which received city approval to operate a retail cannabis business, contributed $500 to Jim McGreevey. This raises concerns because Altalune’s operations are directly dependent on local licensing and oversight. The resolution is listed below.</p>
-            <p><strong>Res 23-989 </strong>On November 29, 2023, the Jersey City Council approved Resolution 23-898 providing local support for Altalune, Inc. to operate a Class 5 retail cannabis business.
-The resolution was made under the New Jersey Cannabis Regulatory and Marketplace Modernization Act and Jersey City’s cannabis ordinance.
-Applicants for cannabis licenses must show municipal approval as part of their application to the State Cannabis Regulatory Commission.
-The City’s Cannabis Control Board reviewed Altalune’s application and recommended Council approval.
-The resolution confirms Jersey City allows this type of license, has no cap on cannabis businesses, and grants local approval without preference. <a href="https://cityofjerseycity.civicweb.net/document/387441">Resolution PDF</a></p>
-          </div>
-        )}
-      </div>
-
-      <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
-          onClick={() => toggleAccordion(20)}
-          aria-expanded={openIndex === 20}
-        >
           USA Architects - $4,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 20 && (
+        {openIndex === 18 && (
           <div className="accordion-content">
             <p>USA Architects made a significant donation while actively competing for high-value city contracts, such as the City Hall – Building Exterior Rehabilitation ($419,873) and City Hall – Fourth Floor Alterations ($822,503 bid). These projects involve direct oversight by city officials who could influence contract awards, so the contribution creates an appearance of a potential conflict of interest or political leverage. Their bids are listed in the resolutions below.</p>
             <p><strong>City Hall – Building Exterior Rehabilitation (Res. 22-798, Nov 9, 2022) – $561,286 </strong> <a href="https://cityofjerseycity.civicweb.net/document/77994">Resolution PDF</a></p>
@@ -1124,14 +1073,14 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
 
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 21 ? "active" : ""}`}  
-          onClick={() => toggleAccordion(21)}
-          aria-expanded={openIndex === 21}
+          className={`accordion-header ${openIndex === 20 ? "active" : ""}`}  
+          onClick={() => toggleAccordion(20)}
+          aria-expanded={openIndex === 20}
         >
           A-Tech Concrete Co., Inc. - $1,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 21 && (
+        {openIndex === 20 && (
           <div className="accordion-content">
             <p>A-Tech Concrete donated McGreevey $1,000. This company has received expenditure payments from the city and has bidded on several contracts. This donation has been marked as a red flag because it creates the appearance of a potential conflict of interest, where campaign contributions could influence the awarding of city contracts. Given their ongoing business relationship with the city, even a relatively small donation may raise concerns about favoritism or undue influence in the procurement process. The expenditures and bidded contracts are listed below.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/60449">12/8/21 - $5,065.44</a></p>
@@ -1158,14 +1107,14 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
       {/* Reliable Tree Services INC */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
-          onClick={() => toggleAccordion(22)}
-          aria-expanded={openIndex === 22}
+          className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
+          onClick={() => toggleAccordion(21)}
+          aria-expanded={openIndex === 21}
         >
           Reliable Tree Services INC - $15,200
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 22 && (
+        {openIndex === 21 && (
           <div className="accordion-content">
             <p>Reliable Tree Services INC's $4,000 donation has been flagged due to a possible conflict of interest, as the company has received city expenditures and has been awarded a contract. This situation raises concerns under Pay-to-Play regulations, where political contributions may influence the awarding of public contracts. Given their financial ties to the city, the donation could create the appearance that the company is seeking preferential treatment or leveraging political contributions to secure business. The expenditures and resolution are listed below. </p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $42,000.000</a></p>
@@ -1178,14 +1127,14 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
       {/* Albio Sires */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
-          onClick={() => toggleAccordion(23)}
-          aria-expanded={openIndex === 23}
+          className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
+          onClick={() => toggleAccordion(22)}
+          aria-expanded={openIndex === 22}
         >
           Albio Sires - $15,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 23 && (
+        {openIndex === 22 && (
           <div className="accordion-content">
             <p>The donations from Sires-affiliated entities to a Jersey City mayoral candidate could be considered potential red flags because they originate from out-of-district political actors and campaign organizations rather than local constituents, signaling possible external influence on local elections. Sires is a former U.S. Congressman from New Jersey and part of the Democratic establishment, so these contributions may indicate establishment backing rather than grassroots support. The sizeable amounts, combined with the donors’ political connections, raise concerns that the candidate could be favoring outside interests or politically connected groups over local priorities.</p>
           </div>
@@ -1195,16 +1144,16 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
       {/* Archer & Greiner*/}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
-          onClick={() => toggleAccordion(24)}
-          aria-expanded={openIndex === 24}
+          className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
+          onClick={() => toggleAccordion(23)}
+          aria-expanded={openIndex === 23}
         >
           Archer & Greiner - $20,800
           Employee Donations - $17,000
 
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 24 && (
+        {openIndex === 23 && (
           <div className="accordion-content">
             <p>Archer & Greiner, P.C. has received multiple substantial payments from Jersey City over the years, going back to 2021. Recurring city expenditures and significant political contributions from the firm and its employees raises potential concerns about conflicts of interest or the perception of undue influence in the local election.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $371,020.95</a></p>
@@ -1222,14 +1171,14 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
 
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
-          onClick={() => toggleAccordion(25)}
-          aria-expanded={openIndex === 25}
+          className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
+          onClick={() => toggleAccordion(24)}
+          aria-expanded={openIndex === 24}
         >
           Plaza Auto Body Inc - $700
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 25 && (
+        {openIndex === 24 && (
           <div className="accordion-content">
             <p>Plaza Auto Body Inc has donated $700 to Jim McGreevey. This donation has been deemed suspicious because the company has also received substantial payments from the City of Jersey City for collision repair contracts, creating a potential conflict of interest. This raise questions about whether the contribution could be intended to influence contract renewals or maintain favorable treatment, rather than being a purely voluntary political contribution. </p>
             <p><strong>Res. 25-354 </strong>The City of Jersey City approved Resolution 25-354 on May 21, 2025, to renew one-year open-end contracts with Plaza Auto Body Inc. and Vavi’s Auto Sales, LLC for collision repairs for the Department of Public Works, Division of Automotive Maintenance. The renewal follows the original contracts awarded in June 2024, with total contract amounts of $176,146.95 for Plaza and $245,786.44 for Vavi, and includes adjustments based on the U.S. Department of Commerce Index Rate. The contracts are effective June 13, 2025, and payments will be made as orders are placed, subject to available funds and certification of compliance with contract specifications. The contractors must also provide evidence of compliance with the Affirmative Action Amendments to the Law Against Discrimination. The resolution ensures that continuation of the contracts depends on the availability of sufficient funds in the 2025 permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/429251">Resolution PDF</a></p>
@@ -1245,14 +1194,14 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
       {/* RSC Architects */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
-          onClick={() => toggleAccordion(26)}
-          aria-expanded={openIndex === 26}
+          className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
+          onClick={() => toggleAccordion(25)}
+          aria-expanded={openIndex === 25}
         >
           RSC Architects - $4,900
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 26 && (
+        {openIndex === 25 && (
           <div className="accordion-content">
             <p>The company has donated $4,900 to Jim McGreevey. RSC Architects has been involved with a construct improvement project with St. Ann's Home for the Aged (Res. 24-241) and has bidded for several contracts given by Jersey City. These donations have been deemed as suspicious because they have bidded on multiple city contracts. such as the Pershing Field Pool Natatorium Roof Replacement and City Hall exterior renovations. RSC Architects have also been involved with a construction improvement project for St Ann's Home for the Aged. Even though RSC Architects was not awarded with these contracts, their financial contributions create a perception of influence or preferential treatment in the competitive bidding process. These donations could be used as potential influence for future government members to choose them for city contracts. The biddings and resolution for the improvement project is listed below.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/396829">Improvement Project (pg 42)</a></p>
@@ -1263,36 +1212,18 @@ The resolution confirms Jersey City allows this type of license, has no cap on c
         )}
       </div>
 
-      {/* The Leaf Joiny */}
-      <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
-          onClick={() => toggleAccordion(27)}
-          aria-expanded={openIndex === 27}
-        >
-          The Leaf Joint - $600
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 27 && (
-          <div className="accordion-content">
-            <p>The Leaf Joint has donated $600 to Jim McGreevey. This donation has been flagged as suspicious because the company has received city approval to operate a retail cannabis business, which creates a potential conflict of interest. The company’s success depends on local licensing and regulatory decisions overseen by city officials, so the contribution could be seen as an attempt to influence those decisions. The resolution is listed below.</p>
-            <p><strong>Res 22-675 </strong>On February 8, 2023, the Jersey City Council approved Resolution 23-100 providing local support for The Leaf Joint to operate a Class 5 retail cannabis business. <a href="https://cityofjerseycity.civicweb.net/document/74396">Resolution PDF</a></p>
-          </div>
-        )}
-      </div>
-
       {/* Hartz Mountain Industries */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 28 ? "active" : ""}`}
-          onClick={() => toggleAccordion(28)}
-          aria-expanded={openIndex === 28}
+          className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
+          onClick={() => toggleAccordion(26)}
+          aria-expanded={openIndex === 26}
         >
           Hartz Mountain Industries - $7,000
           Constantino "Gus" Milano, President and COO - $1,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 28 && (
+        {openIndex === 26 && (
           <div className="accordion-content">
             <p>The donations connected to Hartz Mountain Industries raise potential red flag concerns. Hartz has contributed a combined $7,000, including $1,000 from President and COO Constantino “Gus” Milano. This is notable because the company, via its subsidiary 15 Exchange Place Corp., held a license agreement with Jersey City for event space and staging in 2019. They are also the landlord of the property housing RPM Raceway and have been involved with developments in 70 and 90 Hudson Street in the Waterfront. The overlap between Hartz’s business relationship with the city and its sizable campaign contributions to Jim McGreevey highlights the risk of pay-to-play dynamics. The resolutions are listed below for the developments mentioned.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/422902">Res 25-153 listing Hartz Mountain Industries as the landlord. (Page 5)</a></p>
@@ -1310,15 +1241,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
       {/*Marttine Management*/ }
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 29 ? "active" : ""}`}
-          onClick={() => toggleAccordion(29)}
-          aria-expanded={openIndex === 29}
+          className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
+          onClick={() => toggleAccordion(27)}
+          aria-expanded={openIndex === 27}
         >
           Marttine Management - $2,500
           James Marttine / James Martini, Owner - $5,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 29 && (
+        {openIndex === 27 && (
           <div className="accordion-content">
             <p>Donations from Marttine Management can be considered red flags because the company is directly tied to Kushklub, the cannabis business that received City Council approval to operate in Jersey City on August 16, 2023. Marttine Management is listed as the architectural and development entity on site and architectural plans submitted for KushKlub NJ LLC’s cannabis retail project at 550–560 Tonnele Avenue. Contributions from businesses or individuals tied to industries awaiting local approval can create the appearance of influence, even if no direct quid pro quo is proven. This makes donations in proximity to regulatory wins particularly sensitive in discussions of pay-to-play dynamics.</p>
           </div>
@@ -1328,14 +1259,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
       {/* Kad Associates */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 30 ? "active" : ""}`}
-          onClick={() => toggleAccordion(30)}
-          aria-expanded={openIndex === 30}
+          className={`accordion-header ${openIndex === 28 ? "active" : ""}`}
+          onClick={() => toggleAccordion(28)}
+          aria-expanded={openIndex === 28}
         >
           KAD Associates - $5,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 30 && (
+        {openIndex === 28 && (
           <div className="accordion-content">
             <p>Kad Associates' donations to McGreevey have been deemed as suspicious because they have received several expenditure payments from Jersey City, beginning on April 9 2021. The repeated pattern of payments alongside their political contributions raises concerns about potential conflicts of interest. The overlap suggests that their donations could be seen as a way to maintain goodwill with city leadership, blurring the line between routine business transactions and political influence. The expenditures are listed below.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $3,443.56</a></p>
@@ -1353,14 +1284,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         {/* Jasco Management Corp */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 31 ? "active" : ""}`}
-          onClick={() => toggleAccordion(31)}
-          aria-expanded={openIndex === 31}
+          className={`accordion-header ${openIndex === 29 ? "active" : ""}`}
+          onClick={() => toggleAccordion(29)}
+          aria-expanded={openIndex === 29}
         >
           Jasco Management Corp - $5,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 31 && (
+        {openIndex === 29 && (
           <div className="accordion-content">
             <p>Jasco Management Corp.’s $5,000 donation to Jim McGreevey on February 2, 2024, raises concerns because it preceded a major approval the company later received from Jersey City. On October 30, 2024, the City Council unanimously passed Ordinance 24-097, granting Jasco a 99-year franchise right to construct and maintain a large ramp encroachment into the public right-of-way at 307 Pacific Avenue, where the company leases space to the Jersey City Free Public Library. Although the ordinance was framed as serving public accessibility needs, the close proximity between Jasco’s substantial political contribution and the city’s decision to award the company a long-term benefit creates the appearance of pay-to-play dynamics. This overlap makes the donation a potential red flag. </p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/411334">Ord 24-097</a></p>
@@ -1372,14 +1303,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
       {/* Remington and Vernick Engineers */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 32 ? "active" : ""}`}
-          onClick={() => toggleAccordion(32)}
-          aria-expanded={openIndex === 32}
+          className={`accordion-header ${openIndex === 30 ? "active" : ""}`}
+          onClick={() => toggleAccordion(30)}
+          aria-expanded={openIndex === 30}
         >
           Remington and Vernick Engineers - $2,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 32 && (
+        {openIndex === 30 && (
           <div className="accordion-content">
             <p>A $2,000 donation to McGreevey is a red flag because the firm has directly provided professional engineering and design services for city projects, such as structural plans and geotechnical work for public buildings. This creates a potential conflict of interest: the donation could be perceived as an attempt to influence McGreevey or maintain favorable relations with the city administration, which could indirectly affect contract approvals, project oversight, or future business opportunities. Even if the donation is legal and disclosed, the fact that the donor is a company actively involved in city projects heightens the appearance of impropriety. The red flag arises from the overlap between the donor’s financial contribution and their professional interest in city decisions.</p>
             <p><strong>Res 23-514 </strong>Remington & Vernick Engineers is acting as the structural engineering consultant for the Engine 10 / Ladder 12 Fire Station project in Jersey City. Their role involves updating the structural design to account for new site conditions, including modifications to the foundation system based on geotechnical findings. They ensure that all structural plans comply with the 2021 International Building Code and coordinate closely with other consultants, including Netta Architects, Langan (geotechnical), and Polise Engineering (MEP), to integrate these updates into the overall project documents. Additionally, they provide construction administration support by reviewing contractor submittals, participating in progress meetings, and assisting the city with interpretation of structural aspects of the contract documents. <a href="https://cityofjerseycity.civicweb.net/document/93088">Resolution PDF</a></p>
@@ -1393,15 +1324,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 33 ? "active" : ""}`}
-          onClick={() => toggleAccordion(33)}
-          aria-expanded={openIndex === 33}
+          className={`accordion-header ${openIndex === 31 ? "active" : ""}`}
+          onClick={() => toggleAccordion(31)}
+          aria-expanded={openIndex === 31}
         >
           New York Stone - $5,200
           Employees of New York Stone - $28,400
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 33 && (
+        {openIndex === 31 && (
           <div className="accordion-content">
             <p>The donations from New York Stone—$5,200 from the company and $25,400 from its employees—are a red flag given that the company not only has multiple projects in Jersey City relating to hotels but also maintains a warehouse in the city for storing their stone slabs. This local presence indicates direct, ongoing business interests that could be affected by city policies, approvals, or contracts. Contributions to candidates like McGreevey may therefore be perceived as attempts to curry favor or ensure favorable treatment from officials who have influence over municipal decisions that impact their operations. The combination of substantial donations and a physical stake in the city heightens the potential for conflicts of interest or the appearance of undue influence.</p>
         </div>
@@ -1410,9 +1341,9 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 34 ? "active" : ""}`}
-          onClick={() => toggleAccordion(34)}
-          aria-expanded={openIndex === 34}
+          className={`accordion-header ${openIndex === 32 ? "active" : ""}`}
+          onClick={() => toggleAccordion(32)}
+          aria-expanded={openIndex === 32}
         >
           Eastern Millwork - $15,400
           Andrew Campbell, CEO/Founder - $27,700
@@ -1421,7 +1352,7 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 34 && (
+        {openIndex === 32 && (
           <div className="accordion-content">
             <p>The donations from Eastern Millwork—$10,400 in total, including contributions from CEO Andrew Campbell, co-founder Natalya Campbell, and COO Heiko Sieling—are a red flag because the company has significant projects in Jersey City, such as Hudson Exchange Phase 1B and Liberty National Villas. These projects suggest that Eastern Millwork has ongoing business interests that could be directly affected by municipal decisions or approvals. Contributions to McGreevey may create, or appear to create, a conflict of interest, as the company could benefit from favorable treatment, zoning approvals, or city contracts. The combination of sizable donations and active projects in the city raises concerns about potential influence over elected officials.</p>
             <p><a href="https://easternmillwork.com/portfolio-item/hudson-exchange-phase-1b">HUDSON EXCHANGE PHASE 1B</a></p>
@@ -1434,16 +1365,48 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 35 ? "active" : ""}`}
-          onClick={() => toggleAccordion(35)}
-          aria-expanded={openIndex === 35}
+          className={`accordion-header ${openIndex === 33 ? "active" : ""}`}
+          onClick={() => toggleAccordion(33)}
+          aria-expanded={openIndex === 33}
         >
           Craig Guy for Hudson County Executive - $5,500
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 35 && (
+        {openIndex === 33 && (
           <div className="accordion-content">
             <p>The donations from Craig Guy for Hudson County Executive to Jim McGreevey — $5,000 in June 2024 and $500 in April 2025 — raise red flag concerns. Craig Guy, as Hudson County Executive, oversees significant influence over county resources, contracts, and political networks. Contributions from his campaign committee to McGreevey, who is running for mayor of Jersey City, suggest a tightening of the county political machine around McGreevey’s candidacy. These donations may signal an effort to consolidate power and ensure alignment between county and city leadership, blurring the lines between independent campaigns and entrenched political patronage.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 34 ? "active" : ""}`}
+          onClick={() => toggleAccordion(34)}
+          aria-expanded={openIndex === 34}
+        >
+          Raj Mukherji for Senate - $16,400
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 34 && (
+          <div className="accordion-content">
+            <p>Senator Raj Mukherji’s campaign committees contributed over $16,000 to Jim McGreevey’s mayoral run—including $5,000 twice in December 2023 and additional contributions in March 2024. Mukherji wields considerable influence as a state senator and long-standing Hudson County political figure. His push to replace Jersey City’s fully elected Board of Education with an appointed model—a move broadly criticized as undemocratic and a power grab—has sparked intense backlash from local educators, parents, and elected officials, who argue it strips residents of their voice. These paired developments—a sizable multi-cycle donation combined with efforts to restructure school governance—signal concerning consolidation of political power and raise serious ethical red flags about democratic accountability and undue influence.</p>
+        </div>
+        )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 35 ? "active" : ""}`}
+          onClick={() => toggleAccordion(35)}
+          aria-expanded={openIndex === 35}
+        >
+          Election Fund of Daniel Reiman - $5,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 35 && (
+          <div className="accordion-content">
+            <p>Daniel Reiman’s campaign entity donated $5,000 to McGreevey—an amount notably high for a single political contribution. This contribution raises red-flag concerns given Reiman’s long tenure as Mayor of Carteret, and his past controversies. Reiman has faced serious reputational challenges, including sexual predator allegations from a former acquaintance that he publicly contested as defamatory. While Reiman denied these claims, the combination of the controversy and the sizable donation suggests possible reputational leverage or political alignment, which warrant careful scrutiny for potential ethical concerns or attempts to influence.</p>
         </div>
         )}
     </div>
@@ -1454,12 +1417,12 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
           onClick={() => toggleAccordion(36)}
           aria-expanded={openIndex === 36}
         >
-          Raj Mukherji for Senate - $16,400
+          Josh Gottheimer for Congress - $5,200
           <span className="accordion-arrow" />
         </button>
         {openIndex === 36 && (
           <div className="accordion-content">
-            <p>Senator Raj Mukherji’s campaign committees contributed over $16,000 to Jim McGreevey’s mayoral run—including $5,000 twice in December 2023 and additional contributions in March 2024. Mukherji wields considerable influence as a state senator and long-standing Hudson County political figure. His push to replace Jersey City’s fully elected Board of Education with an appointed model—a move broadly criticized as undemocratic and a power grab—has sparked intense backlash from local educators, parents, and elected officials, who argue it strips residents of their voice. These paired developments—a sizable multi-cycle donation combined with efforts to restructure school governance—signal concerning consolidation of political power and raise serious ethical red flags about democratic accountability and undue influence.</p>
+            <p>Josh Gottheimer’s donation can be flagged as a red flag given his history of controversy. While representing New Jersey in Congress, Gottheimer has faced criticism for being closely aligned with Wall Street and corporate donors, often clashing with progressives within his own party who argue that his positions favor corporate interests over working-class constituents. He has also been accused of undermining party unity by opposing more progressive legislation on healthcare and financial regulation. A contribution from Gottheimer could therefore suggest potential alignment with big-money politics rather than grassroots-driven priorities, raising concerns about outside influence in Jersey City’s mayoral race.</p>
         </div>
         )}
     </div>
@@ -1470,12 +1433,12 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
           onClick={() => toggleAccordion(37)}
           aria-expanded={openIndex === 37}
         >
-          Election Fund of Daniel Reiman - $5,000
+          Vin Gopal for Senate - $14,400
           <span className="accordion-arrow" />
         </button>
         {openIndex === 37 && (
           <div className="accordion-content">
-            <p>Daniel Reiman’s campaign entity donated $5,000 to McGreevey—an amount notably high for a single political contribution. This contribution raises red-flag concerns given Reiman’s long tenure as Mayor of Carteret, and his past controversies. Reiman has faced serious reputational challenges, including sexual predator allegations from a former acquaintance that he publicly contested as defamatory. While Reiman denied these claims, the combination of the controversy and the sizable donation suggests possible reputational leverage or political alignment, which warrant careful scrutiny for potential ethical concerns or attempts to influence.</p>
+            <p>Senator Vin Gopal has been at the center of several controversial actions related to New Jersey education that could raise red flags for donors. In 2025, he threatened to withhold state funding from school districts that did not offer kindergarten programs, a move that could force teacher layoffs and cut essential programs, disproportionately affecting vulnerable communities. In 2023, he criticized the State Board of Education for considering sanctions on districts slow to implement equity plans, arguing that such measures could remove funding that students rely on, sparking backlash from education advocates. Gopal also pushed for increased scrutiny and transparency over school curricula, including legislation in 2022 requiring schools to post health and sex education materials online before the school year, a move that critics say inflamed public distrust and political tension. These controversies highlight his significant influence over funding and policy in education, and contributions to his campaign,like the $14,400 from Gopal for Senate,may raise concerns about potential conflicts of interest or attempts to curry favor with a politically powerful figure involved in contentious, high-stakes decisions affecting school districts, including those in Jersey City.</p>
         </div>
         )}
     </div>
@@ -1486,42 +1449,10 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
           onClick={() => toggleAccordion(38)}
           aria-expanded={openIndex === 38}
         >
-          Josh Gottheimer for Congress - $5,200
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 38 && (
-          <div className="accordion-content">
-            <p>Josh Gottheimer’s donation can be flagged as a red flag given his history of controversy. While representing New Jersey in Congress, Gottheimer has faced criticism for being closely aligned with Wall Street and corporate donors, often clashing with progressives within his own party who argue that his positions favor corporate interests over working-class constituents. He has also been accused of undermining party unity by opposing more progressive legislation on healthcare and financial regulation. A contribution from Gottheimer could therefore suggest potential alignment with big-money politics rather than grassroots-driven priorities, raising concerns about outside influence in Jersey City’s mayoral race.</p>
-        </div>
-        )}
-    </div>
-
-    <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 39 ? "active" : ""}`}
-          onClick={() => toggleAccordion(39)}
-          aria-expanded={openIndex === 39}
-        >
-          Vin Gopal for Senate - $14,400
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 39 && (
-          <div className="accordion-content">
-            <p>Senator Vin Gopal has been at the center of several controversial actions related to New Jersey education that could raise red flags for donors. In 2025, he threatened to withhold state funding from school districts that did not offer kindergarten programs, a move that could force teacher layoffs and cut essential programs, disproportionately affecting vulnerable communities. In 2023, he criticized the State Board of Education for considering sanctions on districts slow to implement equity plans, arguing that such measures could remove funding that students rely on, sparking backlash from education advocates. Gopal also pushed for increased scrutiny and transparency over school curricula, including legislation in 2022 requiring schools to post health and sex education materials online before the school year, a move that critics say inflamed public distrust and political tension. These controversies highlight his significant influence over funding and policy in education, and contributions to his campaign,like the $14,400 from Gopal for Senate,may raise concerns about potential conflicts of interest or attempts to curry favor with a politically powerful figure involved in contentious, high-stakes decisions affecting school districts, including those in Jersey City.</p>
-        </div>
-        )}
-    </div>
-
-    <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 40 ? "active" : ""}`}
-          onClick={() => toggleAccordion(40)}
-          aria-expanded={openIndex === 40}
-        >
           Kyle Antonucci, Phoenix Warehouse  - $5,200
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 40 && (
+        {openIndex === 38 && (
           <div className="accordion-content">
             <p>The $5,200 donation to Jim McGreevey from Kyle Antonucci, Director of Operations at Phoenix Warehouse of NJ, could be considered a red flag. Phoenix Warehouse is an active site under the New Jersey Department of Environmental Protection’s Contaminated Site Remediation & Redevelopment Program, which involves regulatory oversight for soil remediation. Given Antonucci’s executive role and the company’s involvement in redevelopment projects subject to city approvals, the donation raises potential ethical concerns. While legally permissible, the contribution could be perceived as an attempt to gain favor or influence decisions related to redevelopment or regulatory matters, creating a possible conflict of interest and drawing scrutiny in Jersey City’s politically sensitive environment. <a href="https://cityofjerseycity.civicweb.net/document/90485">May 10 2023 Agenda (pg 7)</a></p>
         </div>
@@ -1530,16 +1461,16 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 41 ? "active" : ""}`}
-        onClick={() => toggleAccordion(41)}
-        aria-expanded={openIndex === 41}
+        className={`accordion-header ${openIndex === 39 ? "active" : ""}`}
+        onClick={() => toggleAccordion(39)}
+        aria-expanded={openIndex === 39}
       >
         Anthony Diaco, Founder of AJD Construction - $5,200
         Zackary,Diaco, AJD Construction - $5,200
         Nick Diaco, AJD Construction - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 41 && (
+      {openIndex === 39 && (
         <div className="accordion-content">
           <p>The donations from Zackary Diaco ($5,200), Nick Diaco ($5,200), and Anthony Diaco ($5,200)—all tied to AJD Construction, the general contractor for the 808 Pavonia Owner Urban Renewal project—are potential red flags because of the close financial and regulatory connection between the contractor and the city. AJD Construction is executing a project that qualifies for a Long-Term Tax Exemption under Ordinance 24-086, which allows the developer to receive a significant property tax abatement contingent on completing specific infrastructure and residential improvements. At the same time, the city has already made expenditures toward the company (e.g., $14,692.50 on 6/4/20), demonstrating direct public investment or support. Large personal contributions from the contractor’s executives and trade employees could be perceived as attempts to gain political favor or influence decisions related to approvals, tax incentives, or oversight of the redevelopment project. While legal, the combination of substantial city-backed incentives and large contributions from a contractor benefiting from the project creates the appearance of a potential conflict of interest or pay-to-play dynamic, making these donations ethically sensitive.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/410733">Ord 24-086</a>AJD Construction’s role as the general contractor for the 808 Pavonia Owner Urban Renewal project is directly tied to the financial and regulatory framework established by the City of Jersey City through the Long-Term Tax Exemption ordinance. This ordinance allows developers to receive a tax abatement—effectively paying only a percentage of gross revenue instead of full property taxes—in exchange for constructing significant residential, commercial, and public infrastructure improvements. Under this framework, AJD Construction is responsible for executing the project in compliance with the city-approved site plans, public infrastructure requirements, and redevelopment agreements. Their construction work enables the developer to qualify for the staged tax exemptions and financial incentives outlined in the ordinance, linking AJD’s performance directly to the economic benefits provided by the city’s policy. This connection means that AJD Construction’s role is not only operational but also integral to realizing the tax benefits granted under municipal law.</p>
@@ -1550,14 +1481,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 42 ? "active" : ""}`}
-        onClick={() => toggleAccordion(42)}
-        aria-expanded={openIndex === 42}
+        className={`accordion-header ${openIndex === 40 ? "active" : ""}`}
+        onClick={() => toggleAccordion(40)}
+        aria-expanded={openIndex === 40}
       >
         Edward Farmer, President and CEO of Millennium Strategies - $5,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 42 && (
+      {openIndex === 40 && (
         <div className="accordion-content">
           <p>The $5,500 donation from Edward Farmer, President and CEO of Millennium Strategies, raises a red flag because his firm holds a long-standing and lucrative relationship with Jersey City through its grant writing and consulting contracts. Since at least 2016, Millennium Strategies has been awarded or renewed contracts with the city worth hundreds of thousands of dollars annually, with payments documented across multiple years and resolutions showing consistent renewals. The most recent agreements (Res. 23-504 and Res. 24-681) extend the firm’s contract at annual costs of $156,000, demonstrating Millennium’s ongoing financial reliance on the city. A political donation from the company’s chief executive to local officials who oversee or influence these contracts could create the appearance of a pay-to-play arrangement, where contributions may help secure or maintain public contracts. Even if fully legal under New Jersey’s pay-to-play and disclosure laws, the timing and size of Farmer’s donation are concerning because they overlap with repeated city approvals of significant payments to his firm, making it a potential conflict-of-interest risk.</p>
          <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $13,000</a></p>
@@ -1612,14 +1543,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 43 ? "active" : ""}`}
-        onClick={() => toggleAccordion(43)}
-        aria-expanded={openIndex === 43}
+        className={`accordion-header ${openIndex === 41 ? "active" : ""}`}
+        onClick={() => toggleAccordion(41)}
+        aria-expanded={openIndex === 41}
       >
         Johnathan Feifer, Park Stone - $3,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 43 && (
+      {openIndex === 41 && (
         <div className="accordion-content">
           <p>Jonathan Feifer’s $3,000 donation to Jim McGreevey through his firm, Park Stone, raises clear red flag concerns because of the company’s direct involvement in real estate development in Jersey City, one of the most politically sensitive and lucrative sectors in the city. Park Stone specializes in opportunistic investments, including ground-up development and repositioning of multi-family and mixed-use properties, which are projects that require favorable zoning decisions, city approvals, and political backing. Given McGreevey’s potential influence over development policy and contracts, a donation from a developer with clear financial interests in Jersey City creates the appearance of pay-to-play politics. This dynamic suggests that Feifer and Park Stone could be seeking favorable treatment for future projects in exchange for campaign support. In a city already plagued by concerns about developer influence, this contribution underscores the deep entanglement between political fundraising and real estate interests. <a href="https://parkstonemanagement.com/about-us.html">Park Stone Website</a></p>
         </div>
@@ -1628,16 +1559,50 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 44 ? "active" : ""}`}
-        onClick={() => toggleAccordion(44)}
-        aria-expanded={openIndex === 44}
+        className={`accordion-header ${openIndex === 42 ? "active" : ""}`}
+        onClick={() => toggleAccordion(42)}
+        aria-expanded={openIndex === 42}
       >
         Bikram Gill, Carepoint Health System - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 44 && (
+      {openIndex === 42 && (
         <div className="accordion-content">
           <p>Bikram Gill’s $5,200 donation to Jim McGreevey is a red flag because of his position as a trustee of CarePoint Health, the parent system of Christ Hospital, Hoboken University Medical Center, and Bayonne Medical Center. Jersey City has repeatedly passed resolutions (<a href="https://cityofjerseycity.civicweb.net/document/89649">Res 23-332</a> in 2023 and <a href="https://cityofjerseycity.civicweb.net/document/412156">Res 24-735</a> in 2024) explicitly calling for state and county leaders to provide financial support and long-term stabilization for CarePoint’s hospitals, including advocating for tens of millions of dollars in funding. As a trustee, Gill has a direct governance role in an organization that stands to benefit from these public subsidies, restructuring plans, and political backing. His donation creates the appearance that CarePoint’s leadership is financially supporting a candidate who could influence the city’s advocacy and allocation of resources. This overlap between campaign contributions and ongoing government efforts to secure CarePoint’s financial survival raises serious concerns about conflicts of interest and pay-to-play dynamics.</p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 43? "active" : ""}`}
+        onClick={() => toggleAccordion(43)}
+        aria-expanded={openIndex === 43}
+      >
+        Scott Heagney, Owner of GPI Builders & Engineers - $7,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 43 && (
+        <div className="accordion-content">
+          <p>Scott Heagney’s donations to Jim McGreevey raise serious pay-to-play concerns because his company, GPI Engineers and Builders, is heavily dependent on public-sector contracts, including its multimillion-dollar role in the Pulaski Skyway rehabilitation project. As a firm whose revenue comes from government-funded infrastructure work, GPI’s success is closely tied to political decision-making around contracts, funding, and development priorities. By contributing to McGreevey’s mayoral campaign, Heagney creates the appearance of buying access or favorable consideration for future projects in Jersey City, blurring the line between civic participation and self-interested influence. This intersection of political donations and lucrative public contracts highlights a potential conflict of interest and fits a broader pattern of pay-to-play dynamics in local politics. <a href="https://www.gpinet.com/projects/pulaski-skyway-rehabilitation">Link to their project.</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 44? "active" : ""}`}
+        onClick={() => toggleAccordion(44)}
+        aria-expanded={openIndex === 44}
+      >
+        Donald Scarinci - $66,000
+        Dave Hollenbeck - $5,200
+        Kenneth J Hollenbeck - $22,900
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 44 && (
+        <div className="accordion-content">
+          <p>These donations are a red flag because Scarinci & Hollenbeck, the law firm behind them, is one of the most prominent municipal law firms in New Jersey, earning millions in public contracts for services like municipal counsel, redevelopment, and bond work. When multiple attorneys from the firm each give the legal maximum to the same candidate, it suggests a coordinated effort to secure political goodwill. This is concerning because the firm regularly represents cities and agencies in Hudson County—exactly the type of entities that could be impacted by the mayor’s decisions. If the candidate were to win, awarding future legal contracts to Scarinci & Hollenbeck could create an apparent quid pro quo, blurring the line between public service and private profit. The scale and pattern of these donations look less like community support and more like a strategic investment in influence.</p>
         </div>
       )}
     </div>
@@ -1648,47 +1613,13 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         onClick={() => toggleAccordion(45)}
         aria-expanded={openIndex === 45}
       >
-        Scott Heagney, Owner of GPI Builders & Engineers - $7,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 45 && (
-        <div className="accordion-content">
-          <p>Scott Heagney’s donations to Jim McGreevey raise serious pay-to-play concerns because his company, GPI Engineers and Builders, is heavily dependent on public-sector contracts, including its multimillion-dollar role in the Pulaski Skyway rehabilitation project. As a firm whose revenue comes from government-funded infrastructure work, GPI’s success is closely tied to political decision-making around contracts, funding, and development priorities. By contributing to McGreevey’s mayoral campaign, Heagney creates the appearance of buying access or favorable consideration for future projects in Jersey City, blurring the line between civic participation and self-interested influence. This intersection of political donations and lucrative public contracts highlights a potential conflict of interest and fits a broader pattern of pay-to-play dynamics in local politics. <a href="https://www.gpinet.com/projects/pulaski-skyway-rehabilitation">Link to their project.</a></p>
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 46? "active" : ""}`}
-        onClick={() => toggleAccordion(46)}
-        aria-expanded={openIndex === 46}
-      >
-        Donald Scarinci - $66,000
-        Dave Hollenbeck - $5,200
-        Kenneth J Hollenbeck - $22,900
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 46 && (
-        <div className="accordion-content">
-          <p>These donations are a red flag because Scarinci & Hollenbeck, the law firm behind them, is one of the most prominent municipal law firms in New Jersey, earning millions in public contracts for services like municipal counsel, redevelopment, and bond work. When multiple attorneys from the firm each give the legal maximum to the same candidate, it suggests a coordinated effort to secure political goodwill. This is concerning because the firm regularly represents cities and agencies in Hudson County—exactly the type of entities that could be impacted by the mayor’s decisions. If the candidate were to win, awarding future legal contracts to Scarinci & Hollenbeck could create an apparent quid pro quo, blurring the line between public service and private profit. The scale and pattern of these donations look less like community support and more like a strategic investment in influence.</p>
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 47? "active" : ""}`}
-        onClick={() => toggleAccordion(47)}
-        aria-expanded={openIndex === 47}
-      >
         Connell Foley PAC - $5,200
         Leo Hurley, Partner and Co-Chair - $5,200
         Philip McGovern, Partner - $5,200
         Thomas Scuderi - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 47 && (
+      {openIndex === 45 && (
         <div className="accordion-content">
           <p>Connell Foley’s deep entanglement in Jersey City politics is underscored by both its financial and political ties. The firm, which represents multiple properties along the Jersey City waterfront, has benefited from a steady stream of lucrative city expenditures ranging from hundreds of thousands to nearly a million dollars across 2023 and 2024. At the same time, Connell Foley’s influence has extended into the political sphere. Maureen Hulings, formerly an administrative assistant at the firm, was appointed by the City Council to serve as the Ward B representative on April 14. 2025. This overlap between a politically connected law firm that profits from substantial city business and its direct pipeline into council membership raises significant concerns about conflicts of interest and the blending of private legal advocacy with public governance in Jersey City.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/394848">2/7/24 - $42,646.04</a></p>
@@ -1709,15 +1640,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 48? "active" : ""}`}
-        onClick={() => toggleAccordion(48)}
-        aria-expanded={openIndex === 48}
+        className={`accordion-header ${openIndex === 46? "active" : ""}`}
+        onClick={() => toggleAccordion(46)}
+        aria-expanded={openIndex === 46}
       >
         Najarian Associates - $5,000
         Tavit Najarian, Founder and President - $5,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 48 && (
+      {openIndex === 46 && (
         <div className="accordion-content">
           <p>Najarian Associates has played a pivotal role in major redevelopment work right here in Jersey City—notably earning a Brownfield Redevelopment Outstanding Achievement Award from K. Hovnanian Companies for their work transforming a chromium-contaminated site into the waterfront <a href="https://www.najarian.com/projects/society-hill-droyers-point">“Society Hill at Droyers Point” residential complex</a>. Their work included environmental assessment, remediation planning, obtaining NJDEP No-Further-Action approvals, and securing a slew of critical permits from local and state agencies—all integral to enabling redevelopment. Given this close intersection of Najarian’s business interests with city and state regulatory authority, the simultaneous $5,000 corporate donation from Najarian Associates and $5,000 personal donation from founder Tavit Najarian to a candidate who could influence such approvals understandably creates the appearance of pay-to-play or undue influence. The concern isn’t hypothetical—it comes from the firm’s known dependence on approvals and trust from municipal agencies to deliver projects. That alignment between their business model and political contribution makes this a clear and credible red flag.</p>
         </div>
@@ -1726,16 +1657,48 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 49? "active" : ""}`}
-        onClick={() => toggleAccordion(49)}
-        aria-expanded={openIndex === 49}
+        className={`accordion-header ${openIndex === 47? "active" : ""}`}
+        onClick={() => toggleAccordion(47)}
+        aria-expanded={openIndex === 47}
       >
         Stephen Nislick - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 49 && (
+      {openIndex === 47 && (
         <div className="accordion-content">
           <p>Stephen Nislick’s $5,200 donation to Jim McGreevey raises serious red flags given Nislick’s controversial history as a political power broker and donor. Nislick, a New Jersey real estate developer and founder of NYCLASS (New Yorkers for Clean, Livable and Safe Streets), is best known for bankrolling campaigns to ban horse-drawn carriages in New York City. In 2013, his group poured over $1 million into a super PAC that was later investigated for potential campaign finance violations and pay-to-play tactics tied to Bill de Blasio’s mayoral run. Beyond the carriage issue, Nislick’s dual role as a developer and political financier has long sparked concerns over whether his donations are leveraged to gain influence on land use, zoning, or city contracts. McGreevey’s acceptance of the maximum individual contribution from a figure repeatedly tied to pay-to-play scandals suggests a troubling willingness to align with donors whose reputations are linked to backroom political influence, raising questions about transparency and potential conflicts of interest in his campaign.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 48 ? "active" : ""}`}
+        onClick={() => toggleAccordion(48)}
+        aria-expanded={openIndex === 48}
+      >
+        Kevin J. O'Toole ($59,400) & Thomas Scrivo ($59,400) – Managing Partners, O'Toole Scrivo, LLC
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 48 && (
+        <div className="accordion-content">
+          <p>The donations from Kevin J. O’Toole ($59,400) and Thomas Scrivo ($59,400), both managing partners of O’Toole Scrivo, LLC, to Jim McGreevey represent significant red flags due to their extensive connections to government projects and redevelopment in New Jersey. Kevin O’Toole, a former state senator and current Chair of the Port Authority of New York and New Jersey, oversees major infrastructure investments, while Thomas Scrivo, a former Chief Counsel to Governor Christie and ex-chair of the New Jersey Economic Development Authority, has direct influence over land use and municipal approvals. Their firm specializes in municipal law, redevelopment, and regulatory compliance—fields directly affected by decisions from city officials. Accepting these large contributions from individuals and a firm whose business success depends on government contracts creates a strong appearance of pay-to-play, suggesting that the donations could be intended to gain access or favorable treatment. McGreevey’s acceptance of multiple high-dollar contributions from such politically connected figures raises serious questions about potential conflicts of interest and the transparency of his campaign funding.</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 49 ? "active" : ""}`}
+        onClick={() => toggleAccordion(49)}
+        aria-expanded={openIndex === 49}
+      >
+        Dylan Oanano, Vice President of Blue Star Glass - $5,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 49 && (
+        <div className="accordion-content">
+          <p>Dylan Oanono’s $5,200 donation to Jim McGreevey is a strong red flag because he is the Vice President of Blue Star Glass, a company that had actively engaged in a real estate development project in Jersey City: <a href="https://bluestarglass.net/projects/hudson-house-lofts">Hudson House Lofts – Phase II</a>By contributing to a mayoral candidate, Oanono is in a position to potentially influence city decisions that could benefit his company’s ongoing or future projects. The overlap between his corporate interests and political contributions raises clear concerns about pay-to-play dynamics, especially since McGreevey could be involved in approvals, permits, or zoning decisions affecting Blue Star’s developments if he were elected mayor. Accepting donations from executives tied to local development projects blurs the line between private business interests and public policy, creating both a real and perceived conflict of interest that undermines public trust.</p>
         </div>
       )}
     </div>
@@ -1746,42 +1709,10 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         onClick={() => toggleAccordion(50)}
         aria-expanded={openIndex === 50}
       >
-        Kevin J. O'Toole ($59,400) & Thomas Scrivo ($59,400) – Managing Partners, O'Toole Scrivo, LLC
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 50 && (
-        <div className="accordion-content">
-          <p>The donations from Kevin J. O’Toole ($59,400) and Thomas Scrivo ($59,400), both managing partners of O’Toole Scrivo, LLC, to Jim McGreevey represent significant red flags due to their extensive connections to government projects and redevelopment in New Jersey. Kevin O’Toole, a former state senator and current Chair of the Port Authority of New York and New Jersey, oversees major infrastructure investments, while Thomas Scrivo, a former Chief Counsel to Governor Christie and ex-chair of the New Jersey Economic Development Authority, has direct influence over land use and municipal approvals. Their firm specializes in municipal law, redevelopment, and regulatory compliance—fields directly affected by decisions from city officials. Accepting these large contributions from individuals and a firm whose business success depends on government contracts creates a strong appearance of pay-to-play, suggesting that the donations could be intended to gain access or favorable treatment. McGreevey’s acceptance of multiple high-dollar contributions from such politically connected figures raises serious questions about potential conflicts of interest and the transparency of his campaign funding.</p>
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 51 ? "active" : ""}`}
-        onClick={() => toggleAccordion(51)}
-        aria-expanded={openIndex === 51}
-      >
-        Dylan Oanano, Vice President of Blue Star Glass - $5,200
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 51 && (
-        <div className="accordion-content">
-          <p>Dylan Oanono’s $5,200 donation to Jim McGreevey is a strong red flag because he is the Vice President of Blue Star Glass, a company that had actively engaged in a real estate development project in Jersey City: <a href="https://bluestarglass.net/projects/hudson-house-lofts">Hudson House Lofts – Phase II</a>By contributing to a mayoral candidate, Oanono is in a position to potentially influence city decisions that could benefit his company’s ongoing or future projects. The overlap between his corporate interests and political contributions raises clear concerns about pay-to-play dynamics, especially since McGreevey could be involved in approvals, permits, or zoning decisions affecting Blue Star’s developments if he were elected mayor. Accepting donations from executives tied to local development projects blurs the line between private business interests and public policy, creating both a real and perceived conflict of interest that undermines public trust.</p>
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 52 ? "active" : ""}`}
-        onClick={() => toggleAccordion(52)}
-        aria-expanded={openIndex === 52}
-      >
         Leonard Savino, Principal of Langan Engineering - $2,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 52 && (
+      {openIndex === 50 && (
         <div className="accordion-content">
           <p>Leonard Savino’s donation to the Jersey City mayoral campaign could be considered a red flag because he is a senior principal at Langan Engineering and Environmental Services, a firm that has repeatedly received substantial city contracts, including environmental consulting, site investigations, and demolition services. The firm’s contracts were awarded under the Fair and Open Pay-to-Play process, which legally permits contributions from executives, but the concentration of donations from high-level employees alongside lucrative city contracts raises concerns about the appearance of a conflict of interest. While there is no proof of wrongdoing, the pattern suggests that executives with direct influence over a firm’s business could be using political contributions to maintain favorable access or visibility with city officials. The overlap between Savino’s professional role and the firm’s ongoing city projects makes this donation worth scrutiny, as it highlights the broader tension between public contracting and private political giving in Jersey City.</p>
           <p><strong>Res 25-546 </strong>The Jersey City Council approved Resolution 25-546 on August 20, 2025, awarding a professional services contract to Langan Engineering and Environmental Services, LLC for the demolition of the County Administration Building. The contract covers demolition services, material testing, design, specifications, and bid documents under Project No. 2023-019. Four firms submitted proposals, with bids ranging from $171,750 to $2,276,385, and Langan was selected despite not being the lowest bidder, based on qualifications reviewed by city departments. The contract is valued at $395,030 for a 24-month period and is being awarded under the Fair and Open Pay-to-Play Law provisions. Funding will come from the Municipal Court Capital Account, and the award requires compliance with affirmative action laws and public notice requirements. <a href="https://cityofjerseycity.civicweb.net/document/435637">Resolution PDF</a></p>
@@ -1805,9 +1736,9 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 53 ? "active" : ""}`}
-        onClick={() => toggleAccordion(53)}
-        aria-expanded={openIndex === 53}
+        className={`accordion-header ${openIndex === 51 ? "active" : ""}`}
+        onClick={() => toggleAccordion(51)}
+        aria-expanded={openIndex === 51}
       >
         Howard & Jonathan Schwartz, Partners - $6,450
         Alan Pines - $1,000
@@ -1816,7 +1747,7 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
         BNE Real Estate Group
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 53 && (
+      {openIndex === 51 && (
         <div className="accordion-content">
           <p>
            Howard and Jonathan Schwartz, partners at BNE Real Estate Group, contributed $5,200 and $1,000 respectively to the Jersey City mayoral campaign. Alan Pines, another BNE partner, donated $1,000, while the company’s Chief Financial Officer, Rhonda Tayloe-Calinda, added $1,000. In addition, David, Marc, and Larry Pantirer—closely tied to BNE’s operations—collectively gave $3,000. These contributions raise a strong red flag because BNE Real Estate leases and manages multiple luxury properties in Jersey City, including <a href="https://lifebybne.com/communities">One Ten, 100 House, and The Enclave</a>, giving the company a direct financial stake in city zoning, approvals, and development policy. Taken together, these donations from multiple senior executives and family members create the perception of coordinated influence-buying, especially since BNE’s business success is tied to favorable treatment from local government. While the donations may comply with disclosure and pay-to-play regulations, the concentration of contributions from a single firm blurs the line between public service and private gain, warranting significant public scrutiny.
@@ -1827,14 +1758,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 54 ? "active" : ""}`}
-        onClick={() => toggleAccordion(54)}
-        aria-expanded={openIndex === 54}
+        className={`accordion-header ${openIndex === 52 ? "active" : ""}`}
+        onClick={() => toggleAccordion(52)}
+        aria-expanded={openIndex === 52}
       >
         David Wolfe, Skoloff and Wolfe PC - $2,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 54 && (
+      {openIndex === 52 && (
         <div className="accordion-content">
           <p>David Wolfe’s $2,500 donation to McGreevey is a significant red flag because his law firm, Skoloff & Wolfe PC, has been tied to substantial financial dealings with Jersey City, as evidenced by multiple large expenditure claims totaling millions of dollars in recent years. While no formal “contract” is listed under the firm’s name, the repeated and high-value payments — including one exceeding $5.8 million in 2023 — indicate that the firm is deeply embedded in city-related legal or financial matters. When a managing partner at a firm that directly profits from city expenditures donates to a candidate for mayor, it raises the risk of pay-to-play influence, where political donations could be seen as a way to protect or expand city business ties. Even without a formal contract on record, the scale and consistency of the firm’s financial connections to Jersey City make this donation a strong conflict-of-interest concern.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $7,117.47</a></p>
@@ -1851,15 +1782,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 55 ? "active" : ""}`}
-        onClick={() => toggleAccordion(55)}
-        aria-expanded={openIndex === 55}
+        className={`accordion-header ${openIndex === 53 ? "active" : ""}`}
+        onClick={() => toggleAccordion(53)}
+        aria-expanded={openIndex === 53}
       >
         Arvinder Singh Minhas, President of GN Management - $1,500
         Kiran Samra Minhas, GN Management - $9,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 55 && (
+      {openIndex === 53 && (
         <div className="accordion-content">
           <p>These contributions raise a red flag because GN Management Inc. is an active real estate developer in Jersey City, where Arvinder Singh serves as President and Kiran Samra is a senior executive. The firm has spearheaded dozens of local projects—from historic residential conversions to modern mixed-use high-rises—such as the 29-story “Singh Tower” at 622 Summit Avenue, a 77-unit complex at 829 Bergen Avenue, and a five-story residential development at 84–88 Beacon Avenue. Because city officials oversee permitting, zoning, and development decisions that directly impact these projects, the substantial political contributions from top GN Management executives create a strong appearance of a conflict of interest or pay-to-play. Accepting such donations raises serious concerns about whether campaign support could influence development outcomes or policymaking.</p>
         </div>
@@ -1868,14 +1799,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 56 ? "active" : ""}`}
-        onClick={() => toggleAccordion(56)}
-        aria-expanded={openIndex === 56}
+        className={`accordion-header ${openIndex === 54 ? "active" : ""}`}
+        onClick={() => toggleAccordion(54)}
+        aria-expanded={openIndex === 54}
       >
         Chasan Lamparello Mallon & Cappuzzo - $5,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 56 && (
+      {openIndex === 54 && (
         <div className="accordion-content">
           <p>Chasan Lamparello Mallon & Cappuzzo’s $5,000 donation to Jim McGreevey is a major red flag because the firm has been repeatedly awarded lucrative contracts with Jersey City, many of them approved under exemptions from competitive bidding as “professional services agreements.” Since 2019, the firm has received contracts worth tens of thousands of dollars annually to handle workers’ compensation cases and defend city employees in civil rights lawsuits, with caps as high as $200,000 on some agreements. These resolutions—such as Res 24-645, Res 23-093, and Res 22-770—show a long-standing financial relationship between the firm and Jersey City, funded by taxpayer dollars. By donating to McGreevey while actively benefiting from city contracts, the firm’s contribution suggests a strong appearance of pay-to-play, where political donations could help secure or maintain government legal work. This overlap of campaign money and city business raises serious concerns about conflicts of interest, transparency, and the integrity of the contracting process.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $41,233.38</a></p>
@@ -1939,15 +1870,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 57 ? "active" : ""}`}
-        onClick={() => toggleAccordion(57)}
-        aria-expanded={openIndex === 57}
+        className={`accordion-header ${openIndex === 55 ? "active" : ""}`}
+        onClick={() => toggleAccordion(55)}
+        aria-expanded={openIndex === 55}
       >
         GD Correctional Services LLC - $5,200
         Alfred Frungillo - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 57 && (
+      {openIndex === 55 && (
         <div className="accordion-content">
           <p>GD Correctional Services LLC and Alfred Frungillo’s combined $10,400 in donations to Jim McGreevey raise significant red flags because the company has secured millions of dollars in government food service contracts, including a Hudson County Correctional Center contract originally worth $9.2 million that has since ballooned to nearly $11 million through multiple costly amendments. At the same time, GD Correctional has aggressively pursued other Jersey City food contracts, such as the Summer Food Service Program, where its bid was disqualified for not meeting state and federal requirements. These donations from both the company and its principal create a troubling appearance of pay-to-play, where political contributions could be viewed as a strategy to maintain or expand access to lucrative public food service contracts. The overlap between McGreevey’s campaign support and GD Correctional’s extensive financial dealings with Hudson County and attempted dealings with Jersey City underscores the risk of conflicts of interest and undermines public trust in fair contracting practices.</p>
           <p><strong>Res 22-605 </strong>The Hudson County Correctional Center’s food services contract with GD Correctional Services, LLC is running out of funds, prompting officials to request an additional $163,264 to cover ongoing expenses. Originally awarded at $9.2 million, the contract has already been increased three times—by $385,000, $975,000, and $250,000—bringing the total contract value to $10,973,264. This request highlights the growing costs tied to the county’s agreement with GD Correctional Services to provide meals at the jail. <a href="https://cityofjerseycity.civicweb.net/document/71984">Resolution PDF (pg 26)</a></p>
@@ -1959,14 +1890,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 58 ? "active" : ""}`}
-        onClick={() => toggleAccordion(58)}
-        aria-expanded={openIndex === 58}
+        className={`accordion-header ${openIndex === 56 ? "active" : ""}`}
+        onClick={() => toggleAccordion(56)}
+        aria-expanded={openIndex === 56}
       >
         Joe Zaugg, Managing Executive of Sordoni Construction - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 58 && (
+      {openIndex === 56 && (
         <div className="accordion-content">
           <p>Joe Zaugg, a managing executive at Sordoni Construction, contributed $1,000 to Jim McGreevey’s campaign, raising concerns given the company’s history of major development and infrastructure projects in Jersey City. Sordoni has been directly involved in large-scale developments such as the Powerhouse Arts District (2024), West Side Square (2024), and Liberty Towers (2014), as well as critical infrastructure projects like PSE&G’s Jersey City facility. With McGreevey seeking to shape the city’s future development, Zaugg’s financial support could be seen as a potential pay-to-play red flag, suggesting that a construction firm with deep financial and operational ties to Jersey City may be attempting to secure or maintain favorable access to city contracts under a future McGreevey administration.</p>
           <p><a href="https://sococonstruction.com/projects">Sordoni Construction's Projects</a></p>
@@ -1976,16 +1907,16 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 59 ? "active" : ""}`}
-        onClick={() => toggleAccordion(59)}
-        aria-expanded={openIndex === 59}
+        className={`accordion-header ${openIndex === 57 ? "active" : ""}`}
+        onClick={() => toggleAccordion(57)}
+        aria-expanded={openIndex === 57}
       >
         James McKinney, President and Principal - $1,000
         John McKinney, CEO and Principal - $1,000
         Rodd Werstil, Managing Director and Prinicpal - $3,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 59 && (
+      {openIndex === 57 && (
         <div className="accordion-content">
           <p>Executives from McKinney Properties, the developer behind massive luxury projects such as 100 House, One Ten, and The Enclave, poured a combined $5,500 into Jim McGreevey’s campaign. McKinney’s business model depends directly on city approvals, zoning changes, and political goodwill. In a city with a long history of pay-to-play politics, a cluster of maximum-level donations from a development firm with so much riding on future decisions looks less like civic support and more like an attempt to buy access and influence. For voters, it’s a clear red flag that raises questions about whether a McGreevey administration would prioritize luxury developers over residents.</p>
           <p><a href="https://www.mckinneyproperties.com/properties">McKinney Properties</a></p>
@@ -1995,15 +1926,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 60 ? "active" : ""}`}
-        onClick={() => toggleAccordion(60)}
-        aria-expanded={openIndex === 60}
+        className={`accordion-header ${openIndex === 58 ? "active" : ""}`}
+        onClick={() => toggleAccordion(58)}
+        aria-expanded={openIndex === 58}
       >
         Gibbons Law P.C - $10,000
         Executives of Gibbons Law P.C - $31,250
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 60 && (
+      {openIndex === 58 && (
         <div className="accordion-content">
           <p>
             Executives and attorneys from Gibbons P.C., including Frederick Alworth ($500), Christine Amalfe ($500), Kim Catullo ($500), Michael Deloreto ($250), June Inderwies ($250), Michael Lubben ($250), Lawrence Lustberg ($5,200), David Pascrell ($500), Susanne Peticolas ($1,000), Paul St Onge ($300), Peter Torcicollo ($500), Kevin Weber ($500), and Howard Geneslaw ($10,000), along with a $10,000 P2P corporate donation from Gibbons P.C., collectively contributed over $20,000 to Jim McGreevey’s campaign. Gibbons P.C. has represented major clients in Jersey City development and real estate projects, including SJP Properties, Liberty Harbor North, and other high-profile urban redevelopment projects. Given the firm’s deep ties to city planning and municipal approvals, these donations raise strong red flags about potential influence over local policy decisions. The sheer concentration of contributions from one law firm that routinely represents powerful developers suggests a pattern of seeking favorable treatment from the McGreevey administration, rather than routine political support. For voters, this signals a potential conflict of interest and highlights the ongoing pay-to-play concerns in Jersey City politics.
@@ -2014,14 +1945,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 61 ? "active" : ""}`}
-        onClick={() => toggleAccordion(61)}
-        aria-expanded={openIndex === 61}
+        className={`accordion-header ${openIndex === 59 ? "active" : ""}`}
+        onClick={() => toggleAccordion(59)}
+        aria-expanded={openIndex === 59}
       >
        Sanjave Tuli, Owner and CEO of Tuli Realty - $5,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 61 && (
+      {openIndex === 59 && (
         <div className="accordion-content">
           <p>
             A $5,000 contribution from Sanjave Tuli, Owner and CEO of Tuli Realty, raises clear concerns given the company’s deep footprint in Jersey City’s housing market. Tuli Realty manages 18 apartment buildings across the city, making it a major landlord with a direct financial stake in local development and housing policy. Large donations from real estate owners often signal a potential pay-to-play dynamic, as decisions around zoning, tax abatements, and tenant protections can significantly impact their bottom line. In a city where affordability and displacement are pressing issues, a maximum-level donation from a landlord of this scale can be seen as an attempt to secure favorable treatment from City Hall.
@@ -2033,14 +1964,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 62 ? "active" : ""}`}
-        onClick={() => toggleAccordion(62)}
-        aria-expanded={openIndex === 62}
+        className={`accordion-header ${openIndex === 60 ? "active" : ""}`}
+        onClick={() => toggleAccordion(60)}
+        aria-expanded={openIndex === 60}
       >
         Eliot Spitzer, Former NY Governor - $12,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 62 && (
+      {openIndex === 60 && (
         <div className="accordion-content">
           <p>
             Eliot Spitzer, the former New York governor who resigned in disgrace after being caught patronizing a prostitution ring, donated $2,500 to Jim McGreevey’s mayoral campaign. Spitzer’s downfall in 2008 was one of the most high-profile political scandals of the decade, leaving his reputation permanently tied to corruption and personal misconduct. Since his resignation, he has turned to finance and real estate, industries that already carry heavy influence in Jersey City politics. His contribution is significant because McGreevey’s candidacy has been framed in part around ethics, reform, and rebuilding trust in public office. Accepting money from a figure whose career imploded due to scandal directly undermines that message. Moreover, Spitzer’s role in real estate ventures raises deeper concerns, as development and land deals remain some of the most contentious and pay-to-play–laden issues in Jersey City. Critics could easily interpret this donation as another example of outside real estate interests buying access to City Hall. Even if the amount is relatively modest, the symbolism of accepting funds from such a controversial figure is far more damaging than the dollar value. For McGreevey, Spitzer’s donation risks becoming shorthand for the very contradictions his opponents are eager to exploit.          </p>          
@@ -2050,16 +1981,16 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 63 ? "active" : ""}`}
-        onClick={() => toggleAccordion(63)}
-        aria-expanded={openIndex === 63}
+        className={`accordion-header ${openIndex === 61 ? "active" : ""}`}
+        onClick={() => toggleAccordion(61)}
+        aria-expanded={openIndex === 61}
       >
         John Sills - $3,000
         Arthur Sills - $6,350
         Sills, Cummis, & Gross P.C. - $7,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 63 && (
+      {openIndex === 61 && (
         <div className="accordion-content">
           <p>Sills Cummis & Gross has played a direct and recurring role in shaping major development and cannabis approvals in Jersey City, showing its deep influence in both real estate finance and regulatory processes. In March 2025, attorney Corey Klein represented Montgomery Gateway Preservation, L.P. in negotiating a financial agreement with the city, almost certainly a tax abatement or PILOT deal that reduced the developer’s property tax obligations—a practice often criticized for shifting the tax burden onto residents. Likewise, in 2023, partner Frank Vitolo represented Kushmart Jersey, LLC before the Planning Board, handling legal notices, expert testimony, and compliance arguments to secure conditional approval for a cannabis retail license on JFK Boulevard, despite strong community and political scrutiny of cannabis zoning. These cases demonstrate how the firm leverages its legal and political connections to win favorable terms for private interests, particularly developers and cannabis operators who rely on city approval. When a firm with this track record donates heavily to a mayoral campaign, it raises concerns about pay-to-play dynamics, as those same donors may later appear before the administration seeking zoning changes, abatements, or regulatory approvals. In Jersey City’s political climate—where developers and politically connected law firms already dominate fundraising—such contributions can be seen as a red flag because they suggest not just support, but an investment in future access and influence over city decisions.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/427697">Corey Klein negotiates for a financial agreement. (6.7)</a></p>
@@ -2070,15 +2001,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button 
-        className={`accordion-header ${openIndex === 64 ? "active" : ""}`}
-        onClick={() => toggleAccordion(64)}
-        aria-expanded={openIndex === 64}>
+        className={`accordion-header ${openIndex === 62 ? "active" : ""}`}
+        onClick={() => toggleAccordion(62)}
+        aria-expanded={openIndex === 62}>
           Richard Sciaretta, Managing Partner of Claremont Development - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 64 && (
+      {openIndex === 62 && (
         <div className="accordion-content">
-          <p>Richard Sciaretta, managing partner of Claremont Development, contributed $1,000 to Bill O’Dea’s campaign in April 2024. Claremont Development is a major real estate developer with longstanding interests in Jersey City, particularly in large-scale residential and mixed-use projects, such as St. Lucy's Tower, the Rivet and Rivet 28, and new dorms in Saint Peter's University. The donation is notable because O’Dea has positioned himself as a watchdog against unchecked development, yet his acceptance of funds from a prominent developer may raise questions about consistency. Real estate donations are often scrutinized in Jersey City politics, where concerns about overdevelopment and affordability remain front and center. Sciaretta’s contribution could be interpreted as an attempt to maintain influence over zoning and development decisions should O’Dea become mayor. Critics might argue that this fits into a broader pattern of developers seeking access through campaign contributions. Supporters, however, may downplay the donation as a routine part of political fundraising. Still, in the context of Jersey City’s history with pay-to-play, the $2,500 from Claremont Development raises a clear red flag.</p>
+          <p>Richard Sciaretta, managing partner of Claremont Development, contributed $1,000 to McGreevey's campaign in April 2024. Claremont Development is a major real estate developer with longstanding interests in Jersey City, particularly in large-scale residential and mixed-use projects, such as St. Lucy's Tower, the Rivet and Rivet 28, and new dorms in Saint Peter's University. The donation is notable because O’Dea has positioned himself as a watchdog against unchecked development, yet his acceptance of funds from a prominent developer may raise questions about consistency. Real estate donations are often scrutinized in Jersey City politics, where concerns about overdevelopment and affordability remain front and center. Sciaretta’s contribution could be interpreted as an attempt to maintain influence over zoning and development decisions should O’Dea become mayor. Critics might argue that this fits into a broader pattern of developers seeking access through campaign contributions. Supporters, however, may downplay the donation as a routine part of political fundraising. Still, in the context of Jersey City’s history with pay-to-play, the $2,500 from Claremont Development raises a clear red flag.</p>
           <p><a href="https://www.claredev.com/projects">Claremont Development's Projects</a></p>
         </div>
       )}
@@ -2086,13 +2017,13 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button 
-        className={`accordion-header ${openIndex === 65 ? "active" : ""}`}
-        onClick={() => toggleAccordion(65)}
-        aria-expanded={openIndex === 65}>
+        className={`accordion-header ${openIndex === 63 ? "active" : ""}`}
+        onClick={() => toggleAccordion(63)}
+        aria-expanded={openIndex === 63}>
           John Flo Rito, Head Motherfucker in Charge - Point Capital Development, $10,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 65 && (
+      {openIndex === 63 && (
         <div className="accordion-content">
           <p>John Florito is listed as the “HMFIC” (Head Mother Fucker In Charge) of Point Capital Development, a Jersey City–based real estate development company with a long record of building, renovating, and flipping multi-unit projects across the city. The firm has been involved in dozens of developments — from condo conversions on Erie, Sixth, and Third Street to larger market-rate apartment projects like Mill Rocks, 130 Monitor, and the Baker Building. Many of these required major site plan approvals, tax abatements, or municipal approvals, meaning Point Capital’s profitability is directly tied to City Hall’s discretion. Florito’s $2,500 donation to McGreevey creates a clear conflict of interest because his firm depends on favorable zoning, permitting, and financing arrangements from the city. While donations from developers are legal if properly disclosed, they are often perceived as pay-to-play contributions, especially when tied to active or recent projects in Jersey City. Given Point Capital’s deep footprint in local development, this contribution should be flagged as a strong red flag — signaling an attempt to maintain political influence over the very government processes that determine their business success.</p>
           <p><a href="https://www.pointcapdev.com/current-projects">Point Capital's Current Projects</a></p>
@@ -2103,14 +2034,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 66 ? "active" : ""}`}
-        onClick={() => toggleAccordion(66)}
-        aria-expanded={openIndex === 66}
+        className={`accordion-header ${openIndex === 64 ? "active" : ""}`}
+        onClick={() => toggleAccordion(64)}
+        aria-expanded={openIndex === 64}
       >
         Scott Rechler, CEO of RXR Realty LLC - $2,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 66 && (
+      {openIndex === 64 && (
         <div className="accordion-content">
           <p>Scott Rechler, CEO of RXR Realty LLC, donated $2,000 to Jim McGreevey’s campaign. RXR Realty holds residential properties in Jersey City, including Hudson House and Journal Square, which depend on city approvals, zoning compliance, and permits. In a city with a history of pay-to-play politics, contributions from executives whose projects are directly affected by municipal decisions represent a clear conflict of interest. While the donation may comply with campaign finance laws if properly disclosed, the fact that it comes from the CEO of a company with substantial Jersey City holdings raises a strong red flag. Voters could reasonably question whether such contributions might influence policy decisions, prioritize developer interests over residents, or create perceived favoritism in future city approvals. Accepting donations from top-level executives in development firms with active projects in the city blurs the line between public governance and private gain, warranting scrutiny from both watchdogs and the public.</p>
           <p><a href="https://rxr.com/portfolio/?jsf=epro-posts:properties_grid&tax=location:90">RXR Realty properties in Jersey City</a></p>
@@ -2120,14 +2051,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 67 ? "active" : ""}`}
-        onClick={() => toggleAccordion(67)}
-        aria-expanded={openIndex === 67}
+        className={`accordion-header ${openIndex === 65 ? "active" : ""}`}
+        onClick={() => toggleAccordion(65)}
+        aria-expanded={openIndex === 65}
       >
         Jacob Mermelstein, CEO of Ray Builders - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 67 && (
+      {openIndex === 65 && (
         <div className="accordion-content">
           <p>Ray Builders is listed as an active developer in the project on 711 Montgomery Street. This direct involvement in a major Jersey City development makes their connection to campaign donations especially significant, as it underscores the potential influence of private construction interests on public decision-making. The overlap between active development projects and political contributions highlights why this case raises concerns about pay-to-play dynamics.</p>
           <p><a href="https://www.rayconstruction.net/current-projects">Ray Builders Current Projects</a></p>
@@ -2137,14 +2068,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 68 ? "active" : ""}`}
-        onClick={() => toggleAccordion(68)}
-        aria-expanded={openIndex === 68}
+        className={`accordion-header ${openIndex === 66 ? "active" : ""}`}
+        onClick={() => toggleAccordion(66)}
+        aria-expanded={openIndex === 66}
       >
         Tim Donohue, Partner of Arleo & Donohue LLC - $2,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 68 && (
+      {openIndex === 66 && (
         <div className="accordion-content">
           <p>The $2,000 donation from Tim Donohue, a partner at Arleo & Donohue, raises a strong red flag because his firm has been directly compensated by the City of Jersey City, as documented in Resolution 20-142. Pay-to-play concerns are heightened when campaign donors are principals of firms receiving city contracts, especially in professional services like law, which fall under EUS designations. The timing and nature of this contribution suggest a potential conflict of interest, as the firm could reasonably expect to seek or maintain similar city work. This creates the appearance that political donations might be used to preserve access or influence over lucrative municipal contracts.</p>
           <p><strong>Res 20-181 </strong> The City of Jersey City authorized a contract with the law firm Arleo & Donohue, LLC. The resolution approved a payment of $19,140 to cover professional legal services rendered in litigation matters. This contract was categorized as an extraordinary unspecifiable service (EUS), meaning it required specialized expertise. The resolution was adopted by the City Council with formal approval and signatures. Effectively, it documents that Arleo & Donohue received public funds directly from Jersey City for legal representation. <a href="https://cityofjerseycity.civicweb.net/document/21819">Resolution PDF</a></p>
@@ -2155,14 +2086,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 69 ? "active" : ""}`}
-        onClick={() => toggleAccordion(69)}
-        aria-expanded={openIndex === 69}
+        className={`accordion-header ${openIndex === 67 ? "active" : ""}`}
+        onClick={() => toggleAccordion(67)}
+        aria-expanded={openIndex === 67}
       >
         John Corzine, Former NJ Senator and NJ Governor - $5,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 69 && (
+      {openIndex === 67 && (
         <div className="accordion-content">
           <p>Former New Jersey Governor and U.S. Senator John Corzine donating to Jim McGreevey is a strong red flag. Corzine’s career has been marred by financial scandal, most notably the 2011 collapse of MF Global under his leadership, which left a $1.6 billion shortfall in customer funds and cemented his reputation for mismanagement and Wall Street excess. His presence as a donor ties McGreevey to the old political and financial establishment, suggesting backing from a figure long associated with insider politics rather than reform. This raises concerns that McGreevey’s campaign may be aligned with entrenched interests rather than independent or grassroots support.</p>
         </div>
@@ -2171,15 +2102,15 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 70 ? "active" : ""}`}
-        onClick={() => toggleAccordion(70)}
-        aria-expanded={openIndex === 70}
+        className={`accordion-header ${openIndex === 68 ? "active" : ""}`}
+        onClick={() => toggleAccordion(68)}
+        aria-expanded={openIndex === 68}
       >
         James Caulfield, Co-Founder and Partner of Fields Grade Development - $5,200
         Robert Caulfield, Co-Founder and Partner of Fields Grade Development - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 70 && (
+      {openIndex === 68 && (
         <div className="accordion-content">
           <p>Fields Grade has been an active force in Jersey City’s development boom, with multiple large-scale residential projects completed in just the past few years — including The Devan, The Agnes, The Hazel, Atlas, and Starling, among others — plus new developments like 177 Grand and 151 Yale already underway. With such a deep stake in the city’s real estate market, their maximum contributions of $5,200 each to Jim McGreevey strongly suggest an interest in maintaining access and influence over future approvals, zoning changes, or city incentives. Unlike donations from private individuals with no financial ties to Jersey City, these contributions come directly from developers whose business success depends on favorable treatment from city government. Taken together, the scale of Fields Grade’s footprint and the timing of these large donations make this a textbook example of potential pay-to-play politics.</p>
           <p><a href="https://www.fieldsgrade.com/projects">Fields Grade Development Projects</a></p>
@@ -2189,14 +2120,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className ="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 71 ? "active" : ""}`}
-        onClick={() => toggleAccordion(71)}
-        aria-expanded={openIndex === 71}
+        className={`accordion-header ${openIndex === 69 ? "active" : ""}`}
+        onClick={() => toggleAccordion(69)}
+        aria-expanded={openIndex === 69}
       >
         Leemark Electrics - $2,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 71 && (
+      {openIndex === 69 && (
         <div className="accordion-content">
           <p>Leemark Electrics has donated $2,500 to McGreevey. Leemark Electrics have done several projects in Jersey City relating lighting, power distribution, etc. Along with their projects, they have received expenditures from Jersey City and had received a contract in October 2020. The details are listed below.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/44186">$32,700 - 3/4/21</a></p>
@@ -2210,14 +2141,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 72 ? "active" : ""}`}
-        onClick={() => toggleAccordion(72)}
-        aria-expanded={openIndex === 72}
+        className={`accordion-header ${openIndex === 70 ? "active" : ""}`}
+        onClick={() => toggleAccordion(70)}
+        aria-expanded={openIndex === 70}
       >
         Mast Construction Services - $7,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 72 && (
+      {openIndex === 70 && (
         <div className="accordion-content">
           <p>Mast Construction Services raises potential red flag concerns despite not currently holding direct contracts with Jersey City. The company has made multiple contributions, ranging from $250 to $2,500, both as corporate and “P2P Corporate,” spanning the years 2020 through 2025. While the donations themselves are not unusually large, the repeated contributions over time, combined with Mast’s extensive involvement in high-profile public projects in the region—such as courthouse renovations, Hudson County Community College buildings, and other infrastructure initiatives—suggest a potential interest in maintaining influence or favorable relationships with city officials. Even without formal contracts in Jersey City, their consistent presence and donations indicate strategic relationship-building that could warrant closer scrutiny.</p>
         </div>
@@ -2226,14 +2157,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 73 ? "active" : ""}`}
-        onClick={() => toggleAccordion(73)}
-        aria-expanded={openIndex === 73}
+        className={`accordion-header ${openIndex === 71 ? "active" : ""}`}
+        onClick={() => toggleAccordion(71)}
+        aria-expanded={openIndex === 71}
       >
         Adam Altman, Managing Member at KABR - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 73 && (
+      {openIndex === 71 && (
         <div className="accordion-content">
           <p>
             Adam Altman, a managing member of KABR Group, donated $1,000 to McGreevey’s campaign in 2024. KABR Group is a prominent real estate investment and development firm with multiple high-profile projects in Jersey City, including 26 Journal Square, 30 Journal Square, the Canopy by Hilton Hotel, 65 Bay Street, and the Arts & Powerhouse Building. Because these projects rely on city approvals, zoning decisions, and ongoing support from local leadership, Altman’s donation raises clear concerns about pay-to-play and potential conflicts of interest. Given the direct financial stake KABR has in Jersey City’s development landscape, this contribution is a strong red flag.
@@ -2245,75 +2176,16 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 74 ? "active" : ""}`}
-        onClick={() => toggleAccordion(74)}
-        aria-expanded={openIndex === 74}
-      >
-        Greater NJ Carpenters PAC - $120,200
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 74 && (
-        <div className="accordion-content">
-          <p>
-            The Greater NJ Carpenters, through their PAC, have donated $120,200 to Jim McGreevey’s Jersey City mayoral campaign while simultaneously receiving a long series of substantial expenditure payments from the City of Jersey City. Public records show repeated payments from April 2021 through September 2025, including $143,038.07 (4/14/21), $90,258.05 (9/7/21), $77,426.57 (1/6/22), $168,212.69 (6/24/24), $117,874.81 (1/22/24), and dozens of others ranging from $15,129 to over $72,000, with many months showing multiple payments. Altogether, these expenditures represent millions of dollars directed to the union over four years. The overlap between such consistent, large-scale municipal payments and the PAC’s significant political contributions to McGreevey represents a strong red flag for potential pay-to-play and conflict of interest concerns, raising questions about whether the union’s financial support could influence the city’s contracting and expenditure decisions.
-          </p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/436931">9/3/25 - $25,521.66</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $15,941.21</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $58,510.39</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $33,158.79</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/425256">3/24/25 - $38,253.15</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/422620">2/24/25 - $36,687.15</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $28,140.29</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $29,116.55</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $36,667.00</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $30,217.54</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $32,504.19</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $34,820.65</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $168,212.69</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $66,602.78</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/394633">2/5/24 - $56,934.79</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/393695">1/22/24 - $117,874.81</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $72,711.03</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $53,607.40</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $45,114.90</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $55,762.64</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $56,410.81</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $35,196.81</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $37,071.05</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $37,835.81</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $41,939.10</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $48,206.81</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $58,599.19</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/81765">12/9/22 - $49,546.18</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $44,633.90</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $37,863.91</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/2/22 - $29,022.48</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/73623">8/17/22 - $15,129.04</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $44,999.56</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/67367">4/22/22 - $44,485.55</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $46,873.61</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $22,919.20</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/64284">2/17/22 - $36,280.73</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $77,426.57</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/55896">9/7/21 - $90,258.05</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/46338">4/14/21 - $143,038.07</a></p>
-
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 75 ? "active" : ""}`}
-        onClick={() => toggleAccordion(75)}
-        aria-expanded={openIndex === 75}
+        className={`accordion-header ${openIndex === 72 ? "active" : ""}`}
+        onClick={() => toggleAccordion(72)}
+        aria-expanded={openIndex === 72}
       >
         William Baroni - $2,500
         Wendy Neu - $5,200
         Hugo Neu Corporation - $33,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 75 && (
+      {openIndex === 72 && (
         <div className="accordion-content">
           <p>
             Hugo Neu and its principals have made significant contributions to Jim McGreevey’s mayoral campaign, including maximum-level individual donations from Wendy Neu (\$5,200) and William Baroni (\$2,500), as well as large corporate contributions of \$12,200 and \$20,800 from Hugo Neu Corporation. At the same time, Hugo Neu remains the property owner of the contaminated 1 Jersey Avenue site, where NJDEP oversight has resulted in a Response Action Outcome, a Soil Remedial Action Permit, and a Classification Exception Area/Well Restriction Area due to ongoing soil and groundwater contamination. This overlap between substantial political giving and unresolved regulatory obligations tied to a major redevelopment property in Jersey City presents a strong red flag for potential pay-to-play concerns and conflicts of interest, raising questions about whether campaign contributions could influence the city’s handling of environmental and development matters involving Hugo Neu.
@@ -2327,46 +2199,14 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 76 ? "active" : ""}`}
-        onClick={() => toggleAccordion(76)}
-        aria-expanded={openIndex === 76}
-      >
-        B.A.C Administrative District Council of NJ - $6,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 76 && (
-        <div className="accordion-content">
-          <p>
-            The B.A.C. Administrative District Council of New Jersey contributed $6,000 to McGreevey's campaign, while records show the City of Jersey City has paid the union substantial sums for various projects, including $36,506.07 on April 6, 2023, and $28,265.70 on March 17, 2023, among numerous other disbursements exceeding $100,000 since early 2023. This overlap between significant campaign contributions and recurring city expenditures creates a strong pay-to-play concern. While unions have a legitimate role in supporting candidates, the scale of financial ties in this case raises questions about whether public contracting decisions could be influenced by political donations, signaling a potential conflict of interest.
-          </p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $7,614.84</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $6,980.80</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $3,080.16</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $4,956.00</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $8,538.79</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $5,155.92</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $267.84</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $3,427.90</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $6,355.20</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $14,012.29</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $36,506.07</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $28,265.70</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $5,481.36</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $5,185.98</a></p>
-        </div>
-      )}
-    </div>
-
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 77 ? "active" : ""}`}
-        onClick={() => toggleAccordion(77)}
-        aria-expanded={openIndex === 77}
+        className={`accordion-header ${openIndex === 73 ? "active" : ""}`}
+        onClick={() => toggleAccordion(73)}
+        aria-expanded={openIndex === 73}
       >
         Khacharurian Engineering Assoc INC - $5,200
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 77 && (
+      {openIndex === 73 && (
         <div className="accordion-content">
           <p>
             Khacharurian Engineering Associates, Inc., an MEP engineering firm with multiple active projects in Jersey City, contributed $5,200 to Jim McGreevey’s mayoral campaign. Given the firm’s ongoing and potential city development projects relating to real estate projects, such as 425 Summit Avenue and 351 Marin Boulevard, this donation raises a strong red flag for pay-to-play concerns. The contribution creates the appearance of a conflict of interest, as the firm could potentially benefit from favorable city approvals, expedited permitting, or informal influence over municipal decisions. The timing and size of the donation, relative to the firm’s business interests in the city, further underscore the risk of perceived or actual undue influence.
@@ -2434,6 +2274,108 @@ FIREWORKS CELEBRATION ON JULY 4, 2019 NEAR EXCHANGE PLACE</a></p>
 
 
 
+    </section>
+
+    <section id="red-flags" className="union-section">
+
+      <h2>Union Contributions</h2>
+
+      <p> This campaign understands the importance of unions in protecting workers’ rights and securing fair wages, benefits, and safe working conditions. 
+    However, when unions also hold or seek contracts with the City, their donations may fall under pay-to-play rules. 
+    Including these contributions in our analysis is not a statement against unions or the labor movement — it is simply part of our commitment to transparency, 
+    ensuring that all potential conflicts of interest, regardless of the source, are treated consistently.</p>
+    
+    
+       <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 0 ? "active" : ""}`}
+        onClick={() => toggleAccordion(0)}
+        aria-expanded={openIndex === 0}
+      >
+        Greater NJ Carpenters PAC - $120,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 0 && (
+        <div className="accordion-content">
+          <p>
+            The Greater NJ Carpenters, through their PAC, have donated $120,200 to Jim McGreevey’s Jersey City mayoral campaign while simultaneously receiving a long series of substantial expenditure payments from the City of Jersey City. Public records show repeated payments from April 2021 through September 2025, including $143,038.07 (4/14/21), $90,258.05 (9/7/21), $77,426.57 (1/6/22), $168,212.69 (6/24/24), $117,874.81 (1/22/24), and dozens of others ranging from $15,129 to over $72,000, with many months showing multiple payments. Altogether, these expenditures represent millions of dollars directed to the union over four years. The overlap between such consistent, large-scale municipal payments and the PAC’s significant political contributions to McGreevey represents a strong red flag for potential pay-to-play and conflict of interest concerns, raising questions about whether the union’s financial support could influence the city’s contracting and expenditure decisions.
+          </p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/436931">9/3/25 - $25,521.66</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $15,941.21</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $58,510.39</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/431135">5/15/25 - $33,158.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/425256">3/24/25 - $38,253.15</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/422620">2/24/25 - $36,687.15</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $28,140.29</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $29,116.55</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $36,667.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/412458">10/10/24 - $30,217.54</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/410721">9/6/24 - $32,504.19</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/409634">8/12/24 - $34,820.65</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/406617">6/24/24 - $168,212.69</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $66,602.78</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/394633">2/5/24 - $56,934.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/393695">1/22/24 - $117,874.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $72,711.03</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $53,607.40</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $45,114.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/23 - $55,762.64</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $56,410.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $35,196.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $37,071.05</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $37,835.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $41,939.10</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $48,206.81</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $58,599.19</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/81765">12/9/22 - $49,546.18</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/78028">10/25/22 - $44,633.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $37,863.91</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/74496">9/2/22 - $29,022.48</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/73623">8/17/22 - $15,129.04</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/70762">6/27/22 - $44,999.56</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/67367">4/22/22 - $44,485.55</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $46,873.61</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64888">3/3/22 - $22,919.20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/64284">2/17/22 - $36,280.73</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $77,426.57</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/55896">9/7/21 - $90,258.05</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/46338">4/14/21 - $143,038.07</a></p>
+
+        </div>
+      )}
+    </div>
+
+      <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 76 ? "active" : ""}`}
+        onClick={() => toggleAccordion(76)}
+        aria-expanded={openIndex === 76}
+      >
+        B.A.C Administrative District Council of NJ - $6,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 76 && (
+        <div className="accordion-content">
+          <p>
+            The B.A.C. Administrative District Council of New Jersey contributed $6,000 to McGreevey's campaign, while records show the City of Jersey City has paid the union substantial sums for various projects, including $36,506.07 on April 6, 2023, and $28,265.70 on March 17, 2023, among numerous other disbursements exceeding $100,000 since early 2023. This overlap between significant campaign contributions and recurring city expenditures creates a strong pay-to-play concern. While unions have a legitimate role in supporting candidates, the scale of financial ties in this case raises questions about whether public contracting decisions could be influenced by political donations, signaling a potential conflict of interest.
+          </p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $7,614.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434179">6/20/25 - $6,980.80</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/424296">3/7/25 - $3,080.16</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $4,956.00</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $8,538.79</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/313478">10/23/23 - $5,155.92</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/156507">9/18/23 - $267.84</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $3,427.90</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $6,355.20</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $14,012.29</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/88651">4/6/23 - $36,506.07</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/87444">3/17/23 - $28,265.70</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/85108">2/17/23 - $5,481.36</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $5,185.98</a></p>
+        </div>
+      )}
+    </div> 
     </section>
 
     <footer className="other-candidates-section">

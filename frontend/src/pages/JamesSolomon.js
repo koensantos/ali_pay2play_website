@@ -202,7 +202,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $162,120.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $142,220.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -607,137 +607,105 @@ export default function Draft() {
         )}
       </div>
 
-{/* Accordion item 3 */}
-        <div className="accordion-item">
-          <button
-            className={`accordion-header ${openIndex === 4 ? "active" : ""}`}
-            onClick={() => toggleAccordion(4)}
-            aria-expanded={openIndex === 4}
-          >
-            Boswell Engineering - $2,500
-            <span className="accordion-arrow" />
-          </button>
-          {openIndex === 4 && (
-            <div className="accordion-content">
-              <ul>
-                <li>
-                  They hold several contracts around New Jersey, and have been involved in several projects in Hoboken. They were also awarded a contract in 2020 listed below, which Solomon voted Yes to.
-                </li>
-                <li>
-                  The Jersey City Municipal Council approved a resolution to award a $73,500 professional engineering services contract to Boswell Engineering, Inc. for the Grand Street Improvements project (No. 19-014-E). The firm was selected based on its qualifications and compliance with the city's Pay-to-Play and political contribution disclosure regulations. The contract will run for 12 months and is exempt from public bidding under New Jersey law for professional services. Funds for the project are available from account #04-215-55-151-990, and all required compliance and disclosure certifications will be filed with the resolution. The award must be publicly announced within 10 days.{" "}
-                  <a
-                    href="https://cityofjerseycity.civicweb.net/document/34505/Resolution%20Awarding%20a%20Professional%20Services%20Con.pdf?handle=C23EDB7B40904F9DBBAB8254A67B2500"
-                  >
-                    Resolution PDF
-                  </a>
-                </li>
-              </ul>
-              <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $73,500</a></p>
-              <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $1,098</a></p>
-              <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $585</a></p>
-            </div>
-          )}
-        </div>
+    {/* Accordion item 4 */}
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 4 ? "active" : ""}`}
+        onClick={() => toggleAccordion(4)}
+        aria-expanded={openIndex === 4}
+      >
+        Adams Rehmann & Heggan Associates INC - $5,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 4 && (
+        <div className="accordion-content">
+          <ul>
+            <li>
+              This company has been awareded several contracts to maintain digital tax maps. The resolutions are explained below:
+            </li>
+            <ul>
+              <li>
+                Res 25-086: The Jersey City Council approved Resolution 25-086 on January 29, 2025, awarding a $165,975 contract to Adams, Rehmann & Heggan Associates, Inc. (doing business as Civil Solutions) for digital tax map maintenance and the creation of a comprehensive address point layer. The contract is exempt from public bidding under N.J.S.A. 40A:11-5(1)(d) because it involves furnishing tax maps. Civil Solutions submitted all required political contribution and pay-to-play compliance certifications, confirming no recent reportable contributions to local political campaigns. $20,000 in funds are available from the 2025 temporary budget to begin the work, with future payments contingent on funding in the permanent and subsequent budgets. The contract will last up to 12 months, and payments will be made upon confirmation that services have been delivered as specified.{" "}
+                <a
+                  href="https://cityofjerseycity.civicweb.net/document/419266/Resolution%20to%20perform%20Digital%20Tax%20Map%20Maintenan.pdf?handle=B6B6D8FBEBA34C9C8482B9EF9F73B355"
+                >
+                  Resolution PDF
+                </a>
+              </li>
+              <li>
+                Res 24-057: The City of Jersey City approved Resolution 24-057 on February 7, 2024, awarding a contract to Adams, Rehmann & Heggan Associates, Inc. T/A Civil Solutions for digital tax map maintenance. This contract, not exceeding $165,975.00, is for a twelve-month period, effective from February 7, 2024, to February 6, 2025. The firm will update and maintain the City's official digital tax maps, create a comprehensive address point layer, and provide a web-based system for tracking map changes. This work is vital for property identification, assessment, zoning, and construction purposes, ensuring compliance with various local and state regulations.{" "}
+                <a
+                  href="https://cityofjerseycity.civicweb.net/document/391047/Contract%20to%20Adams,%20Rehmann%20_%20Heggan%20Associates,.pdf?handle=277065F4CD1D41E1BC3C56089FBC97A2"
+                >
+                  Resolution PDF
+                </a>
+              </li>
+              <li>
+                Res 23-037: This resolution from the City of Jersey City awards a contract to Adams, Rehmann, Heggan Associates, Inc. T/A Civil Solutions for digital tax map maintenance. The City's digital tax maps are crucial for identifying properties, synchronizing assessment data, and supporting zoning and construction purposes. The contract, awarded without public bidding as authorized by N.J.S.A. 40A:11-5(1)(d) , is for a total amount not exceeding $165,975.00 and will last for twelve months from the award date. The services include updating tax maps and creating a comprehensive address point layer. The resolution emphasizes compliance with "Pay-to-Play" regulations and affirmative action requirements, with funds of $20,000.00 available in the temporary budget for the 2023 fiscal year.{" "}
+                <a
+                  href="https://cityofjerseycity.civicweb.net/document/82736/Contract%20to%20Adams,%20Rehmann%20_%20Heggan%20Associates,.pdf?handle=06787F11D0DB4932A30D9C6D6A3C8CA2"
+                >
+                  Resolution PDf
+                </a>
+              </li>
+              <li>
+                Res 22-461: This resolution from the City of Jersey City awards a contract to Adams, Rehmann & Heggan Associates, Inc. T/A Civil Solutions for digital tax map maintenance. The firm will update the city's certified digital tax maps and create a comprehensive address point layer, which are essential for identifying properties, zoning, and construction purposes. The contract amount is not to exceed $219,825.00 and was awarded without public bidding as it falls under the furnishing of tax maps, as authorized by N.J.S.A. 40A:11-5(1)(d). The resolution, approved on June 29, 2022, also includes requirements for compliance with "Pay-to-Play" regulations, including business registration.{" "}
+                <a
+                  href="cityofjerseycity.civicweb.net/document/82736/Contract%20to%20Adams,%20Rehmann%20_%20Heggan%20Associates,.pdf?handle=06787F11D0DB4932A30D9C6D6A3C8CA2"
+                >
+                  Resolution PDF
+                </a>
+              </li>
+              <li>Res 19-582 : The City of Jersey City passed a resolution awarding a $149,900 contract to Adams, Rehmann & Heggan Associates, Inc. (Civil Solutions) to perform digital tax map maintenance. State law requires that the City’s certified tax maps, originally approved in 2009, be maintained in digital format to preserve their usefulness. The contract was awarded without public bidding under N.J.S.A. 40A:11-5(1)(d), which permits direct contracting for tax map services, and in compliance with New Jersey’s Pay-to-Play law. Civil Solutions submitted all required certifications, including political contribution disclosures, confirming they had made no reportable contributions to Jersey City officials in the past year. The initial $40,000 in funds will come from the 2019 temporary budget, with the remainder subject to appropriations in the permanent and subsequent budgets <a href="https://cityofjerseycity.civicweb.net/document/9281">Resolution PDF</a></li>
+            </ul>
+          </ul>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $13,046.25</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $23,966.25</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $8,737</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/418957">1/9/25 - $3,952.72</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/416983">12/6/24 - $12,120.88</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $5,291.55</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $11,939.10</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/411476">9/19/24 - $32,410</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $13,049.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/403052">5/17/24 - $9,958.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/400554">4/22/24 - $8,329</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/397144">3/18/24 - $6,276</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $11,317</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $17,042.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/357072">11/6/23 - $47,179.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/242953">10/5/23 - $12,215</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $24,102.25</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $17,679.25</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $20,147.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/83495">1/20/23 - $24,176</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $84,537</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $15,567</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $69,604.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $21,248</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/47945">5/7/21 - $38,293.50</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/43026">2/9/21 - $10,370</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/40872">1/11/21 - $10,334</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $26,661.55</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/19070">1/15/20 - $11,290.80</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/16087">11/26/19 - $15,421.92</a></p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $24,480</a></p>
 
-{/* Accordion item 4 */}
+        </div>
+      )}
+    </div>
+
+{/* Accordion item 5 */}
 <div className="accordion-item">
   <button
     className={`accordion-header ${openIndex === 5 ? "active" : ""}`}
     onClick={() => toggleAccordion(5)}
     aria-expanded={openIndex === 5}
   >
-    Adams Rehmann & Heggan Associates INC - $5,000
-    <span className="accordion-arrow" />
-  </button>
-  {openIndex === 5 && (
-    <div className="accordion-content">
-      <ul>
-        <li>
-          This company has been awareded several contracts to maintain digital tax maps. The resolutions are explained below:
-        </li>
-        <ul>
-          <li>
-            Res 25-086: The Jersey City Council approved Resolution 25-086 on January 29, 2025, awarding a $165,975 contract to Adams, Rehmann & Heggan Associates, Inc. (doing business as Civil Solutions) for digital tax map maintenance and the creation of a comprehensive address point layer. The contract is exempt from public bidding under N.J.S.A. 40A:11-5(1)(d) because it involves furnishing tax maps. Civil Solutions submitted all required political contribution and pay-to-play compliance certifications, confirming no recent reportable contributions to local political campaigns. $20,000 in funds are available from the 2025 temporary budget to begin the work, with future payments contingent on funding in the permanent and subsequent budgets. The contract will last up to 12 months, and payments will be made upon confirmation that services have been delivered as specified.{" "}
-            <a
-              href="https://cityofjerseycity.civicweb.net/document/419266/Resolution%20to%20perform%20Digital%20Tax%20Map%20Maintenan.pdf?handle=B6B6D8FBEBA34C9C8482B9EF9F73B355"
-            >
-              Resolution PDF
-            </a>
-          </li>
-          <li>
-            Res 24-057: The City of Jersey City approved Resolution 24-057 on February 7, 2024, awarding a contract to Adams, Rehmann & Heggan Associates, Inc. T/A Civil Solutions for digital tax map maintenance. This contract, not exceeding $165,975.00, is for a twelve-month period, effective from February 7, 2024, to February 6, 2025. The firm will update and maintain the City's official digital tax maps, create a comprehensive address point layer, and provide a web-based system for tracking map changes. This work is vital for property identification, assessment, zoning, and construction purposes, ensuring compliance with various local and state regulations.{" "}
-            <a
-              href="https://cityofjerseycity.civicweb.net/document/391047/Contract%20to%20Adams,%20Rehmann%20_%20Heggan%20Associates,.pdf?handle=277065F4CD1D41E1BC3C56089FBC97A2"
-            >
-              Resolution PDF
-            </a>
-          </li>
-          <li>
-            Res 23-037: This resolution from the City of Jersey City awards a contract to Adams, Rehmann, Heggan Associates, Inc. T/A Civil Solutions for digital tax map maintenance. The City's digital tax maps are crucial for identifying properties, synchronizing assessment data, and supporting zoning and construction purposes. The contract, awarded without public bidding as authorized by N.J.S.A. 40A:11-5(1)(d) , is for a total amount not exceeding $165,975.00 and will last for twelve months from the award date. The services include updating tax maps and creating a comprehensive address point layer. The resolution emphasizes compliance with "Pay-to-Play" regulations and affirmative action requirements, with funds of $20,000.00 available in the temporary budget for the 2023 fiscal year.{" "}
-            <a
-              href="https://cityofjerseycity.civicweb.net/document/82736/Contract%20to%20Adams,%20Rehmann%20_%20Heggan%20Associates,.pdf?handle=06787F11D0DB4932A30D9C6D6A3C8CA2"
-            >
-              Resolution PDf
-            </a>
-          </li>
-          <li>
-            Res 22-461: This resolution from the City of Jersey City awards a contract to Adams, Rehmann & Heggan Associates, Inc. T/A Civil Solutions for digital tax map maintenance. The firm will update the city's certified digital tax maps and create a comprehensive address point layer, which are essential for identifying properties, zoning, and construction purposes. The contract amount is not to exceed $219,825.00 and was awarded without public bidding as it falls under the furnishing of tax maps, as authorized by N.J.S.A. 40A:11-5(1)(d). The resolution, approved on June 29, 2022, also includes requirements for compliance with "Pay-to-Play" regulations, including business registration.{" "}
-            <a
-              href="cityofjerseycity.civicweb.net/document/82736/Contract%20to%20Adams,%20Rehmann%20_%20Heggan%20Associates,.pdf?handle=06787F11D0DB4932A30D9C6D6A3C8CA2"
-            >
-              Resolution PDF
-            </a>
-          </li>
-          <li>Res 19-582 : The City of Jersey City passed a resolution awarding a $149,900 contract to Adams, Rehmann & Heggan Associates, Inc. (Civil Solutions) to perform digital tax map maintenance. State law requires that the City’s certified tax maps, originally approved in 2009, be maintained in digital format to preserve their usefulness. The contract was awarded without public bidding under N.J.S.A. 40A:11-5(1)(d), which permits direct contracting for tax map services, and in compliance with New Jersey’s Pay-to-Play law. Civil Solutions submitted all required certifications, including political contribution disclosures, confirming they had made no reportable contributions to Jersey City officials in the past year. The initial $40,000 in funds will come from the 2019 temporary budget, with the remainder subject to appropriations in the permanent and subsequent budgets <a href="https://cityofjerseycity.civicweb.net/document/9281">Resolution PDF</a></li>
-        </ul>
-      </ul>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $13,046.25</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $23,966.25</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $8,737</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/418957">1/9/25 - $3,952.72</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/416983">12/6/24 - $12,120.88</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/415425">11/22/24 - $5,291.55</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/413799">11/8/24 - $11,939.10</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/411476">9/19/24 - $32,410</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/404397">6/7/24 - $13,049.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/403052">5/17/24 - $9,958.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/400554">4/22/24 - $8,329</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/397144">3/18/24 - $6,276</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/390968">1/8/24 - $11,317</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/390093">12/11/23 - $17,042.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/357072">11/6/23 - $47,179.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/242953">10/5/23 - $12,215</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/94298">7/7/23 - $24,102.25</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/91602">5/19/23 - $17,679.25</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/90508">5/8/23 - $20,147.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/83495">1/20/23 - $24,176</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/82744">1/6/23 - $84,537</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/77318">10/11/22 - $15,567</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/61646">1/6/22 - $69,604.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/50909">6/25/21 - $21,248</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/47945">5/7/21 - $38,293.50</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/43026">2/9/21 - $10,370</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/40872">1/11/21 - $10,334</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/39624">12/10/20 - $26,661.55</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/19070">1/15/20 - $11,290.80</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/16087">11/26/19 - $15,421.92</a></p>
-      <p><a href="https://cityofjerseycity.civicweb.net/document/15268">11/7/19 - $24,480</a></p>
-
-    </div>
-  )}
-</div>
-
-{/* Accordion item 5 */}
-<div className="accordion-item">
-  <button
-    className={`accordion-header ${openIndex === 6 ? "active" : ""}`}
-    onClick={() => toggleAccordion(6)}
-    aria-expanded={openIndex === 6}
-  >
     Anthony Grano, Owner of Persistent Construction Corp - $2,000
     <span className="accordion-arrow" />
   </button>
-  {openIndex === 6 && (
+  {openIndex === 5 && (
     <div className="accordion-content">
       <p>
   Anthony Grano, the owner of Persistent Construction Corp, contributed $2,000 to the campaign. This donation raises concerns because Persistent Construction has been a frequent recipient of lucrative Jersey City contracts, including multi-million dollar snow removal agreements (Res 24-859 and Res 23-931), an emergency $24,000 parklet construction contract during COVID-19 (Res 21-334), and a $1.16 million award for the Citywide Speed Humps Project (Res 19-152). In addition to these large-scale projects, the company has repeatedly received substantial payments from the City, ranging from $8,000 to nearly $350,000 for various construction and public works services. The company’s consistent stream of city-funded projects, combined with political contributions from its owner, creates the appearance of a potential pay-to-play relationship. These facts warrant closer scrutiny to ensure public contracting decisions are being made transparently and in the public interest.
@@ -799,9 +767,9 @@ export default function Draft() {
 {/* Accordion item 6 */}
 <div className="accordion-item">
   <button
-    className={`accordion-header ${openIndex === 7 ? "active" : ""}`}
-    onClick={() => toggleAccordion(7)}
-    aria-expanded={openIndex === 7}
+    className={`accordion-header ${openIndex === 6 ? "active" : ""}`}
+    onClick={() => toggleAccordion(6)}
+    aria-expanded={openIndex === 6}
   >
     John Burke, Partner - $500
     Madelaine Hicks, Partner - $1,050
@@ -810,7 +778,7 @@ export default function Draft() {
     Antonelli Kantor Rivera, PC - $3,750
     <span className="accordion-arrow" />
   </button>
-  {openIndex === 7 && (
+  {openIndex === 6 && (
     <div className="accordion-content">
       <ul>
         <li>
@@ -841,14 +809,14 @@ export default function Draft() {
       {/* Accordion item 7 */}
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
-          onClick={() => toggleAccordion(8)}
-          aria-expanded={openIndex === 8}
+          className={`accordion-header ${openIndex === 7 ? "active" : ""}`}
+          onClick={() => toggleAccordion(7)}
+          aria-expanded={openIndex === 7}
         >
           Next Generation Leaders - $5,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 8 && (
+        {openIndex === 7 && (
           <div className="accordion-content">
             <p>
               The donation from Next Generation Leaders to James Solomon is a red flag because the PAC itself has been donated to by companies that hold contracts with Jersey City. Public contract resolutions show multiple city vendors — including engineering and law firms like Adams, Rehmann & Heggan Associates (ARH) — contributing thousands of dollars to Next Generation Leaders. These are the same types of contractors who regularly seek and receive city business.
@@ -871,14 +839,14 @@ export default function Draft() {
       {/* Waters, McPherson, McNeil */}
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
-        onClick={() => toggleAccordion(9)}
-        aria-expanded={openIndex === 9}
+        className={`accordion-header ${openIndex === 8 ? "active" : ""}`}
+        onClick={() => toggleAccordion(8)}
+        aria-expanded={openIndex === 8}
       >
         Waters, McPherson, McNeil - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 9 && (
+      {openIndex === 8 && (
         <div className="accordion-content">
           <p>The donations from Waters, McPherson, McNeil P.C. to  James Solomon and other Jersey City candidates raise potential red flags due to the firm’s direct financial and business interests with the city, as well as the timing of these contributions. The law firm represents Honeywell International Inc. in environmental remediation projects affecting public rights-of-way in Jersey City, including the execution and termination of Notices in Lieu of Deed Notices, such as the resolution approving the updated NILODN for Fisk Street and other ROWs in July 2024 (<a href="https://cityofjerseycity.civicweb.net/document/406670">Resolution PDF</a>). Additionally, the firm has historically represented developers in high-value waterfront redevelopment projects in the city (<a href="https://www.lawwmm.com/HudsonRiverRedev.asp">Waters, McPherson, McNeil Hudson River Waterfront Redevelopment</a>). The firm has also received substantial payments from the city itself, including $448,690.70 (<a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25</a>), $338,281.63 (<a href="https://cityofjerseycity.civicweb.net/document/403052">5/14/25</a>), $26,852.32 (<a href="https://cityofjerseycity.civicweb.net/document/387879">11/22/23</a>) $11,510.03 (<a href="https://cityofjerseycity.civicweb.net/document/95854">8/11/2023</a>). The donations, totaling $31,200 from the firm and $5,200 from David McPherson personally, occurred shortly after or around the time of these municipal approvals and expenditures, creating a perception that the contributions could influence officials overseeing matters directly affecting the firm’s clients. While no direct quid pro quo is proven, the overlap of campaign contributions with public decisions and city payments involving the firm constitutes a potential pay-to-play concern and represents a red flag for regulatory or ethical scrutiny.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/436252">8/14/25 - $338,281.63</a></p>
@@ -901,37 +869,17 @@ export default function Draft() {
       )}
     </div>
 
-    
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
-        onClick={() => toggleAccordion(10)}
-        aria-expanded={openIndex === 10}
-      >
-        Ravi Bhalla, Mayor of Hoboken - $2,000
-        Amardeep Bhalla, Ravi's Brother - $1,750
-        Ranbir Bhalla, Ravi's Father - $1,750
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 9 && (
-        <div className="accordion-content">
-          <p>Ravi Bhalla, mayor of Hoboken and a client contact for T&M Associates, personally contributed $2,000 to James Solomon’s campaign, while his father, Rabinder Bhalla, and his brother, Amardeep Bhalla, each contributed $1,750. T&M Associates holds several contracts with Jersey City, creating a potential pay-to-play appearance where contributions from individuals linked to municipal contractors might influence city decisions. Bhalla has also faced multiple controversies, including allegations of parking ticket manipulation, a censure by the New Jersey Supreme Court for ethics violations, and lawsuits claiming quid pro quo or political pressure related to city operations; following these allegations, Hoboken City Council members called for state and federal investigations into his conduct. The combination of Bhalla’s municipal connections, his firm’s city contracts, his family’s donations, and his past controversies strengthens the need for scrutiny to ensure transparency and prevent conflicts of interest.</p>
-        </div>
-      )}
-    </div>
-
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
-        onClick={() => toggleAccordion(11)}
-        aria-expanded={openIndex === 11}
+        className={`accordion-header ${openIndex === 9 ? "active" : ""}`}
+        onClick={() => toggleAccordion(9)}
+        aria-expanded={openIndex === 9}
       >
         Vincent Buono, President of Munidex INC - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 11 && (
+      {openIndex === 9 && (
         <div className="accordion-content">
           <p>Vincent Buono, president of Munidex Inc., contributed $1,000 to James Solomon’s campaign. Munidex Inc. has received multiple payments from the City of Jersey City over several years, including amounts of $11,153 (twice), $6,360, $17,499, $6,235, $17,500, $6,113, $5,760, and $5,875, with transactions spanning from 2019 through 2025. Given that Munidex is a vendor receiving significant city funds, Buono’s contribution to a councilmember’s campaign could create the appearance of a pay-to-play scenario, where political donations might influence city contracts or payments. While the contribution is legal, the repeated business relationship between Munidex and the city warrants scrutiny to ensure transparency and prevent any perception of conflict of interest.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/434925">7/11/25 - $11,153.00</a></p>
@@ -951,17 +899,50 @@ export default function Draft() {
 
     <div className="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
-        onClick={() => toggleAccordion(12)}
-        aria-expanded={openIndex === 12}
+        className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
+        onClick={() => toggleAccordion(10)}
+        aria-expanded={openIndex === 10}
       >
         Sean Gallagher - $300
         Anna Gallagher - $5,500
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 12 && (
+      {openIndex === 10 && (
         <div className="accordion-content">
           <p>The donation history of Sean Gallagher, the current Jersey City Clerk, and his spouse Anna Gallagher raises potential conflict-of-interest concerns for James Solomon’s mayoral campaign. Records show that Anna Gallagher, listed as “not employed” or “homemaker,” made several sizable contributions: $800 on 01/01/2023, $3,300 on 09/05/2024, and $1,400 on 03/31/2025, in addition to smaller donations. Sean Gallagher himself contributed $300 on 01/30/2024 while listed as an architect with DS+R. The fact that the sitting City Clerk, an official responsible for election administration and council records, is directly connected to a household contributing over $5,000 across multiple years could be perceived as problematic</p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 11 ? "active" : ""}`}
+        onClick={() => toggleAccordion(11)}
+        aria-expanded={openIndex === 11}
+      >
+        Jillian Hernandez, Owner of the Brunswick School - $8,200
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 11 && (
+        <div className="accordion-content">
+          <p>Jillian Hernandez, owner of The Brunswick School in Jersey City, made two sizable contributions to a mayoral campaign in 2024, $1,000 on March 21, 2024 and $4,200 on September 13, 2024, while her school’s property at 444 Warren Street was simultaneously under environmental oversight. A letter dated August 19, 2024, from Ronald F. Dooney, Jr. of TERMS Environmental Services to Hernandez documented a Response Action Outcome (RAO) related to the site, which signifies the completion of environmental remediation under New Jersey DEP’s Site Remediation Program. The timing raises a red flag: Hernandez was both navigating regulatory compliance for her school and donating at levels that could be seen as attempting to build political goodwill with city leadership that often intersects with zoning, permitting, and development approvals. While there is no direct evidence of wrongdoing, the overlap between substantial campaign contributions and active environmental oversight highlights the potential risk of pay-to-play dynamics in Jersey City politics. <a href="https://cityofjerseycity.civicweb.net/document/411484">Letter 6.43 from September 25, 2024 Council Meeting.</a></p>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 12 ? "active" : ""}`}
+        onClick={() => toggleAccordion(12)}
+        aria-expanded={openIndex === 12}
+      >
+        Joseph Luppino, 1st Vice President of Government and Business Banking - Freedom Bank - $1,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 12 && (
+        <div className="accordion-content">
+          <p>Joseph Luppino’s $1,000 donation to Solomon raises red flag concerns due to his former role as 1st Vice President of Government and Business Banking at Freedom Bank, an institution officially listed in Jersey City’s 2025 Cash Management Plan as a GUDPA-approved depository. The plan authorizes the city to deposit and invest public funds in banks like Freedom Bank, and it requires disclosure of any material business or personal relationships between city officials and entities handling city funds. Given Luppino’s senior position at a bank where city funds could be deposited or managed, his contribution to Solomon presents a potential conflict of interest or pay-to-play appearance, as it could be interpreted as attempting to influence the city’s financial decisions or maintain favorable access to city-managed funds. <a href="https://cityofjerseycity.civicweb.net/document/418911">Resolution related to Freedom Bank</a></p>
+
         </div>
       )}
     </div>
@@ -972,12 +953,12 @@ export default function Draft() {
         onClick={() => toggleAccordion(13)}
         aria-expanded={openIndex === 13}
       >
-        Jillian Hernandez, Owner of the Brunswick School - $8,200
+        Israel Nieves, McGreevey's Council At-Large Candidate - $500
         <span className="accordion-arrow" />
       </button>
       {openIndex === 13 && (
         <div className="accordion-content">
-          <p>Jillian Hernandez, owner of The Brunswick School in Jersey City, made two sizable contributions to a mayoral campaign in 2024 — $1,000 on March 21 and $4,200 on September 13 — while her school’s property at 444 Warren Street was simultaneously under environmental oversight. A letter dated August 19, 2024, from Ronald F. Dooney, Jr. of TERMS Environmental Services to Hernandez documented a Response Action Outcome (RAO) related to the site, which signifies the completion of environmental remediation under New Jersey DEP’s Site Remediation Program. The timing raises a red flag: Hernandez was both navigating regulatory compliance for her school and donating at levels that could be seen as attempting to build political goodwill with city leadership that often intersects with zoning, permitting, and development approvals. While there is no direct evidence of wrongdoing, the overlap between substantial campaign contributions and active environmental oversight highlights the potential risk of pay-to-play dynamics in Jersey City politics. <a href="https://cityofjerseycity.civicweb.net/document/411484">Letter 6.43 from September 25, 2024 Council Meeting.</a></p>
+          <p>Israel Nieves, a member of Jim McGreevey’s council-at-large team, donated $500 to Solomon’s campaign, which raises a potential red flag. While legal, the donation creates the appearance of a conflict of interest or divided loyalty, as Nieves is publicly affiliated with a competing candidate. Such contributions can be interpreted as attempts to influence or maintain access across multiple campaigns, posing ethical concerns for Solomon’s team. For transparency and accountability, this donation warrants attention and disclosure in any summary of potential campaign red flags.</p>
         </div>
       )}
     </div>
@@ -988,62 +969,13 @@ export default function Draft() {
         onClick={() => toggleAccordion(14)}
         aria-expanded={openIndex === 14}
       >
-        Joseph Luppino, 1st Vice President of Government and Business Banking - Freedom Bank - $1,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 14 && (
-        <div className="accordion-content">
-          <p>Joseph Luppino’s $1,000 donation to Solomon raises red flag concerns due to his former role as 1st Vice President of Government and Business Banking at Freedom Bank, an institution officially listed in Jersey City’s 2025 Cash Management Plan as a GUDPA-approved depository. The plan authorizes the city to deposit and invest public funds in banks like Freedom Bank, and it requires disclosure of any material business or personal relationships between city officials and entities handling city funds. Given Luppino’s senior position at a bank where city funds could be deposited or managed, his contribution to Solomon presents a potential conflict of interest or pay-to-play appearance, as it could be interpreted as attempting to influence the city’s financial decisions or maintain favorable access to city-managed funds. <a href="https://cityofjerseycity.civicweb.net/document/418911">Resolution related to Freedom Bank</a></p>
-
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
-        onClick={() => toggleAccordion(15)}
-        aria-expanded={openIndex === 15}
-      >
-        Israel Nieves, McGreevey's Council At-Large Candidate - $500
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 15 && (
-        <div className="accordion-content">
-          <p>Israel Nieves, a member of Jim McGreevey’s council-at-large team, donated $500 to Solomon’s campaign, which raises a potential red flag. While legal, the donation creates the appearance of a conflict of interest or divided loyalty, as Nieves is publicly affiliated with a competing candidate. Such contributions can be interpreted as attempts to influence or maintain access across multiple campaigns, posing ethical concerns for Solomon’s team. For transparency and accountability, this donation warrants attention and disclosure in any summary of potential campaign red flags.</p>
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
-        onClick={() => toggleAccordion(16)}
-        aria-expanded={openIndex === 16}
-      >
-        Marc Wesson, Treasurer of Jersey City Parks Coalition, and Partner of Tenmarc Building - $4,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 16 && (
-        <div className="accordion-content">
-          <p>The donations from Marc Wesson, a partner in the Tenmarc Building and treasurer of the Jersey City Parks Coalition, raise a significant red flag for Solomon’s campaign. The Tenmarc Building was specifically mentioned in the Planning Board’s resolution concerning Ordinance No. 20-103, which adopted amendments to the Morris Canal Redevelopment Plan, including the creation of the Berry Lane Park North Zone. The resolution noted that while some maps indicated the area as open space, existing structures—including the Tenmarc Building—were excluded from public acquisition and would remain privately owned. Wesson’s financial contributions could therefore be perceived as an attempt to influence city officials in matters affecting redevelopment projects near his property interests, particularly given the ordinance’s provisions for mixed-use development, public recreation space, and community-focused amenities. These connections create the appearance of a conflict of interest, making the donations a strong red flag. <a href="https://cityofjerseycity.civicweb.net/document/61998">Ordinance PDF (Tenmarc Building mentioned on pg 8)</a></p>
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
-        onClick={() => toggleAccordion(17)}
-        aria-expanded={openIndex === 17}
-      >
         Charles Wilkes - $500
         Matt Schiller - $250
         Chris Murphy - $250 
         MURPHY SCHILLER & WILKES LLP
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 17 && (
+      {openIndex === 14 && (
         <div className="accordion-content">
           <p>Charles Wilkes, Matt Schiller, and Chris Murphy collectively donated $1,000 to Councilmember James Solomon through their firm Murphy Schiller & Wilkes LLP, with individual contributions of $500, $250, and $250, respectively. Chris Murphy also acted as counsel for the applicant 660 Tonnele TMW, LLC in Jersey City Zoning Board of Adjustment case Z23-007, which sought variances and approvals for a Class 5 Cannabis Retail Establishment at 660-684 Tonnele Avenue. The overlap of Murphy’s professional work advocating for a development project before the city and his personal contributions to Solomon’s campaign raises concerns about a potential conflict of interest or the appearance of undue influence, especially given that the firm receives significant payments from Jersey City.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/409786">8/14/24 - $124,500.90</a></p>
@@ -1055,35 +987,14 @@ export default function Draft() {
 
     <div className ="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
-        onClick={() => toggleAccordion(18)}
-        aria-expanded={openIndex === 18}
-      >
-        Anthony Catanio, Owner of Leemark Electrics - $500
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 18 && (
-        <div className="accordion-content">
-          <p>Leemark Electrics have done several projects in Jersey City relating lighting, power distribution, etc. Along with their projects, they have received expenditures from Jersey City and had received a contract in October 2020. The details are listed below.</p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/44186">$32,700 - 3/4/21</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/35805">Resolution PDF</a></p>
-          <p><a href ="https://cityofjerseycity.civicweb.net/document/30560">$9,800 - 2/19/20</a></p>
-          <p><a href="https://cityofjerseycity.civicweb.net/document/23359">$4,120 - 3/18/20</a></p>
-
-        </div>
-      )}
-    </div>
-
-    <div className ="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
-        onClick={() => toggleAccordion(19)}
-        aria-expanded={openIndex === 19}
+        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
+        onClick={() => toggleAccordion(15)}
+        aria-expanded={openIndex === 15}
       >
         Claims Resolution INC - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 19 && (
+      {openIndex === 15 && (
         <div className="accordion-content">
           <p>The $1,000 donation from Claims Resolution, Inc. to Solomon is potentially a red flag because CRC is a recurring city contractor who receives large, multi-year payments for third-party administration of worker’s compensation and liability claims. When a vendor making substantial revenue from city contracts also contributes to an elected official’s campaign, it raises concerns about pay-to-play dynamics, where campaign contributions could influence contract awards or renewals. Even if legal, such contributions can create the appearance of a conflict of interest, especially since Solomon voted on multiple resolutions approving CRC’s contracts. This scenario warrants scrutiny to ensure that the contribution did not improperly affect procurement decisions or create a perceived obligation from the official.</p>
           <p><strong>Res 25-181 </strong>The City of Jersey City authorized payment of $212,499.96 to Claims Resolution Corporation, Inc. for providing third-party administrator services for worker’s compensation and liability claims from January through December 2024. James Carroll, representing the city, reviewed and certified that the services were performed as requested and that the charges were fair and reasonable. The payment will be made from Account No. 14-298-56-000-700 through the Insurance Fund Commission. The approval of the payment is contingent upon Claims Resolution Corporation executing a release and affidavit confirming that the submitted claim represents the total costs and releasing the city from any further liability. The Business Administrator is authorized to take any additional actions necessary to implement the resolution. Solomon votes yes to this resolution. <a href="https://cityofjerseycity.civicweb.net/document/422622">Resolution PDF</a></p>
@@ -1100,14 +1011,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
-        onClick={() => toggleAccordion(20)}
-        aria-expanded={openIndex === 20}
+        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
+        onClick={() => toggleAccordion(16)}
+        aria-expanded={openIndex === 16}
       >
         Mark Grossbard, CEO of Kai Strategic Insurance and VP of Insurance World: $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 20 && (
+      {openIndex === 16 && (
         <div className="accordion-content">
           <p>Mark Grossbard, CEO of Kai Strategic Insurance Partners, personally donated $1,000 to Solomon’s campaign on 06/05/25. This donation is flagged because Kai Strategic has received substantial payments from Jersey City, including $1,568,074.46 on 10/16/24, $561,050.40 on 1/9/25, and $602,197.40 on 4/4/25. Even though the donation is technically personal, the timing and the size of city expenditures to his company suggest a potential conflict of interest, as the donation could be perceived as an attempt to influence Solomon in matters affecting Kai Strategic’s business with the city. This raises pay-to-play and ethical concerns, making it a red flag in campaign finance transparency analysis.</p>
            <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $602,197.40</a></p>
@@ -1119,42 +1030,27 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 21 ? "active" : ""}`}
-        onClick={() => toggleAccordion(21)}
-        aria-expanded={openIndex === 21}
+        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
+        onClick={() => toggleAccordion(17)}
+        aria-expanded={openIndex === 17}
       >
         Donald Shauger II - $1,000
         Donald Shauger Sr. - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 21 && (
+      {openIndex === 17 && (
         <div className="accordion-content">
           <p>Donald Shauger II and Donald Shauger Sr., executives of The Shauger Group Inc., each donated $1,000 to Councilmember Solomon on June 30, 2025. This is notable given the scope of their company’s work in Jersey City. Their projects include Phase V Water and Sewer Main Upgrades, involving the installation of 7,000 LF of 12-inch watermain, 4,000 LF of 8-inch watermain, new valves, hydrants, and service connections throughout Jersey City, as well as 11,000 LF of new PVC sewer main with associated manholes and cleanouts. They also carried out the Large Valve Replacement Project, replacing 30 of the most defective valves in the city’s water distribution system, which involved excavation, timber shoring, temporary bypass piping, and maintaining water service to residents during construction. The size and timing of these donations could raise concerns about potential influence or the appearance of a conflict of interest. <a href="https://shauger.com/major-projects">Shauger Group's Major Projects</a></p>
         </div>
       )}
     </div>
 
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 22 ? "active" : ""}`}
-        onClick={() => toggleAccordion(22)}
-        aria-expanded={openIndex === 22}
-      >
-        IBEW Local Union 164 - $2,500
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 22 && (
-        <div className="accordion-content">
-          <p>On June 30, 2025, IBEW Local 164 donated $2,500 to James Solomon’s mayoral campaign, just five days after receiving a $7,366.59 payment from the City of Jersey City. While unions frequently engage in local politics, the timing of this transaction raises significant concerns. Pay-to-play risks often emerge when an organization that benefits financially from city expenditures turns around and contributes to a candidate for mayor, the office that directly oversees city contracts and spending. Even if no explicit quid pro quo is proven, the sequence suggests a potential exchange of public funds for political influence. This kind of donation blurs the line between civic engagement and transactional politics, undermining trust in fair governance and making it a strong red flag in the campaign finance record.</p>
-        </div>
-      )}
-    </div>
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 23 ? "active" : ""}`}
-        onClick={() => toggleAccordion(23)}
-        aria-expanded={openIndex === 23}
+        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
+        onClick={() => toggleAccordion(18)}
+        aria-expanded={openIndex === 18}
       >
         Dane Calcagni, Director of Research and Information - $350
         Alex Chang, Chief Happiness Officer - $300
@@ -1165,7 +1061,7 @@ export default function Draft() {
         Corcoran Sawyer Smith
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 23 && (
+      {openIndex === 18 && (
         <div className="accordion-content">
           <p>Employees from a prominent Jersey City real estate brokerage, which manages over 100 luxury and high-end properties in the city, collectively contributed to James Solomon’s mayoral campaign. Donors include Dane Calcagni, Alex Chang, Leia Duif, Thomas Gibbons, Sawyer Smith, and Selina Vargas, all affiliated with the company’s Jersey City office. While Solomon has pledged not to accept direct contributions from developers, these donations from employees who work in the real estate development sector raise questions about the potential for indirect influence. Even if the contributions are legal and within pledge boundaries, the concentration of donations from individuals connected to a firm heavily involved in local property development creates the appearance of a possible conflict of interest or pay-to-play scenario, making this a notable red flag in the campaign finance record.</p>
           <a href="https://www.corcoran.com/search/for-sale/location/downtown-jersey-city-nj/regionId/130?gad_source=1&gad_campaignid=18224731163&gclid=CjwKCAjw2brFBhBOEiwAVJX5GFqbC2SPYJ-FP6J13_w02DuiOqCOWPOp6mvDa8FSSfI_tVhnif3CABoCzCsQAvD_BwE">Listings of properties under them in Jersey City.</a>
@@ -1173,51 +1069,28 @@ export default function Draft() {
       )}
     </div>
 
+    </section>
 
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 24 ? "active" : ""}`}
-        onClick={() => toggleAccordion(24)}
-        aria-expanded={openIndex === 24}
-      >
-        Christopher Warren, Partner from Scarinci & Hollenbeck - $5,000
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 24 && (
-        <div className="accordion-content">
-          <p>Christopher Warren’s $5,000 contribution to James Solomon’s mayoral campaign on March 31, 2025, takes on additional scrutiny given the broader activities of Scarinci Hollenbeck in Jersey City. Donald Pepe, another partner at the firm, has actively interacted with the city on multiple ordinances and resolutions, demonstrating the firm’s ongoing involvement in municipal matters. This context suggests that the firm not only has clients affected by city decisions but also maintains direct channels of influence with city officials. While no explicit quid pro quo is documented, the donation from Warren,combined with the firm’s city engagement,creates a plausible appearance of potential influence, making it a notable red flag in the campaign finance record.</p>
-         </div>
-      )}
-    </div>
+    <section id="red-flags" className="union-section">
 
-    <div className = "accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 25 ? "active" : ""}`}
-        onClick={() => toggleAccordion(25)}
-        aria-expanded={openIndex === 25}
-      >
-        Irene Barnaby, Agent at Compass NJ - $2,900
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 25 && (
-        <div className="accordion-content">
-          <p>
-            Irene Barnaby, an executive with Compass NJ, personally donated a total of $2,900 to Solomon's campaign in 2024 and 2025. While the donations were made in her name rather than by Compass directly, the connection to a major real estate brokerage raises concern. Compass is deeply tied to Jersey City’s real estate market and stands to benefit from zoning, planning, and development decisions shaped by city leadership. Because executives of real estate firms have a direct financial interest in policies that affect property values and development opportunities, this contribution presents a potential conflict of interest and is appropriately marked as a strong red flag.
-          </p>
-         </div>
-      )}
-    </div>
+      <h2>Union Contributions</h2>
 
-    <div className="accordion-item">
+      <p> This campaign understands the importance of unions in protecting workers’ rights and securing fair wages, benefits, and safe working conditions. 
+    However, when unions also hold or seek contracts with the City, their donations may fall under pay-to-play rules. 
+    Including these contributions in our analysis is not a statement against unions or the labor movement — it is simply part of our commitment to transparency, 
+    ensuring that all potential conflicts of interest, regardless of the source, are treated consistently.</p>
+    
+    
+       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 26 ? "active" : ""}`}
-          onClick={() => toggleAccordion(26)}
-          aria-expanded={openIndex === 26}
+          className={`accordion-header ${openIndex === 0 ? "active" : ""}`}
+          onClick={() => toggleAccordion(0)}
+          aria-expanded={openIndex === 0}
         >
           IBEW Local Union 164 - $2,500
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 26 && (
+        {openIndex === 0 && (
           <div className="accordion-content">
             <p>The donations from IBEW Local Union 164 to Solomon, totaling $2,500, raise a strong red flag given the union’s extensive financial ties with Jersey City. Public records show that IBEW Local 164 has received significant city payments over multiple years, including large expenditures in 2021, 2022, 2024, and 2025. The sequence of receiving municipal funds and then contributing heavily to O’Dea’s campaign creates the appearance of a pay-to-play cycle, where taxpayer money flows to the union and then back into local politics. This dynamic heightens concerns about whether the union is seeking to preserve or expand its influence over future contracts and city decisions. While no direct illegality is proven, the overlap between city expenditures and campaign donations underscores the risk of undue influence and the need for greater transparency.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $8,672.67</a></p>
@@ -1230,32 +1103,21 @@ export default function Draft() {
 
       <div className="accordion-item">
         <button
-          className={`accordion-header ${openIndex === 27 ? "active" : ""}`}
-          onClick={() => toggleAccordion(27)}
-          aria-expanded={openIndex === 27}
+          className={`accordion-header ${openIndex === 1 ? "active" : ""}`}
+          onClick={() => toggleAccordion(1)}
+          aria-expanded={openIndex === 1}
         >
           32BJ United America Dream Fund PAC - $15,000
           <span className="accordion-arrow" />
         </button>
-        {openIndex === 27 && (
+        {openIndex === 1 && (
           <div className="accordion-content">
             <p>A significant red flag arises from the $15,000 contribution from the 32BJ United America Dream Fund PAC to James Solomon's campaign on June 26, 2025. This donation preceded the Jersey City Council’s September 10, 2025 resolution supporting 32BJ SEIU security officers in their 2025 contract campaign. The timing and alignment of the donation with these council actions suggest a potential conflict of interest and raise pay-to-play concerns, as the political committee making the contribution represents a union directly impacted by city contracts. Such a pattern of giving signals the possibility of undue influence over municipal decision-making, even in the absence of explicit legal violations.</p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/436644">Res 25-574 - Sep 10, 2025</a></p>
             <p><a href="https://cityofjerseycity.civicweb.net/document/343830">Res 23-805 - Nov 8, 2023</a></p>
           </div>
         )}
-      </div>
-
-    
-
-
-
-
-
-
-    
-
-      {/* Add more items below in same pattern */}
+      </div> 
     </section>
 
     <div className="other-candidates-section">
