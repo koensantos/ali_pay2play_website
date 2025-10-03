@@ -52,7 +52,7 @@ export default function Home() {
 
         {/* Quick Donation Comparison link at top */}
         <div className="quick-comparison">
-          <Link to="/comparison">Transaprency Dashboard</Link>
+          <Link to="/comparison">Transparency Dashboard</Link>
         </div>
 
         <p className="intro">
