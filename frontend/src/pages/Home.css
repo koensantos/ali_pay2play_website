@@ -127,7 +127,7 @@ header h1 {
 
   .mobile-menu {
     position: fixed; /* changed from absolute → fixed so it respects viewport */
-    top: 80px; /* adjust so menu starts BELOW the red sticky label + header */
+    top: 100px; /* adjust so menu starts BELOW the red sticky label + header */
     left: 0;
     width: 100%;
     background-color: #1d3557;
