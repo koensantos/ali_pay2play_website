@@ -119,7 +119,7 @@ header h1 {
     background-color: #1d3557;
     padding: 0.5rem;
     position: fixed;
-    top: 32px; /* directly below sticky label height */
+    top: 100px; /* directly below sticky label height */
     left: 0;
     width: 100%;
     z-index: 1500;
