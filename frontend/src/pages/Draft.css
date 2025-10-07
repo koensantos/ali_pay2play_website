@@ -492,3 +492,22 @@ button[type="submit"] {
   margin: 0;
 }
 
+.sticky-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #b30000; /* red background */
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 0;
+  z-index: 2000; /* stays ABOVE header and menu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-label p {
+  margin: 0;
+}
+
