@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./FAQ.css";
 
+const otherCandidates = [
+    { name: "Mussab Ali", path: "/MussabAli" },
+    { name: "Bill O'Dea", path: "/BillODea" },
+    { name: "Jim McGreevey", path: "/JimMcGreevey" },
+    { name: "James Solomon", path: "/JamesSolomon" },
+    { name: "Joyce Watterman", path: "/JoyceWatterman" },
+    { name: "Transparency Dashboard", path: "/comparison" },
+    { name: "Frequently Asked Questions", path: "/faq" }
+  ];
+
 export default function FAQ() {
   const faqs = [
     {
@@ -49,6 +59,32 @@ export default function FAQ() {
 
   return (
     <div className="faq-page">
+        <div className="sticky-label">
+            <p><a href="https://www.ali2025.com/paytoplay">This website is part of the Ali2025 Pay2Play Pledge</a></p>
+        </div>
+
+        <div className="mobile-header">
+                <button
+                  className="hamburger"
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  aria-label="Toggle menu"
+                >
+                  ☰ <span className="menu-label">Menu</span>
+                </button>
+                {menuOpen && (
+                  <nav className="mobile-menu">
+                    {otherCandidates.map((candidate) => (
+                      <Link
+                        to={candidate.path}
+                        key={candidate.name}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {candidate.name}
+                      </Link>
+                    ))}
+                  </nav>
+                )}
+              </div>
       <header className="faq-header">
         <h1>Frequently Asked Questions</h1>
         <p>
@@ -77,6 +113,19 @@ export default function FAQ() {
           </div>
         ))}
       </section>
+
+      <div className="other-candidates-section">
+            <h2>Other Candidates</h2>
+            <ul className="other-candidates-list">
+              {otherCandidates
+                .filter(c => c.name !== "Frequently Asked Questions") // exclude current candidate
+                .map(c => (
+                  <li key={c.name}>
+                    <Link to={c.path}>{c.name}</Link>
+                  </li>
+              ))}
+            </ul>
+        </div>
 
       <footer className="footer">
         <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
