@@ -165,3 +165,22 @@ header h1 {
   margin: 0;
 }
 
+
+.sticky-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1c1c1c; /* dark background for contrast */
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 0;
+  z-index: 2000; /* higher than your mobile header/menu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-label p {
+  margin: 0;
+}

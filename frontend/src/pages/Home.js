@@ -23,6 +23,10 @@ export default function Home() {
 
   return (
     <div className="homepage">
+    <div className="sticky-label">
+      <p><a href="https://www.ali2025.com/paytoplay">This website is part of the Ali2025 Pay2Play Pledge</a></p>
+    </div>
+
       {/* Fixed Mobile Header */}
       <div className="mobile-header">
         <button
