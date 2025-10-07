@@ -111,7 +111,7 @@ header h1 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-@@media (max-width: 768px) {
+@media (max-width: 768px) {
   .mobile-header {
     display: flex;
     align-items: center;
