@@ -8,7 +8,7 @@ import BillODea from "./pages/BillODea";
 import JoyceWatterman from "./pages/JoyceWatterman";
 import JamesSolomon from "./pages/JamesSolomon";
 import AllCandidatesComparison from "./pages/AllCandidatesComparison";
-import FAQ from "./FAQ";
+import FAQ from "./pages/FAQ";
 
 
 // SPA pageview tracking for React Router
