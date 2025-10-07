@@ -12,6 +12,9 @@ const otherCandidates = [
     { name: "Frequently Asked Questions", path: "/faq" }
   ];
 
+const [menuOpen, setMenuOpen] = useState(false);
+  
+
 export default function FAQ() {
   const faqs = [
     {
