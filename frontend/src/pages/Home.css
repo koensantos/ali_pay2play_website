@@ -195,3 +195,13 @@ header h1 {
 .sticky-label p {
   margin: 0;
 }
+
+.faq-link {
+  color: #b30000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.faq-link:hover {
+  text-decoration: underline;
+}

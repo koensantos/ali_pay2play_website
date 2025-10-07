@@ -87,6 +87,9 @@ export default function Home() {
         </div>
       </section>
 
+      <Link to="/faq" className="faq-link">FAQ</Link>
+
+
      <footer className="footer">
   <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
 </footer>

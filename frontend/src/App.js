@@ -8,6 +8,8 @@ import BillODea from "./pages/BillODea";
 import JoyceWatterman from "./pages/JoyceWatterman";
 import JamesSolomon from "./pages/JamesSolomon";
 import AllCandidatesComparison from "./pages/AllCandidatesComparison";
+import FAQ from "./FAQ";
+
 
 // SPA pageview tracking for React Router
 function AnalyticsTracker() {
@@ -37,6 +39,7 @@ export default function App() {
           <Route path="/JoyceWatterman" element={<JoyceWatterman />} />
           <Route path="/JamesSolomon" element={<JamesSolomon />} />
           <Route path="/comparison" element={<AllCandidatesComparison />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
 
         {/* Vercel Analytics component */}
