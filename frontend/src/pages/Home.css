@@ -126,15 +126,17 @@ header h1 {
   }
 
   .mobile-menu {
-    position: fixed; /* changed from absolute → fixed so it respects viewport */
-    top: 100px; /* adjust so menu starts BELOW the red sticky label + header */
+    position: fixed;
+    top: 95px; /* bump this higher until the menu starts fully below the red label */
     left: 0;
     width: 100%;
     background-color: #1d3557;
     display: flex;
     flex-direction: column;
     z-index: 1400;
+    padding-top: 0.25rem; /* small padding for visual spacing */
   }
+
 
   .homepage {
     padding-top: 100px; /* ensures content starts below both header + label */
