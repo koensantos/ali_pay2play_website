@@ -111,7 +111,7 @@ header h1 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 768px) {
+@@media (max-width: 768px) {
   .mobile-header {
     display: flex;
     align-items: center;
@@ -119,25 +119,25 @@ header h1 {
     background-color: #1d3557;
     padding: 0.5rem;
     position: fixed;
-    top: 30px; /* moved below sticky label */
+    top: 30px; /* below sticky label */
     left: 0;
     width: 100%;
-    z-index: 1100; /* above the sticky label */
+    z-index: 1500; /* below sticky label */
   }
 
   .mobile-menu {
     position: absolute;
-    top: 50px; /* adjust so it sits under the header */
+    top: 100%; /* directly below header */
     left: 0;
     width: 100%;
     background-color: #1d3557;
     display: flex;
     flex-direction: column;
-    z-index: 1200; /* above sticky label */
+    z-index: 1400; /* below sticky label */
   }
 
   .homepage {
-    padding-top: 90px; /* creates room for both the label and header */
+    padding-top: 90px; /* space for both sticky label + header */
   }
 }
 
@@ -180,13 +180,13 @@ header h1 {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #b30000; /* red pledge background */
+  background-color: #b30000; /* red background */
   color: white;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 6px 0;
-  z-index: 1000; /* same level as header so it's not over the menu */
+  z-index: 2000; /* stays ABOVE header and menu */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
