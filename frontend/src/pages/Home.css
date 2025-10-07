@@ -119,25 +119,25 @@ header h1 {
     background-color: #1d3557;
     padding: 0.5rem;
     position: fixed;
-    top: 30px; /* below sticky label */
+    top: 32px; /* directly below sticky label height */
     left: 0;
     width: 100%;
-    z-index: 1500; /* below sticky label */
+    z-index: 1500;
   }
 
   .mobile-menu {
-    position: absolute;
-    top: 100%; /* directly below header */
+    position: fixed; /* changed from absolute → fixed so it respects viewport */
+    top: 80px; /* adjust so menu starts BELOW the red sticky label + header */
     left: 0;
     width: 100%;
     background-color: #1d3557;
     display: flex;
     flex-direction: column;
-    z-index: 1400; /* below sticky label */
+    z-index: 1400;
   }
 
   .homepage {
-    padding-top: 90px; /* space for both sticky label + header */
+    padding-top: 100px; /* ensures content starts below both header + label */
   }
 }
 
