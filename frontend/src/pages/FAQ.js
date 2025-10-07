@@ -32,7 +32,12 @@ export default function FAQ() {
     {
       question: "Who built this project?",
       answer:
-        "The site was created and maintained by Koen Mitchel Santos, a Jersey City resident, as part of a civic technology initiative to make local political finance data accessible and understandable.",
+        "The site was created and maintained by Koen Mitchel Santos, a Jersey City resident and Software Development Intern, as part of a civic technology initiative to make local political finance data accessible and understandable.",
+    },
+    {
+      question: "This website is part of the Ali2025 Pay2Play Pledge. Why should I trust it?",
+      answer:
+        "The Pay2Play pledge commits Mussab Ali to refuse donations from developers and entities with pending or recent business before the city. This website aims to promote transparency for all candidates, encouraging accountability and informed voting. All data is sourced from official NJ ELEC records, and is free to download under each candidate's page.",
     },
   ];
 

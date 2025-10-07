@@ -196,12 +196,24 @@ header h1 {
   margin: 0;
 }
 
-.faq-link {
-  color: #b30000;
-  text-decoration: none;
-  font-weight: 600;
+.faq-button-container {
+  text-align: center;
+  margin-top: 2rem;
 }
 
-.faq-link:hover {
-  text-decoration: underline;
+.faq-button {
+  display: inline-block;
+  background-color: #b30000; /* red like the pledge */
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.faq-button:hover {
+  background-color: #8e0000;
+  transform: translateY(-2px);
 }

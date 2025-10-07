@@ -87,7 +87,12 @@ export default function Home() {
         </div>
       </section>
 
-      <Link to="/faq" className="faq-link">FAQ</Link>
+      <div className="faq-button-container">
+        <Link to="/faq" className="faq-button">
+          View Frequently Asked Questions
+        </Link>
+      </div>
+
 
 
      <footer className="footer">
