@@ -111,7 +111,6 @@ header h1 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Show hamburger on mobile only */
 @media (max-width: 768px) {
   .mobile-header {
     display: flex;
@@ -120,15 +119,25 @@ header h1 {
     background-color: #1d3557;
     padding: 0.5rem;
     position: fixed;
-    top: 0;
+    top: 30px; /* moved below sticky label */
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1100; /* above the sticky label */
   }
 
-  /* Add padding to page so content isn't hidden under fixed header */
+  .mobile-menu {
+    position: absolute;
+    top: 50px; /* adjust so it sits under the header */
+    left: 0;
+    width: 100%;
+    background-color: #1d3557;
+    display: flex;
+    flex-direction: column;
+    z-index: 1200; /* above sticky label */
+  }
+
   .homepage {
-    padding-top: 60px;
+    padding-top: 90px; /* creates room for both the label and header */
   }
 }
 
@@ -171,13 +180,13 @@ header h1 {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #1c1c1c; /* dark background for contrast */
+  background-color: #b30000; /* red pledge background */
   color: white;
   text-align: center;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 6px 0;
-  z-index: 2000; /* higher than your mobile header/menu */
+  z-index: 1000; /* same level as header so it's not over the menu */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
