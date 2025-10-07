@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./FAQ.css";
+  
 
-const otherCandidates = [
+export default function FAQ() {
+
+    const otherCandidates = [
     { name: "Mussab Ali", path: "/MussabAli" },
     { name: "Bill O'Dea", path: "/BillODea" },
     { name: "Jim McGreevey", path: "/JimMcGreevey" },
@@ -12,10 +15,7 @@ const otherCandidates = [
     { name: "Frequently Asked Questions", path: "/faq" }
   ];
 
-const [menuOpen, setMenuOpen] = useState(false);
-  
-
-export default function FAQ() {
+    const [menuOpen, setMenuOpen] = useState(false);
   const faqs = [
     {
       question: "What is Pay2Play?",
