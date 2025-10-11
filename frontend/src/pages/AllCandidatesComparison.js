@@ -51,9 +51,7 @@ export default function Comparison() {
   return (
     <div className="comparison-page">
 
-      <div className="sticky-label">
-        <p><a href="https://www.ali2025.com/paytoplay">This website is part of the Ali2025 Pay2Play Pledge</a></p>
-      </div>
+
 
        <div className="mobile-header">
               <button

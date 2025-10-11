@@ -32,8 +32,28 @@ export default function FAQ() {
     {
       question: "Who built this project?",
       answer:
-        "The site was created and maintained by Koen Mitchel Santos, a Jersey City resident, as part of a civic technology initiative to make local political finance data accessible and understandable.",
+        "The site was created and maintained by Koen Mitchel Santos, a Jersey City resident, as part of a civic technology initiative to make local political finance data accessible and understandable. My contact info is at the bottom of the homepage.",
     },
+    {
+      question: "Isn’t this site biased because it’s funded by a campaign?",
+      answer: 
+      "Pay2PlayJC.com was built under Mussab Ali’s Pay2Play pledge to promote transparency. While the site is funded through the campaign (legally disclosed at the bottom of every page), all donation data — including Ali’s — is treated the same way as every other candidate’s. The goal is to make public filings accessible and understandable, not to favor any candidate.",
+    },
+    {
+      question: "How do you determine what counts as a “red flag” donation?",
+      answer:
+      "donation is flagged if there is strong evidence of a potential conflict of interest, pay-to-play connection, or ties to developers, contractors, or political committees with business before Jersey City. These rules are applied consistently to every candidate."
+    },
+    {
+      question: "How do I know the data is accurate?",
+      answer:
+      "All data is sourced from official NJ ELEC filings and candidate reports. While the site strives for accuracy, any discrepancies should be reported to NJ ELEC for resolution."
+    },
+    {
+      question: "Is this a smear campaign against other candidates?",
+      answer:
+      "Absolutely not. The site is designed to increase transparency and accountability, not attack anyone personally. If a donation appears suspicious, that reflects the public record, not the creator’s opinion. Our goal is to give voters easy access to verified information so they can make informed decisions."
+    }
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
