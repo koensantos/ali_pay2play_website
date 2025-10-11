@@ -106,7 +106,6 @@ export default function Home() {
         <li>Email: <a href="kms226655@gmail.com">kms226655@gmail.com</a></li>
         <li>Instagram: <a href="https://www.instagram.com/_koensantos_" target="_blank" rel="noopener noreferrer">@_koensantos_</a></li>
         <li>LinkedIn: <a href="https://www.linkedin.com/in/koen-mitchel-santos-306476278" target="_blank" rel="noopener noreferrer">Koen Mitchel Santos - LinkedIn</a></li>
-        <li>Twitter/X: <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">@yourhandle</a></li>
         {/* Add more links here as needed */}
       </ul>
     </div>
