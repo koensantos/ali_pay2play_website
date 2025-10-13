@@ -202,7 +202,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $142,220.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $124,720.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -1069,55 +1069,6 @@ export default function Draft() {
       )}
     </div>
 
-    </section>
-
-    <section id="red-flags" className="union-section">
-
-      <h2>Union Contributions</h2>
-
-      <p> This campaign understands the importance of unions in protecting workers’ rights and securing fair wages, benefits, and safe working conditions. 
-    However, when unions also hold or seek contracts with the City, their donations may fall under pay-to-play rules. 
-    Including these contributions in our analysis is not a statement against unions or the labor movement — it is simply part of our commitment to transparency, 
-    ensuring that all potential conflicts of interest, regardless of the source, are treated consistently.</p>
-    
-    
-       <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 0 ? "active" : ""}`}
-          onClick={() => toggleAccordion(0)}
-          aria-expanded={openIndex === 0}
-        >
-          IBEW Local Union 164 - $2,500
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 0 && (
-          <div className="accordion-content">
-            <p>The donations from IBEW Local Union 164 to Solomon, totaling $2,500, raise a strong red flag given the union’s extensive financial ties with Jersey City. Public records show that IBEW Local 164 has received significant city payments over multiple years, including large expenditures in 2021, 2022, 2024, and 2025. The sequence of receiving municipal funds and then contributing heavily to O’Dea’s campaign creates the appearance of a pay-to-play cycle, where taxpayer money flows to the union and then back into local politics. This dynamic heightens concerns about whether the union is seeking to preserve or expand its influence over future contracts and city decisions. While no direct illegality is proven, the overlap between city expenditures and campaign donations underscores the risk of undue influence and the need for greater transparency.</p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/434284">6/25/25 - $8,672.67</a></p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/405701">6/12/24 - $10,086.83</a></p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/66966">4/13/22 - $65,573.14</a></p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/53126">8/17/21 - $44,465.12</a></p>
-          </div>
-        )}
-      </div>
-
-      <div className="accordion-item">
-        <button
-          className={`accordion-header ${openIndex === 1 ? "active" : ""}`}
-          onClick={() => toggleAccordion(1)}
-          aria-expanded={openIndex === 1}
-        >
-          32BJ United America Dream Fund PAC - $15,000
-          <span className="accordion-arrow" />
-        </button>
-        {openIndex === 1 && (
-          <div className="accordion-content">
-            <p>A significant red flag arises from the $15,000 contribution from the 32BJ United America Dream Fund PAC to James Solomon's campaign on June 26, 2025. This donation preceded the Jersey City Council’s September 10, 2025 resolution supporting 32BJ SEIU security officers in their 2025 contract campaign. The timing and alignment of the donation with these council actions suggest a potential conflict of interest and raise pay-to-play concerns, as the political committee making the contribution represents a union directly impacted by city contracts. Such a pattern of giving signals the possibility of undue influence over municipal decision-making, even in the absence of explicit legal violations.</p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/436644">Res 25-574 - Sep 10, 2025</a></p>
-            <p><a href="https://cityofjerseycity.civicweb.net/document/343830">Res 23-805 - Nov 8, 2023</a></p>
-          </div>
-        )}
-      </div> 
     </section>
 
     <div className="other-candidates-section">
