@@ -895,21 +895,18 @@ export default function Draft() {
       )}
     </div>
 
-
-
     <div className="accordion-item">
       <button
         className={`accordion-header ${openIndex === 10 ? "active" : ""}`}
         onClick={() => toggleAccordion(10)}
         aria-expanded={openIndex === 10}
       >
-        Sean Gallagher - $300
-        Anna Gallagher - $5,500
+        Jillian Hernandez, Owner of the Brunswick School - $8,200
         <span className="accordion-arrow" />
       </button>
       {openIndex === 10 && (
         <div className="accordion-content">
-          <p>The donation history of Sean Gallagher, the current Jersey City Clerk, and his spouse Anna Gallagher raises potential conflict-of-interest concerns for James Solomon’s mayoral campaign. Records show that Anna Gallagher, listed as “not employed” or “homemaker,” made several sizable contributions: $800 on 01/01/2023, $3,300 on 09/05/2024, and $1,400 on 03/31/2025, in addition to smaller donations. Sean Gallagher himself contributed $300 on 01/30/2024 while listed as an architect with DS+R. The fact that the sitting City Clerk, an official responsible for election administration and council records, is directly connected to a household contributing over $5,000 across multiple years could be perceived as problematic</p>
+          <p>Jillian Hernandez, owner of The Brunswick School in Jersey City, made two sizable contributions to a mayoral campaign in 2024, $1,000 on March 21, 2024 and $4,200 on September 13, 2024, while her school’s property at 444 Warren Street was simultaneously under environmental oversight. A letter dated August 19, 2024, from Ronald F. Dooney, Jr. of TERMS Environmental Services to Hernandez documented a Response Action Outcome (RAO) related to the site, which signifies the completion of environmental remediation under New Jersey DEP’s Site Remediation Program. The timing raises a red flag: Hernandez was both navigating regulatory compliance for her school and donating at levels that could be seen as attempting to build political goodwill with city leadership that often intersects with zoning, permitting, and development approvals. While there is no direct evidence of wrongdoing, the overlap between substantial campaign contributions and active environmental oversight highlights the potential risk of pay-to-play dynamics in Jersey City politics. <a href="https://cityofjerseycity.civicweb.net/document/411484">Letter 6.43 from September 25, 2024 Council Meeting.</a></p>
         </div>
       )}
     </div>
@@ -920,12 +917,13 @@ export default function Draft() {
         onClick={() => toggleAccordion(11)}
         aria-expanded={openIndex === 11}
       >
-        Jillian Hernandez, Owner of the Brunswick School - $8,200
+        Joseph Luppino, 1st Vice President of Government and Business Banking - Freedom Bank - $1,000
         <span className="accordion-arrow" />
       </button>
       {openIndex === 11 && (
         <div className="accordion-content">
-          <p>Jillian Hernandez, owner of The Brunswick School in Jersey City, made two sizable contributions to a mayoral campaign in 2024, $1,000 on March 21, 2024 and $4,200 on September 13, 2024, while her school’s property at 444 Warren Street was simultaneously under environmental oversight. A letter dated August 19, 2024, from Ronald F. Dooney, Jr. of TERMS Environmental Services to Hernandez documented a Response Action Outcome (RAO) related to the site, which signifies the completion of environmental remediation under New Jersey DEP’s Site Remediation Program. The timing raises a red flag: Hernandez was both navigating regulatory compliance for her school and donating at levels that could be seen as attempting to build political goodwill with city leadership that often intersects with zoning, permitting, and development approvals. While there is no direct evidence of wrongdoing, the overlap between substantial campaign contributions and active environmental oversight highlights the potential risk of pay-to-play dynamics in Jersey City politics. <a href="https://cityofjerseycity.civicweb.net/document/411484">Letter 6.43 from September 25, 2024 Council Meeting.</a></p>
+          <p>Joseph Luppino’s $1,000 donation to Solomon raises red flag concerns due to his former role as 1st Vice President of Government and Business Banking at Freedom Bank, an institution officially listed in Jersey City’s 2025 Cash Management Plan as a GUDPA-approved depository. The plan authorizes the city to deposit and invest public funds in banks like Freedom Bank, and it requires disclosure of any material business or personal relationships between city officials and entities handling city funds. Given Luppino’s senior position at a bank where city funds could be deposited or managed, his contribution to Solomon presents a potential conflict of interest or pay-to-play appearance, as it could be interpreted as attempting to influence the city’s financial decisions or maintain favorable access to city-managed funds. <a href="https://cityofjerseycity.civicweb.net/document/418911">Resolution related to Freedom Bank</a></p>
+
         </div>
       )}
     </div>
@@ -936,13 +934,12 @@ export default function Draft() {
         onClick={() => toggleAccordion(12)}
         aria-expanded={openIndex === 12}
       >
-        Joseph Luppino, 1st Vice President of Government and Business Banking - Freedom Bank - $1,000
+        Israel Nieves, McGreevey's Council At-Large Candidate - $500
         <span className="accordion-arrow" />
       </button>
       {openIndex === 12 && (
         <div className="accordion-content">
-          <p>Joseph Luppino’s $1,000 donation to Solomon raises red flag concerns due to his former role as 1st Vice President of Government and Business Banking at Freedom Bank, an institution officially listed in Jersey City’s 2025 Cash Management Plan as a GUDPA-approved depository. The plan authorizes the city to deposit and invest public funds in banks like Freedom Bank, and it requires disclosure of any material business or personal relationships between city officials and entities handling city funds. Given Luppino’s senior position at a bank where city funds could be deposited or managed, his contribution to Solomon presents a potential conflict of interest or pay-to-play appearance, as it could be interpreted as attempting to influence the city’s financial decisions or maintain favorable access to city-managed funds. <a href="https://cityofjerseycity.civicweb.net/document/418911">Resolution related to Freedom Bank</a></p>
-
+          <p>Israel Nieves, a member of Jim McGreevey’s council-at-large team, donated $500 to Solomon’s campaign, which raises a potential red flag. While legal, the donation creates the appearance of a conflict of interest or divided loyalty, as Nieves is publicly affiliated with a competing candidate. Such contributions can be interpreted as attempts to influence or maintain access across multiple campaigns, posing ethical concerns for Solomon’s team. For transparency and accountability, this donation warrants attention and disclosure in any summary of potential campaign red flags.</p>
         </div>
       )}
     </div>
@@ -953,29 +950,13 @@ export default function Draft() {
         onClick={() => toggleAccordion(13)}
         aria-expanded={openIndex === 13}
       >
-        Israel Nieves, McGreevey's Council At-Large Candidate - $500
-        <span className="accordion-arrow" />
-      </button>
-      {openIndex === 13 && (
-        <div className="accordion-content">
-          <p>Israel Nieves, a member of Jim McGreevey’s council-at-large team, donated $500 to Solomon’s campaign, which raises a potential red flag. While legal, the donation creates the appearance of a conflict of interest or divided loyalty, as Nieves is publicly affiliated with a competing candidate. Such contributions can be interpreted as attempts to influence or maintain access across multiple campaigns, posing ethical concerns for Solomon’s team. For transparency and accountability, this donation warrants attention and disclosure in any summary of potential campaign red flags.</p>
-        </div>
-      )}
-    </div>
-
-    <div className="accordion-item">
-      <button
-        className={`accordion-header ${openIndex === 14 ? "active" : ""}`}
-        onClick={() => toggleAccordion(14)}
-        aria-expanded={openIndex === 14}
-      >
         Charles Wilkes - $500
         Matt Schiller - $250
         Chris Murphy - $250 
         MURPHY SCHILLER & WILKES LLP
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 14 && (
+      {openIndex === 13 && (
         <div className="accordion-content">
           <p>Charles Wilkes, Matt Schiller, and Chris Murphy collectively donated $1,000 to Councilmember James Solomon through their firm Murphy Schiller & Wilkes LLP, with individual contributions of $500, $250, and $250, respectively. Chris Murphy also acted as counsel for the applicant 660 Tonnele TMW, LLC in Jersey City Zoning Board of Adjustment case Z23-007, which sought variances and approvals for a Class 5 Cannabis Retail Establishment at 660-684 Tonnele Avenue. The overlap of Murphy’s professional work advocating for a development project before the city and his personal contributions to Solomon’s campaign raises concerns about a potential conflict of interest or the appearance of undue influence, especially given that the firm receives significant payments from Jersey City.</p>
           <p><a href="https://cityofjerseycity.civicweb.net/document/409786">8/14/24 - $124,500.90</a></p>
@@ -987,14 +968,14 @@ export default function Draft() {
 
     <div className ="accordion-item">
       <button
-        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
-        onClick={() => toggleAccordion(15)}
-        aria-expanded={openIndex === 15}
+        className={`accordion-header ${openIndex === 14 ? "active" : ""}`}
+        onClick={() => toggleAccordion(14)}
+        aria-expanded={openIndex === 14}
       >
         Claims Resolution INC - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 15 && (
+      {openIndex === 14 && (
         <div className="accordion-content">
           <p>The $1,000 donation from Claims Resolution, Inc. to Solomon is potentially a red flag because CRC is a recurring city contractor who receives large, multi-year payments for third-party administration of worker’s compensation and liability claims. When a vendor making substantial revenue from city contracts also contributes to an elected official’s campaign, it raises concerns about pay-to-play dynamics, where campaign contributions could influence contract awards or renewals. Even if legal, such contributions can create the appearance of a conflict of interest, especially since Solomon voted on multiple resolutions approving CRC’s contracts. This scenario warrants scrutiny to ensure that the contribution did not improperly affect procurement decisions or create a perceived obligation from the official.</p>
           <p><strong>Res 25-181 </strong>The City of Jersey City authorized payment of $212,499.96 to Claims Resolution Corporation, Inc. for providing third-party administrator services for worker’s compensation and liability claims from January through December 2024. James Carroll, representing the city, reviewed and certified that the services were performed as requested and that the charges were fair and reasonable. The payment will be made from Account No. 14-298-56-000-700 through the Insurance Fund Commission. The approval of the payment is contingent upon Claims Resolution Corporation executing a release and affidavit confirming that the submitted claim represents the total costs and releasing the city from any further liability. The Business Administrator is authorized to take any additional actions necessary to implement the resolution. Solomon votes yes to this resolution. <a href="https://cityofjerseycity.civicweb.net/document/422622">Resolution PDF</a></p>
@@ -1011,14 +992,14 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
-        onClick={() => toggleAccordion(16)}
-        aria-expanded={openIndex === 16}
+        className={`accordion-header ${openIndex === 15 ? "active" : ""}`}
+        onClick={() => toggleAccordion(15)}
+        aria-expanded={openIndex === 15}
       >
         Mark Grossbard, CEO of Kai Strategic Insurance and VP of Insurance World: $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 16 && (
+      {openIndex === 15 && (
         <div className="accordion-content">
           <p>Mark Grossbard, CEO of Kai Strategic Insurance Partners, personally donated $1,000 to Solomon’s campaign on 06/05/25. This donation is flagged because Kai Strategic has received substantial payments from Jersey City, including $1,568,074.46 on 10/16/24, $561,050.40 on 1/9/25, and $602,197.40 on 4/4/25. Even though the donation is technically personal, the timing and the size of city expenditures to his company suggest a potential conflict of interest, as the donation could be perceived as an attempt to influence Solomon in matters affecting Kai Strategic’s business with the city. This raises pay-to-play and ethical concerns, making it a red flag in campaign finance transparency analysis.</p>
            <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $602,197.40</a></p>
@@ -1030,15 +1011,15 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
-        onClick={() => toggleAccordion(17)}
-        aria-expanded={openIndex === 17}
+        className={`accordion-header ${openIndex === 16 ? "active" : ""}`}
+        onClick={() => toggleAccordion(16)}
+        aria-expanded={openIndex === 16}
       >
         Donald Shauger II - $1,000
         Donald Shauger Sr. - $1,000
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 17 && (
+      {openIndex === 16 && (
         <div className="accordion-content">
           <p>Donald Shauger II and Donald Shauger Sr., executives of The Shauger Group Inc., each donated $1,000 to Councilmember Solomon on June 30, 2025. This is notable given the scope of their company’s work in Jersey City. Their projects include Phase V Water and Sewer Main Upgrades, involving the installation of 7,000 LF of 12-inch watermain, 4,000 LF of 8-inch watermain, new valves, hydrants, and service connections throughout Jersey City, as well as 11,000 LF of new PVC sewer main with associated manholes and cleanouts. They also carried out the Large Valve Replacement Project, replacing 30 of the most defective valves in the city’s water distribution system, which involved excavation, timber shoring, temporary bypass piping, and maintaining water service to residents during construction. The size and timing of these donations could raise concerns about potential influence or the appearance of a conflict of interest. <a href="https://shauger.com/major-projects">Shauger Group's Major Projects</a></p>
         </div>
@@ -1048,9 +1029,9 @@ export default function Draft() {
 
     <div className = "accordion-item">
       <button
-        className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
-        onClick={() => toggleAccordion(18)}
-        aria-expanded={openIndex === 18}
+        className={`accordion-header ${openIndex === 17 ? "active" : ""}`}
+        onClick={() => toggleAccordion(17)}
+        aria-expanded={openIndex === 17}
       >
         Dane Calcagni, Director of Research and Information - $350
         Alex Chang, Chief Happiness Officer - $300
@@ -1061,7 +1042,7 @@ export default function Draft() {
         Corcoran Sawyer Smith
         <span className="accordion-arrow" />
       </button>
-      {openIndex === 18 && (
+      {openIndex === 17 && (
         <div className="accordion-content">
           <p>Employees from a prominent Jersey City real estate brokerage, which manages over 100 luxury and high-end properties in the city, collectively contributed to James Solomon’s mayoral campaign. Donors include Dane Calcagni, Alex Chang, Leia Duif, Thomas Gibbons, Sawyer Smith, and Selina Vargas, all affiliated with the company’s Jersey City office. While Solomon has pledged not to accept direct contributions from developers, these donations from employees who work in the real estate development sector raise questions about the potential for indirect influence. Even if the contributions are legal and within pledge boundaries, the concentration of donations from individuals connected to a firm heavily involved in local property development creates the appearance of a possible conflict of interest or pay-to-play scenario, making this a notable red flag in the campaign finance record.</p>
           <a href="https://www.corcoran.com/search/for-sale/location/downtown-jersey-city-nj/regionId/130?gad_source=1&gad_campaignid=18224731163&gclid=CjwKCAjw2brFBhBOEiwAVJX5GFqbC2SPYJ-FP6J13_w02DuiOqCOWPOp6mvDa8FSSfI_tVhnif3CABoCzCsQAvD_BwE">Listings of properties under them in Jersey City.</a>
