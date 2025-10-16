@@ -446,7 +446,7 @@ Individual - Large,2600,JASON,FISHKIND,,02/04/2025,JASON FISHKIND,REAL ESTATE,PU
 Individual - Small,-2600,JASON,FISHKIND,,03/31/2025,JASON FISHKIND,REAL ESTATE,PURCHASE,NY
 Individual - Small,50,ALLISON,FLEECE,,03/31/2025,WHOA TRAVEL,BUSINESS OWNER,JERSEY CITY,NJ
 Individual - Small,250,ALLISON,FLEECE,,08/08/2024,WHOA TRAVEL,BUSINESS OWNER,JERSEY CITY,NJ
-Individual - Small,150,ERIC,FLEMING,,03/25/2025,COMMERICAL DISTRICT SERVICES,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,JERSEY CITY,NJ
+Individual - Small,150,ERIC,FLEMING,,03/25/2025,COMMERCIAL DISTRICT SERVICES,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,JERSEY CITY,NJ
 Individual - Small,300,MARK,FLETCHER,,06/28/2024,AF SUPPLY,MANAGEMENT/ADMINISTRATOR/EXECUTIVE,JERSEY CITY,NJ
 Individual - Medium,500,KATE,FLETCHER,,12/22/2023,KM EDUCATION LLC,CONSULTANT,YPSILANTI,MI
 Individual - Small,250,KATE,FLETCHER,,09/30/2024,KM EDUCATION LLC,CONSULTANT,YPSILANTI,MI
@@ -1845,7 +1845,7 @@ Individual - Small,250,Shehnaaz,Jagasia,,02/05/25,Shehnaaz Dance Academy,Busines
 Individual - Small,300,Charles,Kessler,,03/23/25,Retired,Retired,Jersey City,NJ
 Individual - Medium,500,Andrew,Khazanovich,,02/23/25,Gartner INC,Information Technology/Computer Science,Hoboken,NJ
 Individual - Small,250,Corey H,Kilburn,,03/27/25,Enterprise Products,Management/Administrator/Executive,Houston,TX
-Individual - Small,250,Maria,Kilburn,,03/31/25,Productive Captial LLC,Retail Sales,San Antonio,TX
+Individual - Small,250,Maria,Kilburn,,03/31/25,Productive Capital LLC,Retail Sales,San Antonio,TX
 Individual - Small,100,Jeffrey J,Kissinger,,03/31/25,Warner Bros Discovery,Marketing/Public Relations,Jersey City,NJ
 Individual - Small,250,Eddie,Kunjvarkey,,03/31/25,Retired,Retired,Union City,NJ
 Individual - Large,2500,Rolando,Lavarro,,03/22/25,Saint Peters University,Management/Administrator/Executive,Jersey City,NJ
@@ -2009,7 +2009,7 @@ Individual - Small,50,Allison M,Fleece,,10/01/25,Whoa Travel,Business Owner,Jers
 Individual - Small,50,Allison M,Fleece,,09/01/25,Whoa Travel,Business Owner,Jersey City,NJ
 Individual - Small,50,Allison M,Fleece,,08/01/25,Whoa Travel,Business Owner,Jersey City,NJ
 Individual - Small,50,Allison M,Fleece,,07/01/25,Whoa Travel,Business Owner,Jersey City,NJ
-Individual - Small,100,Eric C,Fleming,,08/05/25,Commerical District Services LLC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,100,Eric C,Fleming,,08/05/25,Commercial District Services LLC,Management/Administrator/Executive,Jersey City,NJ
 Individual - Small,100,Michael,Flynn,,08/26/25,CAI,Management/Administrator/Executive,Chicago,IL
 Individual - Medium,1000,Michael,Fortenbaugh,,09/16/25,Manhattan Yacht Club,Management/Administrator/Executive,Jersey City,NJ
 Individual - Medium,1000,Michael,Fortenbaugh,,08/12/25,Manhattan Yacht Club,Management/Administrator/Executive,Jersey City,NJ
@@ -2074,7 +2074,7 @@ Individual - Medium,500,Rahul,Kalita,,08/18/25,Tutored by Teachers,Business Owne
 Individual - Small,250,Mani,Kamboj,,08/18/25,Self at Mani Kamboj,Information Technology/Computer Science,New York,NY
 Individual - Medium,500,Amaha,Kassa,,09/30/25,African Communities Together,Public Sector,New York,NY
 Individual - Small,250,Ryan,Kennedy,,08/16/25,Cranberry,Management/Administrator/Executive,Boston,MA
-Individual - Medium,1000,Sanket,Khanna,,09/16/25,Arya Lane Captial,Financial Services/Banking,Jersey City,NJ
+Individual - Medium,1000,Sanket,Khanna,,09/16/25,Arya Lane Capital,Financial Services/Banking,Jersey City,NJ
 Individual - Small,250,Kirat,Kharode,,09/30/25,Healco,Management/Administrator/Executive,Benardsville,NJ
 Individual - Small,7,Leslie Ann,Kilpatrick,,08/12/25,Mathmove,Management/Administrator/Executive,Jersey City,NJ
 Individual - Small,17,Moriah,Kinberg,,09/30/25,NJ Working Families Alliance,Management/Administrator/Executive,Jersey City,NJ
@@ -2273,8 +2273,123 @@ Individual - Small,100,William,Wychakinas,,07/20/25,Bloomberg,Business Owner,Jer
 Individual - Medium,500,John,Yau,,09/25/25,John Yau Poetry,Arts/Entertaiment,Jersey City,NJ
 Individual - Small,250,Craig,Zehms,,08/04/25,Sotheby's,Real Estate,Jersey City,NJ
 Corporate,1000,,,Zettes Auto Mall,08/04/25,Zettes Auto Mall,,Jersey City,NJ
-
-
+Corporate,5000,,,Adams Rehmann & Heggan Associates,09/08/25,Adams Rehmann & Heggan Associates,,Hammonton,NJ
+Individual - Medium,500,Kishor,Aher,,07/25/25,Amazon,Management/Administrator/Executive,Livingston,NJ
+Individual - Small,250,Veronica N,Akaezuwa,,10/02/25,NJ Appleseed,Public Sector,Jersey City,NJ
+Individual - Medium,500,Veronica N,Akaezuwa,,09/05/25,NJ Appleseed,Public Sector,Jersey City,NJ
+Individual - Small,250,John,Allen,,08/08/25,Schenck Price Smith & King,Attorney,Hoboken,NJ
+Union,250,,,American Federation of Teachers Local 1839,08/21/25,American Federation of Teachers Local 1839,,Jersey City,NJ
+Individual - Large,2000,Amish,Amin,,08/21/25,Bauhealth,Management/Administrator/Executive,Flemington,NJ
+Individual - Small,250,William,Andersen,,07/06/25,Not Employed,Unemployed,Onalaska,WI
+Individual - Small,250,Arrelle,Anderson,,08/23/25,JD,Management/Administrator/Executive,Washington,DC
+Individual - Small,350,E. Michael,Angulo,,09/19/25,Helmer Conley & Kasselman P.A,Attorney,Cherry Hill,NJ
+Individual - Small,300,Jesus,Atencio,,10/03/25,Unemployed,Unemployed,Jackson Heights,NY
+Individual - Small,250,Guillermo,Austria,,08/18/25,AM Pinoy Trading INC,Retail Sales,Jersey City,NJ
+Individual - Medium,1000,Michael,Benz,,08/18/25,RWJ Barnabas Health,Physician,Jersey City,NJ
+Individual - Small,250,Dennis,Bernardo,,07/26/25,Englewood Health,Physician,Tuxedo Park,NY
+Individual - Small,250,David,Bettridge,,09/25/25,Westside Woodworks,Construction Trade/Labor Trade,Providence,RI
+Individual - Small,250,Ravinder,Bhalla,,10/03/25,City of Hoboken,Politician,Hoboken,NJ
+Individual - Small,250,Ravinder,Bhalla,,08/08/25,City of Hoboken,Politician,Hoboken,NJ
+Individual - Small,50,Kevin R,Bing,,08/18/25,BM Machine CO INC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,50,Kevin R,Bing,,07/20/25,BM Machine CO INC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,150,Ester,Blay,,07/26/25,Not Employed,Retired,Somerset,NJ
+Individual - Medium,500,Anthony,Borelli,,07/25/25,Not Employed,Unemployed,Jersey City,NJ
+Individual - Small,100,Wrion S,Bowling,,07/25/25,IHeartMedia,Arts/Entertainment,Jersey City,NJ
+Individual - Small,250,Manisha,Brahmachary,,08/15/25,Pharma,Medical Professional (Not Physician),Jersey City,NJ
+Individual - Small,250,Mark A,Bunbury JR,,09/20/25,Proskauer Rose,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,250,Julius,Caldari,,07/05/25,Not Employed,Unemployed,Randolph,NJ
+Individual - Small,300,Fe,Caliolio,,08/04/25,Retired,Retired,Newton,NJ
+Individual - Medium,1000,Karazona,Cinar,,09/19/25,Organic Modernism,Business Owner,Jersey City,NJ
+Individual - Medium,500,Karazona,Cinar,,08/04/25,Organic Modernism,Business Owner,Jersey City,NJ
+Individual - Medium,1000,Lourdes,Corrales,,08/21/25,Retired,Retired,Basking Ridge,NJ
+Individual - Medium,500,Amanda,Diamond,,07/24/25,COJC,Public Sector,Jersey City,NJ
+Individual - Small,250,Nicholas,Dinallo,,08/08/25,JLL,Real Estate,Hoboken,NJ
+Individual - Small,100,Brendan C,Doohan,,07/31/25,Google LLC,Engineer,Jersey City,NJ
+Individual - Large,2000,Peter,Ellingboe,,10/03/25,Extant Capital LLC,Management/Administrator/Executive,Larchmont,NY
+Individual - Small,300,Frances,Ferguson,,07/23/25,Not Employed,Unemployed,Jersey City,NJ
+Political Committee,5000,,,Fields of Change PAC,09/30/25,Fields of Change PAC,,Washington,DC
+Individual - Small,50,Eric C,Fleming,,08/15/25,Commercial District Services LLC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,50,Eric C,Fleming,,08/12/25,Commercial District Services LLC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Large,5000,Edward,Florio,,09/26/25,Florio Kenny Raval LLP,Attorney,Lyndhurt,NJ
+Individual - Small,250,Aiza,Galdo,,07/21/25,Capital One,Financial Services/Banking,Santa Ana,CA
+Individual - Small,250,Sunil,Garg,,08/21/25,Sunil Garg 3D,Arts/Entertainment,Summit,NJ
+Individual - Small,100,Jessica E,George,,09/19/25,Jessica George Media,Media,Jersey City,NJ
+Individual - Small,100,Jessica E,George,,08/19/25,Jessica George Media,Media,Jersey City,NJ
+Individual - Small,200,Jessica E,George,,07/25/25,Jessica George Media,Media,Jersey City,NJ
+Individual - Small,100,Jessica E,George,,07/19/25,Jessica George Media,Media,Jersey City,NJ
+Individual - Small,150,Curtis,Giddings,,07/21/25,Paws and Tales Doggy Playgroup,Business Owner,Linden,NJ
+Individual - Small,250,Stacey,Glass,,07/17/25,Yelp,Information Technology/Computer Science,Phoenix,AZ
+Individual - Small,50,Erin M,Gromen,,07/12/25,Center for Communication,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,100,Robinson,Holloway,,07/15/25,Arts 14C,Arts/Entertainment,Jersey City,NJ
+Individual - Small,300,Steph,Huang,,08/04/25,Wells Fargo,Financial Services/Banking,Union City,NJ
+Interest Group,500,,,Indian American Impact,09/25/25,Indian American Impact,,Washington,DC
+Interest Group,1000,,,Islamic Council of Hudson County A NJ Nonprofit Corporation,08/04/25,Islamic Council of Hudson County A NJ Nonprofit Corporation,,Jersey City,NJ
+Individual - Medium,500,Arjun,Iyengar,,09/20/25,NYU Langone,Physician,Livingston,NJ
+Individual - Small,250,Tyhesha,Jackson,,09/20/25,HBCBSNJ,Office Worker,Newark,NJ
+Individual - Medium,1000,Jordan D,Justus,,09/29/25,Automotus INC,Business Owner,Los Angeles,CA
+Individual - Small,100,James M,Lee,,07/25/25,Path Dot Pub,Engineer,Jersey City,NJ
+Individual - Small,250,Jacob,Letendre,,08/30/25,Jacob Lentendre Consulting LLC,Consultant,Jersey City,NJ
+Individual - Small,250,Patrick,Light,,08/08/25,The Light Group,Business Owner,Hoboken,NJ
+Individual - Medium,500,Liyun,Ma,,08/13/25,Tong Yang School,Education/Professor/Teacher,Jersey City,NJ
+Individual - Small,50,Paola,Macri,,08/03/25,Bindi USA,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,250,Nisarga,Markandaiah,,07/11/25,Spotify,Information Technology/Computer Science,Jersey City,NJ
+Individual - Medium,1000,Brian,Markey,,07/14/25,Garden Greenz,Business Owner,East Hanover,NJ
+Individual - Small,250,Robert,McHugh,,08/13/25,Not Employed,Unemployed,Ewing,NJ
+Individual - Small,34,Charles Metzger,,07/25/25,Katten Muchin Rosenman LLP,Attorney,Jersey City,NJ
+Individual - Small,250,Rachel P,Meyers,,09/16/25,Google,Information Technology/Computer Science,Jersey City,NJ
+Individual - Small,50,Elna A,Mukaida,,08/21/25,Newport Metals LLC,Management/Administrator/Executive,Jersey City,NJ
+Individual - Medium,1000,Kedar,Muley,,08/05/25,Global Soccer Academy,Athletics,Jersey City,NJ
+Individual - Small,250,Jun,Musa,,08/04/25,Retired,Retired,Union,NJ
+Political Committee,138400,,,New York Hotel Trades Council Committee on Political Education,10/03/25,New York Hotel Trades Council Committee on Political Education,,New York,NY
+Individual - Small,250,Ryan,Nuckols,,08/12/25,LS Trust,Management/Administrator/Executive,Boca Raton,FL
+Individual - Small,75,Olivia,Olivares,,07/21/25,Ma Xuxu,Hospitality/Hotel/Food/Beverage,Jersey City,NJ
+Individual - Small,250,Erin,Oneill,,08/29/25,New Jersey City University,Education/Professor/Teacher,Jersey City,NJ
+Individual - Medium,500,Vajaah,Parker,,08/07/25,WDG,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,251,Govind,Patel,,09/08/25,Port Authority,Public Sector,Jersey City,NJ
+Individual - Small,251,Tenzin,Pema,,07/28/25,UHY LLP,Accountant/Auditor,Jersey City,NJ
+Individual - Small,250,Keshav,Poddar,,08/25/25,Windels Marx,Attorney,New Brunswick,NJ
+Individual - Small,100,Keshav,Poddar,,08/01/25,Windels Marx,Attorney,New Brunswick,NJ
+Individual - Small,100,Keshav,Poddar,,07/24/25,Windels Marx,Attorney,New Brunswick,NJ
+Individual - Small,250,Karima,Popatia,,08/21/25,SAKS,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,150,Samuel M,Pott,,08/21/25,Nimbus Dance Works,Arts/Entertainment,Jersey City,NJ
+Corporate,5000,,,Prime Construction Corp,10/03/25,Prime Construction Corp,,Vauxhall,NJ
+Individual - Small,250,Arturo,Ramos,,08/02/25,HRT,Information Technology/Computer Science,Glenview,IL
+Individual - Small,300,Zainul,Rangwala,,07/21/25,Citi,Financial Services/Banking,Jersey City,NJ
+Individual - Small,25,Brian A,Rans,,08/03/25,City of Jersey City,Attorney,Jersey City,NJ
+Corporate,5000,,,Remington & Vernick Engineers,10/03/25,Remington & Vernick Engineers,,Cherry Hill,NJ
+Individual - Small,250,Morgan,Revier,,07/22/25,Next Step Broadway,Business Owner,Chester,NJ
+Individual - Small,200,Victoria,Rey,,07/02/25,Not Employed,Retired,Bayonne,NJ
+Individual - Medium,1000,Lilliam,Rosado,,08/25/25,Not Employed,Unemployed,Highland Park,NJ
+Individual - Small,250,Arman,Rousta,,08/18/25,Super Base,Management/Administrator/Executive,Jersey City,NJ
+Individual - Large,2500,Ziggy,Rozalski,,10/03/25,NA,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,250,Jamie,Rudolph,,08/15/25,Grove Street Consulting,Consultant,Jersey City,NJ
+Individual - Medium,1000,Joel K,Ruhter,,10/03/25,HHS,Public Sector,Washington,DC
+Individual - Small,250,Daniela,Sarbu,,07/20/25,Waldo International School,Business Owner,Summit,NJ
+Individual - Small,250,Stephen,Shinn,,07/25/25,Shinn Cranes INC,Business Owner,Hoboken,NJ
+Individual - Small,250,Gaitree,Simpson,,08/04/25,Brick Street Realty,Real Estate,Jersey City,NJ
+Individual - Medium,500,Amardeep,Singh Bhalla,,08/09/25,Proteus Fund,Management/Administrator/Executive,Hoboken,NJ
+Individual - Large,5000,Mamta,Singh,,10/03/25,JCFamilies,Marketing/Public Relations,Jersey City,NJ
+Individual - Medium,1000,Jason,Solowsky,,09/30/25,CMG Home Loans,Business Owner,Glen Rock,NJ
+Individual - Medium,1000,Calvin,Souder,,09/24/25,Souder Law Group,Management/Administrator/Executive,Newark,NJ
+Corporate,1500,,,Spinello Companies,10/03/25,Spinello Companies,,Newark,NJ
+Individual - Small,150,Robert,Stapf,,08/04/25,British Swim School,Business Owner,Jersey City,NJ
+Individual - Small,250,Sudesh,Sukhai,,08/21/25,City of Jersey City,Law Enforcement,Jersey City,NJ
+Individual - Small,200,Michelle,Swisher,,09/19/25,Suplee Clooney & Company,Accountant/Auditor,Cranford,NJ
+Individual - Medium,1750,Maya A,Tank,,09/17/25,Dentsu Creative,Management/Administrator/Executive,Jersey City,NJ
+Individual - Small,250,Angela,Timtiman,,09/08/25,Retired,Retired,New York,NY
+Individual - Large,5000,Andrew,Trenk,,10/03/25,Missing Sock Laundry,Management/Administrator/Executive,West Orange,NJ
+Individual - Small,200,Alex,Valdez,,07/06/25,International Rescue Committee,Public Sector,Kearny,NJ
+Individual - Small,200,Alex,Valdez,,07/06/25,International Rescue Committee,Public Sector,Kearny,NJ
+Individual - Small,50,Courtney,Walker,,09/19/25,Squarespace,Information Technology/Computer Science,Jersey City,NJ
+Individual - Medium,500,Marc J,Wesson,,07/27/25,Tenmarc Building,Management/Administrator/Executive,Jersey City,NJ
+Corporate,10000,,,Wilentz Attorneys at Law,10/03/25,Wilentz Attorneys at Law,,Woodbridge,NJ
+Individual - Small,200,Ryan B,Williams,,08/07/25,Open Athena,Information Technology/Computer Science,Jersey City,NJ
+Individual - Medium,500,Ryan B,Williams,,08/07/25,Open Athena,Information Technology/Computer Science,Jersey City,NJ
+Individual - Medium,500,Ryan B,Williams,,07/29/25,Open Athena,Information Technology/Computer Science,Jersey City,NJ
+Individual - Medium,500,George D,Zalepa,,08/02/25,Art Redacted LLC,Arts/Entertainment,Jersey City,NJ
+Individual - Small,250,Amy,Zdunoswki,,07/17/25,Coldwell Banker,Real Estate,Hopewell,NJ
+Individual - Small,250,Sonia,Zerrudo,,08/04/25,Allan & Mark LLC,Attorney,Jersey City,NJ
+Individual - Small,250,Peter,Zirnis IV,,08/10/25,Not Employed,Retired,Jersey City,NJ
 
 
 

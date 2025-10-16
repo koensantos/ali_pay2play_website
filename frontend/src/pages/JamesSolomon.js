@@ -393,12 +393,13 @@ export default function Draft() {
           aria-expanded={openIndex === 1}
         >
           Florio Kenny Raval, LLP - $5,000
+          Edward Florio - $5,000
           <span className="accordion-arrow" />
         </button>
         {openIndex === 1 && (
           <div className="accordion-content">
             <p>
-            Solomon has received a total of $5,000 connected to Florio Kenny Raval, LLPWhile the dollar amounts may not be the largest compared to other donors, the concern arises because Florio Kenny Raval has secured numerous lucrative contracts with Jersey City, including multimillion-dollar agreements to represent the City in tax appeals and high-profile litigation involving police officers and civil rights cases. These contracts have been repeatedly renewed and expanded over the years, with individual amendments often adding tens or hundreds of thousands of dollars in legal fees. In addition to the resolutions, the firm has also received a steady stream of direct payments from the City for legal services. The overlap between campaign donations and significant ongoing city business creates the appearance of a conflict of interest and raises potential pay-to-play concerns.
+            Solomon has received a total of $5,000 connected to Florio Kenny Raval, LLP. While the dollar amounts may not be the largest compared to other donors, the concern arises because Florio Kenny Raval has secured numerous lucrative contracts with Jersey City, including multimillion-dollar agreements to represent the City in tax appeals and high-profile litigation involving police officers and civil rights cases. These contracts have been repeatedly renewed and expanded over the years, with individual amendments often adding tens or hundreds of thousands of dollars in legal fees. In addition to the resolutions, the firm has also received a steady stream of direct payments from the City for legal services. The overlap between campaign donations and significant ongoing city business creates the appearance of a conflict of interest and raises potential pay-to-play concerns.
             </p>
             <p><strong>Res 25-077 </strong>The Jersey City Council passed Resolution 25-077 on January 29, 2025, renewing its professional services agreement with the law firm Florio, Kenny, Raval, LLP to represent the city in ongoing tax appeal matters. This marks the latest in a series of annual renewals and amendments since 2018, bringing the total contract amount to $1,425,000. The firm will continue providing legal services at an hourly rate of $175, and $5,000 in funds are currently available for the renewed term. The contract is awarded under the “fair and open” process outlined in New Jersey’s Pay-to-Play law and is exempt from competitive bidding due to its professional services status. Continuation of the agreement depends on future budget appropriations. <a href="https://cityofjerseycity.civicweb.net/document/419119/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=4A986F87F8A5407D9E83B296CF75CA56">Resolution PDF</a></p>
             <p><strong>Res 25-078 </strong>Resolution 25-078, approved on January 29, 2025, renews a professional services agreement with the law firm Florio Kenny Raval, LLP to represent former police officer Omar Polanco in the ongoing lawsuit Estate of Robertson v. City of Jersey City et al.. This renewal adds $50,000 to the legal services contract, bringing the total to $180,000, and sets the term for one year beginning January 1, 2025. The firm will be paid an hourly rate of $175, and the award follows New Jersey’s Pay-to-Play Law under the "fair and open" process. The agreement is exempt from public bidding as a professional service under state law. Continuation of the contract is contingent on sufficient funds being appropriated in the 2025 permanent budget. <a href="https://cityofjerseycity.civicweb.net/document/419112/Renewal%20of%20a%20professional%20services%20agreement%20wi.pdf?handle=8A06D8321D8D4A1588FC68A7F0B12B4B">Resolution PDF</a></p>
@@ -493,7 +494,7 @@ export default function Draft() {
           aria-expanded={openIndex === 2}
         >
           Michael Oriani - Manager of William J Guarini INC - $5,500
-          William Guarini - $500
+          William Guarini - $5,500
           <span className="accordion-arrow" />
         </button>
         {openIndex === 2 && (
@@ -566,7 +567,7 @@ export default function Draft() {
           onClick={() => toggleAccordion(3)}
           aria-expanded={openIndex === 3}
         >
-          Wilentz, Goldman, and Spitzer - $5,200
+          Wilentz, Goldman, and Spitzer - $15,200
           Everett Johnson, co-chair of Public Finance Team - $1,500
           <span className="accordion-arrow" />
         </button>
@@ -614,14 +615,14 @@ export default function Draft() {
         onClick={() => toggleAccordion(4)}
         aria-expanded={openIndex === 4}
       >
-        Adams Rehmann & Heggan Associates INC - $5,000
+        Adams Rehmann & Heggan Associates INC - $10,000
         <span className="accordion-arrow" />
       </button>
       {openIndex === 4 && (
         <div className="accordion-content">
           <ul>
             <li>
-              This company has been awareded several contracts to maintain digital tax maps. The resolutions are explained below:
+              This company has been rewarded several contracts to maintain digital tax maps. The resolutions are explained below:
             </li>
             <ul>
               <li>
@@ -843,7 +844,7 @@ export default function Draft() {
         onClick={() => toggleAccordion(8)}
         aria-expanded={openIndex === 8}
       >
-        Waters, McPherson, McNeil - $1,000
+        Waters, McPherson, McNeil - $2,000
         <span className="accordion-arrow" />
       </button>
       {openIndex === 8 && (
@@ -1046,6 +1047,85 @@ export default function Draft() {
         <div className="accordion-content">
           <p>Employees from a prominent Jersey City real estate brokerage, which manages over 100 luxury and high-end properties in the city, collectively contributed to James Solomon’s mayoral campaign. Donors include Dane Calcagni, Alex Chang, Leia Duif, Thomas Gibbons, Sawyer Smith, and Selina Vargas, all affiliated with the company’s Jersey City office. While Solomon has pledged not to accept direct contributions from developers, these donations from employees who work in the real estate development sector raise questions about the potential for indirect influence. Even if the contributions are legal and within pledge boundaries, the concentration of donations from individuals connected to a firm heavily involved in local property development creates the appearance of a possible conflict of interest or pay-to-play scenario, making this a notable red flag in the campaign finance record.</p>
           <a href="https://www.corcoran.com/search/for-sale/location/downtown-jersey-city-nj/regionId/130?gad_source=1&gad_campaignid=18224731163&gclid=CjwKCAjw2brFBhBOEiwAVJX5GFqbC2SPYJ-FP6J13_w02DuiOqCOWPOp6mvDa8FSSfI_tVhnif3CABoCzCsQAvD_BwE">Listings of properties under them in Jersey City.</a>
+        </div>
+      )}
+    </div>
+
+    <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 18 ? "active" : ""}`}
+          onClick={() => toggleAccordion(18)}
+          aria-expanded={openIndex === 18}
+        >
+          Brian Markey, Owner of Garden Greenz - $1,000
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 18 && (
+          <div className="accordion-content">
+            <p>
+              <p>Brian Markey, owner of Garden Greenz, donated $1,000 to the campaign. In 2022, the Jersey City Council passed Resolution 22-765, supporting Garden Greenz’s cannabis business application. While the donation and resolution were separate events, the connection between a campaign donor and a city-backed business raises pay-to-play concerns about potential conflicts of interest.</p>
+              <a href="https://hudsoncountyview.com/jersey-city-cannabis-board-denies-local-modiv-again-oks-ex-councilmans-application">Article relating to Robinson's allegations.</a>
+            </p>
+            <p>
+              <p><strong>Res 22-765 </strong> The Jersey City Council provides support for Garden Greenz to run a cannabis business. </p><a href="https://cityofjerseycity.civicweb.net/document/77364">Resolution PDF</a>
+            </p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+        <button
+          className={`accordion-header ${openIndex === 19 ? "active" : ""}`}
+          onClick={() => toggleAccordion(19)}
+          aria-expanded={openIndex === 19}
+        >
+          Remington and Vernick Engineers - $7,500
+          <span className="accordion-arrow" />
+        </button>
+        {openIndex === 19 && (
+          <div className="accordion-content">
+            <p>A $2,000 donation to Solomon is a red flag because the firm has directly provided professional engineering and design services for city projects, such as structural plans and geotechnical work for public buildings. This creates a potential conflict of interest: the donation could be perceived as an attempt to influence McGreevey or maintain favorable relations with the city administration, which could indirectly affect contract approvals, project oversight, or future business opportunities. Even if the donation is legal and disclosed, the fact that the donor is a company actively involved in city projects heightens the appearance of impropriety. The red flag arises from the overlap between the donor’s financial contribution and their professional interest in city decisions.</p>
+            <p><strong>Res 23-514 </strong>Remington & Vernick Engineers is acting as the structural engineering consultant for the Engine 10 / Ladder 12 Fire Station project in Jersey City. Their role involves updating the structural design to account for new site conditions, including modifications to the foundation system based on geotechnical findings. They ensure that all structural plans comply with the 2021 International Building Code and coordinate closely with other consultants, including Netta Architects, Langan (geotechnical), and Polise Engineering (MEP), to integrate these updates into the overall project documents. Additionally, they provide construction administration support by reviewing contractor submittals, participating in progress meetings, and assisting the city with interpretation of structural aspects of the contract documents. <a href="https://cityofjerseycity.civicweb.net/document/93088">Resolution PDF</a></p>
+            <p><strong>Ord 22-112 </strong>Remington & Vernick are involved as the design and engineering consultants, having provided the proposed layout and plans for the renovations and expansions at 514 Newark Avenue. Their work includes designing the modifications to ensure ADA compliance, improving facilities to reduce COVID-19 transmission risks, and creating space for showers, laundry, and congregate meals for residents experiencing homelessness. Essentially, Remington & Vernick’s plans form the basis for the City and Garden State Community Development Corporation to implement the Hudson CASA Coordinated Entry Program at the property. Their proposed layout is incorporated into the ordinance as part of the city’s authorization to proceed with the $2,100,400 in improvements. <a href="https://cityofjerseycity.civicweb.net/document/81763">Ordinance PDF</a></p>
+            <p><strong>6.19</strong>This letter, dated April 10, 2025, from James L. Hankins, P.E., a project manager and engineer at Remington & Vernick Engineers, was sent to Sean J. Gallagher, the Jersey City Clerk, regarding the NJDEP Waterfront Development Individual Permit for the Van Winkle Combined Sewer Outfall project in Jersey City. It indicates that Remington & Vernick Engineers are acting as the engineering consultants responsible for preparing and submitting technical documentation and permitting materials to the New Jersey Department of Environmental Protection. The correspondence highlights Vernick’s direct involvement in the regulatory and design aspects of the waterfront development project. <a href="https://cityofjerseycity.civicweb.net/document/427697">4/23/25 Agenda</a></p>
+          </div>
+        )}
+      </div>
+
+      <div className="accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 20 ? "active" : ""}`}
+        onClick={() => toggleAccordion(20)}
+        aria-expanded={openIndex === 20}
+      >
+        Spiniello Companies - $1,500
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 20 && (
+        <div className="accordion-content">
+        <p>Spiniello Companies’ $1,500 donation to Solomon raises potential red flags given the firm’s recent and sizable contracting history with Jersey City. In October 2024, the City awarded Spiniello a $1.17 million contract for the City Hall Foundation Project (Res. 24-454) after rejecting a lower bid as “unbalanced,” and subsequent records show City payments of $297,428 (Oct. 2024), $124,284 (Jan. 2025), and $58,942 (Apr. 2025) tied to the project. While the contract was approved through a public bidding process, the overlap between large municipal payments and campaign contributions creates the appearance of a pay-to-play relationship, particularly since O’Dea is running for mayor and could influence future infrastructure funding. </p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/426925">4/4/25 - $58,942.69</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/419821">1/24/25 - $124,284.38</a></p>
+         <p><a href="https://cityofjerseycity.civicweb.net/document/413149">10/25/24 - $297,428.86</a></p>
+         <p><strong>24-454 </strong>the Jersey City Council approved Resolution 24-454 rejecting the lowest bid of $800,000 from Hear Construction, Inc. for the City Hall – Foundation Project (No. 2022-029A), deeming it “unbalanced” and unresponsive since it was significantly lower than the City’s estimated cost. Instead, the contract was awarded to Spiniello Companies, the second lowest responsive and responsible bidder, for $1,175,500. The City authorized a total encumbrance of $1,410,600, which includes a 20% contingency, with funds certified as available under the Department of Infrastructure, Division of Architecture’s capital accounts. <a href="https://cityofjerseycity.civicweb.net/document/403929">Resolution PDF</a></p>
+         
+        </div>
+      )}
+    </div>
+
+    <div className = "accordion-item">
+      <button
+        className={`accordion-header ${openIndex === 21? "active" : ""}`}
+        onClick={() => toggleAccordion(21)}
+        aria-expanded={openIndex === 21}
+      >
+        Joseph DeMarco, Scarinci Hollenbeck - $5,000
+        <span className="accordion-arrow" />
+      </button>
+      {openIndex === 21 && (
+        <div className="accordion-content">
+          <p>Joseph “Joe” DeMarco, a veteran attorney specializing in land use and redevelopment, donated $5,000 to James Solomon’s campaign. DeMarco represents both municipal governments and private developers, putting him in a position where council decisions could intersect with his professional work. In 2024, Coles Jersey Development Co., LLC transferred Block 6004, Lot 1.03 and Block 6005, Lot 13.01 (later designated as Coles Street Park) to the City of Jersey City for $1 under a Bargain and Sale Deed prepared by Scarinci Hollenbeck. Following the transfer, the city passed Res. 24-903, cancelling $885.13 in taxes on the property due to an erroneous assessment. The overlap between DeMarco’s campaign contribution and his professional involvement in matters that could be affected by council actions raises potential pay-to-play concerns.</p>
+          <p><a href="https://cityofjerseycity.civicweb.net/document/402505">Res 24-903</a></p>
         </div>
       )}
     </div>
