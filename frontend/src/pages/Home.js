@@ -72,6 +72,20 @@ export default function Home() {
   </p>  
       </header>
 
+      <section className="updates-section">
+        <h2>Latest Updates</h2>
+        <div className="update-card">
+          <h3>🗓️ NEW FILINGS FOR JAMES SOLOMON!</h3>
+          <p><strong>Red Flag Donations Include:</strong></p>
+          <ul>
+            <li>$10,000 from <em>Wilentz, Goldman, and Spitzer</em></li>
+            <li>$5,000 from <em>William Guarini Plumbing</em></li>
+            <li>$1,500 from <em>Spiniello Companies</em></li>
+          </ul>
+          <p className="update-date">Updated: October 15, 2025</p>
+        </div>
+      </section>
+
       <section className="candidate-section">
         <h2>Explore Candidate Data</h2>
         <div className="candidate-grid">

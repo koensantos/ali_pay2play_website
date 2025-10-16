@@ -217,3 +217,41 @@ header h1 {
   background-color: #8e0000;
   transform: translateY(-2px);
 }
+
+.updates-section {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.updates-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.75rem;
+}
+
+.update-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #dc2626; /* red accent for 'red flag' theme */
+}
+
+.update-card h3 {
+  margin-top: 0;
+  color: #dc2626;
+}
+
+.update-card ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+.update-date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 10px;
+}
