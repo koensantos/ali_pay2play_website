@@ -75,14 +75,19 @@ export default function Home() {
       <section className="updates-section">
         <h2>Latest Updates</h2>
         <div className="update-card">
-          <h3>🗓️ NEW FILINGS FOR JAMES SOLOMON!</h3>
+          <h3>🗓️ NEW FILINGS OUT FOR MCGREEVEY AND O'DEA!</h3>
           <p><strong>Red Flag Donations Include:</strong></p>
           <ul>
-            <li>$10,000 from <em>Wilentz, Goldman, and Spitzer</em></li>
-            <li>$5,000 from <em>William Guarini Plumbing</em></li>
-            <li>$1,500 from <em>Spiniello Companies</em></li>
+            <li>$30,000 from <em>Eliot Spitzer to Jim McGreevey</em></li>
+            <li>$45,000 from <em>AJD Construction to Jim McGreevey</em></li>
+            <li>$5,500 from <em>Anthony Grano of Persistent Construction to Jim McGreevey</em></li>
+
+            <li>$5,000 from <em>Florio Edward from Florio Kenny Raval to Bill O'Dea</em></li>
+            <li>$2,500 from <em>Edward Geerlof of Noble Construction Group to Bill O'Dea</em></li>
+            <li>$5,000 from <em>William Guarini Plumbing to Bill O'Dea</em></li>
+            <li></li>
           </ul>
-          <p className="update-date">Updated: October 15, 2025</p>
+          <p className="update-date">Updated: October 22, 2025</p>
         </div>
       </section>
 
