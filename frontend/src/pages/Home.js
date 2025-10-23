@@ -72,6 +72,21 @@ export default function Home() {
   </p>  
       </header>
 
+      <section className="instagram-highlight">
+        <h2>📸 Follow Our Instagram</h2>
+        <p className="instagram-text">
+          Get visual breakdowns, real-time updates, and behind-the-scenes insights on Jersey City’s 2025 mayoral race.
+        </p>
+        <a
+          href="https://www.instagram.com/pay2playjc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="instagram-link"
+        >
+          @pay2playjc
+        </a>
+      </section>
+
       <section className="updates-section">
         <h2>Latest Updates</h2>
         <div className="update-card">

@@ -202,7 +202,7 @@ export default function Draft() {
 
       <div className="red-flag-warning">
         <p>
-          This candidate has been flagged for having suspicious donations, totaling to $159,520.{" "}
+          This candidate has been flagged for having suspicious donations, totaling to $169,520.{" "}
           <HashLink smooth to="#red-flags">Click here to view them.</HashLink>
         </p>
       </div>
@@ -356,7 +356,7 @@ export default function Draft() {
           Robert Parisi - $5,000
           Rob Parisi, Owner of RD Parisi Associates - $30,200
           Sheila Parisi - $5,200
-          RD Parisi Associates - $20,400
+          RD Parisi Associates - $30,400
           <span className="accordion-arrow" />
         </button>
         {openIndex === 0 && (

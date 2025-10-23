@@ -255,3 +255,38 @@ header h1 {
   color: gray;
   margin-top: 10px;
 }
+
+.instagram-highlight {
+  text-align: center;
+  background-color: #fafafa;
+  padding: 30px 20px;
+  margin: 20px auto;
+  border-radius: 16px;
+  max-width: 700px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.instagram-highlight h2 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.instagram-text {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.instagram-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #E4405F;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.instagram-link:hover {
+  text-decoration: underline;
+  color: #c13584;
+}
