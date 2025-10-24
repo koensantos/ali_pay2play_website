@@ -81,6 +81,8 @@ export default function Comparison() {
         candidate. Red-flag donations are contributions that may suggest potential conflicts of interest or
         pay-to-play patterns. The bar chart shows totals side-by-side per candidate. The pies show each
         candidate’s red-flag share as a percentage of their own total.
+
+        (To see detailed breakdowns for each candidate, click their names in the graphs.)
       </p>
       {/* One pie per candidate with legend-based percentages */}
       <h2>Red-Flag Share by Candidate</h2>

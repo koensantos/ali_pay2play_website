@@ -5,6 +5,32 @@ import "./FAQ.css";
 export default function FAQ() {
   const faqs = [
     {
+      question: "How do you determine what counts as a “red flag” donation?",
+      answer: (
+        <>
+          A donation is flagged if there is strong evidence of a potential conflict of interest, pay-to-play connection, or ties to developers, contractors, or political committees with business before Jersey City. These rules are applied consistently to every candidate.{" "}
+          <a
+            href="https://pay2playjc.com/#/comparison"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            Learn more here.
+          </a>
+        </>
+      ),
+    },
+    {
+      question: "How do I know the data is accurate?",
+      answer:
+      "All data is sourced from official NJ ELEC filings and candidate reports. While the site strives for accuracy, any discrepancies should be reported to NJ ELEC for resolution."
+    },
+    {
+      question: "Is this a smear campaign against other candidates?",
+      answer:
+      "Absolutely not. The site is designed to increase transparency and accountability, not attack anyone personally. If a donation appears suspicious, that reflects the public record, not the creator’s opinion. Our goal is to give voters easy access to verified information so they can make informed decisions."
+    },
+    {
       question: "What is Pay2Play?",
       answer:
         "Pay2Play is a transparency project tracking campaign donations in Jersey City's 2025 mayoral election. It helps voters see where candidates' funding comes from and identify potential pay-to-play patterns.",
@@ -38,21 +64,6 @@ export default function FAQ() {
       question: "Isn’t this site biased because it’s funded by a campaign?",
       answer: 
       "Pay2PlayJC.com was built under Mussab Ali’s Pay2Play pledge to promote transparency. While the site is funded through the campaign (legally disclosed at the bottom of every page), all donation data — including Ali’s — is treated the same way as every other candidate’s. The goal is to make public filings accessible and understandable, not to favor any candidate.",
-    },
-    {
-      question: "How do you determine what counts as a “red flag” donation?",
-      answer:
-      "donation is flagged if there is strong evidence of a potential conflict of interest, pay-to-play connection, or ties to developers, contractors, or political committees with business before Jersey City. These rules are applied consistently to every candidate."
-    },
-    {
-      question: "How do I know the data is accurate?",
-      answer:
-      "All data is sourced from official NJ ELEC filings and candidate reports. While the site strives for accuracy, any discrepancies should be reported to NJ ELEC for resolution."
-    },
-    {
-      question: "Is this a smear campaign against other candidates?",
-      answer:
-      "Absolutely not. The site is designed to increase transparency and accountability, not attack anyone personally. If a donation appears suspicious, that reflects the public record, not the creator’s opinion. Our goal is to give voters easy access to verified information so they can make informed decisions."
     }
   ];
 
@@ -86,7 +97,7 @@ export default function FAQ() {
             </button>
             {openIndex === index && (
               <div className="faq-answer">
-                <p>{faq.answer}</p>
+                <p className="faq-answer-text">{faq.answer}</p>
               </div>
             )}
           </div>
