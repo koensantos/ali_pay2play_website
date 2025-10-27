@@ -511,7 +511,7 @@ Individual - Medium,500,Jalal,Shehadeh,,06/25/25,"Shehadeh Giannamore, PLLC",Leg
 Individual - Medium,500,Syed,Shere,,06/04/25,Brownstone Dental,Medical Professional (Not Physician),Houston ,TX
 Individual - Medium,1000,Mufeed,Said,,04/14/25,Fresh n Save Food Corp,Business Owner,Staten Island,NY
 Individual - Small,250,Muhammad,Siddique,,06/12/25,Bayonne Medical Care LKC,Physician,Princeton,NJ
-Individual - Small,500,Muhammad,Siddique,,06/01/25,Bayonne Medical Care LKC,Physician,Princeton,NJ
+Individual - Medium,500,Muhammad,Siddique,,06/01/25,Bayonne Medical Care LKC,Physician,Princeton,NJ
 Individual - Medium,500,Ali,Siddiqui,,06/30/25,Amazon,Office Worker,Teaneck,NJ
 Individual - Small,250,Asra,Siddiqui,,04/19/25,Awakenings Kansas City,Medical Professional (Not Physician),Overland Park,KS
 Individual - Small,250,Naim,Siddiqui,,06/22/25,Not Employed,Unemployed,Chino Hills,CA
@@ -548,16 +548,18 @@ Individual - Medium,500,Ishdaiq,Hashmi,,03/31/25,Shazi Grocery,Hospitalty/Hotel/
 Individual - Medium,700,Mohammad F,Khan,,03/02/25,Bombay Vada House,Business Owner,Jersey City,NJ
 Individual - Large,5000,Shabab,Khan,,03/04/25,MKSCC,Information Technology/Computer Science,Jersey City,NJ
 Individual - Medium,700,Mohammed Abrar,Siddiqui,,03/02/25,Self-Employed,Engineer,Jersey City,NJ
-Individual - Small,500,Abdalla,Bassim,,07/08/25,Magna Properties Inc.,Management/Administrator/Executive,Greenwood,IN
+Individual - Small,250,Ahmed,Mutahar,,09/30/25,Hackensack University Medical Center,Physician,Franklin Lakes,NJ
+Individual - Medium,500,Ahmed,Zain,,08/10/25,Consulting Cardiologists,Physician,South Windsor,CT
+Individual - Medium,500,Abdalla,Bassim,,07/08/25,Magna Properties Inc,Management/Administrator/Executive,Greenwood,IN
 Individual - Medium,1000,Abdelghani,Mohammad,,09/09/25,Excellent Printing & Signs,Management/Administrator/Executive,Clifton,NJ
-Individual - Small,100,Abdelmuti,Jamal,,08/14/25,Self Employed,,Huntington Beach,CA
-Individual - Medium,2000,Aboushi,Aymen,,09/09/25,Select Employed,Attorney,Manhattan,NY
-Individual - Medium,500,Adam,Ahmad,,07/02/25,Halal Holdings Inc.,Business Owner,Scottsdale,AZ
+Individual - Small,100,Abdelmuti,Jamal,,08/14/25,Self Employed,Self Employed,Huntington Beach,CA
+Individual - Medium,2000,Aboushi,Aymen,,09/09/25,Self Employed,Attorney,Manhattan,NY
+Individual - Medium,500,Adam,Ahmad,,07/02/25,Halal Holdings Inc,Business Owner,Scottsdale,AZ
 Individual - Medium,2000,Adaya,Salim,,07/23/25,IDS Real Estate Group,Management/Administrator/Executive,Santa Monica,CA
 Individual - Medium,1000,Adnan,Muhammad,,08/10/25,Self Employed,Business Owner,Southington,CT
 Individual - Small,250,Adra,Khalli,,09/14/25,Self Employed,Business Owner,Mansfield,MA
-Individual - Small,250,Agwan,Pervez,,07/09/25,,Unemployed,Houston,TX
-Individual - Medium,500,Ahamma,Zubair,,09/08/25,Mercy Health-St. Vincent Medical Center,Physician,Toledo,OH
+Individual - Small,250,Agwan,Pervez,,07/09/25,Unemployed,Unemployed,Houston,TX
+Individual - Medium,500,Ahamma,Zubair,,09/08/25,Mercy Health-St Vincent Medical Center,Physician,Toledo,OH
 Individual - Small,300,Ahmad,Haider,,10/02/25,Renopro Gallery,Management/Administrator/Executive,Brooklyn,NY
 Individual - Medium,1000,Ahmad,Muktar,,08/10/25,Self Employed,Business Owner,Rocky Hill,CT
 Individual - Medium,500,Ahmad,Shaun,,09/17/25,25 Capital Partners,Financial Services/Banking,Basking Ridge,NJ
@@ -566,9 +568,7 @@ Individual - Small,25,Ahmed,Adeel,,09/09/25,CIR-SEIU,Services Occupation,Cartere
 Individual - Small,25,Ahmed,Adeel,,08/09/25,CIR-SEIU,Services Occupation,Carteret,NJ
 Individual - Small,25,Ahmed,Adeel,,07/09/25,CIR-SEIU,Services Occupation,Carteret,NJ
 Individual - Small,250,Ahmed,Habeeb,,10/02/25,Not Employed,Unemployed,Westbury,NY
-Individual - Small,250,Ahmed,Mutahar,,09/30/25,Hackensack University Medical Center,Physician,Franklin Lakes,NJ
-Individual - Medium,500,Ahmed,Zain,,08/10/25,Consulting Cardiologists,Physician,South Windsor,CT
-Individual - Medium,2500,Aish,Wisfe,,07/15/25,Double AA Corporation,Management/Administrator/Executive,South San Francisco,CA
+Individual - Medium,500,Aish,Wisfe,,07/15/25,Double AA Corporation,Management/Administrator/Executive,South San Francisco,CA
 Individual - Medium,1000,Akel,Akel,,08/28/25,Dept of Education,Education/Professor/Teacher,New York,NY
 Individual - Medium,1000,Akhtar,Mirza,,08/10/25,Amerigas,Management/Administrator/Executive,South Windsor,CT
 Individual - Small,250,Akhter,Assad,,09/09/25,Passaic County,Politician,Paterson,NJ
@@ -578,13 +578,13 @@ Individual - Medium,500,Alaorabawi,Diyaalhaq,,09/04/25,Diyaalhaq Alaorabawi,Cons
 Individual - Medium,500,Algendy,Sherif,,09/13/25,Self Employed,Physician,West Bridgewater,MA
 Individual - Medium,1000,Ali,Ahmad,,08/10/25,Vet For Pet Animal Hospital,Medical Professional (Not Physician),Simsbury,CT
 Individual - Medium,1000,Ali,Durrani,,08/10/25,Self Employed,Medical Professional (Not Physician),Longmeadow,MA
-Individual - Small,250,Ali,Mir,,07/27/25,,Unemployed,Katy,TX
-Individual - Small,500,Ali,Yaseen,,07/03/25,McKinsey,Consultant,New York,NY
-Individual - Small,500,Alizade,Azer,,10/03/25,Premier OBGYN Group,Physician,Montvale,NJ
+Individual - Small,250,Ali,Mir,,07/27/25,Unemployed,Unemployed,Katy,TX
+Individual - Medium,500,Ali,Yaseen,,07/03/25,McKinsey,Consultant,New York,NY
+Individual - Medium,500,Alizade,Azer,,10/03/25,Premier OBGYN Group,Physician,Montvale,NJ
 Individual - Medium,1000,Almimeh,Ibrahim,,08/21/25,Ibrahim Almimeh,Business Owner,Alpine,NJ
 Individual - Medium,1000,Almontaser,Naji,,08/30/25,NY Hilton,Hospitality/Hotel/Food/Beverage,Brooklyn,NY
 Individual - Small,250,Alnatur,Tarek,,09/09/25,Elite Child Development Academy,Business Owner,Clifton,NJ
-Individual - Small,250,Amiwala,Bushra,,09/28/25,,Unemployed,Skokie,IL
+Individual - Small,250,Amiwala,Bushra,,09/28/25,Unemployed,Unemployed,Skokie,IL
 Individual - Medium,2000,Anwar,Naveed,,08/17/25,HGS45,Management/Administrator/Executive,Piscataway Township,NJ
 Individual - Medium,2750,Anwar,Naveed,,07/21/25,HGS45,Management/Administrator/Executive,Piscataway Township,NJ
 Individual - Medium,1000,Anwar,Saud,,08/10/25,NEPA LLC,Physician,South Windsor,CT
@@ -596,21 +596,21 @@ Individual - Medium,1000,Baghdadi,Khaldoun,,08/04/25,Walkup Melodia,Attorney,San
 Individual - Medium,1500,Bakerywala,Mohamed,,10/02/25,ASB Resources,Politician,Kendall Park,NJ
 Individual - Medium,1000,Barakat,Nidal,,08/13/25,Unemployed,Unemployed,Los Angeles,CA
 Individual - Medium,1000,Bareentto,Omar,,09/30/25,McCarter & English LLP,Attorney,Newark,NJ
-Individual - Small,500,Bell,Valerie,,09/24/25,Unemployed,Unemployed,Tampa,FL
+Individual - Medium,500,Bell,Valerie,,09/24/25,Unemployed,Unemployed,Tampa,FL
 Individual - Small,250,Bhatti,Waseem,,07/04/25,Summit Health,Physician,Jersey City,NJ
 Individual - Small,250,Bilal,Ahmad,,09/30/25,Retired,Retired,Pittsford,NY
 Individual - Small,250,Blackburn,Willis,,08/28/25,Google,Information Technology/Computer Science,Jersey City,NJ
 Individual - Small,100,Blackburn,Willis,,07/10/25,Google,Information Technology/Computer Science,Jersey City,NJ
-Individual - Small,500,Buisier,Nasser,,09/18/25,A L Prime Energy Consultant Inc,Management/Administrator/Executive,Boston,MA
+Individual - Medium,500,Buisier,Nasser,,09/18/25,A L Prime Energy Consultant Inc,Management/Administrator/Executive,Boston,MA
 Individual - Small,100,Cantor,Nancy,,08/05/25,Hunter College,Education/Professor/Teacher,New York City,NY
 Individual - Small,250,Catovic,Mariam,,09/19/25,Haleon,Management/Administrator/Executive,Montgomery,NJ
-Individual - Small,500,Censits,Mark,,08/04/25,Cool Vines,Business Owner,Jersey City,NJ
-Individual - Small,500,Chatha,Arshad,,08/29/25,,Retired,Jersey City,NJ
-Individual - Small,500,Chaudhary,Safdar,,09/07/25,Self Employed,Physician,Tempe,AZ
+Individual - Medium,500,Censits,Mark,,08/04/25,Cool Vines,Business Owner,Jersey City,NJ
+Individual - Medium,500,Chatha,Arshad,,08/29/25,Retired,Retired,Jersey City,NJ
+Individual - Medium,500,Chaudhary,Safdar,,09/07/25,Self Employed,Physician,Tempe,AZ
 Individual - Large,4300,Chaudhray,Haroon,,08/16/25,Self Employed,Physician,Jersey City,NJ
 Individual - Medium,1000,Chaudhray,Nauman,,08/10/25,Retina Group of New England,Physician,East Lyme,CT
 Individual - Medium,1000,Choudhray,Tahir,,08/10/25,Self Employed,Business Owner,Wethersfield,CT
-Individual - Small,500,Cooper,Savanna,,09/14/25,,Unemployed,Grover Beach,CA
+Individual - Medium,500,Cooper,Savanna,,09/14/25,Unemployed,Unemployed,Grover Beach,CA
 Individual - Medium,1000,Daud-Ahmad,Sameera,,08/05/25,Metropolitan Endocrinology,Physician,Old Tappan,NJ
 Individual - Medium,2000,Davison,Gina,,09/24/25,City of Jersey City,Public Sector,Jersey City,NJ
 Individual - Large,5000,Eisa,Jasim,,08/25/25,Jasim Eisa,Business Owner,Wayzata,MN
@@ -618,11 +618,11 @@ Individual - Small,250,El-Kazaz,Ibrahim,,09/23/25,Google LLC,Marketing/Public Re
 Individual - Small,250,Elgendy,Mohamed,,10/03/25,Hackensack Meridian Health,Physician,Bergenfield,NJ
 Individual - Medium,2000,Elsiesy,Hussien,,09/02/25,Self Employed,Physician,Irving,TX
 Individual - Medium,1000,Fadli,Azeddine,,09/13/25,Self Employed,Real Estate,Stoughton,MA
-Individual - Small,500,Fadli,Azeddine,,08/01/25,Self Employed,Real Estate,Stoughton,MA
+Individual - Medium,500,Fadli,Azeddine,,08/01/25,Self Employed,Real Estate,Stoughton,MA
 Individual - Small,250,Farooqi,Ikram,,09/14/25,Seha Medical and Wound Care LLC,Physician,Dover,MA
 Individual - Medium,1000,Farooqui,Suhail,,10/03/25,K-12 Insight,Management/Administrator/Executive,Vienna,VA
 Individual - Small,10,Farooqui,Suhail,,10/01/25,K-12 Insight,Management/Administrator/Executive,Vienna,VA
-Individual - Small,500,Fayed,Hamsa,,09/07/25,Ibrahim Fayed,Attorney,West Orange,NJ
+Individual - Medium,500,Fayed,Hamsa,,09/07/25,Ibrahim Fayed,Attorney,West Orange,NJ
 Individual - Medium,1900,Fazil,Rosy,,09/30/25,Not Employed,Not Employed,Stafford,TX
 Individual - Small,100,Fazil,Rosy,,09/24/25,Not Employed,Not Employed,Stafford,TX
 Individual - Medium,1000,Frazier,Kenneth,,09/15/25,Unemployed,Unemployed,Newtown,PA
@@ -634,49 +634,49 @@ Individual - Small,100,Ghayasuddin,Sheikh,,07/23/25,Self Employed,Self Employed,
 Individual - Medium,1000,Gilbert,Rondi,,07/23/25,Unemployed,Unemployed,Berkeley,CA
 Individual - Small,250,Gold,Stephanie,,08/20/25,Unemployed,Unemployed,Manhattan,NY
 Individual - Small,250,Goosby,Jenckyn,,07/02/25,Unemployed,Unemployed,San Francisco,CA
-Individual - Small,500,Gregory,Robert,,07/24/25,NJ Galvanizing,Business Owner,Plainfield,NJ
-Individual - Small,500,Habib,Usman,,09/22/25,Johnson and Johnson,Consultant,Santa Clara,CA
-Individual - Small,500,Haider,Naeem,,09/04/25,Self Employed,Physician,Jacksonville,FL
+Individual - Medium,500,Gregory,Robert,,07/24/25,NJ Galvanizing,Business Owner,Plainfield,NJ
+Individual - Medium,500,Habib,Usman,,09/22/25,Johnson and Johnson,Consultant,Santa Clara,CA
+Individual - Medium,500,Haider,Naeem,,09/04/25,Self Employed,Physician,Jacksonville,FL
 Individual - Large,3500,Halepota,Shahmeer,,09/30/25,AZA,Attorney,Houston,TX
 Individual - Medium,1000,Hamdan,Abdul,,09/09/25,Alsaidi Chang & Hamdan,Attorney,Clifton,NJ
-Individual - Small,500,Hameeduddin,Mohammed,,07/07/25,Haw Title Agency,Business Owner,Teaneck,NJ
+Individual - Medium,500,Hameeduddin,Mohammed,,07/07/25,Haw Title Agency,Business Owner,Teaneck,NJ
 Individual - Small,25,Hameeduddin,Rafiya,,09/18/25,Northwestern Medicine,,Saint Charles,IL
 Individual - Small,250,Haq,Rashid,,07/13/25,UHS Medical Group,,Vestal,NY
 Individual - Medium,1000,Haque MD,Muhammad,,08/10/25,City Prime Health,,Paramus,NJ
 Individual - Medium,1000,Haque,Muhammad,,07/10/25,City Prime Health,Physician,Paramus,NJ
 Individual - Small,25,Haque,Omar,,09/16/25,Not Employed,Not Employed,Princeton Junction,NJ
 Individual - Small,250,Hasan,Hussein,,09/09/25,Samcoplasticbag,Business Owner,Wayne,NJ
-Individual - Small,500,Hasan,Imran,,10/03/25,Not Employed,Unemployed,Burlington,MA
+Individual - Medium,500,Hasan,Imran,,10/03/25,Not Employed,Unemployed,Burlington,MA
 Individual - Small,250,Hashmi,Samir,,09/09/25,BP,Information Technology/Computer Science,Paramus,NJ
-Individual - Small,500,Holloway,Robinson,,08/20/25,Arts 14C,Management/Administrator/Executive,Jersey City,NJ
+Individual - Medium,500,Holloway,Robinson,,08/20/25,Arts 14C,Management/Administrator/Executive,Jersey City,NJ
 Individual - Medium,1000,Hosein,Haseeb,,09/13/25,Boston Police Department,Law Enforcement,Milton,MA
 Individual - Small,300,Hoshan,Husne,,09/09/25,Hlline Wireless LLC,Management/Administrator/Executive,Clifton,NJ
 Individual - Small,300,Hussein,Faisel,,09/09/25,PIP LLC,Financial Services/Banking,Alpine,NJ
 Individual - Small,250,Jaber,Alae,,09/09/25,JP Morgan Chase,Financial Services/Banking,Rochelle Park,NJ
-Individual - Small,250,Jalisi,Jay,,07/24/25,HMJ Health Management Company, LLC,Management/Administrator/Executive,Owings Mills,MD
+Individual - Small,250,Jalisi,Jay,,07/24/25,HMJ Health Management Company LLC,Management/Administrator/Executive,Owings Mills,MD
 Individual - Small,250,Jaloudi,Ali,,09/04/25,Jaloudi Law LLC,Attorney,Englewood Cliffs,NJ
 Individual - Small,250,Jaloudi,Ali,,08/13/25,Jaloudi Law LLC,Attorney,Englewood Cliffs,NJ
-Individual - Small,500,Jamal,Daanish,,07/30/25,Dolomite Therapeutics,Management/Administrator/Executive,San Francisco,CA
+Individual - Medium,500,Jamal,Daanish,,07/30/25,Dolomite Therapeutics,Management/Administrator/Executive,San Francisco,CA
 Individual - Small,250,Janjua,Omer,,10/03/25,Amazon,Management/Administrator/Executive,Sterling Heights,MI
-Individual - Small,500,Jarraya,Mohamed,,09/13/25,Massachusetts General Hospital,Physician,Boston,MA
+Individual - Medium,500,Jarraya,Mohamed,,09/13/25,Massachusetts General Hospital,Physician,Boston,MA
 Individual - Medium,1000,Javed,Abrahim,,09/30/25,Riceland Healthcare,Management/Administrator/Executive,Beaumont,TX
 Individual - Large,4500,Javed,Tahir,,09/24/25,Riceland Healthcare,Business Owner,Beaumont,TX
-Individual - Small,500,Javid,Rihan,,07/25/25,The Permanente Medical Group, Inc.,Physician,Elk Grove,CA
+Individual - Medium,500,Javid,Rihan,,07/25/25,The Permanente Medical Group Inc,Physician,Elk Grove,CA
 Individual - Small,250,Jetawi,Abdul,,07/01/25,Abdulrahman Aljetawi,Medical Professional (Not Physician),Clifton,NJ
-Individual - Small,100,Johal-Sharif,Romesh K,,08/31/25,Self Employed,Self Employed,Chatham,NJ
+Individual - Small,100,Johal-Sharif,Romesh K,,08/31/25,Self Employed,,Chatham,NJ
 Individual - Small,250,Joud,Mohammad,,08/13/25,Self Employed,Physician,Wesley Chapel,FL
 Individual - Small,250,Jubran,Mohammad,,09/08/25,Schneider Electric,Engineer,Wayne,NJ
 Individual - Small,300,Kananeh,Mohammed,,09/12/25,Retired,Retired,Oakland,NJ
 Individual - Small,250,Karaca,Veysel,,08/31/25,Self Employed,Business Owner,Catasauqua,PA
 Individual - Small,250,Kayed,Jaiel,,09/04/25,UBS,Engineer,North Bergen,NJ
 Individual - Small,250,Kayed,Sayel,,09/04/25,Self Employed,Retail Sales,North Bergen,NJ
-Individual - Small,500,Kazmi,Kosar,,10/02/25,Quality Home Care,Business Owner,Oradell,NJ
+Individual - Medium,500,Kazmi,Kosar,,10/02/25,Quality Home Care,Business Owner,Oradell,NJ
 Individual - Small,250,Khan,Aaliya,,07/29/25,Athena Health,Management/Administrator/Executive,Pleasanton,CA
-Individual - Small,250,Khan,Mazhar,,07/28/25,Unemployed,Unemployed,Morgan Hill,CA
+Individual - Small,250,Khan,Mazhar,,07/28/25,,Unemployed,Morgan Hill,CA
 Individual - Medium,1000,Khan,Mubashar,,10/01/25,BSWH (Baylor Scott & White Medical Center),Physician,Frisco,TX
-Individual - Small,250,Khan,Mustaq,,07/27/25,Unemployed,Unemployed,Stevenson Ranch,CA
-Individual - Medium,1000,Khateeb,Afshan,,10/03/25,Thomas Drugs Inc.,Medical Professional (Not Physician),Paramus,NJ
-Individual - Medium,1000,Khateeb,Afshan,,09/09/25,Thomas Drugs Inc.,Medical Professional (Not Physician),Paramus,NJ
+Individual - Small,250,Khan,Mustaq,,07/27/25,,Unemployed,Stevenson Ranch,CA
+Individual - Medium,1000,Khateeb,Afshan,,10/03/25,Thomas Drugs Inc,Medical Professional (Not Physician),Paramus,NJ
+Individual - Medium,1000,Khateeb,Afshan,,09/09/25,Thomas Drugs Inc,Medical Professional (Not Physician),Paramus,NJ
 Individual - Large,2500,Khawaja,Omar,,09/28/25,Law Office of Omar Khawaja,Attorney,Houston,TX
 Individual - Medium,1000,Khedr,Mohammed,,10/02/25,High Touch Pharmacy,Medical Professional (Not Physician),Elizabeth,NJ
 Individual - Small,150,Kibrea,SM,,10/03/25,Self Employed,Self Employed,Jersey City,NJ
@@ -695,27 +695,27 @@ Individual - Small,250,Masud,Enver,,07/09/25,Unemployed,Unemployed,Ashburn,VA
 Individual - Small,300,Matari,Ahmad,,09/10/25,Unemployed,Unemployed,Belmar,NJ
 Individual - Medium,1000,Mehal,Wajahat,,08/12/25,Yale School of Medicine,Physician,Branford,CT
 Individual - Medium,1000,Mirza,Atique,,08/10/25,Central CT Cardiologists,Physician,Avon,CT
-Individual - Small,500,Mirza,Hafeez,,08/10/25,Speedigo Enterprises,Business Owner,Rocky Hill,CT
-Individual - Small,50,Mohammed,Nabila,,07/16/25,Not Employed,,Darien,IL
-Individual - Small,500,Mohammed,Rahed,,09/10/25,St. Joseph's Hospital,Physician,Haledon,NJ
-Individual - Small,500,Mohammed,Rahed,,09/10/25,St. Joseph's Hospital,Physician,Haledon,NJ
+Individual - Medium,500,Mirza,Hafeez,,08/10/25,Speedigo Enterprises,Business Owner,Rocky Hill,CT
+Individual - Small,50,Mohammed,Nabila,,07/16/25,Not Employed,Not Employed,Darien,IL
+Individual - Medium,500,Mohammed,Rahed,,09/10/25,St Josephs Hospital,Physician,Haledon,NJ
+Individual - Medium,500,Mohammed,Rahed,,09/10/25,St Josephs Hospital,Physician,Haledon,NJ
 Individual - Small,250,Mohemani,Shamsi,,07/04/25,,Unemployed,Orange County,CA
-Individual - Small,100,Moreb,Jan,,07/20/25,Novant Health,,Winston-Salem,NC
+Individual - Small,100,Moreb,Jan,,07/20/25,Novant Health,Medical Professional (Not Physician),Winston-Salem,NC
 Individual - Medium,1000,Mubarak,Hashem,,09/18/25,Not Employed,,Panama City,FL
-Individual - Small,50,Mubarak,Hashem,,09/02/25,Not Employed,,Panama City,FL
-Individual - Small,25,Mubarak,Hashem,,08/14/25,Not Employed,,Panama City,FL
-Individual - Small,500,Muhammad,Arsalan,,09/30/25,Haynes and Boone LLP,Attorney,Houston,TX
-Individual - Small,500,Musmar,Ghaith,,09/16/25,Millermusmar CPAs,Accountant/Auditor,Herndon,VA
-Individual - Small,500,Mustafa,Ibrahim,,10/02/25,Safah Corp,Management/Administrator/Executive,Sachse,TX
+Individual - Small,50,Mubarak,Hashem,,09/02/25,Not Employed,Not Employed,Panama City,FL
+Individual - Small,25,Mubarak,Hashem,,08/14/25,Not Employed,Not Employed,Panama City,FL
+Individual - Medium,500,Muhammad,Arsalan,,09/30/25,Haynes and Boone LLP,Attorney,Houston,TX
+Individual - Medium,500,Musmar,Ghaith,,09/16/25,Millermusmar CPAs,Accountant/Auditor,Herndon,VA
+Individual - Medium,500,Mustafa,Ibrahim,,10/02/25,Safah Corp,Management/Administrator/Executive,Sachse,TX
 Individual - Small,200,Mustafa,Ibrahim,,09/29/25,Safah Corp,Management/Administrator/Executive,Sachse,TX
 Individual - Medium,1000,Mustafa,Maimoon,,09/09/25,Self Employed,Attorney,Wayne,NJ
-Individual - Small,500,Mustafa,Nedam,,09/09/25,Self Employed,Real Estate,Jersey City,NJ
-Individual - Medium,1200,Nabi,Uzair,,10/01/25,Ruel Pharmacy Corp. DBA Family Drugstore,Management/Administrator/Executive,,NY
+Individual - Medium,500,Mustafa,Nedam,,09/09/25,Self Employed,Real Estate,Jersey City,NJ
+Individual - Medium,1200,Nabi,Uzair,,10/01/25,Ruel Pharmacy Corp DBA Family Drugstore,Management/Administrator/Executive,,NY
 Individual - Small,250,Nanji,Suhail,,09/21/25,Eyecast,Management/Administrator/Executive,Parkland,FL
 Individual - Small,250,Naqvi,Ejaz,,07/27/25,Kaiser,Physician,Pleasant Hill,CA
 Individual - Small,250,Omeish,Esam,,09/29/25,Inova Alexandria Hospital,Physician,Fairfax,VA
 Individual - Medium,2000,Othman,Ibraheem,,09/09/25,Zion Capital,Construction Trade/Labor Trade,Clifton,NJ
-Individual - Small,500,P Grover,Owen,,07/22/25,Unemployed,Unemployed,Brooklyn,NY
+Individual - Medium,500,P Grover,Owen,,07/22/25,Unemployed,Unemployed,Brooklyn,NY
 Individual - Small,250,Patall,Nabella,,09/11/25,UPMC,Physician,Westbury,NY
 Individual - Small,250,Patwa,Huned,,08/08/25,Yale,Physician,Hamden,CT
 Individual - Small,250,Qatanani,Osama,,09/04/25,Self Employed,Marketing/Public Relations,Paterson,NJ
@@ -724,18 +724,18 @@ Individual - Medium,1000,Rafique,Muizz,,08/14/25,Coinbase,Attorney,Pleasant Hill
 Individual - Small,250,Rajab,Nisreen,,09/09/25,Wayne Public Schools,Education/Professor/Teacher,Pompton Lakes,NJ
 Individual - Small,250,Ramadan,Zead,,08/04/25,West Harlem Dev Corp,Management/Administrator/Executive,Bronx,NY
 Individual - Small,300,Rana,Ronuk,,10/02/25,Accel Medical Billing Assoc,Business Owner,Paramus,NJ
-Individual - Small,500,Rasheed,Fouad,,09/01/25,Self Employed,Physician,Prospect Park,NJ
-Individual - Small,500,Rasoul,Suhad,,09/16/25,Redfin,Real Estate,Fairfax,VA
-Individual - Small,500,Razzak,Mannan,,09/02/25,Woodland Park Peds,Physician,Woodland Park,NJ
-Individual - Medium,1000,Rizvi,Syed,,07/25/25,Unemployed,Unemployed,Palo Alto,CA
+Individual - Medium,500,Rasheed,Fouad,,09/01/25,Self Employed,Physician,Prospect Park,NJ
+Individual - Medium,500,Rasoul,Suhad,,09/16/25,Redfin,Real Estate,Fairfax,VA
+Individual - Medium,500,Razzak,Mannan,,09/02/25,Woodland Park Peds,Physician,Woodland Park,NJ
+Individual - Medium,1000,Rizvi,Syed,,07/25/25,,Unemployed,Palo Alto,CA
 Individual - Small,250,Sahaf,Sophie,,09/12/25,Groundwork Collaborative,Consultant,Washington,DC
-Individual - Small,250,Saifee,Quaid,,09/08/25,WIT Inc.,Information Technology/Computer Science,Rochester Hills,MI
+Individual - Small,250,Saifee,Quaid,,09/08/25,WIT Inc,Information Technology/Computer Science,Rochester Hills,MI
 Individual - Small,250,Sajjad,Syed,,09/02/25,Eli Lilly and Company,Management/Administrator/Executive,Washington Crossing,PA
-Individual - Small,100,Salama Mohamed,Bothaina,,08/31/25,,Unemployed,Los Altos,CA
-Individual - Small,250,Salama Mohamed,Bothaina,,07/19/25,,Unemployed,Los Altos,CA
+Individual - Small,100,Salama Mohamed,Bothaina,,08/31/25,Unemployed,Unemployed,Los Altos,CA
+Individual - Small,250,Salama Mohamed,Bothaina,,07/19/25,Unemployed,Unemployed,Los Altos,CA
 Individual - Medium,1000,Shallal,Anas,,09/19/25,Stone Soup,Management/Administrator/Executive,Washington,DC
 Individual - Medium,1000,Shallal,Anas,,09/19/25,Stone Soup,Management/Administrator/Executive,Washington,DC
-Individual - Small,500,Siddiqui,Arshi,,09/08/25,Bellwether Government Affairs,Attorney,Miami Beach,FL
+Individual - Medium,500,Siddiqui,Arshi,,09/08/25,Bellwether Government Affairs,Attorney,Miami Beach,FL
 Individual - Small,300,Siddiqui,Assad,,09/28/25,Chevron,Information Technology/Computer Science,Richmond,TX
 Individual - Small,100,Siddiqui,Assad,,09/28/25,Chevron,Information Technology/Computer Science,Richmond,TX
 Individual - Small,250,Siddiqui,Mansoor,,07/07/25,Unemployed,Unemployed,Newport Beach,CA
@@ -746,6 +746,12 @@ Individual - Medium,1000,Tamez,Selma,,09/30/25,United Airlines,Retail Sales,Hous
 Individual - Small,250,Tubbs,Michael,,10/02/25,Principal,Public Sector,Stockton,CA
 Individual - Small,25,Usmani,Asma,,10/03/25,Self Employed,Self Employed,Franklin Park,NJ
 Individual - Small,250,Vohra,Mona,,09/11/25,Non Profit,Attorney,Takoma Park,MD
-Individual - Small,500,Westbrook,Kelvin,,09/23/25,Self Employed,Consultant,Tampa,FL
+Individual - Medium,500,Westbrook,Kelvin,,09/23/25,Self Employed,Consultant,Tampa,FL
 Individual - Small,250,Zafar,Saadia,,08/02/25,Woodland Anesthesia,Physician,Avon,CT
-Corporate,500,,,952-954 Main Street LLC,09/09/25,RBC Royal Bank of Canada,,Clifton,NJ
+Corporate,500,,,Main Street LLC,09/09/25,RBC Royal Bank of Canada,,Clifton,NJ
+Individual - Small,100,Andrea,Carroll,,10/09/25,Retired,Retired,Jersey City,NJ
+Individual - Small,100,John,Carroll,,10/09/25,Retired,Retired,Jersey City,NJ
+Individual - Large,2500,Farrukh,Babar,,10/16/25,Med Screen Labs,,Colonia,NJ
+Individual - Large,4500,Bothania S,Mohamed,,10/17/25,,,Los Altos,CA
+Corporate,2000,,,Smile Care Dental Group LLC,10/16/25,Smile Care Dental Group LLC,,Clifton,NJ
+Individual - Large,15000,Russab,Ali,,10/16/25,SMC Digital Marketing,Marketing/Public Relations,Jersey City,NJs
