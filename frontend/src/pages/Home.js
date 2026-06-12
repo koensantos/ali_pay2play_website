@@ -24,6 +24,19 @@ export default function Home() {
   return (
     <div className="homepage">
 
+
+      {/* Archive Banner */}
+      <div style={{
+        backgroundColor: "#1a2a3a",
+        borderBottom: "1px solid #2e4a6a",
+        color: "rgba(230,238,248,0.85)",
+        textAlign: "center",
+        padding: "10px 20px",
+        fontSize: "0.9rem"
+      }}>
+         <strong>Archive Notice:</strong> This site covered the 2025 Jersey City mayoral election and is no longer actively updated. Data reflects contributions recorded during that campaign.
+      </div>
+
       {/* Fixed Mobile Header */}
       <div className="mobile-header">
         <button
@@ -133,21 +146,11 @@ export default function Home() {
         textAlign: "center",
       }}
     >
-      <h2>Contact</h2>
-      <p>If you’d like to reach out, you can contact me through any of the following:</p>
-      
-      <ul style={{ listStyle: "none", padding: 0, fontSize: "16px" }}>
-        <li>Email: <a href="kms226655@gmail.com">kms226655@gmail.com</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/_koensantos_" target="_blank" rel="noopener noreferrer">@_koensantos_</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/koen-mitchel-santos-306476278" target="_blank" rel="noopener noreferrer">Koen Mitchel Santos - LinkedIn</a></li>
-        {/* Add more links here as needed */}
-      </ul>
     </div>
 
 
 
      <footer className="footer">
-  <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
 </footer>
 
     </div>
