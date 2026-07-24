@@ -25,7 +25,7 @@ export default function Draft() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const backendUrl = "https://ali-pay2play-backend.onrender.com";
+  const backendUrl = "https://ali-pay2play-website.onrender.com";
 
  const otherCandidates = [
     { name: "Mussab Ali", path: "/MussabAli" },
@@ -1152,10 +1152,6 @@ export default function Draft() {
         <a href="/" className="btn-return">Return to Home Page</a>
         <a href="https://www.njelecefilesearch.com/SearchContributionInteractive?eid=436752">View Full ELEC Records</a>
       </div>
-
-      <footer className="footer">
-  <p>PAID FOR BY ALI FOR JERSEY CITY PO BOX 8237, JERSEY CITY, NJ 07308</p>
-</footer>
 
     </div>
   );
