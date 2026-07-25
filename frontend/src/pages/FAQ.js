@@ -10,7 +10,7 @@ export default function FAQ() {
         <>
           A donation is flagged if there is strong evidence of a potential conflict of interest, pay-to-play connection, or ties to developers, contractors, or political committees with business before Jersey City. These rules are applied consistently to every candidate.{" "}
           <a
-            href="https://pay2playjc.com/#/comparison"
+            href="https://ali-pay2play-website.vercel.app/#/comparison"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
