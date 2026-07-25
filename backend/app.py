@@ -12,16 +12,7 @@ from cleaning_scripts import campaigndonations
 
 app = Flask(__name__)
 
-CORS(app, resources={
-    r"/*": {
-        "origins": [
-            "https://pay2playjc.com",
-            "https://www.pay2playjc.com",   # optional
-            "pay2playjc.com",         # optional
-        ]
-    }
-})
-
+CORS(app, origins=["https://ali-pay2play-website.vercel.app"])
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
