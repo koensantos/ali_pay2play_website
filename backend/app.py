@@ -12,7 +12,7 @@ from cleaning_scripts import campaigndonations
 
 app = Flask(__name__)
 
-CORS(app, origins=["https://ali-pay2play-website.vercel.app"])
+CORS(app, origins=["https://pay2playjc.vercel.app"])
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -390,7 +390,7 @@ def download_p2p_contributions():
 
 @app.after_request
 def add_cors_headers(response):
-    response.headers.add("Access-Control-Allow-Origin", "https://ali-pay2play-website.vercel.app")
+    response.headers.add("Access-Control-Allow-Origin", "https://pay2playjc.vercel.app")
     response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
     response.headers.add("Access-Control-Allow-Methods", "GET,POST,OPTIONS")
     return response
